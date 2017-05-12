@@ -1,0 +1,320 @@
+id: new-tour
+name: NewTour
+description: Hello, this is a new tour!
+title_default: "New Tour"
+
+steps:
+  - title: 'Step 1'
+    element: 'div#everything > div#left > div.unified-panel-header > div.unified-panel-header-inner > div.panel-header-buttons > div.upload-button > div.progress > a#tool-panel-upload-button.panel-header-button > span.fa.fa-upload'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-header > div.unified-panel-header-inner > div.panel-header-buttons > div.upload-button > div.progress > a#tool-panel-upload-button.panel-header-button > span.fa.fa-upload
+
+  - title: 'Step 2'
+    element: 'div.modal.ui-modal > div.modal-dialog > div.modal-content > div.modal-body > div.ui-tabs.tabbable.tabs-left > div.tab-content > div#regular.tab-pane.active > div.upload-view-default > div.upload-buttons > button#btn-new.ui-button-default.btn.btn-default'
+    content: ''
+    placement: ''
+    postclick: 
+      - div.modal.ui-modal > div.modal-dialog > div.modal-content > div.modal-body > div.ui-tabs.tabbable.tabs-left > div.tab-content > div#regular.tab-pane.active > div.upload-view-default > div.upload-buttons > button#btn-new.ui-button-default.btn.btn-default
+
+  - title: 'Step 3'
+    element: 'div.modal.ui-modal > div.modal-dialog > div.modal-content > div.modal-body > div.ui-tabs.tabbable.tabs-left > div.tab-content > div#regular.tab-pane.active > div.upload-view-default > div.upload-box > table.upload-table.ui-table-striped > tbody > tr#upload-row-0.upload-row > td > div.upload-text-column > div.upload-text > textarea.upload-text-content.form-control'
+    content: ''
+    placement: ''
+    postclick: 
+      - div.modal.ui-modal > div.modal-dialog > div.modal-content > div.modal-body > div.ui-tabs.tabbable.tabs-left > div.tab-content > div#regular.tab-pane.active > div.upload-view-default > div.upload-box > table.upload-table.ui-table-striped > tbody > tr#upload-row-0.upload-row > td > div.upload-text-column > div.upload-text > textarea.upload-text-content.form-control
+
+  - title: 'Step 4'
+    element: 'div.modal.ui-modal > div.modal-dialog > div.modal-content > div.modal-body > div.ui-tabs.tabbable.tabs-left > div.tab-content > div#regular.tab-pane.active > div.upload-view-default > div.upload-buttons > button#btn-start.ui-button-default.disabled.btn.btn-default > span.title'
+    content: ''
+    placement: ''
+    postclick: 
+      - div.modal.ui-modal > div.modal-dialog > div.modal-content > div.modal-body > div.ui-tabs.tabbable.tabs-left > div.tab-content > div#regular.tab-pane.active > div.upload-view-default > div.upload-buttons > button#btn-start.ui-button-default.disabled.btn.btn-default > span.title
+
+  - title: 'Step 5'
+    element: 'div.modal.ui-modal > div.modal-dialog > div.modal-content > div.modal-body > div.ui-tabs.tabbable.tabs-left > div.tab-content > div#regular.tab-pane.active > div.upload-view-default > div.upload-buttons > button#btn-close.ui-button-default.btn.btn-default > span.title'
+    content: ''
+    placement: ''
+    postclick: 
+      - div.modal.ui-modal > div.modal-dialog > div.modal-content > div.modal-body > div.ui-tabs.tabbable.tabs-left > div.tab-content > div#regular.tab-pane.active > div.upload-view-default > div.upload-buttons > button#btn-close.ui-button-default.btn.btn-default > span.title
+
+  - title: 'Step 6'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width
+
+  - title: 'Step 7'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#fasta/fastq_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.67.tool-link'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#fasta/fastq_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.67.tool-link
+
+  - title: 'Step 8'
+    element: 'div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-34.ui-portlet-limited > div.portlet-content > div.portlet-buttons > button#uid-15.ui-button-default.btn.btn-info > span.title'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-34.ui-portlet-limited > div.portlet-content > div.portlet-buttons > button#uid-15.ui-button-default.btn.btn-info > span.title
+
+  - title: 'Step 9'
+    element: 'div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-09ca0af6cb53d1a1.list-item.dataset.history-content.state-ok > div.primary-actions > a.icon-btn.display-btn > span.fa.fa-eye'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-09ca0af6cb53d1a1.list-item.dataset.history-content.state-ok > div.primary-actions > a.icon-btn.display-btn > span.fa.fa-eye
+
+  - title: 'Step 10'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width
+
+  - title: 'Step 11'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#ngs:_qc_and_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/1.6.tool-link'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#ngs:_qc_and_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/1.6.tool-link
+
+  - title: 'Step 12'
+    element: 'div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-115.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-63.ui-form-element.section-row > div.ui-form-field > div > div > div#uid-64.ui-button-icon.form-repeat-add > div.button > span.title'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-115.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-63.ui-form-element.section-row > div.ui-form-field > div > div > div#uid-64.ui-button-icon.form-repeat-add > div.button > span.title
+
+  - title: 'Step 13'
+    element: 'div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-ab3a41de8d52f723.list-item.dataset.history-content.state-ok > div.primary-actions > a.icon-btn.display-btn > span.fa.fa-eye'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-ab3a41de8d52f723.list-item.dataset.history-content.state-ok > div.primary-actions > a.icon-btn.display-btn > span.fa.fa-eye
+
+  - title: 'Step 14'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#ngs:_qc_and_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/1.6.tool-link'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#ngs:_qc_and_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/lparsons/cutadapt/cutadapt/1.6.tool-link
+
+  - title: 'Step 15'
+    element: 'div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-ab3a41de8d52f723.list-item.dataset.history-content.state-ok > div.details > pre.dataset-peek > table > tbody > tr > td'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-ab3a41de8d52f723.list-item.dataset.history-content.state-ok > div.details > pre.dataset-peek > table > tbody > tr > td
+
+  - title: 'Step 16'
+    element: 'div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-ab3a41de8d52f723.list-item.dataset.history-content.state-ok > div.details > pre.dataset-peek > table > tbody > tr > td'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-ab3a41de8d52f723.list-item.dataset.history-content.state-ok > div.details > pre.dataset-peek > table > tbody > tr > td
+
+  - title: 'Step 17'
+    element: 'div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-ab3a41de8d52f723.list-item.dataset.history-content.state-ok > div.details > pre.dataset-peek > table > tbody > tr > td'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-ab3a41de8d52f723.list-item.dataset.history-content.state-ok > div.details > pre.dataset-peek > table > tbody > tr > td
+
+  - title: 'Step 18'
+    element: 'div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-ab3a41de8d52f723.list-item.dataset.history-content.state-ok > div.details > pre.dataset-peek > table > tbody > tr > td'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-ab3a41de8d52f723.list-item.dataset.history-content.state-ok > div.details > pre.dataset-peek > table > tbody > tr > td
+
+  - title: 'Step 19'
+    element: 'div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-205.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-153.ui-form-element.section-row > div.ui-form-field > div > div > div#uid-154.ui-button-icon.form-repeat-add > div.button > span.title'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-205.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-153.ui-form-element.section-row > div.ui-form-field > div > div > div#uid-154.ui-button-icon.form-repeat-add > div.button > span.title
+
+  - title: 'Step 20'
+    element: 'div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-205.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-153.ui-form-element.section-row > div.ui-form-field > div > div > div#uid-153-section-0.ui-portlet-repeat.section-row > div.portlet-content > div.portlet-body > div > div#uid-207-section-0.ui-form-section.section-row > div#uid-210.ui-form-element.section-row > div.ui-form-field > input#field-uid-210.ui-input'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-205.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-153.ui-form-element.section-row > div.ui-form-field > div > div > div#uid-153-section-0.ui-portlet-repeat.section-row > div.portlet-content > div.portlet-body > div > div#uid-207-section-0.ui-form-section.section-row > div#uid-210.ui-form-element.section-row > div.ui-form-field > input#field-uid-210.ui-input
+
+  - title: 'Step 21'
+    element: 'div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-205.ui-portlet-limited > div.portlet-content > div.portlet-buttons > button#uid-134.ui-button-default.btn.btn-info > span.title'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-205.ui-portlet-limited > div.portlet-content > div.portlet-buttons > button#uid-134.ui-button-default.btn.btn-info > span.title
+
+  - title: 'Step 22'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width
+
+  - title: 'Step 23'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width
+
+  - title: 'Step 24'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#fasta/fastq_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.67.tool-link'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#fasta/fastq_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.67.tool-link
+
+  - title: 'Step 25'
+    element: 'div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-246.ui-portlet-limited > div.portlet-content > div.portlet-buttons > button#uid-227.ui-button-default.btn.btn-info > span.title'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-246.ui-portlet-limited > div.portlet-content > div.portlet-buttons > button#uid-227.ui-button-default.btn.btn-info > span.title
+
+  - title: 'Step 26'
+    element: 'div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-538a7ad7b8426fec.list-item.dataset.history-content.state-ok > div.primary-actions > a.icon-btn.display-btn'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-538a7ad7b8426fec.list-item.dataset.history-content.state-ok > div.primary-actions > a.icon-btn.display-btn
+
+  - title: 'Step 27'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width
+
+  - title: 'Step 28'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width
+
+  - title: 'Step 29'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width
+
+  - title: 'Step 30'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#ngs:_qc_and_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/pjbriggs/trimmomatic/trimmomatic/0.36.0.tool-link'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#ngs:_qc_and_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/pjbriggs/trimmomatic/trimmomatic/0.36.0.tool-link
+
+  - title: 'Step 31'
+    element: 'div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-322.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-259.ui-form-element.section-row > div.ui-form-field > div#field-uid-259.ui-options > div.btn-group.ui-radiobutton > label.btn.btn-default.ui-option'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-322.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-259.ui-form-element.section-row > div.ui-form-field > div#field-uid-259.ui-options > div.btn-group.ui-radiobutton > label.btn.btn-default.ui-option
+
+  - title: 'Step 32'
+    element: 'div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-322.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-259.ui-form-element.section-row > div.ui-form-field > div#field-uid-259.ui-options > div.btn-group.ui-radiobutton > label.btn.btn-default.ui-option > input'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-322.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-259.ui-form-element.section-row > div.ui-form-field > div#field-uid-259.ui-options > div.btn-group.ui-radiobutton > label.btn.btn-default.ui-option > input
+
+  - title: 'Step 33'
+    element: 'div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-d0285f6cbc9af68e.list-item.dataset.history-content.state-ok > div.primary-actions > a.icon-btn.edit-btn > span.fa.fa-pencil'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-d0285f6cbc9af68e.list-item.dataset.history-content.state-ok > div.primary-actions > a.icon-btn.edit-btn > span.fa.fa-pencil
+
+  - title: 'Step 34'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#ngs:_qc_and_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/pjbriggs/trimmomatic/trimmomatic/0.36.0.tool-link'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#ngs:_qc_and_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/pjbriggs/trimmomatic/trimmomatic/0.36.0.tool-link
+
+  - title: 'Step 35'
+    element: 'div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-395.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-332.ui-form-element.section-row > div.ui-form-field > div#field-uid-332.ui-options > div.btn-group.ui-radiobutton > label.btn.btn-default.ui-option'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-395.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-332.ui-form-element.section-row > div.ui-form-field > div#field-uid-332.ui-options > div.btn-group.ui-radiobutton > label.btn.btn-default.ui-option
+
+  - title: 'Step 36'
+    element: 'div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-395.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-332.ui-form-element.section-row > div.ui-form-field > div#field-uid-332.ui-options > div.btn-group.ui-radiobutton > label.btn.btn-default.ui-option > input'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-395.ui-portlet-limited > div.portlet-content > div.portlet-body > div > div#uid-332.ui-form-element.section-row > div.ui-form-field > div#field-uid-332.ui-options > div.btn-group.ui-radiobutton > label.btn.btn-default.ui-option > input
+
+  - title: 'Step 37'
+    element: 'div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-395.ui-portlet-limited > div.portlet-content > div.portlet-buttons > button#uid-331.ui-button-default.btn.btn-info > span.title'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-395.ui-portlet-limited > div.portlet-content > div.portlet-buttons > button#uid-331.ui-button-default.btn.btn-info > span.title
+
+  - title: 'Step 38'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width
+
+  - title: 'Step 39'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#fasta/fastq_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.67.tool-link'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#fasta/fastq_manipulation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/devteam/fastqc/fastqc/0.67.tool-link
+
+  - title: 'Step 40'
+    element: 'div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-423.ui-portlet-limited > div.portlet-content > div.portlet-buttons > button#uid-404.ui-button-default.btn.btn-info > span.title'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div > div#center-panel > div > div > div#uid-423.ui-portlet-limited > div.portlet-content > div.portlet-buttons > button#uid-404.ui-button-default.btn.btn-info > span.title
+
+  - title: 'Step 41'
+    element: 'div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-2f2796c46ccee89b.list-item.dataset.history-content.state-ok > div.primary-actions > a.icon-btn.display-btn > span.fa.fa-eye'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#right.history-right-panel > div#current-history-panel.list-panel.history-panel.current-history-panel.middle > ul.list-items > div#dataset-2f2796c46ccee89b.list-item.dataset.history-content.state-ok > div.primary-actions > a.icon-btn.display-btn > span.fa.fa-eye
+
+  - title: 'Step 42'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width
+
+  - title: 'Step 43'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width
+
+  - title: 'Step 44'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div#tool-search.bar > input#tool-search-query.search-query.parent-width
+
+  - title: 'Step 45'
+    element: 'div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#annotation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.1.tool-link'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body.unified-panel-body-background > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#annotation.toolSectionBody > div.toolTitle > div > a.toolshed.g2.bx.psu.edu/repos/rnateam/sortmerna/bg_sortmerna/2.1b.1.tool-link
