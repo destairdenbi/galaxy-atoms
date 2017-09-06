@@ -1,0 +1,47 @@
+id: new-tour
+name: NewTour
+description: Hello, this is a new tour!
+title_default: "New Tour"
+
+steps:
+  - title: 'Step 1'
+    element: 'div#everything > div#left > div.unified-panel-body > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#title___workflow__inputs__.toolSectionTitle > a > span'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#title___workflow__inputs__.toolSectionTitle > a > span
+
+  - title: 'Step 2'
+    element: 'div#everything > div#left > div.unified-panel-body > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#__workflow__inputs__.toolSectionBody > div.toolSectionBg > div.toolTitle > a'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body > div.toolMenuContainer > div.toolMenu > div.toolSectionWrapper > div#__workflow__inputs__.toolSectionBody > div.toolSectionBg > div.toolTitle > a
+
+  - title: 'Step 3'
+    element: 'div#everything > div#center.inbound > div.unified-panel-body > div#canvas-viewport > div#canvas-container > div#wf-node-step-2.toolForm.toolFormInCanvas.toolForm-active > div.toolFormTitle.unselectable > span.nodeTitle'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#center.inbound > div.unified-panel-body > div#canvas-viewport > div#canvas-container > div#wf-node-step-2.toolForm.toolFormInCanvas.toolForm-active > div.toolFormTitle.unselectable > span.nodeTitle
+
+  - title: 'Step 4'
+    element: 'div#everything > div#left > div.unified-panel-body > div.toolMenuContainer > div.toolMenu > div.toolSectionList > div.toolSectionWrapper > div#title_textutil.toolSectionTitle > a > span'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body > div.toolMenuContainer > div.toolMenu > div.toolSectionList > div.toolSectionWrapper > div#title_textutil.toolSectionTitle > a > span
+
+  - title: 'Step 5'
+    element: 'div#everything > div#left > div.unified-panel-body > div.toolMenuContainer > div.toolMenu > div.toolSectionList > div.toolSectionWrapper > div#textutil.toolSectionBody > div.toolSectionBg > div.toolTitle > a#link-mergeCols1'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#everything > div#left > div.unified-panel-body > div.toolMenuContainer > div.toolMenu > div.toolSectionList > div.toolSectionWrapper > div#textutil.toolSectionBody > div.toolSectionBg > div.toolTitle > a#link-mergeCols1
+
+  - title: 'Step 6'
+    element: 'div#tour-config > textarea#tour-textarea'
+    content: ''
+    placement: ''
+    postclick: 
+      - div#tour-config > textarea#tour-textarea
