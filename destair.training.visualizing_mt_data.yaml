@@ -1,10 +1,9 @@
-id: taxonomic_classification_and_visualization_of_metatranscriptomic_data
-name: "Taxonomic classification and visualization of metatranscriptomic data"
-description: "In this tour we perform taxonomic classification and visualization of metatranscriptomic data"
-title_default: "Taxonomic classification and visualization of metatranscriptomic data"
+id: visualizing_taxonomic_classification_of_metatranscriptomic_data
+name: 'Visualizing taxonomic classification of metatranscriptomic data'
+description: 'This tour assists in the taxonomic classification and visualization of metatranscriptomic data: from quality-controlled FASTA sequences to a taxonomic tree.'
+title_default: 'Visualizing taxonomic classification of metatranscriptomic data'
 
 steps:
-
 
   - title: "<b>Taxonomic classification and visualization of metatranscriptomic data<b/>"
     content: "This interactive tour walks you through the steps that are needed to perform taxonomic classification and visualization of metatranscriptomic data.<br><br>Follow the instructions. Click <b>'Next'</b> to proceed to the following step, or <b>'Prev'</b> to review the previous one."
