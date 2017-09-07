@@ -38,10 +38,13 @@ steps:
     content: 'The file is uploading in the history.'
     placement: left
 
-  - title: Step 6
+  - title: 'Step 6: <b>Quality trimming</b>'
     element: '#tool-search-query'
-    content: ''
+    content: 'Look out for the FASQC tool.'
     placement: right
+    textinsert:
+        fastqc
+
   - title: Step 7
     element: '#tool-search'
     content: ''
