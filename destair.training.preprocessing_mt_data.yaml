@@ -1,7 +1,7 @@
-id: new-tour
-name: Galaxy Tour
-description: This is a new tour created with the Galaxy Tour Builder extension.
-title_default: Galaxy Tour
+id: preprocessing_metatranscriptomic_data
+name: "Preprocessing of metatranscriptomic data"
+description: "This tour assists in the pre-processing of metatranscriptomic data: from the raw sequence reads to quality-controlled FASTA for downstream analysis."
+title_default: "Preprocessing of metatranscriptomic data"
 steps:
   - title: Step 1
     element: '#current-history-panel .controls .title .name input'
