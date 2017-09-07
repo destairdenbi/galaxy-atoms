@@ -7,22 +7,37 @@ steps:
     element: '#current-history-panel .controls .title .name input'
     content: ''
     placement: left
-  - title: Step 2
+
+  - title: 'Step 2: <b>Import metatranscriptomic data</b>'
     element: '#tool-panel-upload-button .fa.fa-upload'
+    content: 'The import button imports data into Galaxy.<br />'
+    placement: right
+    postclick:
+        - ".upload-button"
+
+  - title: 'Step 3: <b>Import metatranscriptomic data</b>'
+    element: '.upload-text-content:first'
     content: ''
     placement: right
-  - title: Step 3
-    element: '#btn-new'
-    content: ''
-    placement: left
-  - title: Step 4
+    preclick:
+        - ".upload-button"
+        - "#btn-new"
+    textinsert:
+        https://zenodo.org/record/574266/files/metatranscriptomic_dataset.fastqsanger
+
+  - title: 'Step 4: <b>Import metatranscriptomic data</b>'
     element: '#btn-start'
     content: ''
+    placement: top
+    postclick:
+        - "#btn-start"
+        - "#btn-close"
+
+  - title: 'Step 5: <b>Import metatranscriptomic data</b>'
+    element: '#right'
+    content: 'The file is uploading in the history.'
     placement: left
-  - title: Step 5
-    element: '#btn-close'
-    content: ''
-    placement: left
+
   - title: Step 6
     element: '#tool-search-query'
     content: ''
