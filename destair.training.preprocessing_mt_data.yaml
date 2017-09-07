@@ -140,11 +140,11 @@ steps:
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.67"]
-  - title: Step 30
+  - title: Step 29
     element: '#tool-search-query'
     content: ''
     placement: right
-  - title: Step 31
+  - title: Step 30
     element: '#tool-search'
     content: ''
     placement: right
