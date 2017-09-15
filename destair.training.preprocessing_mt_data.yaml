@@ -34,7 +34,7 @@ steps:
 
   - title: 'Step 5: <b>Import metatranscriptomic data</b>'
     element: '#right'
-    content: 'The dataset is uploading in your history...<br /><br />Uploaded datasets are available as soon as their entries turn green.<br /><br />Click <b>Next</b> to start the analysis on the training dataset.<br />'
+    content: 'The dataset is uploading in your history.<br /><br />Uploaded datasets are available as soon as their entries turn green.<br /><br />Click <b>Next</b> to start the analysis on the training dataset.<br />'
     placement: left
 
   - title: 'Step 6: <b>Quality trimming</b>'
@@ -54,7 +54,7 @@ steps:
 
   - title: 'Step 8: <b>Quality trimming</b>'
     element: '#right'
-    content: 'FastQC processing has begun, and the results are loading in your history...<br /><br />Results are available as soon as their entries turn green.<br /><br />Click <b>Next</b> to start the next step of the analysis.<br />'
+    content: 'FastQC processing has begun, and the results are loading in your history.<br /><br />Results are available as soon as their entries turn green.<br /><br />Click <b>Next</b> to start the next step of the analysis.<br />'
     placement: left
 
   - title: Step 9
