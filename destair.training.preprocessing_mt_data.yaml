@@ -29,8 +29,8 @@ steps:
     content: 'Multiple datasets can be imported.<br /><br />Click <b>Next</b> to start the upload of the training dataset.<br />'
     placement: top
     postclick:
-        - "#btn-start"
-        - "#btn-close"
+      - "#btn-start"
+      - "#btn-close"
 
   - title: 'Step 5: <b>Import metatranscriptomic data</b>'
     element: '#right'
