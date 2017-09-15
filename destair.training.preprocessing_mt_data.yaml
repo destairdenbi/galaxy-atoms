@@ -22,8 +22,7 @@ steps:
     preclick:
       - ".upload-button"
       - "#btn-new"
-    textinsert:
-      https://zenodo.org/record/574266/files/metatranscriptomic_dataset.fastqsanger
+    textinsert: https://zenodo.org/record/574266/files/metatranscriptomic_dataset.fastqsanger
 
   - title: 'Step 4: <b>Import metatranscriptomic data</b>'
     element: '#btn-start'
@@ -63,8 +62,8 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.6"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.6"]'
+
   - title: Step 10
     element: '#dataset-6cdbdf34ef8cf85d .details .dataset-peek table tbody tr td'
     content: ''
@@ -82,8 +81,8 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.67"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.67"]'
+
   - title: Step 14
     element: '#tool-search-query'
     content: ''
@@ -93,8 +92,8 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Frnateam%2Fsortmerna%2Fbg_sortmerna%2F2.1b.4"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Frnateam%2Fsortmerna%2Fbg_sortmerna%2F2.1b.4"]'
+
   - title: Step 16
     element: 'div[tour_id="databases_type|input_databases"]'
     content: ''
@@ -124,8 +123,7 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.4"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.4"]'
   - title: Step 23
     element: >-
       #dataset-e9ca83e654949535 .primary-actions
@@ -147,8 +145,7 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.4"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.4"]'
   - title: Step 27
     element: '#tool-search-query'
     content: ''
@@ -158,8 +155,7 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.67"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.67"]'
   - title: Step 29
     element: '#tool-search-query'
     content: ''
@@ -169,5 +165,4 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqtofasta%2Ffastq_to_fasta_python%2F1.0.0"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqtofasta%2Ffastq_to_fasta_python%2F1.0.0"]'
