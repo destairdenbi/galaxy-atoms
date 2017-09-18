@@ -10,59 +10,60 @@ steps:
 
   - title: 'Step 2: <b>Import metatranscriptomic data</b>'
     element: '#tool-panel-upload-button .fa.fa-upload'
-    content: 'The import button imports data into Galaxy.<br />'
+    content: 'The import button imports data into Galaxy.<br /><br />Click <b>Next</b> to import your data and start the analysis.<br />'
     placement: right
     postclick:
-        - ".upload-button"
+      - ".upload-button"
 
   - title: 'Step 3: <b>Import metatranscriptomic data</b>'
     element: '.upload-text-content:first'
-    content: ''
+    content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />Click <b>Next</b> to import a training dataset from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
     placement: right
     preclick:
-        - ".upload-button"
-        - "#btn-new"
-    textinsert:
-        https://zenodo.org/record/574266/files/metatranscriptomic_dataset.fastqsanger
+      - ".upload-button"
+      - "#btn-new"
+    textinsert: https://zenodo.org/record/574266/files/metatranscriptomic_dataset.fastqsanger
 
   - title: 'Step 4: <b>Import metatranscriptomic data</b>'
     element: '#btn-start'
-    content: ''
+    content: 'Multiple datasets can be imported.<br /><br />Click <b>Next</b> to start the upload of the training dataset.<br />'
     placement: top
     postclick:
-        - "#btn-start"
-        - "#btn-close"
+      - "#btn-start"
+      - "#btn-close"
 
   - title: 'Step 5: <b>Import metatranscriptomic data</b>'
     element: '#right'
-    content: 'The file is uploading in the history.'
+    content: 'The dataset is uploading in your history.<br /><br />Uploaded datasets are available as soon as their entries turn green.<br /><br />Click <b>Next</b> to start the analysis on the training dataset.<br />'
     placement: left
 
   - title: 'Step 6: <b>Quality trimming</b>'
     element: '#tool-search-query'
-    content: 'Look out for the FASQC tool.'
+    content: 'Look for the <b>FastQC</b> tool.<br /><br />FastQC is the first step of a data analysis that relies on raw sequencing reads.<br /><br />This tool gets rid of low quality score reads that might bias the analysis, and ultimately the interpretation of your data.<br /><br/ >Click <b>Next</b> to load FastQC.<br />'
     placement: right
-    textinsert:
-        fastqc
+    textinsert: fastqc
+    postclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.68"]'
 
-  - title: Step 7
-    element: '#tool-search'
-    content: ''
+  - title: 'Step 7: <b>Quality trimming</b>'
+    element: '.portlet-content'
+    content: 'If the uploaded dataset entry in the history is green, FastQC will recognize it as its default input.<br /><br />In this quality trimming step we will use all default settings for the present tool. However, to adjust its parameters, you can read the manual that is provided below this box.<br /><br />Click <b>Next</b> to execute FastQC.<br />'
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.67"]
-  - title: Step 8
-    element: '#tool-search-query'
-    content: ''
-    placement: right
+      - '#execute'
+
+  - title: 'Step 8: <b>Quality trimming</b>'
+    element: '#right'
+    content: 'FastQC processing has begun, and the results are loading in your history.<br /><br />Results are available as soon as their entries turn green.<br /><br />Click <b>Next</b> to start the next step of the analysis.<br />'
+    placement: left
+
   - title: Step 9
     element: '#tool-search'
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.6"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.6"]'
+
   - title: Step 10
     element: '#dataset-6cdbdf34ef8cf85d .details .dataset-peek table tbody tr td'
     content: ''
@@ -80,8 +81,8 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.67"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.67"]'
+
   - title: Step 14
     element: '#tool-search-query'
     content: ''
@@ -91,8 +92,8 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Frnateam%2Fsortmerna%2Fbg_sortmerna%2F2.1b.4"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Frnateam%2Fsortmerna%2Fbg_sortmerna%2F2.1b.4"]'
+
   - title: Step 16
     element: 'div[tour_id="databases_type|input_databases"]'
     content: ''
@@ -122,8 +123,7 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.4"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.4"]'
   - title: Step 23
     element: >-
       #dataset-e9ca83e654949535 .primary-actions
@@ -145,8 +145,7 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.4"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.4"]'
   - title: Step 27
     element: '#tool-search-query'
     content: ''
@@ -156,8 +155,7 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.67"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.67"]'
   - title: Step 29
     element: '#tool-search-query'
     content: ''
@@ -167,5 +165,4 @@ steps:
     content: ''
     placement: right
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqtofasta%2Ffastq_to_fasta_python%2F1.0.0"]
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqtofasta%2Ffastq_to_fasta_python%2F1.0.0"]'
