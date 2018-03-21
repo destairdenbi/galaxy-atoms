@@ -1,0 +1,132 @@
+id: new-tour
+name: Tour 1a
+description: This is a new tour created with the Galaxy Tour Builder extension.
+title_default: Tour 1a
+steps:
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: '#tool-panel-upload-button .fa.fa-upload'
+    content: 'The import button imports data into Galaxy.<br /><br />Click <b>Next</b> to import your data and start the analysis.<br />'
+    placement: right
+    postclick:
+      - ".upload-button"
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: '.upload-text-content:first'
+    content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />Click <b>Next</b> to import a training dataset from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
+    placement: right
+    preclick:
+      - ".upload-button"
+      - "#btn-new"
+    textinsert: https://zenodo.org/record/574266/files/metatranscriptomic_dataset.fastqsanger
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: '#btn-start'
+    content: 'Multiple datasets can be imported.<br /><br />Click <b>Next</b> to start the upload of the training dataset.<br />'
+    placement: top
+    postclick:
+      - "#btn-start"
+      - "#btn-close"
+
+  - title: '<b>Import the training datasets</b>'
+    element: '#right'
+    content: 'The datasets are uploading in your history.<br /><br />Uploaded datasets are available as soon as their entries turn green.<br /><br />Click <b>Next</b> to start the analysis on the training dataset.<br />'
+    placement: left
+
+  - title: '<b>NOPE NOPE NOPE</b>'
+    element: '#tool-search-query'
+    content: 'Look for the <b>FastQC</b> tool.<br /><br />FastQC is the first step of a data analysis that relies on raw sequencing reads.<br /><br />This tool gets rid of low quality score reads that might bias the analysis, and ultimately the interpretation of your data.<br /><br/ >Click <b>Next</b> to load FastQC.<br />'
+    placement: right
+    textinsert: fastqc
+    postclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.71"]'
+
+  - title: '<b>Quality control</b>'
+    element: '.portlet-content'
+    content: 'If the uploaded dataset entry in the history is green, FastQC will recognize it as its default input.<br /><br />In this quality trimming step we will use all default settings for the present tool. However, to adjust its parameters, you can read the manual that is provided below its box.<br /><br />Click <b>Next</b> to execute FastQC.<br />'
+    placement: right
+    postclick:
+      - '#execute'
+
+  - title: Step 8
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 9
+    element: 'div[tour_id="input_file"]'
+    content: Click "Next" to select the collection mode
+    placement: right
+  - title: Step 10
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 11
+    element: '#tool-search-query'
+    content: ''
+    placement: right
+  - title: Step 12
+    element: '#tool-search'
+    content: Click "Next" to open the Trim Galore tool
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftrim_galore%2Ftrim_galore%2F0.4.3.1"]
+  - title: Step 13
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 14
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: Click "Next" to select the collection mode
+    placement: right
+  - title: Step 15
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 16
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 17
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 18
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 19
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 20
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 21
+    element: '#tool-search-query'
+    content: ''
+    placement: right
+  - title: Step 22
+    element: '#tool-search'
+    content: Click "Next" to open the FastQC tool
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.71"]
+  - title: Step 23
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 24
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 25
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 26
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right

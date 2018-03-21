@@ -1,0 +1,164 @@
+id: new-tour
+name: Tour 1b
+description: This is a new tour created with the Galaxy Tour Builder extension.
+title_default: Tour 1b
+steps:
+  - title: Step 1
+    element: '#tool-panel-upload-button .fa.fa-upload'
+    content: ''
+    placement: right
+  - title: Step 2
+    element: '#regular .upload-view-default .upload-box input'
+    content: ''
+    placement: right
+  - title: Step 3
+    element: '#btn-local'
+    content: ''
+    placement: right
+  - title: Step 4
+    element: '#btn-start'
+    content: Click "Next" to start the upload
+    placement: left
+  - title: Step 5
+    element: '#btn-close'
+    content: Click "Next" to close the upload dialog
+    placement: left
+  - title: Step 6
+    element: '#tool-search-query'
+    content: ''
+    placement: right
+  - title: Step 7
+    element: '#tool-search'
+    content: Click "Next" to open FastQC
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.71"]
+  - title: Step 8
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 9
+    element: 'div[tour_id="input_file"]'
+    content: Click "Next" to select the collection mode
+    placement: right
+  - title: Step 10
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 11
+    element: '#tool-search-query'
+    content: ''
+    placement: right
+  - title: Step 12
+    element: '#tool-search'
+    content: Click "Next" to open the Trim Galore tool
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftrim_galore%2Ftrim_galore%2F0.4.3.1"]
+  - title: Step 13
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 14
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: Click "Next" to select the collection mode
+    placement: right
+  - title: Step 15
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 16
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 17
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 18
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 19
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 20
+    element: 'div[tour_id="singlePaired|input_singles"]'
+    content: ''
+    placement: right
+  - title: Step 21
+    element: '#tool-search-query'
+    content: ''
+    placement: right
+  - title: Step 22
+    element: '#tool-search'
+    content: Click "Next" to open the FastQC tool
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.71"]
+  - title: Step 23
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 24
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 25
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 26
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 27
+    element: '#tool-search-query'
+    content: ''
+    placement: right
+  - title: Step 28
+    element: '#tool-search'
+    content: Click "Next" to open the Trimmomatic tool
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.5"]
+  - title: Step 29
+    element: 'div[tour_id="readtype|fastq_in"]'
+    content: ''
+    placement: right
+  - title: Step 30
+    element: 'div[tour_id="readtype|fastq_in"]'
+    content: ''
+    placement: right
+  - title: Step 31
+    element: 'div[tour_id="readtype|fastq_in"]'
+    content: ''
+    placement: right
+  - title: Step 32
+    element: '#tool-search-query'
+    content: ''
+    placement: right
+  - title: Step 33
+    element: '#tool-search'
+    content: Click "Next" to open the FastQC tool
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.71"]
+  - title: Step 34
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 35
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
+  - title: Step 36
+    element: 'div[tour_id="input_file"]'
+    content: ''
+    placement: right
