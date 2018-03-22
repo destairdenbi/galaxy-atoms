@@ -1,8 +1,9 @@
 #! /usr/bin/env bash
 shopt -s extglob
 
-for i in *.yaml; do
-	ln -sfn $dir/$i $GALAXY_ROOT/config/plugins/tours/$(basename $i)
+dir=$(cd $(dirname $0) && pwd)
+for i in $(ls -d $dir/*.yaml); do
+	ln -sfn $i $GALAXY_ROOT/config/plugins/tours/$(basename $i)
 done
 
 cfg=$(ls $GALAXY_ROOT/config/galaxy.+(yml|ini) | head -1 &> /dev/null)
