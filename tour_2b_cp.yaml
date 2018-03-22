@@ -1,7 +1,7 @@
-id: new-tour
-name: Tour 2a
-description: This is a new tour created with the Galaxy Tour Builder extension.
-title_default: Tour 2a
+id: tour-2b
+name: Tour 2b
+description: Mapping and visualization using STAR and Read-GC.
+title_default: Tour 2b
 steps:
   - title: Step 1
     element: '#tool-search-query'

@@ -1,6 +1,6 @@
-id: new-tour
+id: tour-3b
 name: Tour 3b
-description: This is a new tour created with the Galaxy Tour Builder extension.
+description: Quantification and differntial expression analysis using HTSeq-Count and DESeq2.
 title_default: Tour 3b
 steps:
   - title: Step 1
