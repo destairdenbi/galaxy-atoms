@@ -19,12 +19,14 @@ steps:
       - '.upload-button'
       - '#btn-new'
     textinsert: |
-      https://github.com/bagnacan/guided-tours-test-data/blob/master/control_1.fastqc
-      https://github.com/bagnacan/guided-tours-test-data/blob/master/control_2.fastqc
-      https://github.com/bagnacan/guided-tours-test-data/blob/master/control_3.fastqc
-      https://github.com/bagnacan/guided-tours-test-data/blob/master/treated_1.fastqc
-      https://github.com/bagnacan/guided-tours-test-data/blob/master/treated_2.fastqc
-      https://github.com/bagnacan/guided-tours-test-data/blob/master/treated_3.fastqc
+      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/control_1.fastqsanger
+      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/control_2.fastqsanger
+      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/control_3.fastqsanger
+      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/treated_1.fastqsanger
+      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/treated_2.fastqsanger
+      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/treated_3.fastqsanger
+      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/Saccharomyces_cerevisiae_BK006934.fna
+      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/Saccharomyces_cerevisiae.gff
 
   - title: '<b>Import the sequence datasets</b>'
     element: '#btn-start'
