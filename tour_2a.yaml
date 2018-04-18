@@ -3,75 +3,99 @@ name: Tour 2a
 description: Mapping and visualization using HISAT2 and Read-GC.
 title_default: Tour 2a
 steps:
-  - title: Step 1
+
+  - title: '<b>Import the reference genome</b>'
+    element: ''
+    content: 'In this analysis step, we need to align and map the processed reads against a reference genome.<br /><br />The reference genome can be imported from the local machine, as well as from diverse online resources.<br /><br />Click <b>Next</b> to import it from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
+    placement: right
+    preclick:
+      - '.upload-button'
+      - '#btn-new'
+    textinsert: |
+      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/Saccharomyces_cerevisiae_BK006934.fna
+
+  - title: '<b>Import the reference genome</b>'
+    element: '#btn-start'
+    content: 'Multiple datasets can be imported.<br /><br />Click <b>Next</b> to start the upload of the reference genome.<br />'
+    placement: top
+    postclick:
+      - '#btn-start'
+      - '#btn-close'
+
+  - title: '<b>Import the reference genome</b>'
+    element: '#right'
+    content: 'The reference genome is uploading in your history.<br /><br />Uploaded datasets are available as soon as their entries turn green.<br /><br />Click <b>Next</b> to start the analysis of the reference genome.<br />'
+    placement: left
+
+  - title: '<b>Best practice :)</b>'
+    element: ''
+    content: 'Are your datasets named with meaningful names?<br /><br />Rename your datasets:<br />- Click on the pencil icon on the dataset entry you want to analyse<br />- Modify the name in the first box<br />- Click <b>Save</b>.<br /><br />Click <b>Next</b> to resume the analysis once you are done.<br />'
+
+  - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
-    content: ''
+    content: 'Look for the <b>HISAT2</b> tool.<br /><br />HISAT2 is a fast and sensitive aligner for mapping sequence reads against a reference genome.<br /><br />Click <b>Next</b> to load it.<br />'
     placement: right
-  - title: Step 2
-    element: '#tool-search'
-    content: ''
-    placement: right
+    textinsert: hisat2
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fhisat2%2Fhisat2%2F2.1.0"]
         .tool-old-link
-  - title: Step 3
-    element: 'div[tour_id="library|input_1"]'
-    content: ''
-    placement: right
-  - title: Step 4
-    element: 'div[tour_id="library|input_1"]'
-    content: ''
-    placement: right
-  - title: Step 5
-    element: 'div[tour_id="library|input_1"]'
-    content: ''
-    placement: right
-  - title: Step 6
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#left'
+    content: 'Click on the <b>Source for the reference genome</b> menu, and select <b>Use a genome from history</b>.<br /><br />In the FASTA/Q section, click on the <b>Multiple datasets</b> icon to select multiple inputs.<br /><br />HISAT2 will align sequence reads against the provided reference genome, only from those sequence datasets whose formats are compatible with its input.<br />If some or all of the imported sequence files do not appear in the box, then you need to convert the missing ones to the correct format:<br />- Click on the pencil icon on the dataset entry you want to analyse<br />- Select the <b>Datatype</b> tab<br />- Select <b>fastqcsanger</b><br />- Click <b>Save</b>.<br /><br />When you are done converting dataset formats, click again on <b>HISAT2</b> in the tool bar on the left, click on the <b>Source for the referece genome<b>Use a genome from history</b> menu, and select all desired datasets. Finally, click on the <b>Multiple datasets</b> icon, and select all desired datasets.<br /><br />In this aligning and mapping against a reference genome step, we will use all default settings for the present tool. However, to adjust its parameters, you can read the manual that is provided below its box.<br /><br />Click <b>Next</b> to execute.<br />'
+    placement: left
+    postclick:
+      - '#execute'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right'
+    content: 'HISAT2 processing has begun, and the results are loading in your history.<br /><br />Results are available as soon as their entries turn green.<br /><br />Click <b>Next</b> to overview your data.<br />'
+    placement: left
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: ''
+    content: '<b>TODO: explain what is happening in the background</b>.<br /><br />If the aligning and mapping processing has finished, click <b>Next</b> to analyse the overall gene expression.<br />'
+
+  - title: '<b>Visualise the quality of the RNA-Seq experiment</b>'
+    element: ''
+    content: 'Now that the processed input datasets have been aligned and mapped against the provided reference genome, we can visualise the quality of the mapped reads, <b>TODO: provide a complete motivation of why this is desired</b>.<br /><br />Click <b>Next</b> to start this process.'
+    placement: ''
+
+  - title: '<b>Visualise the quality of the RNA-Seq experiment</b>'
     element: '#tool-search-query'
-    content: ''
+    content: 'Look for the <b>RSeQC</b> tool (<b>Read GC</b>).<br /><br />RSeQC is a quality control tool for RNA-Seq experiments.<br /><b>TODO: more on this tool</b>.<br /><br/ >Here we use <b>RSeQC</b> to <b>TODO: explain the practical application within this context</b>.<br /><br />Click <b>Next</b> to load it.<br />'
     placement: right
-  - title: Step 7
-    element: '#tool-search'
-    content: ''
-    placement: right
+    textinsert: rseqc
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fnilesh%2Frseqc%2Frseqc_bam_stat%2F2.6.4"]
         .tool-old-link
-  - title: Step 8
-    element: 'div[tour_id="input"]'
-    content: ''
-    placement: right
-  - title: Step 9
-    element: 'div[tour_id="input"]'
-    content: ''
-    placement: right
-  - title: Step 10
-    element: 'div[tour_id="input"]'
-    content: ''
-    placement: right
-  - title: Step 11
-    element: '#tool-search-query'
-    content: Click "Next" to search for the Read GC content tool
-    placement: right
-  - title: Step 12
-    element: '#tool-search'
-    content: Click "Next" to open the Read GC content tool
-    placement: right
+
+  - title: '<b>Visualise the quality of the RNA-Seq experiment</b>'
+    element: '#left'
+    content: 'In the section <b>Input .bam/.sam file</b>, click on the <b>Multiple datasets</b> icon to select multiple inputs. Finally, select all generated BAM files.<br /><br />In this analysis step, we will use all default settings for the present tool. However, to adjust its parameters, you can read the manual that is provided below its box.<br /><br />Click <b>Next</b> to execute.<br />'
+    placement: left
     postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fnilesh%2Frseqc%2Frseqc_read_GC%2F2.6.4"]
-        .tool-old-link
-  - title: Step 13
-    element: 'div[tour_id="input"]'
-    content: ''
-    placement: right
-  - title: Step 14
-    element: 'div[tour_id="input"]'
-    content: ''
-    placement: right
-  - title: Step 15
-    element: 'div[tour_id="input"]'
-    content: ''
-    placement: right
+      - '#execute'
+
+  - title: '<b>Visualise the quality of the RNA-Seq experiment</b>'
+    element: '#right'
+    content: 'RSeQC processing has begun, and the results are loading in your history.<br /><br />Results are available as soon as their entries turn green.<br /><br />Click <b>Next</b> to overview your data.<br />'
+    placement: left
+
+  - title: '<b>Visualise the quality of the RNA-Seq experiment</b>'
+    element: '#right'
+    content: 'RSeQC generates a table with the percentage of CG content and read counts (<b>xls</b> output), and a plot of the GC contentent of the aligned and mapped samples (<b>pdf</b> output).<br /><br />While the former can be used for further downstream analysis, the latter can be used as a publication-ready plot for the GC content of the samples.<br /><br />Click on the eye icon of the <b>pdf</b> report of RSeQC to understand its output, then click <b>Next</b> to review the properties of your data.<br />'
+    placement: left
+
+  - title: '<b>Visualise the quality of the RNA-Seq experiment</b>'
+    element: '#left'
+    content: '<b>TODO: explanation of the graph</b>'
+    placement: left
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: ''
+    content: 'The aligning and mapping of sequences against a reference genome phase has been completed.<br />'
+    position: ''
+
