@@ -39,8 +39,9 @@ steps:
     placement: left
 
   - title: '<b>Best practice :)</b>'
-    element: ''
+    element: '#right'
     content: 'Are your datasets named with meaningful names?<br /><br />Rename your datasets:<br />- Click on the pencil icon on the dataset entry you want to analyse<br />- Modify the name in the first box<br />- Click <b>Save</b>.<br /><br />Click <b>Next</b> to resume the analysis once you are done.<br />'
+    placement: left
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
