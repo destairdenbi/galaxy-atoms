@@ -56,8 +56,19 @@ steps:
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#left'
     content: '
-In section <b>RNA-Seq FASTAQ/FASTA</b>, click on the <b>Multiple datasets</b> icon to select multiple inputs.<br /><br />STAR will align sequence reads against the provided reference genome, only from those sequence datasets whose formats are compatible with its input.<br />Here, we want to align all control and treated samples. If some or all of these imported sequence files do not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />- Click on the pencil icon on the dataset entry you want to analyse<br />- Select the <b>Datatype</b> tab<br />- Select <b>fastqcsanger</b><br />- Click <b>Save</b>.<br /><br />When you are done converting dataset formats, click again on <b>STAR</b> in the tool bar on the left.<br />Now that they are ready, click on the <b>Multiple datasets</b> icon of section <b>RNA-Seq FASTQ/FASTA file</b>, to select the multiple inputs.<br /><br />
-Finally, in section <b>Custom or built-in reference genome</b>, select <b>Use reference genome from history and create temporary index</b>, and specify the uploaded reference genome. Then, <b>Gene model file for splice junction</b>, select the gene model GFF entry from your history.<br /><br />In this aligning and mapping against a reference genome step, we will use all default settings for the present tool. However, to adjust its parameters, you can read the manual that is provided below its box.<br /><br />Click <b>Next</b> to execute.<br />'
+With <b>STAR</b>, we want to align all sequence reads from the control and treated samples, against the provided reference genome. However, STAR requires its input datasets to be of compatible formats.<br /><br />
+In section <b>RNA-Seq FASTAQ/FASTA</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br />
+If some or all of these imported sequence files do not appear in the box, then you need to convert the missing ones to the correct format. Only in this case:<br />
+- Click on the pencil icon on the dataset entry you want to analyse<br />
+- Select the <b>Datatype</b> tab<br />
+- Select <b>fastqcsanger</b><br />
+- Click <b>Save</b><br />
+- Resume the analysis by clicking again on the STAR tool, in the tool bar on the left. Finally, in section <b>RNA-Seq FASTAQ/FASTA</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br /><br />
+
+In section <b>Custom or built-in reference genome</b>, select <b>Use reference genome from history and create temporary index</b>, and specify the uploaded reference genome.<br /><br />
+
+In section <b>Gene model file for splice junction</b>, select the gene model GFF entry from your history.<br /><br />
+In this aligning and mapping against a reference genome step, we will use all default settings for the present tool. However, to adjust its parameters, you can read the manual that is provided below its box.<br /><br />Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
       - '#execute'
