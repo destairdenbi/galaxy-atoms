@@ -16,7 +16,7 @@ steps:
       - '.upload-button'
 
   - title: '<b>Import the reference genome</b>'
-    element: '.upload-text-content:first'
+    element: '.upload-text-content:last'
     content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />Click <b>Next</b> to import the reference genome from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
     placement: right
     preclick:
