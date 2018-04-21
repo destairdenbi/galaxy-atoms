@@ -44,7 +44,7 @@ Click <b>Next</b> to execute.<br />'
     postclick:
       - '#execute'
 
-  - title: '<b>Map sequences against a reference genome</b>'
+  - title: '<b>Counting mapped reads</b>'
     element: '#right'
     content: 'HTSeq-Count processing has begun, and the results are loading in your history.<br /><br />Results are available as soon as their entries turn green.<br /><br />Click <b>Next</b> as soon as they become available.<br />'
     placement: left
