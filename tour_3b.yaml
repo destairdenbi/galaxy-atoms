@@ -3,18 +3,20 @@ name: Tour 3b
 description: Quantification and differntial expression analysis using HTSeq-Count and DESeq2.
 title_default: Tour 3b
 steps:
-  - title: Step 1
+
+  - title: '<b>Counting mapped reads</b>'
+    element: ''
+    content: 'In this step, we want to count the number of sequence reads that have been mapped against the provided genome.<br /><br />.Click <b>Next</b> to start the analysis.<br />'
+
+  - title: '<b>Counting mapped reads</b>'
     element: '#tool-search-query'
-    content: Click "Next" to look for the htseq-count tool
+    content: 'Look for the <b>HTSeq-Count</b> tool.<br /><br />HTSeq-Count computes the number of reads mapping to each <i>feature</i>. Here, a feature represents a positional range on a chromosome, or a union of such ranges.<br /><br />Click <b>Next</b> to load it.<br />'
     placement: right
-  - title: Step 2
-    element: '#tool-search'
-    content: Click "Next" to open the htseq-count tool
-    placement: right
+    textinsert: htseq-count
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fhtseq_count%2Fhtseq_count%2F0.9.1"]
-        .tool-old-link
+
   - title: Step 3
     element: 'div[tour_id="samfile"]'
     content: ''
