@@ -21,13 +21,14 @@ Click <b>Next</b> to import your data and start the analysis.<br />'
   - title: '<b>Import the reference genome</b>'
     element: '.upload-text-content:last'
     content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />
-Click <b>Next</b> to import the reference genome from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
+Click <b>Next</b> to import the reference genome and gene model from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
     placement: right
     preclick:
       - '.upload-button'
       - '#btn-new'
     textinsert: |
       https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/Saccharomyces_cerevisiae_BK006934.fna
+      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/Saccharomyces_cerevisiae.gff
 
   - title: '<b>Import the reference genome</b>'
     element: '#btn-start'
