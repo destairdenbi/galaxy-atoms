@@ -1,0 +1,67 @@
+id: tour-3a
+name: Tour 3a
+description: Quantification and differential expression analysis using featurecounst and DESeq2.
+title_default: Tour 3a
+steps:
+  - title: Step 1
+    element: '#tool-search-query'
+    content: Click "Next" to look for the htseq-count tool
+    placement: right
+  - title: Step 2
+    element: '#tool-search'
+    content: Click "Next" to open the htseq-count tool
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fhtseq_count%2Fhtseq_count%2F0.9.1"]
+        .tool-old-link
+  - title: Step 3
+    element: 'div[tour_id="samfile"]'
+    content: ''
+    placement: right
+  - title: Step 4
+    element: 'div[tour_id="samfile"]'
+    content: Click "Next" to select the multiple
+    placement: right
+  - title: Step 5
+    element: 'div[tour_id="samfile"]'
+    content: ''
+    placement: right
+  - title: Step 6
+    element: 'div[tour_id="idattr"]'
+    content: ''
+    placement: right
+  - title: Step 7
+    element: 'div[tour_id="idattr"]'
+    content: Click "Next" to change the ID Attribute to ID
+    placement: right
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right'
+    content: 'HTSeq-Count processing has begun, and the results are loading in your history.<br /><br />Results are available as soon as their entries turn green.<br /><br />Click <b>Next</b> as soon as they become available.<br />'
+    placement: left
+
+  - title: '<b>Find differentially expressed genes</b>'
+    element: '#tool-search-query'
+    content: 'Look for the <b>DESeq2</b> tool.<br /><br />
+DESeq2 leverage on the number of aligned reads against the reference genome, and estimates whether they indicate a significant differentially expressed gene.<br /><br />
+Click <b>Next</b> to load it.<br />'
+    placement: right
+    textinsert: star
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fdeseq2%2Fdeseq2%2F2.11.40.1"]
+
+  - title: '<b>Find differentially expressed genes</b>'
+    element: '#left'
+    content: 'DESeq2 can handle multiple <i>factor</i>s affecting your experiment, each of which has two <i>levels</i> (or <i>states</i>). For instance, we can describe our experiment in terms of its treatment factor, which is conditioned by two different healthy states: control, and treated. Thus, we will describe our experiment accordingly.<br /><br />
+In section <b>Specify a factor name</b>, change the default name with <b>Treatment</b>.<br />
+In its two subsections <b>Specify a factor level</b>, change the first default value to <b>Control</b>, and the second to <b>Treated</b>. Then, click on the <b>Multiple datasets</b> icon of each factor level, and select all control and treated samples respectively.<br /><br />
+Click <b>Next</b> to overview the next parameters.<br />'
+    placement: left
+
+  - title: '<b>Find differentially expressed genes</b>'
+    element: '#left'
+    content: 'In section <b>Output normalized counts table</b>, click <b>yes</b>.
+Click <b>Next</b> to overview the next parameters.<br />'
+    placement: left
