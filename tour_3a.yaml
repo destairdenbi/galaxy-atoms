@@ -1,17 +1,19 @@
 id: tour-3a
 name: Tour 3a
-description: Quantification and differential expression analysis using featurecounts and DESeq2.
+description: Quantification and differential gene expression analysis using featurecounts and DESeq2.
 title_default: Tour 3a
 steps:
 
   - title: '<b>Counting mapped reads</b>'
     element: ''
-    content: 'In this step, we want to count the number of sequence reads that have been mapped against the provided genome.<br /><br />.Click <b>Next</b> to start the analysis.<br />'
+    content: 'In this step, we want to count the number of sequence reads that have been mapped against the provided genome.<br /><br />.
+Click <b>Next</b> to start the analysis.<br />'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#tool-search-query'
     content: 'Look for the <b>featureCounts</b> tool.<br /><br />
-featureCounts computes the number of reads mapping to each <i>feature</i>. Here, a feature represents a positional range on a chromosome, or a union of such ranges.<br /><br />Click <b>Next</b> to load it.<br />'
+featureCounts computes the number of reads mapping to each <i>feature</i>. Here, a feature represents a positional range on a chromosome, or a union of such ranges.<br /><br />
+Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: featurecounts
     postclick:
@@ -47,7 +49,9 @@ Click <b>Next</b> to execute.<br />'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#right'
-    content: 'featureCounts processing has begun, and the results are loading in your history.<br /><br />Results are available as soon as their entries turn green.<br /><br />Click <b>Next</b> as soon as they become available.<br />'
+    content: 'featureCounts processing has begun, and the results are loading in your history.<br /><br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> as soon as they become available.<br />'
     placement: left
 
   - title: '<b>Find differentially expressed genes</b>'
