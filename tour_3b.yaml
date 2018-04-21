@@ -17,9 +17,33 @@ steps:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fhtseq_count%2Fhtseq_count%2F0.9.1"]
 
-  - title: Step 3
-    element: 'div[tour_id="samfile"]'
-    content: ''
+  - title: '<b>Counting mapped reads</b>'
+    element: '#left'
+    content: 'With <b>HTSeq-Count</b>, we want to count the number of reads mapped to the features described in the gene model file.<br /><br />
+In section <b>Aligned SAM/BAM File</b>, click on the the <b>Multiple datasets</b> icon, and select all alignment results in the BAM format.<br /><br />
+Click <b>Next</b> to overview the next parameters.<br />'
+    placement: left
+
+  - title: '<b>Counting mapped reads</b>'
+    element: '#left'
+    content: 'In section <b>GFF File</b>, select the previously uploaded gene model file in the GFF format.<br /><br />
+Click <b>Next</b> to overview the next parameters.<br />'
+    placement: left
+
+  - title: '<b>Counting mapped reads</b>'
+    element: '#left'
+    content: 'In section <b>ID Attribute</b>, change the value to <b>ID</b>.<b>TODO: explain why</b>.<br /><br />
+Click <b>Next</b> to overview the next parameters.<br />'
+    placement: left
+
+  - title: '<b>Counting mapped reads</b>'
+    element: '#left'
+    content: 'For this operation, we will use all default settings for the remaining parameters. However, if you want to know more about their meaning, you can read the HTSeq-Count manual that is provided below.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: left
+    postclick:
+      - '#execute'
+
     placement: right
   - title: Step 4
     element: 'div[tour_id="samfile"]'
