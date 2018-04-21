@@ -52,8 +52,34 @@ steps:
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fhisat2%2Fhisat2%2F2.1.0"]
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#left'
-    content: 'Click on the <b>Source for the reference genome</b> menu, and select <b>Use a genome from history</b>.<br /><br />In the FASTA/Q section, click on the <b>Multiple datasets</b> icon to select multiple inputs.<br /><br />HISAT2 will align sequence reads against the provided reference genome, only from those sequence datasets whose formats are compatible with its input.<br />If some or all of the imported sequence files do not appear in the box, then you need to convert the missing ones to the correct format:<br />- Click on the pencil icon on the dataset entry you want to analyse<br />- Select the <b>Datatype</b> tab<br />- Select <b>fastqcsanger</b><br />- Click <b>Save</b>.<br /><br />When you are done converting dataset formats, click again on <b>HISAT2</b> in the tool bar on the left, click on the <b>Source for the referece genome<b>Use a genome from history</b> menu, and select all desired datasets. Finally, click on the <b>Multiple datasets</b> icon, and select all desired datasets.<br /><br />In this aligning and mapping against a reference genome step, we will use all default settings for the present tool. However, to adjust its parameters, you can read the manual that is provided below its box.<br /><br />Click <b>Next</b> to execute.<br />'
+    element: '#right'
+    content: 'With <b>HISAT2</b>, we want to align all sequence reads from the control and treated samples, against the provided reference genome.<br /><br />
+In section <b>Source for the reference genome</b>, select <b>Use a genome from history</b>, and specify the uploaded reference genome.<br /><br />
+If the reference genome does not appear in the box, then you need to first convert it to the correct format, and then reload HISAT2. Only in this case:<br />
+- Click on the pencil icon of the reference genome entry in your history<br />
+- Select the <b>Datatype</b> tab<br />
+- Select <b>FASTA</b><br />
+- Click <b>Save</b><br />
+- Resume the analysis by clicking again on the HISAT2 tool, in the tool bar on the left. Finally, reselect the reference genome.<br /><br />
+Click <b>Next</b> to overview the next parameters.<br />'
+    placement: left
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right'
+    content: 'In section <b>Single-end or paired-end reads?</b>, chose <b>Single-end</b>. Finally, in section <b>FASTA/Q file</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br /><br />
+If some or all of these samples do not appear in the box, then you need to first convert the missing ones to the correct format, and then reload HISAT2. Only in this case:<br />
+- Click on the pencil icon on the dataset entry you want to analyse<br />
+- Select the <b>Datatype</b> tab<br />
+- Select <b>fastqcsanger</b><br />
+- Click <b>Save</b><br />
+- Resume the analysis by clicking again on the HISAT2 tool, in the tool bar on the left. Finally, reselect the reference genome, as well as all control and treated samples.<br /><br />
+Click <b>Next</b> to overview the next parameters.<br />'
+    placement: left
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right'
+    content: 'For this operation, we will use all default settings for the remaining parameters. However, if you want to know more about their meaning, you can read the HISAT2 manual that is provided below.<br /><br />
+Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
       - '#execute'
