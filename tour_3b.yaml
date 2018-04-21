@@ -1,16 +1,19 @@
 id: tour-3b
 name: Tour 3b
-description: Quantification and differntial expression analysis using HTSeq-Count and DESeq2.
+description: Quantification and differntial gene expression analysis using HTSeq-Count and DESeq2.
 title_default: Tour 3b
 steps:
 
   - title: '<b>Counting mapped reads</b>'
     element: ''
-    content: 'In this step, we want to count the number of sequence reads that have been mapped against the provided genome.<br /><br />.Click <b>Next</b> to start the analysis.<br />'
+    content: 'In this step, we want to count the number of sequence reads that have been mapped against the provided genome.<br /><br />
+Click <b>Next</b> to start the analysis.<br />'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>HTSeq-Count</b> tool.<br /><br />HTSeq-Count computes the number of reads mapping to each <i>feature</i>. Here, a feature represents a positional range on a chromosome, or a union of such ranges.<br /><br />Click <b>Next</b> to load it.<br />'
+    content: 'Look for the <b>HTSeq-Count</b> tool.<br /><br />
+HTSeq-Count computes the number of reads mapping to each <i>feature</i>. Here, a feature represents a positional range on a chromosome, or a union of such ranges.<br /><br />
+Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: htseq-count
     postclick:
@@ -46,7 +49,9 @@ Click <b>Next</b> to execute.<br />'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#right'
-    content: 'HTSeq-Count processing has begun, and the results are loading in your history.<br /><br />Results are available as soon as their entries turn green.<br /><br />Click <b>Next</b> as soon as they become available.<br />'
+    content: 'HTSeq-Count processing has begun, and the results are loading in your history.<br /><br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> as soon as they become available.<br />'
     placement: left
 
   - title: '<b>Find differentially expressed genes</b>'
@@ -70,7 +75,7 @@ Click <b>Next</b> to overview the next parameters.<br />'
 
   - title: '<b>Find differentially expressed genes</b>'
     element: '#left'
-    content: 'In section <b>Output normalized counts table</b>, click <b>yes</b>.
+    content: 'In section <b>Output normalized counts table</b>, click <b>yes</b>.<br /><br />
 Click <b>Next</b> to overview the next parameters.<br />'
     placement: left
 
@@ -84,6 +89,8 @@ Click <b>Next</b> to execute.<br />'
 
   - title: '<b>Find differentially expressed genes</b>'
     element: '#right'
-    content: 'DESeq2 processing has begun, and the results are loading in your history.<br /><br />Results are available as soon as their entries turn green.<br /><br />Click <b>Next</b> to overview your data.<br />'
+    content: 'DESeq2 processing has begun, and the results are loading in your history.<br /><br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to overview your data.<br />'
     placement: left
 
