@@ -6,7 +6,18 @@ steps:
 
   - title: '<b>Import the reference genome</b>'
     element: ''
-    content: 'In this analysis step, we need to align and map the processed reads against a reference genome.<br /><br />The reference genome can be imported from the local machine, as well as from diverse online resources.<br /><br />Click <b>Next</b> to import it from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
+    content: 'In this analysis step, we need to align and map the processed reads against a reference genome.<br /><br /><b>TODO: more on this analysis</b>.<br /><br />Click <b>Next</b> to start the analysis.<br />'
+
+  - title: '<b>Import the reference genome</b>'
+    element: '#tool-panel-upload-button .fa.fa-upload'
+    content: 'The import button imports data into Galaxy.<br /><br />Click <b>Next</b> to import your data and start the analysis.<br />'
+    placement: right
+    postclick:
+      - '.upload-button'
+
+  - title: '<b>Import the reference genome</b>'
+    element: '.upload-text-content:last'
+    content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />Click <b>Next</b> to import the reference genome from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
     placement: right
     preclick:
       - '.upload-button'
