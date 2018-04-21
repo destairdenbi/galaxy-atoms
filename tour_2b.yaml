@@ -134,7 +134,7 @@ Click <b>Next</b> to start this process.'
     element: '#tool-search-query'
     content: 'Look for the <b>RSeQC</b> tool (<b>Read GC</b>).<br /><br />
 RSeQC is a quality control tool for RNA-Seq experiments.<br />
-<b>TODO: more on this tool</b>.<br /><br/ >
+<b>TODO: more on this tool</b>.<br /><br />
 Here we use <b>RSeQC</b> to <b>TODO: explain the practical application within this context</b>.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
