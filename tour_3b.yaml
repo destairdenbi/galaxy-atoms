@@ -44,92 +44,46 @@ Click <b>Next</b> to execute.<br />'
     postclick:
       - '#execute'
 
-    placement: right
-  - title: Step 4
-    element: 'div[tour_id="samfile"]'
-    content: Click "Next" to select the multiple
-    placement: right
-  - title: Step 5
-    element: 'div[tour_id="samfile"]'
-    content: ''
-    placement: right
-  - title: Step 6
-    element: 'div[tour_id="idattr"]'
-    content: ''
-    placement: right
-  - title: Step 7
-    element: 'div[tour_id="idattr"]'
-    content: Click "Next" to change the ID Attribute to ID
-    placement: right
-  - title: Step 8
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right'
+    content: 'HTSeq-Count processing has begun, and the results are loading in your history.<br /><br />Results are available as soon as their entries turn green.<br /><br />Click <b>Next</b> as soon as they become available.<br />'
+    placement: left
+
+  - title: '<b>Find differentially expressed genes</b>'
     element: '#tool-search-query'
-    content: Click "Next" to look for the DESeq2 tool
+    content: 'Look for the <b>DESeq2</b> tool.<br /><br />
+DESeq2 leverage on the number of aligned reads against the reference genome, and estimates whether they indicate a significant differentially expressed gene.<br /><br />
+Click <b>Next</b> to load it.<br />'
     placement: right
-  - title: Step 9
-    element: '#tool-search'
-    content: Click "Next" to open the DESeq2 tool
-    placement: right
+    textinsert: star
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fdeseq2%2Fdeseq2%2F2.11.40.1"]
-        .tool-old-link
-  - title: Step 10
-    element: 'div[tour_id="rep_factorName_0|factorName"]'
-    content: ''
-    placement: right
-  - title: Step 11
-    element: 'div[tour_id="rep_factorName_0|factorName"]'
-    content: Click "Next" to set the Factor Name to Source
-    placement: right
-  - title: Step 12
-    element: 'div[tour_id="rep_factorName_0|rep_factorLevel_0|factorLevel"]'
-    content: ''
-    placement: right
-  - title: Step 13
-    element: 'div[tour_id="rep_factorName_0|rep_factorLevel_0|factorLevel"]'
-    content: Click "Next" to set the Factor Name to Control
-    placement: right
-  - title: Step 14
-    element: 'div[tour_id="rep_factorName_0|rep_factorLevel_0|countsFile"]'
-    content: ''
-    placement: right
-  - title: Step 15
-    element: 'div[tour_id="rep_factorName_0|rep_factorLevel_0|countsFile"]'
-    content: ''
-    placement: right
-  - title: Step 16
-    element: 'div[tour_id="rep_factorName_0|rep_factorLevel_0|countsFile"]'
-    content: ''
-    placement: right
-  - title: Step 17
-    element: 'div[tour_id="rep_factorName_0|rep_factorLevel_1|factorLevel"]'
-    content: ''
-    placement: right
-  - title: Step 18
-    element: 'div[tour_id="rep_factorName_0|rep_factorLevel_1|factorLevel"]'
-    content: Click "Next" to set the Factor Name to Treated
-    placement: right
-  - title: Step 19
-    element: 'div[tour_id="rep_factorName_0|rep_factorLevel_1|countsFile"]'
-    content: ''
-    placement: right
-  - title: Step 20
-    element: 'div[tour_id="rep_factorName_0|rep_factorLevel_1|countsFile"]'
-    content: ''
-    placement: right
-  - title: Step 21
-    element: 'div[tour_id="rep_factorName_0|rep_factorLevel_1|countsFile"]'
-    content: ''
-    placement: right
-  - title: Step 22
-    element: 'div[tour_id="rep_factorName_0|rep_factorLevel_1|countsFile"]'
-    content: ''
-    placement: right
-  - title: Step 23
-    element: 'div[tour_id="normCounts"]'
-    content: ''
-    placement: right
-  - title: Step 24
-    element: 'div[tour_id="normCounts"]'
-    content: Click "Next" to output the normalized counts table
-    placement: right
+
+  - title: '<b>Find differentially expressed genes</b>'
+    element: '#left'
+    content: 'DESeq2 can handle multiple <i>factor</i>s affecting your experiment, each of which has two <i>levels</i> (or <i>states</i>). For instance, we can describe our experiment in terms of its treatment factor, which is conditioned by two different healthy states: control, and treated. Thus, we will describe our experiment accordingly.<br /><br />
+In section <b>Specify a factor name</b>, change the default name with <b>Treatment</b>.<br />
+In its two subsections <b>Specify a factor level</b>, change the first default value to <b>Control</b>, and the second to <b>Treated</b>. Then, click on the <b>Multiple datasets</b> icon of each factor level, and select all control and treated samples respectively.<br /><br />
+Click <b>Next</b> to overview the next parameters.<br />'
+    placement: left
+
+  - title: '<b>Find differentially expressed genes</b>'
+    element: '#left'
+    content: 'In section <b>Output normalized counts table</b>, click <b>yes</b>.
+Click <b>Next</b> to overview the next parameters.<br />'
+    placement: left
+
+  - title: '<b>Find differentially expressed genes</b>'
+    element: '#right'
+    content: 'For this operation, we will use all default settings for the remaining parameters. However, if you want to know more about their meaning, you can read the DESeq2 manual that is provided below.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: left
+    postclick:
+      - '#execute'
+
+  - title: '<b>Find differentially expressed genes</b>'
+    element: '#right'
+    content: 'DESeq2 processing has begun, and the results are loading in your history.<br /><br />Results are available as soon as their entries turn green.<br /><br />Click <b>Next</b> to overview your data.<br />'
+    placement: left
+
