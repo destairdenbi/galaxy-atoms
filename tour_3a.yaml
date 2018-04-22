@@ -6,7 +6,7 @@ steps:
   - title: '<b>Outline</b>'
     element: ''
     content: 'In this tour, we will carry out transcript quantification, and differential gene expression analysis using RNA-Seq data.<br />
-Here, we will leverage on two tools: <b>featureCounts</b>, to count the number of sequence reads overlapping with predetermined genomic features (exons, genes, promoter regions), and <b>DESeq2</b>, to assess the level of gene expression.<br /><br />
+Here, we will leverage on two tools: <b>featureCounts</b>, to count the number of sequence reads overlapping with predetermined genomic features (e.g. exons, genes, promoter regions), and <b>DESeq2</b>, to assess the level of gene expression.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
@@ -17,8 +17,8 @@ Click <b>Next</b> to start the analysis.<br />'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>featureCounts</b> tool.<br /><br />
-featureCounts computes the number of reads mapping to each <i>feature</i>. Here, a feature represents a positional range on a chromosome, or a union of such ranges.<br /><br />
+    content: 'Look for the <b>featureCounts</b> tool.<br />
+featureCounts calculates the number of reads that have been mapped against the genomic feature of a reference genome. Here, a feature is a positional range on a chromosome, or a union of such ranges, representing exons, genes, promoter regions, etc.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: featurecounts
@@ -28,26 +28,25 @@ Click <b>Next</b> to load it.<br />'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#left'
-    content: 'With <b>featureCounts</b>, we want to count the number of reads mapped to the features described in the gene model file.<br /><br />
-In section <b>Alignment file</b>, click on the <b>Multiple datasets</b> icon, and select all alignment results in the BAM format.<br /><br />
-Click <b>Next</b> to overview the next parameters.<br />'
+    content: 'In section <b>Alignment file</b>, click on the <b>Multiple datasets</b> icon, and select all alignment results in the BAM format.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Counting mapped reads</b>'
     element: '#left'
-    content: 'In section <b>Gene annotation file</b>, chose <b>in your history</b> option, and select the previously uploaded gene model file in the GFF format.<br /><br />
-Click <b>Next</b> to overview the next parameters.<br />'
+    content: 'In section <b>Gene annotation file</b>, chose <b>in your history</b>, and select the uploaded gene model file in the GFF format.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Counting mapped reads</b>'
     element: '#left'
-    content: 'Click on <b>Advanced options</b>. Here, in section <b>GFF gene identifier</b>, change the value to <b>ID</b>.<b>TODO: explain why</b>.<br /><br />
-Click <b>Next</b> to overview the next parameters.<br />'
+    content: 'Click on <b>Advanced options</b>. Here, in section <b>GFF gene identifier</b>, change the value to <b>ID</b>. <b>TODO: explain why</b>.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Counting mapped reads</b>'
     element: '#left'
-    content: 'For this operation, we will use all default settings for the remaining parameters. However, if you want to know more about their meaning, you can read the featureCounts manual that is provided below.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
