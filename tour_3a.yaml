@@ -11,11 +11,6 @@ Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
   - title: '<b>Counting mapped reads</b>'
-    element: ''
-    content: 'In this step, we want to count the number of sequence reads that have been mapped against the provided genome.<br /><br />.
-Click <b>Next</b> to start the analysis.<br />'
-
-  - title: '<b>Counting mapped reads</b>'
     element: '#right'
     content: 'Before proceeding, we want to instruct Galaxy that all alignment results, as well as the gene feature file, refer to the same genome build. For each of these entries in your history:<br />
 - Click on the pencil icon of the dataset entry
