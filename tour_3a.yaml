@@ -1,8 +1,14 @@
 id: tour-3a
 name: Tour 3a
-description: Quantification and differential gene expression analysis using featurecounts and DESeq2.
+description: Quantification and differential gene expression analysis using featureCounts and DESeq2
 title_default: Tour 3a
 steps:
+  - title: '<b>Outline</b>'
+    element: ''
+    content: 'In this tour, we will carry out transcript quantification, and differential gene expression analysis using RNA-Seq data.<br />
+Here, we will leverage on two tools: <b>featureCounts</b>, to count the number of sequence reads overlapping with predetermined genomic features (exons, genes, promoter regions), and <b>DESeq2</b>, to assess the level of gene expression.<br /><br />
+Click <b>Next</b> to start the analysis.<br />'
+    backdrop: true
 
   - title: '<b>Counting mapped reads</b>'
     element: ''
