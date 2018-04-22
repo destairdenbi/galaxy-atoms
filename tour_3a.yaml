@@ -34,13 +34,14 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#left'
-    content: 'In section <b>Gene annotation file</b>, chose <b>in your history</b>, and select the uploaded gene model file in the GFF format.<br /><br />
+    content: 'In section <b>Gene annotation file</b>, chose <b>in your history</b>, and select the uploaded gene feature file in the GFF format.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Counting mapped reads</b>'
     element: '#left'
-    content: 'Click on <b>Advanced options</b>. Here, in section <b>GFF gene identifier</b>, change the value to <b>ID</b>. <b>TODO: explain why</b>.<br /><br />
+    content: 'The gene feature file organises the gene identifiers under the label "ID". To enable featureCounts referring to such identifiers, we need to explicitly point featureCounts towards the gene "ID" column.<br />
+Click on <b>Advanced options</b> and, in section <b>GFF gene identifier</b>, change the default value to <b>ID</b>.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
