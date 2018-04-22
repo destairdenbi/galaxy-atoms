@@ -5,7 +5,8 @@ title_default: Tour 1a
 steps:
   - title: '<b>Outline</b>'
     element: ''
-    content: 'In this tour, we will carry out quality control analysis of RNA-Seq data, leveraging on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Trim Galore</b>, to remove low sequence quality reads that might tamper with the interpretation of results.<br /><br />
+    content: 'In this tour, we will carry out quality control analysis of RNA-Seq data. This represents the first task in analysing raw high throughput sequence reads, because it provides an overview of the overall quality of data, as well as a mean to remove low quality sequence reads that might ultimately modify the interpretation of results.<br />
+Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Trim Galore!</b>, to remove low sequence quality reads.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
@@ -61,9 +62,8 @@ Click <b>Next</b> to resume the analysis once you are done.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>FastQC</b> tool.<br /><br />
-FastQC is the first step of a data analysis that relies on raw high throughput sequence reads.<br /><br />
-This tool plots the overall quality of the input datasets, providing a starting point for interpreting NGS data.<br /><br />
+    content: 'Look for the <b>FastQC</b> tool.<br />
+FastQC plots the overall quality of the input datasets, providing a starting point for interpreting NGS data.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: fastqc
