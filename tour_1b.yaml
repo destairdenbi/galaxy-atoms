@@ -3,6 +3,12 @@ name: Tour 1b
 description: Quality control and data preprocessing with FastQC and Trimmomatic
 title_default: Tour 1b
 steps:
+  - title: '<b>Outline</b>'
+    element: ''
+    content: 'In this tour, we will carry out quality control analysis of RNA-Seq data. This represents the first task in analysing raw high throughput sequence reads, because it provides an overview of the overall quality of data, as well as a mean to remove low quality sequence reads that might ultimately bias the interpretation of results.<br />
+Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Trimmomatic</b>, to remove low sequence quality reads.<br /><br />
+Click <b>Next</b> to start the analysis.<br />'
+    backdrop: true
 
   - title: '<b>Import the sequence datasets</b>'
     element: '#tool-panel-upload-button .fa.fa-upload'
