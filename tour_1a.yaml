@@ -5,7 +5,8 @@ title_default: Tour 1a
 steps:
   - title: '<b>Outline</b>'
     element: ''
-    content: 'In this tour, we will carry out quality control analysis of RNA-Seq data, leveraging on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Trim Galore</b>, to remove low sequence quality reads that might tamper with the interpretation of results.<br />'
+    content: 'In this tour, we will carry out quality control analysis of RNA-Seq data, leveraging on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Trim Galore</b>, to remove low sequence quality reads that might tamper with the interpretation of results.<br /><br />
+Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
   - title: '<b>Import the sequence datasets</b>'
