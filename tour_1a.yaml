@@ -107,7 +107,7 @@ Click <b>Next</b> to review the properties of your data.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'The <b>Basic statistics</b> plot shows some simple composition statistics for the provided input dataset.<br /><br />
+    content: 'The <b>Basic statistics</b> plot shows some simple composition statistics for the provided input dataset.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/1%20Basic%20Statistics.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -116,10 +116,10 @@ Click <b>Next</b> to overview the next plot.<br />'
     element: '#left'
     content: 'The <b>Per base sequence quality</b> plot shows the range of quality values across all bases at each position in the analysed FastQ file.<br />
 The Y axis shows the quality score: the higher, the better the base call. The background color of the graph divides the base call operation into:<br />
-- very good quality (green)<br />
-- reasonable quality (orange)<br />
-- poor quality (red).<br />
-The quality of calls usually degrade as the run progresses.<br /><br />
+- Very good quality (green)<br />
+- Reasonable quality (orange)<br />
+- Poor quality (red).<br />
+The quality of calls usually degrade as the run progresses.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/2%20Per%20Base%20Sequence%20Quality.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -127,7 +127,7 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Per sequence quality scores</b> plot shows if a subset of sequences have universally low quality values.<br />
-If a significant subset of sequences in a run have overall low quality scores, then this could suggest some kind of systematic problem in a sequencing run.<br /><br />
+If a significant subset of sequences in a run have overall low quality scores, then this could suggest some kind of systematic problem in a sequencing run.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/3%20Per%20Sequence%20Quality%20Scores.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -135,7 +135,7 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Per base sequence content</b> plot shows the proportion of each base in each position of a sequence for which each of the four normal DNA bases has been called.<br />
-The four bases hould not be hugely imbalanced. However, some libraries will always produce biased sequence composition when fragmentation does not occurr randomly.<br /><br />
+The four bases hould not be hugely imbalanced. However, some libraries will always produce biased sequence composition when fragmentation does not occurr randomly.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/4%20Per%20Base%20Sequence%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -143,7 +143,7 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Per sequence GC content</b> plot shows the GC content distribution of the sample.<br />
-This should follow a normal distribution. However, unusually shaped distribution might occurr in case of a contaminated library. A shifted normal distribution instead indicates some systematic bias, independent of base position.<br /><br />
+This should follow a normal distribution. However, unusually shaped distribution might occurr in case of a contaminated library. A shifted normal distribution instead indicates some systematic bias, independent of base position.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/5%20Per%20Sequence%20GC%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -152,7 +152,7 @@ Click <b>Next</b> to overview the next plot.<br />'
     element: '#left'
     content: 'The <b>Per base N content</b> plot shows the overall percentage of N occurrences in the sequence reads.<br />
 If a sequencer is unable to make a base call with confidence, then it will place an N. Here, N represents an ambiguous nucleotide: a base which could not be identified.<br />
-High number of Ns are a sign for low quality sequences.<br /><br />
+High number of Ns are a sign for low quality sequences.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/6%20Per%20Base%20N%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -160,14 +160,14 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Sequence length distribution</b> plot shows the distribution of sequence read length.<br />
-For NGS sequencers generating uniform sequence reads, this will result in a spike around a fixed length value.<br /><br />
+For NGS sequencers generating uniform sequence reads, this will result in a spike around a fixed length value.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/7%20Sequence%20Length%20Distribution.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'The <b>Sequence duplication levels</b> plot shows the relative number of sequences with different degrees of duplication. Here, the blue line represents the full sequence set, showing how its duplication levels are distributed; the red line instead, represents the de-duplicated sequences, plotting the proportions of deduplicated sequence sets which come from different duplication levels in the original data.<br /><br />
+    content: 'The <b>Sequence duplication levels</b> plot shows the relative number of sequences with different degrees of duplication. Here, the blue line represents the full sequence set, showing how its duplication levels are distributed; the red line instead, represents the de-duplicated sequences, plotting the proportions of deduplicated sequence sets which come from different duplication levels in the original data.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/8%20Duplicate%20Sequences.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -175,7 +175,7 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Overrepresented sequences</b> plot shows all sequence making up for more than 0.1% of the total number of sequences in the dataset.<br />
-If a sequence is overrepresented, this means that it is either highly biologically significant, or that it is contaminant for the current library.<br /><br />
+If a sequence is overrepresented, this means that it is either highly biologically significant, or that it is contaminant for the current library.<br />
 More informations on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/9%20Overrepresented%20Sequences.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -183,7 +183,7 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Adapter content</b> plot shows the amount of residual tag sequences within the sample.<br />
-Base frequencies across the reads should follow a uniform distribution, on the contrary, uneven distributions (high frequencies for certain bases over several positions) indicate remaining sequence artifacts within the dataset.<br /><br />
+Base frequencies across the reads should follow a uniform distribution, on the contrary, uneven distributions (high frequencies for certain bases over several positions) indicate remaining sequence artifacts within the dataset.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/10%20Adapter%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -192,7 +192,6 @@ Click <b>Next</b> to overview the next plot.<br />'
     element: ''
     content: 'Now that the quality of the input dataset have been assessed, it is necessary to improve the overall quality of the input reads.<br /><br />
 Click <b>Next</b> to start this process.'
-    placement: ''
 
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
