@@ -73,15 +73,20 @@ Click <b>Next</b> to load it.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'Click on the <b>Multiple datasets</b> icon to select multiple inputs.<br /><br />
+    content: 'In section <b>Short read data from your current history</b>, click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
 FastQC will analyse only those datasets whose formats are compatible with its input.<br />
-If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format:<br />
+If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />
 - Click on the pencil icon on the dataset entry you want to analyse<br />
 - Select the <b>Datatype</b> tab<br />
 - Select <b>fastqcsanger</b><br />
 - Click <b>Save</b>.<br /><br />
-When you are done converting dataset formats, click again on <b>FastQC</b> in the tool bar on the left, click on the <b>Multiple datasets</b> icon, and select all desired datasets.<br /><br />
-In this quality control step we will use all default settings for the present tool. However, to adjust its parameters, you can read the manual that is provided below its box.<br /><br />
+When you are done converting dataset formats, reload FastQC, and select all imported control and treated datasets.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
+
+  - title: '<b>Quality control</b>'
+    element: '#left'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
@@ -96,7 +101,9 @@ Click <b>Next</b> to overview your data.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#right'
-    content: 'FastQC generates diverse plots to assess the quality of the input sequence reads.<br /><br />Click on the eye icon of one of the <b>Webpage</b> reports of FastQC to understand its output, then click <b>Next</b> to review the properties of your data.<br />'
+    content: 'FastQC generates diverse plots to assess the quality of the input sequence reads.<br />
+Click on the eye icon of one of the <b>Webpage</b> reports of FastQC to understand its output.<br /><br />
+Click <b>Next</b> to review the properties of your data.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
@@ -186,18 +193,17 @@ Click <b>Next</b> to overview the next plot.<br />'
     element: ''
     content: 'Now that the quality of the input dataset have been assessed, it is necessary to improve the overall quality of the input reads.<br /><br />
 Click <b>Next</b> to start this process.'
-    placement: ''
 
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>Trimmomatic</b> tool.<br /><br />
-Trimmomatic is an adapter/sequence trim/removal tool.<br /><br />
-This tool searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
+    content: 'Look for the <b>Trimmomatic</b> tool.<br />
+Trimmomatic is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: trim galore
     postclick:
-      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftrim_galore%2Ftrim_galore%2F0.4.3.1"]'
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.5"]
 
   - title: '<b>Quality control</b>'
     element: '#left'
