@@ -1,8 +1,14 @@
 id: tour-3b
 name: Tour 3b
-description: Quantification and differntial gene expression analysis using HTSeq-Count and DESeq2.
+description: Differntial gene expression analysis using HTSeq-Count and DESeq2.
 title_default: Tour 3b
 steps:
+  - title: '<b>Outline</b>'
+    element: ''
+    content: 'In this tour, we will carry out transcript quantification, and differential gene expression analysis using RNA-Seq data.<br />
+Here, we will leverage on two tools: <b>HTSeq-Count</b>, to count the number of sequence reads overlapping with predetermined genomic features (e.g. exons, genes, promoter regions), and <b>DESeq2</b>, to assess the level of gene expression.<br /><br />
+Click <b>Next</b> to start the analysis.<br />'
+    backdrop: true
 
   - title: '<b>Counting mapped reads</b>'
     element: ''
