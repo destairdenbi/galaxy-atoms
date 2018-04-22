@@ -51,7 +51,7 @@ Click <b>Next</b> to start the analysis on the training datasets.<br />'
     placement: left
 
   - title: '<b>Best practice :)</b>'
-    element: ''
+    element: '#right'
     content: 'Are your datasets named with meaningful names?<br /><br />
 Rename your datasets:<br />
 - Click on the pencil icon on the dataset entry you want to analyse<br />
@@ -79,7 +79,7 @@ If some or all of the imported sequence files does not appear in the box, then y
 - Click on the pencil icon on the dataset entry you want to analyse<br />
 - Select the <b>Datatype</b> tab<br />
 - Select <b>fastqcsanger</b><br />
-- Click <b>Save</b>.<br /><br />
+- Click <b>Save</b>.<br />
 When you are done converting dataset formats, reload FastQC, and select all imported control and treated datasets.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
@@ -265,7 +265,7 @@ Click <b>Next</b> to overview how the overall quality of your data has improved.
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
     content: 'Look for the <b>FastQC</b> tool.<br />
-FastQC is used once again to assess the overall quality of the <b>processed</b> data: the first run of FastQC assessed the quality of the provided input datasets; then, based on the generated plots, the following trimming operation got rid of all those reads that FastQC highlighted as potential bias for the analysis (and ultimately the interpretation of results). Here, FastQC assesses the overall quality of the trimmed data.<br /><br />
+FastQC is used once again to assess the overall quality of the <b>processed</b> data: the first run of FastQC assessed the quality of the provided input datasets; then, based on the generated plots, the following trimming operation got rid of all those reads that FastQC highlighted as potential bias for the analysis (and ultimately the interpretation of results). Here, FastQC is used to assess the overall quality of the trimmed data.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: fastqc
