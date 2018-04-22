@@ -5,7 +5,7 @@ title_default: Tour 1a
 steps:
   - title: '<b>Outline</b>'
     element: ''
-    content: 'In this tour, we will carry out quality control analysis of RNA-Seq data. This represents the first task in analysing raw high throughput sequence reads, because it provides an overview of the overall quality of data, as well as a mean to remove low quality sequence reads that might ultimately modify the interpretation of results.<br />
+    content: 'In this tour, we will carry out quality control analysis of RNA-Seq data. This represents the first task in analysing raw high throughput sequence reads, because it provides an overview of the overall quality of data, as well as a mean to remove low quality sequence reads that might ultimately bias the interpretation of results.<br />
 Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Trim Galore!</b>, to remove low sequence quality reads.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
@@ -279,11 +279,19 @@ Click <b>Next</b> to execute.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#right'
+    content: 'FastQC processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to overview your data.<br />'
+    placement: left
+
+  - title: '<b>Quality control</b>'
+    element: '#right'
     content: 'FastQC generates diverse plots to assess the quality of the input sequence reads.<br /><br />
-Click on the eye icon of the <b>Webpage</b> reports of FastQC to understand its output, and  review the properties of your data.<br />'
+Click on the eye icon of one of the <b>Webpage</b> reports of FastQC to understand its output.<br /><br />
+Click <b>Next</b> to review the properties of your data.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: ''
-    content: 'The quality control phase has been completed.<br />'
-    position: ''
+    content: 'The quality control and data preprocessing analysis has been completed.<br />'
+    backdrop: true
