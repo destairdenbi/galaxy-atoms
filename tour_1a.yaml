@@ -82,6 +82,7 @@ If some or all of the imported sequence files does not appear in the box, then y
 - Click <b>Save</b>.<br />
 When you are done converting dataset formats, reload FastQC, and select all imported control and treated datasets.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
@@ -237,7 +238,8 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 - Automatically detect the adapter sequences to be trimmed<br />
 - Trim low-qality score sequence ends<br />
 - Remove sequences whose overlap with adapter sequences is at least 5 bp<br />
-- Discard reads whose length became shorter than 20 bp.<br /><br />
+- Discard reads whose length became shorter than 20 bp.<br />
+For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
@@ -253,7 +255,7 @@ Click <b>Next</b> to overview how the overall quality of your data has improved.
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
     content: 'Look for the <b>FastQC</b> tool.<br /><br />
-FastQC is used once again to assess the overall quality of the <b>processed</b> data: the first run of FastQC assessed the quality of the provided input datasets; based on the generated plots, the following trimming operation got rid of all those reads that FastQC highlighted as potential bias for the analysis (and ultimately the interpretation of your data). Here, FastQC assesses the overall quality of the trimmed data.<br /><br />
+FastQC is used once again to assess the overall quality of the <b>processed</b> data: the first run of FastQC assessed the quality of the provided input datasets; then, based on the generated plots, the following trimming operation got rid of all those reads that FastQC highlighted as potential bias for the analysis (and ultimately the interpretation of results). Here, FastQC is used to assess the overall quality of the trimmed data.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: fastqc
@@ -263,15 +265,13 @@ Click <b>Next</b> to load it.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'Click on the <b>Multiple datasets</b> icon to select multiple inputs.<br /><br />
-FastQC will analyse only those datasets whose formats are compatible with its input.<br />
-If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format:<br />
-- Click on the pencil icon on the dataset entry you want to analyse<br />
-- Select the <b>Datatype</b> tab<br />
-- Select <b>fastqcsanger</b><br />
-- Click <b>Save</b>.<br /><br />
-When you are done converting dataset formats, click again on <b>FastQC</b> in the tool bar on the left, click on the <b>Multiple datasets</b> icon, and select all desired datasets.<br /><br />
-In this quality control step we will use all default settings for the present tool.<br /><br />
+    content: 'In section <b>Short read data from your current history</b>, click on the <b>Multiple datasets</b> icon to select al processed control and treated datasets.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
+
+  - title: '<b>Quality control</b>'
+    element: '#left'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
