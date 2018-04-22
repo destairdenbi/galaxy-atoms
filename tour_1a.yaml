@@ -44,7 +44,7 @@ Click <b>Next</b> to start the upload of the training dataset.<br />'
 
   - title: '<b>Import the training datasets</b>'
     element: '#right'
-    content: 'The datasets are uploading in your history.<br /><br />
+    content: 'The datasets are uploading in your history.<br />
 Uploaded datasets are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to start the analysis on the training datasets.<br />'
     placement: left
