@@ -1,0 +1,107 @@
+id: tour-3a
+name: Tour 3a
+description: Differential gene expression analysis using featureCounts and DESeq2
+title_default: Tour 3a
+steps:
+  - title: '<b>Outline</b>'
+    element: ''
+    content: 'In this tour, we will carry out transcript quantification, and differential gene expression analysis using RNA-Seq data.<br />
+Here, we will leverage on two tools: <b>featureCounts</b>, to count the number of sequence reads overlapping with predetermined genomic features (e.g. exons, genes, promoter regions), and <b>DESeq2</b>, to assess the level of gene expression.<br /><br />
+Click <b>Next</b> to start the analysis.<br />'
+    backdrop: true
+
+  - title: '<b>Counting mapped reads</b>'
+    element: ''
+    content: 'In this step, we want to count the number of sequence reads that have been mapped against the provided genome.<br /><br />.
+Click <b>Next</b> to start the analysis.<br />'
+
+  - title: '<b>Counting mapped reads</b>'
+    element: '#tool-search-query'
+    content: 'Look for the <b>featureCounts</b> tool.<br />
+featureCounts calculates the number of reads that have been mapped against the genomic feature of a reference genome. Here, a feature is a positional range on a chromosome, or a union of such ranges, representing exons, genes, promoter regions, etc.<br /><br />
+Click <b>Next</b> to load it.<br />'
+    placement: right
+    textinsert: featurecounts
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Ffeaturecounts%2Ffeaturecounts%2F1.6.0.3"]
+
+  - title: '<b>Counting mapped reads</b>'
+    element: '#left'
+    content: 'In section <b>Alignment file</b>, click on the <b>Multiple datasets</b> icon, and select all alignment results in the BAM format.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
+
+  - title: '<b>Counting mapped reads</b>'
+    element: '#left'
+    content: 'In section <b>Gene annotation file</b>, chose <b>in your history</b>, and select the uploaded gene feature file in the GFF format.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
+
+  - title: '<b>Counting mapped reads</b>'
+    element: '#left'
+    content: 'The gene feature file organises the gene identifiers under the label "ID". To enable featureCounts referring to such identifiers, we need to explicitly point featureCounts towards the gene "ID" column.<br />
+Click on <b>Advanced options</b> and, in section <b>GFF gene identifier</b>, change the default value to <b>ID</b>.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
+
+  - title: '<b>Counting mapped reads</b>'
+    element: '#left'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: left
+    postclick:
+      - '#execute'
+
+  - title: '<b>Counting mapped reads</b>'
+    element: '#right'
+    content: 'featureCounts processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to use the read counts for differential gene expression analysis.<br />'
+    placement: left
+
+  - title: '<b>Differential gene expression analysis</b>'
+    element: '#tool-search-query'
+    content: 'Look for the <b>DESeq2</b> tool.<br />
+DESeq2 applies statistical methods to the genomic features-aligned read counts, to carry out gene expression analysis.<br /><br />
+Click <b>Next</b> to load it.<br />'
+    placement: right
+    textinsert: deseq2
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fdeseq2%2Fdeseq2%2F2.11.40.1"]
+
+  - title: '<b>Differential gene expression analysis</b>'
+    element: '#left'
+    content: 'DESeq2 can handle multiple factors affecting an experiment, each of which has two levels (or states). For instance, we can describe our experiment in terms of its treatment factor, which is conditioned by two different healthy states: control, and treated. Thus, we will describe our experiment accordingly.<br />
+In section <b>Specify a factor name</b>, change the default name with <b>Treatment</b>.<br />
+In its two subsections <b>Specify a factor level</b>, change the first default value to <b>Control</b>, and the second to <b>Treated</b>. Then, click on the <b>Multiple datasets</b> icon of each factor level, and select all control and treated samples respectively.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
+
+  - title: '<b>Differential gene expression analysis</b>'
+    element: '#left'
+    content: 'In section <b>Output normalized counts table</b>, select <b>yes</b>.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
+
+
+  - title: '<b>Differential gene expression analysis</b>'
+    element: '#left'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: left
+    postclick:
+      - '#execute'
+
+  - title: '<b>Differential gene expression analysis</b>'
+    element: '#right'
+    content: 'DESeq2 processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to overview your data.<br />'
+    placement: left
+
+  - title: '<b>Differential gene expression analysis</b>'
+    element: ''
+    content: 'The differential gene expression analysis has been completed.<br />'
+    backdrop: true
