@@ -195,9 +195,8 @@ Click <b>Next</b> to start this process.'
 
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>Trim Galore</b> tool.<br /><br />
-Trim Galore is an adapter/sequence trim/removal tool.<br /><br />
-This tool searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
+    content: 'Look for the <b>Trim Galore</b> tool.<br />
+Trim Galore is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: trim galore
