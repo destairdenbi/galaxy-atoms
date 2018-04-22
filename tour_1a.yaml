@@ -247,14 +247,14 @@ Click <b>Next</b> to execute.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#right'
-    content: 'Trim Galore processing has begun, and the results are loading in your history.<br /><br />
+    content: 'Trim Galore processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview how the overall quality of your data has improved.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>FastQC</b> tool.<br /><br />
+    content: 'Look for the <b>FastQC</b> tool.<br />
 FastQC is used once again to assess the overall quality of the <b>processed</b> data: the first run of FastQC assessed the quality of the provided input datasets; then, based on the generated plots, the following trimming operation got rid of all those reads that FastQC highlighted as potential bias for the analysis (and ultimately the interpretation of results). Here, FastQC is used to assess the overall quality of the trimmed data.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
@@ -286,7 +286,7 @@ Click <b>Next</b> to overview your data.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#right'
-    content: 'FastQC generates diverse plots to assess the quality of the input sequence reads.<br /><br />
+    content: 'FastQC generates diverse plots to assess the quality of the input sequence reads.<br />
 Click on the eye icon of one of the <b>Webpage</b> reports of FastQC to understand its output.<br /><br />
 Click <b>Next</b> to review the properties of your data.<br />'
     placement: left
