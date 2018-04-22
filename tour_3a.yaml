@@ -13,8 +13,8 @@ Click <b>Next</b> to start the analysis.<br />'
   - title: '<b>Counting mapped reads</b>'
     element: '#right'
     content: 'Before proceeding, we want to instruct Galaxy that all alignment results, as well as the gene feature file, refer to the same genome build. For each of these entries in your history:<br />
-- Click on the pencil icon of the dataset entry
-- In section <b>Database/Build</b>, select <b>S. cerevisae str. S288C (Saccharomyces_cerevisiae_S288C_SGD2010)
+- Click on the pencil icon of the dataset entry<br />
+- In section <b>Database/Build</b>, select <b>S. cerevisae str. S288C</b><br />
 - Click <b>Save</b>.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     placement: left
