@@ -1,6 +1,6 @@
 id: tour-2a
 name: Tour 2a
-description: Mapping and visualization using HISAT2 and Read-GC.
+description: Alignment of sequence reads against a reference genome using HISAT2
 title_default: Tour 2a
 steps:
 
