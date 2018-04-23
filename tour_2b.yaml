@@ -3,6 +3,12 @@ name: Tour 2b
 description: Alignment of sequence reads against a reference genome using STAR
 title_default: Tour 2b
 steps:
+  - title: '<b>Outline</b>'
+    element: ''
+    content: 'In this tour, we will align sequence reads against a reference genome. This represents a necessary task for the quantification and estimation of gene expression, because it provides a mapping between the processed reads and a reference genome, which can be later used in conjunction with statistical methods to evaluate transcript abundance.<br />
+Here, we will leverage on <b>STAR</b>, an ultrafast and low error rate RNA-Seq aligner.<br /><br />
+Click <b>Next</b> to start the analysis.<br />'
+    backdrop: true
 
   - title: '<b>Import the reference genome</b>'
     element: ''
