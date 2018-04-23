@@ -96,7 +96,7 @@ Click <b>Next</b> to execute.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'HISAT2 processing has begun, and the results are loading in your history.<br /><br />
+    content: 'HISAT2 processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview your data.<br />'
     placement: left
