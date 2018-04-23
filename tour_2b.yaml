@@ -1,6 +1,6 @@
 id: tour-2b
 name: Tour 2b
-description: Mapping and visualization using STAR and Read-GC.
+description: Alignment of sequence reads against a reference genome using STAR
 title_default: Tour 2b
 steps:
 
