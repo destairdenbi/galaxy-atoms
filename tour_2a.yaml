@@ -3,6 +3,12 @@ name: Tour 2a
 description: Alignment of sequence reads against a reference genome using HISAT2
 title_default: Tour 2a
 steps:
+  - title: '<b>Outline</b>'
+    element: ''
+    content: 'In this tour, we will align sequence reads against a reference genome. This represents a necessary task for the quantification and estimation of gene expression, because it provides a mapping between the processed reads and a reference genome, which can be later used in conjunction with statistical methods to evaluate transcript abundance.<br />
+Here, we will leverage on <b>HISAT2</b>, an efficient RNA-Seq aligner.<br /><br />
+Click <b>Next</b> to start the analysis.<br />'
+    backdrop: true
 
   - title: '<b>Import the reference genome</b>'
     element: ''
