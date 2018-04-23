@@ -21,7 +21,7 @@ Click <b>Next</b> to import your data and start the analysis.<br />'
   - title: '<b>Import the reference genome</b>'
     element: '.upload-text-content:last'
     content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />
-Click <b>Next</b> to import the reference genome and gene model from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
+Click <b>Next</b> to import the reference genome and gene feature file from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
     placement: right
     preclick:
       - '.upload-button'
@@ -33,7 +33,7 @@ Click <b>Next</b> to import the reference genome and gene model from <a href="ht
   - title: '<b>Import the reference genome</b>'
     element: '#btn-start'
     content: 'Multiple datasets can be imported.<br /><br />
-Click <b>Next</b> to start the upload of the reference genome.<br />'
+Click <b>Next</b> to start the upload of the reference genome and the gene feature file.<br />'
     placement: top
     postclick:
       - '#btn-start'
@@ -41,7 +41,7 @@ Click <b>Next</b> to start the upload of the reference genome.<br />'
 
   - title: '<b>Import the reference genome</b>'
     element: '#right'
-    content: 'The reference genome is uploading in your history.<br /><br />
+    content: 'The reference genome and the gene feature file are uploading in your history.<br />
 Uploaded datasets are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to start the analysis of the reference genome.<br />'
     placement: left
@@ -58,8 +58,8 @@ Click <b>Next</b> to resume the analysis once you are done.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>STAR</b> tool.<br /><br />
-STAR is an ultrafast and sensitive RNA-Seq aligner, for mapping sequence reads against a reference genome.<br /><br />
+    content: 'Look for the <b>STAR</b> tool.<br />
+STAR is an ultrafast and sensitive RNA-Seq aligner, that maps sequence reads against a reference genome.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: star
