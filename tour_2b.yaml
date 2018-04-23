@@ -59,7 +59,8 @@ Click <b>Next</b> to resume the analysis once you are done.<br />'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
     content: 'Look for the <b>STAR</b> tool.<br />
-STAR is an ultrafast and sensitive RNA-Seq aligner, that maps sequence reads against a reference genome.<br /><br />
+STAR is an ultrafast and sensitive RNA-Seq aligner, that maps sequence reads against a reference genome.<br />
+Here, we want to align the sequence reads from the control and treated samples, against the provided reference genome.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: star
@@ -69,44 +70,37 @@ Click <b>Next</b> to load it.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'With <b>STAR</b>, we want to align all sequence reads from the control and treated samples, against the provided reference genome.<br /><br />
-In section <b>Paired or single reads</b>, chose <b>Single reads</b>. Finally, in section <b>Your single read RNA-Seq FASTQ file</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br /><br />
-If some or all of these samples do not appear in the box, then you need to first convert the missing ones to the correct format, and then reload STAR. Only in this case:<br />
-- Click on the pencil icon on the dataset entry you want to analyse<br />
-- Select the <b>Datatype</b> tab<br />
-- Select <b>fastqcsanger</b><br />
-- Click <b>Save</b><br />
-- Resume the analysis by clicking again on the STAR tool, in the tool bar on the left. Finally, reselect all control and treated samples.<br /><br />
-Click <b>Next</b> to overview the next parameters.<br />'
+    content: 'In section <b>Paired or single reads</b>, chose <b>Single reads</b>. Then, in section <b>Your single read RNA-Seq FASTQ file</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'In section <b>Genotoul reference genome or your own fasta file</b>, select <b>Your own fasta file</b>, and specify the uploaded reference genome.<br /><br />
-If the reference genome does not appear in the box, then you need to first convert it to the correct format, and then reload STAR. Only in this case:<br />
+    content: 'In section <b>Genotoul reference genome or your own fasta file</b>, select <b>Your own fasta file</b>, and specify the uploaded reference genome.<br />
+If the reference genome does not appear in the box, then you need to first convert it to the correct format. In this case:<br />
 - Click on the pencil icon of the reference genome entry in your history<br />
 - Select the <b>Datatype</b> tab<br />
 - Select <b>FASTA</b><br />
-- Click <b>Save</b><br />
-- Resume the analysis by clicking again on the STAR tool, in the tool bar on the left. Finally, reselect all control and treated samples, as well as the reference genome.<br /><br />
-Click <b>Next</b> to overview the next parameters.<br />'
+- Click <b>Save</b>.<br />
+When you are done converting, reload STAR, and reselect all imported control and treated datasets, as well as the reference genome.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'In section <b>Your own GTF file</b>, select the gene model GFF entry from your history.<br /><br />
-If the gene model does not appear in the box, then you need to first convert it to the correct format, and then reload STAR. Only in this case:<br />
-- Click on the pencil icon of the gene model entry in your history<br />
+    content: 'In section <b>Your own GTF file</b>, select the gene feature file GFF entry from your history.<br />
+If the gene feature file does not appear in the box, then you need to first convert it to the correct format. In this case:<br />
+- Click on the pencil icon of the gene feature entry in your history<br />
 - Select the <b>Datatype</b> tab<br />
 - Select <b>GTF</b><br />
-- Click <b>Save</b><br />
-- Resume the analysis by clicking again on the STAR tool, in the tool bar on the left. Finally, reselect all control and treated samples, the reference genome, and the gene model.<br /><br />
-Click <b>Next</b> to overview the next parameters.<br />'
+- Click <b>Save</b>.<br />
+When you are done converting, reload STAR, and reselect all imported control and treated datasets, the reference genome, and the gene feature file.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'For this operation, we will use all default settings for the remaining parameters. However, if you want to know more about their meaning, you can read the STAR manual that is provided below.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
