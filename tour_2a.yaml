@@ -11,12 +11,6 @@ Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
   - title: '<b>Import the reference genome</b>'
-    element: ''
-    content: 'In this analysis step, we need to align and map the processed reads against a reference genome.<br /><br />
-<b>TODO: more on this analysis</b>.<br /><br />
-Click <b>Next</b> to start the analysis.<br />'
-
-  - title: '<b>Import the reference genome</b>'
     element: '#tool-panel-upload-button .fa.fa-upload'
     content: 'The import button imports data into Galaxy.<br /><br />
 Click <b>Next</b> to import your data and start the analysis.<br />'
@@ -27,18 +21,19 @@ Click <b>Next</b> to import your data and start the analysis.<br />'
   - title: '<b>Import the reference genome</b>'
     element: '.upload-text-content:last'
     content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />
-Click <b>Next</b> to import the reference genome from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
+Click <b>Next</b> to import the reference genome and gene feature file from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
     placement: right
     preclick:
       - '.upload-button'
       - '#btn-new'
     textinsert: |
       https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/Saccharomyces_cerevisiae_BK006934.fna
+      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/Saccharomyces_cerevisiae.gff
 
   - title: '<b>Import the reference genome</b>'
     element: '#btn-start'
     content: 'Multiple datasets can be imported.<br /><br />
-Click <b>Next</b> to start the upload of the reference genome.<br />'
+Click <b>Next</b> to start the upload of the reference genome and the gene feature file.<br />'
     placement: top
     postclick:
       - '#btn-start'
@@ -46,7 +41,7 @@ Click <b>Next</b> to start the upload of the reference genome.<br />'
 
   - title: '<b>Import the reference genome</b>'
     element: '#right'
-    content: 'The reference genome is uploading in your history.<br /><br />
+    content: 'The reference genome and the gene feature file are uploading in your history.<br />
 Uploaded datasets are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to start the analysis of the reference genome.<br />'
     placement: left
