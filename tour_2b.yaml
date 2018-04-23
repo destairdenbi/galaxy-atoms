@@ -11,12 +11,6 @@ Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
   - title: '<b>Import the reference genome</b>'
-    element: ''
-    content: 'In this analysis step, we need to align and map the processed reads against a reference genome.<br /><br />
-<b>TODO: more on the analysis</b>.<br /><br />
-Click <b>Next</b> to start the analysis.<br />'
-
-  - title: '<b>Import the reference genome</b>'
     element: '#tool-panel-upload-button .fa.fa-upload'
     content: 'The import button imports data into Galaxy.<br /><br />
 Click <b>Next</b> to import your data and start the analysis.<br />'
