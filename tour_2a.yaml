@@ -27,8 +27,8 @@ Click <b>Next</b> to import the reference genome and gene feature file from <a h
       - '.upload-button'
       - '#btn-new'
     textinsert: |
-      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/Saccharomyces_cerevisiae_BK006934.fna
-      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/Saccharomyces_cerevisiae.gff
+      https://zenodo.org/record/1207238/files/Saccharomyces_cerevisiae_BK006934.fna
+      https://zenodo.org/record/1207238/files/Saccharomyces_cerevisiae.gff
 
   - title: '<b>Import the reference genome</b>'
     element: '#btn-start'

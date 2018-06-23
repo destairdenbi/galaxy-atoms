@@ -27,12 +27,12 @@ Click <b>Next</b> to import a training dataset from <a href="https://zenodo.org/
       - '.upload-button'
       - '#btn-new'
     textinsert: |
-      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/control_1.fastqsanger
-      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/control_2.fastqsanger
-      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/control_3.fastqsanger
-      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/treated_1.fastqsanger
-      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/treated_2.fastqsanger
-      https://zenodo.org/api/files/24933283-642a-4ee9-802a-6e7e03afb877/treated_3.fastqsanger
+      https://zenodo.org/record/1207238/files/control_1.fastqsanger
+      https://zenodo.org/record/1207238/files/control_2.fastqsanger
+      https://zenodo.org/record/1207238/files/control_3.fastqsanger
+      https://zenodo.org/record/1207238/files/treated_1.fastqsanger
+      https://zenodo.org/record/1207238/files/treated_2.fastqsanger
+      https://zenodo.org/record/1207238/files/treated_3.fastqsanger
 
   - title: '<b>Import the sequence datasets</b>'
     element: '#btn-start'
@@ -200,7 +200,7 @@ Click <b>Next</b> to start this process.'
 Trimmomatic is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
-    textinsert: trim galore
+    textinsert: trimmomatic
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.5"]
