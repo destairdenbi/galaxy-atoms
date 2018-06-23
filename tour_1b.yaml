@@ -200,7 +200,7 @@ Click <b>Next</b> to start this process.'
 Trimmomatic is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
-    textinsert: trim galore
+    textinsert: trimmomatic
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.5"]
