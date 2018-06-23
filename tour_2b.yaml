@@ -63,10 +63,10 @@ STAR is an ultrafast and sensitive RNA-Seq aligner, that maps sequence reads aga
 Here, we want to align the sequence reads from the control and treated samples, against the provided reference genome.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
-    textinsert: star
+    textinsert: rna star
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fsarahinraauzeville%2Fstar%2Fsm_star_single_V2%2F1.0.0"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Frgrnastar%2Frna_star%2F2.5.2b-2"]
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
