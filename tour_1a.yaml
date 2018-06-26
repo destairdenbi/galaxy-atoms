@@ -109,19 +109,19 @@ Click <b>Next</b> to review the properties of your data.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Basic statistics</b> table provides the summary statistics of the provided input dataset.<br />
-More information on the <b>Basic Statistics</b> can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/1%20Basic%20Statistics.html" target="_blank">here</a>.<br /><br />
+More informations on the <b>Basic Statistics</b> can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/1%20Basic%20Statistics.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'The <b>Per base sequence quality</b> plot shows the range of quality values across all bases at each position in the analysed FastQ file.<br />
+    content: 'The <b>Per base sequence quality</b> plot shows the average quality scores of all reads of each sequence of the provided input dataset.<br />
 The Y axis shows the quality score: the higher, the better the base call. The background color of the graph divides the base call operation into:<br />
 - Very good quality (green)<br />
 - Reasonable quality (orange)<br />
 - Poor quality (red).<br />
-The quality of calls usually degrade as the run progresses.<br />
-More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/2%20Per%20Base%20Sequence%20Quality.html" target="_blank">here</a>.<br /><br />
+The quality of each call usually degrades as the run progresses.<br />
+More informations on the <b>Per base sequence quality</b> plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/2%20Per%20Base%20Sequence%20Quality.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
 
