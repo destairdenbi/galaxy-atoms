@@ -108,52 +108,52 @@ Click <b>Next</b> to review the properties of your data.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'The <b>Basic statistics</b> plot shows some simple composition statistics for the provided input dataset.<br />
-More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/1%20Basic%20Statistics.html" target="_blank">here</a>.<br /><br />
+    content: 'The <b>Basic statistics</b> table provides the summary statistics of the provided input dataset.<br />
+More informations on the <b>Basic Statistics</b> can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/1%20Basic%20Statistics.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'The <b>Per base sequence quality</b> plot shows the range of quality values across all bases at each position in the analysed FastQ file.<br />
+    content: 'The <b>Per base sequence quality</b> plot shows the average quality scores of all reads of each sequence of the provided input dataset.<br />
 The Y axis shows the quality score: the higher, the better the base call. The background color of the graph divides the base call operation into:<br />
 - Very good quality (green)<br />
 - Reasonable quality (orange)<br />
 - Poor quality (red).<br />
-The quality of calls usually degrade as the run progresses.<br />
-More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/2%20Per%20Base%20Sequence%20Quality.html" target="_blank">here</a>.<br /><br />
+The quality of each call usually degrades as the sequencing run progresses. Here however, each provided input dataset shows lower average quality scores at the beginning of each sequence. Although these scores still account for reasonable quality reads, a reason behind this trend might be that the image scanner focus had to be recalibrated during the first sequence run cycles.<br />
+More informations on the <b>Per base sequence quality</b> plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/2%20Per%20Base%20Sequence%20Quality.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Per sequence quality scores</b> plot shows if a subset of sequences have universally low quality values.<br />
-If a significant subset of sequences in a run have overall low quality scores, then this could suggest some kind of systematic problem in a sequencing run.<br />
+If a significant subset of sequences in a run have overall low quality scores, this suggests that some kind of systematic problem occurred during the sequencing experiment. Here, the entire sequence set scores well, showing the desired overall behavior for a sequence set: a peak (large sequence subset) showing a good score, and a short tail (sequence subset) scoring lower, although still well.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/3%20Per%20Sequence%20Quality%20Scores.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'The <b>Per base sequence content</b> plot shows the proportion of each base in each position of a sequence for which each of the four normal DNA bases has been called.<br />
-The four bases hould not be hugely imbalanced. However, some libraries will always produce biased sequence composition when fragmentation does not occurr randomly.<br />
+    content: 'The <b>Per base sequence content</b> plot shows the percentage of occurrence of each base in each position of each sequence.<br />
+The four bases should not be hugely imbalanced. However, some libraries will always produce biased sequence composition when fragmentation does not occurr randomly. Here, each provided input dataset shows the desired trend.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/4%20Per%20Base%20Sequence%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'The <b>Per sequence GC content</b> plot shows the GC content distribution of the sample.<br />
-This should follow a normal distribution. However, unusually shaped distribution might occurr in case of a contaminated library. A shifted normal distribution instead indicates some systematic bias, independent of base position.<br />
+    content: 'The <b>Per sequence GC content</b> plot shows the GC content distribution of the provided sample.<br />
+This should follow a normal distribution. However, unusually shaped distribution might occurr in case of a contaminated library. A shifted normal distribution instead indicates some systematic bias, independent of base position. Here, each provided sample aligns to the theoretical (blue line) CG distribution.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/5%20Per%20Sequence%20GC%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'The <b>Per base N content</b> plot shows the overall percentage of N occurrences in the sequence reads.<br />
-If a sequencer is unable to make a base call with confidence, then it will place an N. Here, N represents an ambiguous nucleotide: a base which could not be identified.<br />
-High number of Ns are a sign for low quality sequences.<br />
+    content: 'The <b>Per base N content</b> plot shows the percentage of N occurrences in the sequence reads.<br />
+If a sequencer is unable to make a base call with confidence, then it will place an N, where N represents an ambiguous nucleotide: a base which could not be correctly identified.<br />
+High number of Ns are a sign of low quality sequence reads, which might be due to transient problems occurring during the sequencing experiment. Here, each provided sample shows the ideal percentage of N at each position in the sequence set, accounting for a good sequencing run.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/6%20Per%20Base%20N%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -176,7 +176,7 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Overrepresented sequences</b> plot shows all sequence making up for more than 0.1% of the total number of sequences in the dataset.<br />
-If a sequence is overrepresented, this means that it is either highly biologically significant, or that it is contaminant for the current library.<br />
+If a sequence is overrepresented, this means that it is either highly biologically significant, or that it is contaminant for the current library. Here, each provided sequence dataset shows no overrepresented sequences.<br />
 More informations on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/9%20Overrepresented%20Sequences.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
