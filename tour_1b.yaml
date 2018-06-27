@@ -115,7 +115,7 @@ Click <b>Next</b> to overview the next plot.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'The <b>Per base sequence quality</b> plot shows the range of quality values across all bases at each position in the analysed FastQ file.<br />
+content: 'The <b>Per base sequence quality</b> plot shows the average quality scores of all reads of each sequence of the provided input dataset.<br />
 The Y axis shows the quality score: the higher, the better the base call. The background color of the graph divides the base call operation into:<br />
 - Very good quality (green)<br />
 - Reasonable quality (orange)<br />
