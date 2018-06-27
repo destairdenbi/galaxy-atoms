@@ -108,8 +108,8 @@ Click <b>Next</b> to review the properties of your data.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'The <b>Basic statistics</b> plot shows some simple composition statistics for the provided input dataset.<br />
-More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/1%20Basic%20Statistics.html" target="_blank">here</a>.<br /><br />
+    content: 'The <b>Basic statistics</b> table provides the summary statistics of the provided input dataset.<br />
+More informations on the <b>Basic Statistics</b> can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/1%20Basic%20Statistics.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
 
