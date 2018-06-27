@@ -151,9 +151,9 @@ Click <b>Next</b> to overview the next plot.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'The <b>Per base N content</b> plot shows the overall percentage of N occurrences in the sequence reads.<br />
-If a sequencer is unable to make a base call with confidence, then it will place an N. Here, N represents an ambiguous nucleotide: a base which could not be identified.<br />
-High number of Ns are a sign for low quality sequences.<br />
+    content: 'The <b>Per base N content</b> plot shows the percentage of N occurrences in the sequence reads.<br />
+If a sequencer is unable to make a base call with confidence, then it will place an N. Here, N represents an ambiguous nucleotide: a base which could not be correctly identified.<br />
+High number of Ns are a sign of low quality sequence reads, which might be due to transient problems occurring during the sequencing experiment.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/6%20Per%20Base%20N%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
