@@ -128,7 +128,7 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Per sequence quality scores</b> plot shows if a subset of sequences have universally low quality values.<br />
-If a significant subset of sequences in a run have overall low quality scores, then this could suggest some kind of systematic problem in a sequencing run.<br />
+If a significant subset of sequences in a run have overall low quality scores, this suggests that some kind of systematic problem occurred during the sequencing experiment. Here, the entire sequence set scores well, showing the desired overall behavior for a sequence set: a peak (large sequence subset) showing a good score, and a short tail (sequence subset) scoring lower, although still well.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/3%20Per%20Sequence%20Quality%20Scores.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
