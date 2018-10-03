@@ -1,7 +1,7 @@
 id: tour-2a
-name: Tour 2a
+name: 'Mapping'
 description: Alignment of sequence reads against a reference genome using HISAT2
-title_default: Tour 2a
+title_default: 'Mapping'
 steps:
   - title: '<b>Outline</b>'
     element: ''

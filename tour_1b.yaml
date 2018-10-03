@@ -1,7 +1,7 @@
 id: tour-1b
-name: Tour 1b
+name: 'Data preprocessing'
 description: Quality control and data preprocessing with FastQC and Trimmomatic
-title_default: Tour 1b
+title_default: 'Data preprocessing'
 steps:
   - title: '<b>Outline</b>'
     element: ''

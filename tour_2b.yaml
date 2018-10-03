@@ -1,7 +1,7 @@
 id: tour-2b
-name: Tour 2b
+name: 'Mapping'
 description: Alignment of sequence reads against a reference genome using STAR
-title_default: Tour 2b
+title_default: 'Mapping'
 steps:
   - title: '<b>Outline</b>'
     element: ''
