@@ -1,6 +1,6 @@
 id: dgea_tour_1d
 name: 'Data preprocessing'
-description: Quality control and data preprocessing with FastQC and Sickle
+description: 'Quality control and data preprocessing with FastQC and Sickle'
 title_default: 'Data preprocessing'
 steps:
   - title: '<b>Outline</b>'

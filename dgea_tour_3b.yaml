@@ -1,6 +1,6 @@
 id: dgea_tour_3b
 name: 'Differential gene expression'
-description: Differntial gene expression analysis using HTSeq-Count and DESeq2.
+description: 'Differential gene expression analysis using HTSeq-Count and DESeq2'
 title_default: 'Differential gene expression'
 steps:
   - title: '<b>Outline</b>'

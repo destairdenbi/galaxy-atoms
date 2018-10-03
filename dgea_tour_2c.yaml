@@ -1,6 +1,6 @@
 id: dgea_tour_2c
 name: 'Mapping'
-description: Alignment of sequence reads against a reference genome using BWA-MEM
+description: 'Alignment of sequence reads against a reference genome using BWA-MEM'
 title_default: 'Mapping'
 steps:
   - title: '<b>Outline</b>'

@@ -1,6 +1,6 @@
 id: dgea_tour_2d
 name: 'Mapping'
-description: Alignment of sequence reads against a reference genome using Segemehl
+description: 'Alignment of sequence reads against a reference genome using Segemehl'
 title_default: 'Mapping'
 steps:
   - title: '<b>Outline</b>'
