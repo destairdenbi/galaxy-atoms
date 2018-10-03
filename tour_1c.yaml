@@ -86,7 +86,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further informations, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
@@ -249,9 +249,9 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
     element: '#left'
     content: 'With the current parametrisation, Cutadapt will:<br />
 - Automatically detect the adapter sequences to be trimmed<br />
-- Trim low-qality score sequence ends<br />
+- Trim low-quality score sequence ends<br />
 - Remove sequences whose overlap with adapter sequences is at least 5 bp<br />
-- Discard reads whose length became shorter than 20 bp.<br />
+- Discard reads whose length became shorter than 40 bp.<br />
 For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
@@ -284,7 +284,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further informations, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
