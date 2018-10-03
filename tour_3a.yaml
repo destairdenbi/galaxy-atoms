@@ -1,7 +1,7 @@
 id: tour-3a
-name: Tour 3a
+name: 'Differential gene expression'
 description: Differential gene expression analysis using featureCounts and DESeq2
-title_default: Tour 3a
+title_default: 'Differential gene expression'
 steps:
   - title: '<b>Outline</b>'
     element: ''
