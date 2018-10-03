@@ -1,6 +1,6 @@
 id: dgea_tour_2b
 name: 'Mapping'
-description: Alignment of sequence reads against a reference genome using STAR
+description: 'Alignment of sequence reads against a reference genome using STAR'
 title_default: 'Mapping'
 steps:
   - title: '<b>Outline</b>'

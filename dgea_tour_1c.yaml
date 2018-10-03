@@ -1,6 +1,6 @@
 id: dgea_tour_1c
 name: 'Data preprocessing'
-description: Quality control and data preprocessing with FastQC and Cutadapt
+description: 'Quality control and data preprocessing with FastQC and Cutadapt'
 title_default: 'Data preprocessing'
 steps:
   - title: '<b>Outline</b>'

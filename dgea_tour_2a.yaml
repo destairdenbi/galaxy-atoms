@@ -1,6 +1,6 @@
 id: dgea_tour_2a
 name: 'Mapping'
-description: Alignment of sequence reads against a reference genome using HISAT2
+description: 'Alignment of sequence reads against a reference genome using HISAT2'
 title_default: 'Mapping'
 steps:
   - title: '<b>Outline</b>'
