@@ -7,14 +7,14 @@ git clone https://github.com/galaxyproject/galaxy.git $GALAXY_ROOT
 cd $GALAXY_ROOT
 git checkout v17.05
 ```
-Add also
- * https://github.com/destairdenbi/workflows
+Install
+ * https://github.com/destairdenbi/webhooks
 
-    
+
 # Installation
 ```
 git clone https://github.com/destairdenbi/guided_tours.git
-cd guided_tours.git
+cd guided_tours
 ./setup.sh
 ```
 
