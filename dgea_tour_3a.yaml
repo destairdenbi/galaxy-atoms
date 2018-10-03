@@ -1,6 +1,6 @@
-id: tour-3a
+id: dgea_tour_3a
 name: 'Differential gene expression'
-description: Differential gene expression analysis using featureCounts and DESeq2
+description: 'Differential gene expression analysis using featureCounts and DESeq2'
 title_default: 'Differential gene expression'
 steps:
   - title: '<b>Outline</b>'
@@ -51,7 +51,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#left'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
@@ -92,7 +92,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Differential gene expression analysis</b>'
     element: '#left'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
