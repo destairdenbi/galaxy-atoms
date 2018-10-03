@@ -1,12 +1,12 @@
-id: tour-3a
+id: dgea_tour_3b
 name: 'Differential gene expression'
-description: Differential gene expression analysis using featureCounts and DESeq2
+description: Differntial gene expression analysis using HTSeq-Count and DESeq2.
 title_default: 'Differential gene expression'
 steps:
   - title: '<b>Outline</b>'
     element: ''
     content: 'In this tour, we will carry out transcript quantification, and differential gene expression analysis using RNA-Seq data.<br />
-Here, we will leverage on two tools: <b>featureCounts</b>, to count the number of sequence reads overlapping with predetermined genomic features (e.g. exons, genes, promoter regions), and <b>DESeq2</b>, to assess the level of gene expression.<br /><br />
+Here, we will leverage on two tools: <b>HTSeq-Count</b>, to count the number of sequence reads overlapping with predetermined genomic features (e.g. exons, genes, promoter regions), and <b>DESeq2</b>, to assess the level of gene expression.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
@@ -21,31 +21,31 @@ Click <b>Next</b> to start the analysis.<br />'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>featureCounts</b> tool.<br />
-featureCounts calculates the number of reads that have been mapped against the genomic feature of a reference genome. Here, a feature is a positional range on a chromosome, or a union of such ranges, representing exons, genes, promoter regions, etc.<br /><br />
+    content: 'Look for the <b>HTSeq-Count</b> tool.<br />
+HTSeq-Count calculates the number of reads that have been mapped against the genomic feature of a reference genome. Here, a feature is a positional range on a chromosome, or a union of such ranges, representing exons, genes, promoter regions, etc.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
-    textinsert: featurecounts
+    textinsert: htseq-count
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Ffeaturecounts%2Ffeaturecounts%2F1.6.0.3"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fhtseq_count%2Fhtseq_count%2F0.9.1"]
 
   - title: '<b>Counting mapped reads</b>'
     element: '#left'
-    content: 'In section <b>Alignment file</b>, click on the <b>Multiple datasets</b> icon, and select all alignment results in the BAM format.<br /><br />
+    content: 'In section <b>Aligned SAM/BAM File</b>, click on the the <b>Multiple datasets</b> icon, and select all alignment results in the BAM format.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Counting mapped reads</b>'
     element: '#left'
-    content: 'In section <b>Gene annotation file</b>, chose <b>in your history</b>, and select the uploaded gene feature file in the GFF format.<br /><br />
+    content: 'In section <b>GFF File</b>, select the uploaded gene feature file in the GFF format.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Counting mapped reads</b>'
     element: '#left'
-    content: 'The gene feature file organises the gene identifiers under the label "ID". To enable featureCounts referring to such identifiers, we need to explicitly point featureCounts towards the gene "ID" column.<br />
-Click on <b>Advanced options</b> and, in section <b>GFF gene identifier</b>, change the default value to <b>ID</b>.<br /><br />
+    content: 'The gene feature file organises the gene identifiers under the label "ID". To enable HTSeq-Count referring to such identifiers, we need to explicitly point HTSeq-Count towards the gene "ID" column.<br />
+In section <b>ID Attribute</b>, change the default value to <b>ID</b>.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
@@ -59,7 +59,7 @@ Click <b>Next</b> to execute.<br />'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#right'
-    content: 'featureCounts processing has begun, and the results are loading in your history.<br />
+    content: 'HTSeq-Count processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to use the read counts for differential gene expression analysis.<br />'
     placement: left
