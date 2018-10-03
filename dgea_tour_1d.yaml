@@ -1,12 +1,12 @@
-id: tour-1c
+id: dgea_tour_1d
 name: 'Data preprocessing'
-description: Quality control and data preprocessing with FastQC and Cutadapt
+description: Quality control and data preprocessing with FastQC and Sickle
 title_default: 'Data preprocessing'
 steps:
   - title: '<b>Outline</b>'
     element: ''
     content: 'In this tour, we will carry out quality control analysis of RNA-Seq data. This represents the first task in analysing raw high throughput sequence reads, because it provides an overview of the overall quality of data, as well as a mean to remove low quality sequence reads that might ultimately bias the interpretation of results.<br />
-Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Cutadapt</b>, to remove low sequence quality reads.<br /><br />
+Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Sickle</b>, to remove low sequence quality reads.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
@@ -86,7 +86,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further informations, please refer to the manual provided below the tool box.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
@@ -196,71 +196,57 @@ Click <b>Next</b> to start this process.'
 
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>Cutadapt</b> tool.<br />
-Cutadapt is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
+    content: 'Look for the <b>Sickle</b> tool.<br />
+Sickle is an adapter/sequence trim/removal tool, which searches for low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
-    textinsert: cutadapt
+    textinsert: sickle
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.16.1"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fcutadapt%2Fsickle%2F1.2.8"]
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'In section <b>FASTQ/A file</b>, click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
-Cutadapt will analyse only those datasets whose formats are compatible with its input.<br />If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />
+    content: 'In section <b>Single-end FASTQ reads</b>, click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
+Sickle will analyse only those datasets whose formats are compatible with its input.<br />If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />
 - Click on the pencil icon on the dataset entry you want to analyse<br />
 - Select the <b>Datatype</b> tab<br />
 - Select <b>fastqcsanger</b><br />
 - Click <b>Save</b>.<br />
-When you are done converting dataset formats, reload Cutadapt, and select all imported control and treated datasets.<br /><br />
+When you are done converting dataset formats, reload Sickle, and select all imported control and treated datasets.<br /><br />
 In this quality control step we will use some advanced settings for the present tool.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'Click on the section <b>Adapter Options</b>.<br /><br />
-The <b>Minimum overlap length</b> of the adapter sequence required to trim a sequence, indicates how many bp are required for the adapter to overlap with the sequence read to remove the sequence from the dataset.<br />
-The default value is too stringent, and on average will result in removing 25% of the reads.<br />
-Change this parameter to 5.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
-
-  - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'Click on the section <b>Filter Options</b>.<br /><br />
-The <b>Minimum length</b> of a sequence, indicates how many bp are required for the sequence before it is removed from the dataset.<br />
-The default value keeps every sequence of any length, however, it is generally recommended to keep only those sequences whose length can be still meaningful for the analysis.<br />
-Change this parameter to 40.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
-
-  - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'Click on the section <b>Read Modification Options</b>.<br /><br />
-The <b>Quality cutoff</b> indicates the allowed quality threshold allowed on each ends of the read before adapter removal.<br />
-It is generally recommended to keep only those nucleotides whose quality cutoff is above 20.<br />
+    content: 'The <b>Quality threshold</b> indicates the allowed base-quality.<br />
+It is generally recommended to keep only those nucleotides whose quality is above 20.<br />
 Change this parameter to 20.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'With the current parametrisation, Cutadapt will:<br />
-- Automatically detect the adapter sequences to be trimmed<br />
-- Trim low-quality score sequence ends<br />
-- Remove sequences whose overlap with adapter sequences is at least 5 bp<br />
+    content: 'The <b>Length threshold</b> indicates the allowed length (in nucleotides) that a sequence must have after quality threshold trimming.<br />
+Tt is generally recommended to keep only those sequences whose length can be still meaningful for the analysis.<br />
+Change this parameter to 40.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+
+  - title: '<b>Quality control</b>'
+    element: '#left'
+    content: "With the current parametrisation, Sickle will:<br />
+- Trim low-quality score sequence (3' and 5')<br />
 - Discard reads whose length became shorter than 40 bp.<br />
 For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
+Click <b>Next</b> to execute.<br />"
     placement: left
     postclick:
       - '#execute'
 
   - title: '<b>Quality control</b>'
     element: '#right'
-    content: 'Cutadapt processing has begun, and the results are loading in your history.<br />
+    content: 'Sickle processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview how the overall quality of your data has improved.<br />'
     placement: left
@@ -284,7 +270,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further informations, please refer to the manual provided below the tool box.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:

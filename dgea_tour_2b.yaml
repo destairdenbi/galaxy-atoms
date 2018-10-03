@@ -1,12 +1,12 @@
-id: tour-2d
+id: dgea_tour_2b
 name: 'Mapping'
-description: Alignment of sequence reads against a reference genome using Segemehl
+description: Alignment of sequence reads against a reference genome using STAR
 title_default: 'Mapping'
 steps:
   - title: '<b>Outline</b>'
     element: ''
     content: 'In this tour, we will align sequence reads against a reference genome. This represents a necessary task for the quantification and estimation of gene expression, because it provides a mapping between the processed reads and a reference genome, which can be later used in conjunction with statistical methods to evaluate transcript abundance.<br />
-Here, we will leverage on <b>Segemehl</b>, an efficient RNA-Seq aligner.<br /><br />
+Here, we will leverage on <b>STAR</b>, an ultrafast and low error rate RNA-Seq aligner.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
@@ -58,43 +58,49 @@ Click <b>Next</b> to resume the analysis once you are done.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>Segemehl</b> tool.<br />
-Segemehl is an efficient aligner for mapping sequence reads against a reference genome.<br />
+    content: 'Look for the <b>STAR</b> tool.<br />
+STAR is an ultrafast and sensitive RNA-Seq aligner, that maps sequence reads against a reference genome.<br />
 Here, we want to align the sequence reads from the control and treated samples, against the provided reference genome.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
-    textinsert: segemehl
+    textinsert: rna star
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Frnateam%2Fsegemehl%2Fsegemehl%2F0.2.0.3"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Frgrnastar%2Frna_star%2F2.5.2b-2"]
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'In section <b>Will you select a reference genome from your history or use a built-in index?</b>, select <b>Use one from the history</b>, and specify the uploaded reference genome in section <b>Select the reference genome</>.<br />
+    content: 'In section <b>Single-end or paired-end reads</b>, chose <b>Single-end</b>. Then, in section <b>RNA-Seq FASTQ/FASTA file</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right'
+    content: 'In section <b>Custom or built-in reference genome</b>, select <b>Use reference genome from history and create temporary index</b>, then in section <b>Select a reference genome</b>, specify the uploaded reference genome.<br />
 If the reference genome does not appear in the box, then you need to first convert it to the correct format. In this case:<br />
 - Click on the pencil icon of the reference genome entry in your history<br />
 - Select the <b>Datatype</b> tab<br />
 - Select <b>FASTA</b><br />
 - Click <b>Save</b>.<br />
-When you are done converting, reload Segemehl, and the reference genome.<br /><br />
+When you are done converting, reload STAR, and reselect all imported control and treated datasets, as well as the reference genome.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'In section <b>Reads in FASTQ/FASTA files</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br /><br />
+    content: 'In section <b>Gene model (gff3,gtf) file for splice junctions</b>, select the gene feature file GFF entry from your history.<br />
+If the gene feature file does not appear in the box, then you need to first convert it to the correct format. In this case:<br />
+- Click on the pencil icon of the gene feature entry in your history<br />
+- Select the <b>Datatype</b> tab<br />
+- Select <b>GTF</b><br />
+- Click <b>Save</b>.<br />
+When you are done converting, reload STAR, and reselect all imported control and treated datasets, the reference genome, and the gene feature file.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'In section <b>Detect split/spliced reads</b>, select <b>Split reads</b> to detect spliced variants within the samples.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further informations, please refer to the manual provided below the tool box.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
@@ -102,7 +108,7 @@ Click <b>Next</b> to execute.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'Segemehl processing has begun, and the results are loading in your history.<br />
+    content: 'STAR processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview your data.<br />'
     placement: left
