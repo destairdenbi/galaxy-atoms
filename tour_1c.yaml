@@ -1,7 +1,7 @@
 id: tour-1c
-name: Tour 1c
+name: 'Data preprocessing'
 description: Quality control and data preprocessing with FastQC and Cutadapt
-title_default: Tour 1c
+title_default: 'Data preprocessing'
 steps:
   - title: '<b>Outline</b>'
     element: ''

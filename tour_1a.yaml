@@ -1,7 +1,7 @@
 id: tour-1a
-name: Tour 1a
+name: 'Data preprocessing'
 description: Quality control and data preprocessing with FastQC and Trim Galore!
-title_default: Tour 1a
+title_default: 'Data preprocessing'
 steps:
   - title: '<b>Outline</b>'
     element: ''

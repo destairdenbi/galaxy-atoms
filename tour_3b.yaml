@@ -1,7 +1,7 @@
 id: tour-3b
-name: Tour 3b
+name: 'Differential gene expression'
 description: Differntial gene expression analysis using HTSeq-Count and DESeq2.
-title_default: Tour 3b
+title_default: 'Differential gene expression'
 steps:
   - title: '<b>Outline</b>'
     element: ''
