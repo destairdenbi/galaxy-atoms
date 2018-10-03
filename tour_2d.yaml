@@ -1,0 +1,113 @@
+id: tour-2d
+name: 'Mapping'
+description: Alignment of sequence reads against a reference genome using Segemehl
+title_default: 'Mapping'
+steps:
+  - title: '<b>Outline</b>'
+    element: ''
+    content: 'In this tour, we will align sequence reads against a reference genome. This represents a necessary task for the quantification and estimation of gene expression, because it provides a mapping between the processed reads and a reference genome, which can be later used in conjunction with statistical methods to evaluate transcript abundance.<br />
+Here, we will leverage on <b>Segemehl</b>, an efficient RNA-Seq aligner.<br /><br />
+Click <b>Next</b> to start the analysis.<br />'
+    backdrop: true
+
+  - title: '<b>Import the reference genome</b>'
+    element: '#tool-panel-upload-button .fa.fa-upload'
+    content: 'The import button imports data into Galaxy.<br /><br />
+Click <b>Next</b> to import your data and start the analysis.<br />'
+    placement: right
+    postclick:
+      - '.upload-button'
+
+  - title: '<b>Import the reference genome</b>'
+    element: '.upload-text-content:last'
+    content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />
+Click <b>Next</b> to import the reference genome and gene feature file from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
+    placement: right
+    preclick:
+      - '.upload-button'
+      - '#btn-new'
+    textinsert: |
+      https://zenodo.org/record/1207238/files/Saccharomyces_cerevisiae_BK006934.fna
+      https://zenodo.org/record/1207238/files/Saccharomyces_cerevisiae.gff
+
+  - title: '<b>Import the reference genome</b>'
+    element: '#btn-start'
+    content: 'Multiple datasets can be imported.<br /><br />
+Click <b>Next</b> to start the upload of the reference genome and the gene feature file.<br />'
+    placement: top
+    postclick:
+      - '#btn-start'
+      - '#btn-close'
+
+  - title: '<b>Import the reference genome</b>'
+    element: '#right'
+    content: 'The reference genome and the gene feature file are uploading in your history.<br />
+Uploaded datasets are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to start the analysis of the reference genome.<br />'
+    placement: left
+
+  - title: '<b>Best practice :)</b>'
+    element: '#right'
+    content: 'Are your datasets named with meaningful names?<br /><br />
+Rename your datasets:<br />
+- Click on the pencil icon on the dataset entry you want to analyse<br />
+- Modify the name in the first box<br />
+- Click <b>Save</b>.<br /><br />
+Click <b>Next</b> to resume the analysis once you are done.<br />'
+    placement: left
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#tool-search-query'
+    content: 'Look for the <b>Segemehl</b> tool.<br />
+Segemehl is an efficient aligner for mapping sequence reads against a reference genome.<br />
+Here, we want to align the sequence reads from the control and treated samples, against the provided reference genome.<br /><br />
+Click <b>Next</b> to load it.<br />'
+    placement: right
+    textinsert: segemehl
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Frnateam%2Fsegemehl%2Fsegemehl%2F0.2.0.3"]
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right'
+    content: 'In section <b>Will you select a reference genome from your history or use a built-in index?</b>, select <b>Use one from the history</b>, and specify the uploaded reference genome in section <b>Select the reference genome</>.<br />
+If the reference genome does not appear in the box, then you need to first convert it to the correct format. In this case:<br />
+- Click on the pencil icon of the reference genome entry in your history<br />
+- Select the <b>Datatype</b> tab<br />
+- Select <b>FASTA</b><br />
+- Click <b>Save</b>.<br />
+When you are done converting, reload Segemehl, and the reference genome.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right'
+    content: 'In section <b>Reads in FASTQ/FASTA files</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right'
+    content: 'In section <b>Detect split/spliced reads</b>, select <b>Split reads</b> to detect spliced variants within the samples.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right'
+content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further informations, please refer to the manual provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: left
+    postclick:
+      - '#execute'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right'
+    content: 'Segemehl processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to overview your data.<br />'
+    placement: left
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: ''
+    content: 'The alignment of sequence reads against a reference genome has been completed.<br />'
+    backdrop: true
