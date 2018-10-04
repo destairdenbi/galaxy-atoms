@@ -94,7 +94,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further informations, please refer to the manual provided below the tool box.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further informations, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
