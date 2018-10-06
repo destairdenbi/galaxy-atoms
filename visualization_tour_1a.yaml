@@ -1,4 +1,4 @@
-id: visualization_tour1a
+id: visualization_tour_1a
 name: 'Visualization'
 description: 'Heatmap visualization of DESeq results'
 title_default: 'Visualization'
