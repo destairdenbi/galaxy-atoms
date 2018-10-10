@@ -61,7 +61,7 @@ Click <b>Next</b> to resume the visualization once you are done.<br />'
 de.STAIR heatmap plots differentially expressed genes according to their fold change, and Q-value cutoff < 0.05.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
-    textinsert: destair heatmap
+    textinsert: de.stair heatmap
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=destair_heatmap"]
