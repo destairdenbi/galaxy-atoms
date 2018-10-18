@@ -128,7 +128,7 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Per sequence quality scores</b> plot shows if a subset of sequences have universally low quality values.<br />
-If a significant subset of sequences in a run have overall low quality scores, this suggests that some kind of systematic problem occured during the sequencing experiment. Here, the entire sequence set scores well, showing the desired overall behavior for a sequence set: a peak (large sequence subset) showing a good score, and a short tail (sequence subset) scoring lower, although still well.<br />
+If a significant subset of sequences in a run have overall low quality scores, this suggests that some kind of systematic problem occurred during the sequencing experiment. Here, the entire sequence set scores well, showing the desired overall behavior for a sequence set: a peak (large sequence subset) showing a good score, and a short tail (sequence subset) scoring lower, although still well.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/3%20Per%20Sequence%20Quality%20Scores.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -144,7 +144,7 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Per sequence GC content</b> plot shows the GC content distribution of the provided sample.<br />
-This should follow a normal distribution. However, unusually shaped distribution might occurr in case of a contaminated library. A shifted normal distribution instead indicates some systematic bias, independent of base position. Here, each provided sample aligns to the theoretical (blue line) CG distribution.<br />
+This should follow a normal distribution. However, unusually shaped distribution might occur in case of a contaminated library. A shifted normal distribution instead indicates some systematic bias, independent of base position. Here, each provided sample aligns to the theoretical (blue line) CG distribution.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/5%20Per%20Sequence%20GC%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -196,8 +196,8 @@ Click <b>Next</b> to start this process.'
 
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>Trim Galore</b> tool.<br />
-Trim Galore is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
+    content: 'Look for the <b>Trim Galore!</b> tool.<br />
+Trim Galore! is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: trim galore
@@ -208,12 +208,12 @@ Click <b>Next</b> to load it.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'In section <b>Reads in FASTQ format</b>, click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
-Trim Galore will analyse only those datasets whose formats are compatible with its input.<br />If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />
+Trim Galore! will analyse only those datasets whose formats are compatible with its input.<br />If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />
 - Click on the pencil icon on the dataset entry you want to analyse<br />
 - Select the <b>Datatype</b> tab<br />
 - Select <b>fastqcsanger</b><br />
 - Click <b>Save</b>.<br />
-When you are done converting dataset formats, reload Trim Galore, and select all imported control and treated datasets.<br /><br />
+When you are done converting dataset formats, reload Trim Galore!, and select all imported control and treated datasets.<br /><br />
 In this quality control step we will use some advanced settings for the present tool.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
@@ -234,7 +234,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'With the current parametrisation, Trim Galore will:<br />
+    content: 'With the current parametrisation, Trim Galore! will:<br />
 - Automatically detect the adapter sequences to be trimmed<br />
 - Trim low-quality score sequence ends<br />
 - Remove sequences whose overlap with adapter sequences is at least 5 bp<br />
@@ -247,7 +247,7 @@ Click <b>Next</b> to execute.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#right'
-    content: 'Trim Galore processing has begun, and the results are loading in your history.<br />
+    content: 'Trim Galore! processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview how the overall quality of your data has improved.<br />'
     placement: left

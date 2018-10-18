@@ -222,25 +222,25 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>SLIDINGWINDOW</b> operation performs an iterative scanning of the sequence, trimming once the average quality falls below the provided threshold.<br />
-Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to SLIDINGWINDOW, and its values:<br />
-- Number of bases to average across to 4<br />
-- Average quality required to 20.<br /><br />
+Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to <b>SLIDINGWINDOW</b>, and its values:<br />
+- <b>Number of bases to average across</b> to 4<br />
+- <b>Average quality required</b> to 20.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>MINLEN</b> operation drops all sequences whose lenght falls below the provided threshold.<br />
-Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to MINLEN, and its values:<br />
-- Minimum length of reads to be kept to 20.<br /><br />
+Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to <b>MINLEN</b>, and its values:<br />
+- <b>Minimum length of reads to be kept</b> to 20.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>AVGQUAL</b> operation drops all sequences whose average read quality falls below the provided threshold.<br />
-Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to AVGQUAL, and its values:<br />
-- Minimum average quality required to keep a read to 20.<br /><br />
+Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to <b>AVGQUAL</b>, and its values:<br />
+- <b>Minimum average quality required to keep a read</b> to 20.<br /><br />
 Click <b>Next</b> to overview the provided parametrization.<br />'
     placement: left
 

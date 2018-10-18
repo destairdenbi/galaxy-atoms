@@ -69,8 +69,8 @@ Click <b>Next</b> to load it.<br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fbwa%2Fbwa_mem%2F0.7.17.1"]
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'In section <b>Will you select a reference genome from your history or use a built-in index?</b>, select <b>Use a genome from history and build index</b>, and specify the uploaded reference genome in section <b>Use the following dataset as the reference sequence</>.<br />
+    element: '#left'
+    content: 'In section <b>Will you select a reference genome from your history or use a built-in index?</b>, select <b>Use a genome from history and build index</b>, and in section <b>Use the following dataset as the reference sequence</b>, specify the uploaded reference genome.<br />
 If the reference genome does not appear in the box, then you need to first convert it to the correct format. In this case:<br />
 - Click on the pencil icon of the reference genome entry in your history<br />
 - Select the <b>Datatype</b> tab<br />
@@ -81,14 +81,21 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'In section <b>Single or Paired-end reads</b>, select <b>Single</b>, then in section <b>Select fastq dataset</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br /><br />
+    element: '#left'
+    content: 'In section <b>Single or Paired-end reads</b>, select <b>Single</b>, then in section <b>Select fastq dataset</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br />
+If all control and treated datasets do not appear in the box, then you need to first convert them to the correct format. In this case:<br />
+- Click on the pencil icon of one treated or control dataset entry in your history<br />
+- Select the <b>Datatype</b> tab<br />
+- Select <b>FASTA</b><br />
+- Click <b>Save</b><br />
+- Repeat the operation for each treated and control datasets.<br />
+When you are done converting, reload BWA-MEM, and the reference genome.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further informations, please refer to the manual provided below the tool box.<br /><br />
+    element: '#left'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
