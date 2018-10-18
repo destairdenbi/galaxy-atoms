@@ -86,7 +86,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
@@ -109,7 +109,7 @@ Click <b>Next</b> to review the properties of your data.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Basic statistics</b> table provides the summary statistics of the provided input dataset.<br />
-More informations on the <b>Basic Statistics</b> can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/1%20Basic%20Statistics.html" target="_blank">here</a>.<br /><br />
+More information on the <b>Basic Statistics</b> can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/1%20Basic%20Statistics.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
 
@@ -121,7 +121,7 @@ The Y axis shows the quality score: the higher, the better the base call. The ba
 - Reasonable quality (orange)<br />
 - Poor quality (red).<br />
 The quality of each call usually degrades as the sequencing run progresses. Here however, each provided input dataset shows lower average quality scores at the beginning of each sequence. Although these scores still account for reasonable quality reads, a reason behind this trend might be that the image scanner focus had to be recalibrated during the first sequence run cycles.<br />
-More informations on the <b>Per base sequence quality</b> plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/2%20Per%20Base%20Sequence%20Quality.html" target="_blank">here</a>.<br /><br />
+More information on the <b>Per base sequence quality</b> plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/2%20Per%20Base%20Sequence%20Quality.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
 
@@ -136,7 +136,7 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Per base sequence content</b> plot shows the percentage of occurrence of each base in each position of each sequence.<br />
-The four bases should not be hugely imbalanced. However, some libraries will always produce biased sequence composition when fragmentation does not occurr randomly. Here, each provided input dataset shows the desired trend.<br />
+The four bases should not be hugely imbalanced. However, some libraries will always produce biased sequence composition when fragmentation does not occur randomly. Here, each provided input dataset shows the desired trend.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/4%20Per%20Base%20Sequence%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -144,7 +144,7 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Per sequence GC content</b> plot shows the GC content distribution of the provided sample.<br />
-This should follow a normal distribution. However, unusually shaped distribution might occurr in case of a contaminated library. A shifted normal distribution instead indicates some systematic bias, independent of base position. Here, each provided sample aligns to the theoretical (blue line) CG distribution.<br />
+This should follow a normal distribution. However, unusually shaped distribution might occur in case of a contaminated library. A shifted normal distribution instead indicates some systematic bias, independent of base position. Here, each provided sample aligns to the theoretical (blue line) CG distribution.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/5%20Per%20Sequence%20GC%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
@@ -177,7 +177,7 @@ Click <b>Next</b> to overview the next plot.<br />'
     element: '#left'
     content: 'The <b>Overrepresented sequences</b> plot shows all sequence making up for more than 0.1% of the total number of sequences in the dataset.<br />
 If a sequence is overrepresented, this means that it is either highly biologically significant, or that it is contaminant for the current library. Here, each provided sequence dataset shows no overrepresented sequences.<br />
-More informations on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/9%20Overrepresented%20Sequences.html" target="_blank">here</a>.<br /><br />
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/9%20Overrepresented%20Sequences.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: left
 
@@ -238,7 +238,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
     content: "With the current parametrisation, Sickle will:<br />
 - Trim low-quality score sequence (3' and 5')<br />
 - Discard reads whose length became shorter than 40 bp.<br />
-For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
+For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />"
     placement: left
     postclick:
@@ -270,7 +270,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#left'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, to further understand its options, you can read the manual that is provided below the tool box.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
