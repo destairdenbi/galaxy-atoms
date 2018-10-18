@@ -232,6 +232,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 Tt is generally recommended to keep only those sequences whose length can be still meaningful for the analysis.<br />
 Change this parameter to 40.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
 
   - title: '<b>Quality control</b>'
     element: '#left'
