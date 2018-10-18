@@ -70,7 +70,7 @@ Click <b>Next</b> to load it.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'In section <b>Will you select a reference genome from your history or use a built-in index?</b>, select <b>Use one from the history</b>, and specify the uploaded reference genome in section <b>Select the reference genome</>.<br />
+    content: 'In section <b>Will you select a reference genome from your history or use a built-in index?</b>, select <b>Use one from the history</b>, and in section <b>Select the reference genome</b>, specify the uploaded reference genome.<br />
 If the reference genome does not appear in the box, then you need to first convert it to the correct format. In this case:<br />
 - Click on the pencil icon of the reference genome entry in your history<br />
 - Select the <b>Datatype</b> tab<br />
@@ -94,7 +94,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further informations, please refer to the manual provided below the tool box.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
     postclick:
