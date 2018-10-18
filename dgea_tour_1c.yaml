@@ -19,7 +19,7 @@ Click <b>Next</b> to import your data and start the analysis.<br />'
       - '.upload-button'
 
   - title: '<b>Import the sequence datasets</b>'
-    element: '.upload-text-content:first'
+    element: '.upload-text-content:last'
     content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />
 Click <b>Next</b> to import a training dataset from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
     placement: right
