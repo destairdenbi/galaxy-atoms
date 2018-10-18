@@ -82,7 +82,13 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#left'
-    content: 'In section <b>Reads in FASTQ/FASTA files</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br /><br />
+    content: 'In section <b>Reads in FASTQ/FASTA files</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br />
+If all control and treated datasets do not appear in the box, then you need to first convert them to the correct format. In this case:<br />
+- Click on the pencil icon of one treated or control dataset entry in your history<br />
+- Select the <b>Datatype</b> tab<br />
+- Select <b>fastqsanger</b><br />
+- Click <b>Save</b><br />
+- Repeat the operation for each treated and control datasets.<br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
