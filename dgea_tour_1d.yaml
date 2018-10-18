@@ -203,7 +203,7 @@ Click <b>Next</b> to load it.<br />'
     textinsert: sickle
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fcutadapt%2Fsickle%2F1.2.8"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fsickle%2Fsickle%2F1.33.1"]
 
   - title: '<b>Quality control</b>'
     element: '#left'
