@@ -301,7 +301,7 @@ Click <b>Next</b> to overview your data.<br />'
     element: '#right'
     content: 'FastQC generates diverse plots to assess the quality of the input sequence reads.<br />
 Click on the eye icon of one of the <b>Webpage</b> reports of FastQC to understand its output.<br /><br />
-Click <b>Next</b> to review the properties of your data.<br />'
+Click <b>Next</b> to finalize the quality control.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
