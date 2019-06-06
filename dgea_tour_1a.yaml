@@ -78,7 +78,7 @@ FastQC will analyse only those datasets whose formats are compatible with its in
 If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />
 - Click on the pencil icon on the dataset entry you want to analyse<br />
 - Select the <b>Datatype</b> tab<br />
-- Select <b>fastqcsanger</b><br />
+- Select <b>fastqsanger</b><br />
 - Click <b>Save</b>.<br />
 When you are done converting dataset formats, reload FastQC, and select all imported control and treated datasets.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
@@ -211,7 +211,7 @@ Click <b>Next</b> to load it.<br />'
 Trim Galore! will analyse only those datasets whose formats are compatible with its input.<br />If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />
 - Click on the pencil icon on the dataset entry you want to analyse<br />
 - Select the <b>Datatype</b> tab<br />
-- Select <b>fastqcsanger</b><br />
+- Select <b>fastqsanger</b><br />
 - Click <b>Save</b>.<br />
 When you are done converting dataset formats, reload Trim Galore!, and select all imported control and treated datasets.<br /><br />
 In this quality control step we will use some advanced settings for the present tool.<br /><br />
