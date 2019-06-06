@@ -203,7 +203,7 @@ Click <b>Next</b> to load it.<br />'
     textinsert: cutadapt
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.16.3"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.16.6"]
 
   - title: '<b>Quality control</b>'
     element: '#left'
