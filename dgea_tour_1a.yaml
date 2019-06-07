@@ -261,7 +261,7 @@ Click <b>Next</b> to load it.<br />'
     textinsert: fastqc
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.71"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]
 
   - title: '<b>Quality control</b>'
     element: '#left'
