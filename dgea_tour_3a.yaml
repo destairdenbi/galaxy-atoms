@@ -28,7 +28,7 @@ Click <b>Next</b> to load it.<br />'
     textinsert: featurecounts
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Ffeaturecounts%2Ffeaturecounts%2F1.6.0.3"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Ffeaturecounts%2Ffeaturecounts%2F1.6.3%2Bgalaxy2"]
 
   - title: '<b>Counting mapped reads</b>'
     element: '#left'

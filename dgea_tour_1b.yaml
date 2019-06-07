@@ -69,7 +69,7 @@ Click <b>Next</b> to load it.<br />'
     textinsert: fastqc
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.71"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]
 
   - title: '<b>Quality control</b>'
     element: '#left'
@@ -78,7 +78,7 @@ FastQC will analyse only those datasets whose formats are compatible with its in
 If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />
 - Click on the pencil icon on the dataset entry you want to analyse<br />
 - Select the <b>Datatype</b> tab<br />
-- Select <b>fastqcsanger</b><br />
+- Select <b>fastqsanger</b><br />
 - Click <b>Save</b>.<br />
 When you are done converting dataset formats, reload FastQC, and select all imported control and treated datasets.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
@@ -203,7 +203,7 @@ Click <b>Next</b> to load it.<br />'
     textinsert: trimmomatic
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.5"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.6"]
 
   - title: '<b>Quality control</b>'
     element: '#left'
@@ -212,7 +212,7 @@ Trimmomatic will analyse only those datasets whose formats are compatible with i
 If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />
 - Click on the pencil icon on the dataset entry you want to analyse<br />
 - Select the <b>Datatype</b> tab<br />
-- Select <b>fastqcsanger</b><br />
+- Select <b>fastqsanger</b><br />
 - Click <b>Save</b>.<br />
 When you are done converting dataset formats, reload Trimmomatic, and select all imported control and treated datasets.<br /><br />
 In this quality control step we will use some advanced settings for the present tool.<br /><br />
@@ -298,7 +298,7 @@ Click <b>Next</b> to overview your data.<br />'
     element: '#right'
     content: 'FastQC generates diverse plots to assess the quality of the input sequence reads.<br />
 Click on the eye icon of one of the <b>Webpage</b> reports of FastQC to understand its output.<br /><br />
-Click <b>Next</b> to review the properties of your data.<br />'
+Click <b>Next</b> to finalize the quality control.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
