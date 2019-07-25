@@ -1,0 +1,8 @@
+id: destair_linker_1
+name: 'de.STAIR DGEA linker'
+description: 'Differntial gene expression analysis'
+title_default: 'de.STAIR DGEA linker'
+tags:
+	- 'dgea_tour'
+steps:
+    content: 'just a linker'
