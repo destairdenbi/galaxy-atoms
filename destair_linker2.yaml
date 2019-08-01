@@ -5,4 +5,4 @@ title_default: 'de.STAIR Visualization linker'
 tags:
   - 'visualization_tour'
 steps:
-    content: 'just a linker'
+  - content: 'just a linker'
