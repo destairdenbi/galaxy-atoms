@@ -250,8 +250,19 @@ Click <b>Next</b> to load it.<br />'
 
   - title: '<b>Quality control</b>'
     element: 'div[tour_id="library|type"]'
-    content: 'Click on the <b>Dataset collection</b> icon, and select the first collection.<br /><br />
-In this quality control step we will use some advanced settings for the present tool.<br /><br />
+    content: 'Select <b>Paired-end</b>.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quality control</b>'
+    element: 'div[tour_id="library|input_1"]'
+    content: 'Click on the <b>Dataset collection</b> icon, and select the 1st collection.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quality control</b>'
+    element: 'div[tour_id="library|input_2"]'
+    content: 'Click on the <b>Dataset collection</b> icon, and select the 2nd collection.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: bottom
     postclick:
@@ -340,9 +351,9 @@ Click <b>Next</b> to review the properties of your data.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#right'
-    content: 'You can now repeat all quality control steps for all remaining collections:<br />
+    content: 'You can now repeat all quality control steps for the remaining collections:<br />
 - Run <b>FastQC</b> with default parameters<br />
-- Run <b>Cutadapt</b> changing the <b>Filter Options / Minimum length</b> to 20, and the <b>Read Modification Options / Quality cutoff</b> to 20<br />
+- Run <b>Cutadapt</b> by selecting <b>Paired-end reads</b>, and changing the <b>Filter Options / Minimum length</b> to 20 and the <b>Read Modification Options / Quality cutoff</b> to 20<br />
 - Run <b>FastQC</b> with default parameters.<br /><br />
 Click <b>Next</b> to finalize the Quality control analysis.<br />'
     placement: left
