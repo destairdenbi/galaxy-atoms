@@ -1,0 +1,8 @@
+id: destair_linker_3
+name: 'de.STAIR RRBS/BS linker'
+description: 'Differential RRBS/BS-Seq analysis'
+title_default: 'de.STAIR BS linker'
+tags:
+  - 'bs_tour'
+steps:
+  - content: 'just a linker'
