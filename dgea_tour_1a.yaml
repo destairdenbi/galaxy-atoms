@@ -1,5 +1,5 @@
 id: dgea_tour_1a
-name: 'Data preprocessing'
+name: 'Differential Gene Expression Analysis: Data preprocessing'
 description: 'Quality control and data preprocessing with FastQC and Trim Galore!'
 title_default: 'Data preprocessing'
 steps:
