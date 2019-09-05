@@ -6,7 +6,7 @@ steps:
   - title: '<b>Outline</b>'
     element: ''
     content: 'In this tour, we will carry out quality control analysis of RNA-Seq data. This represents the first task in analysing raw high throughput sequence reads, because it provides an overview of the overall quality of data, as well as a mean to remove low quality sequence reads that might ultimately bias the interpretation of results.<br />
-Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Sickle</b>, to remove low sequence quality reads.<br /><br />
+Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>PRINSEQ</b>, to remove low sequence quality reads.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
