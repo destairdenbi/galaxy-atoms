@@ -175,12 +175,12 @@ Click <b>Next</b> to overview the next plot.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'The <b>Adapter content</b> plot shows the amount of residual tag sequences within the sample.<br />
+    element: '#center'
+    content: 'Under <b>Summary</b>, click on <b>Adapter content</b>.<br /><br />The <b>Adapter content</b> plot shows the amount of residual tag sequences within the sample.<br />
 Base frequencies across the reads should follow a uniform distribution, on the contrary, uneven distributions (high frequencies for certain bases over several positions) indicate remaining sequence artifacts within the dataset.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/10%20Adapter%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: ''
