@@ -211,12 +211,12 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'The <b>Overlap with adapter sequence required to trim a sequence</b>, indicates how many bp are required for the adapter to overlap with the sequence read to remove the sequence from the dataset.<br />
+    element: 'div[tour_id="params|stringency"]'
+    content: 'This indicates how many bp are required for the adapter to overlap with the sequence read to remove the sequence from the dataset.<br />
 The default value is too stringent, and on average will result in removing 25% of the reads.<br />
 Change this parameter to 5.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#left'
