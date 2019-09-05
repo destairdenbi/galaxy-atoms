@@ -100,11 +100,11 @@ Click <b>Next</b> to review the properties of your data.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'The <b>Basic statistics</b> table provides the summary statistics of the provided input dataset.<br />
+    element: '#center'
+    content: 'Under <b>Summary</b>, click on <b>Basic statistics</b>.<br /><br />The <b>Basic statistics</b> table provides the summary statistics of the provided input dataset.<br />
 More information on the <b>Basic Statistics</b> can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/1%20Basic%20Statistics.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#left'
