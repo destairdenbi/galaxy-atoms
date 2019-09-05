@@ -213,12 +213,12 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'The <b>Quality threshold</b> indicates the allowed base-quality.<br />
+    element: 'div[tour_id="filter_treatments|quality_filter_treatments|mean_quality_filter_treatments|min_mean_quality_filter_treatments|min_mean_quality_filter_treatment_value"]'
+    content: 'The <b>Minimum mean score threshold to conserve sequences</b> indicates the allowed base-quality.<br />
 It is generally recommended to keep only those nucleotides whose quality is above 20.<br />
 Change this parameter to 20.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#left'
