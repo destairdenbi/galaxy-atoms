@@ -190,7 +190,7 @@ Click <b>Next</b> to start this process.'
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
     content: 'Look for the <b>PRINSEQ</b> tool.<br />
-Sickle is an adapter/sequence trim/removal tool, which searches for low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
+PRINSEQ is a tool for rapid quality control and data preprocessing of genomic and metagenomic datasets, which searches for low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: prinseq
