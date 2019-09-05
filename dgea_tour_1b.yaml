@@ -263,10 +263,10 @@ Click <b>Next</b> to load it.<br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'In section <b>Short read data from your current history</b>, click on the <b>Multiple datasets</b> icon to select al processed control and treated datasets.<br /><br />
+    element: 'div[tour_id="input_file"]'
+    content: 'Click on the <b>Multiple datasets</b> icon to select al processed control and treated datasets.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#left'
