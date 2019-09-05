@@ -268,10 +268,10 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
+    element: 'div[tour_id="input_file"]'
     content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
-    placement: left
+    placement: bottom
     postclick:
       - '#execute'
 
