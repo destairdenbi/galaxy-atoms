@@ -160,11 +160,11 @@ Click <b>Next</b> to overview the next plot.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'The <b>Sequence duplication levels</b> plot shows the relative number of sequences with different degrees of duplication. Here, the blue line represents the full sequence set, showing how its duplication levels are distributed; the red line instead, represents the de-duplicated sequences, plotting the proportions of deduplicated sequence sets which come from different duplication levels in the original data.<br />
+    element: '#center'
+    content: 'Under <b>Summary</b>, click on <b>Sequence duplication levels</b>.<br /><br />The <b>Sequence duplication levels</b> plot shows the relative number of sequences with different degrees of duplication. Here, the blue line represents the full sequence set, showing how its duplication levels are distributed; the red line instead, represents the de-duplicated sequences, plotting the proportions of deduplicated sequence sets which come from different duplication levels in the original data.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/8%20Duplicate%20Sequences.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#left'
