@@ -107,8 +107,8 @@ Click <b>Next</b> to overview the next plot.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'The <b>Per base sequence quality</b> plot shows the average quality scores of all reads of each sequence of the provided input dataset.<br />
+    element: '#center'
+    content: 'Under <b>Summary</b>, click on <b>Per base sequence quality</b>.<br /><br />The <b>Per base sequence quality</b> plot shows the average quality scores of all reads of each sequence of the provided input dataset.<br />
 The Y axis shows the quality score: the higher, the better the base call. The background color of the graph divides the base call operation into:<br />
 - Very good quality (green)<br />
 - Reasonable quality (orange)<br />
@@ -116,7 +116,7 @@ The Y axis shows the quality score: the higher, the better the base call. The ba
 The quality of each call usually degrades as the sequencing run progresses. Here however, each provided input dataset shows lower average quality scores at the beginning of each sequence. Although these scores still account for reasonable quality reads, a reason behind this trend might be that the image scanner focus had to be recalibrated during the first sequence run cycles.<br />
 More information on the <b>Per base sequence quality</b> plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/2%20Per%20Base%20Sequence%20Quality.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#left'
