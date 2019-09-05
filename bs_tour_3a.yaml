@@ -19,15 +19,8 @@ Click <b>Next</b> to load it.<br />'
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtools_sort%2Fsamtools_sort%2F2.0.2"]
-
-  - title: '<b>Input data preparation</b>'
-    element: '#tool-search-query'
-    content: search for samtools sort
-    placement: right
-    postclick:
-      - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtools_sort%2Fsamtools_sort%2F2.0.3"]
-        .tool-old-link
+
   - title: Step 55
     element: 'div[tour_id="input1"]'
     content: >-
