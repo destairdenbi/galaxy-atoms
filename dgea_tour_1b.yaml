@@ -72,13 +72,13 @@ Click <b>Next</b> to load it.<br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]
 
   - title: '<b>Quality control</b>'
-    element: 'div[tour_id="readtype|fastq_in"]'
+    element: 'div[tour_id="input_file"]'
     content: 'Click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: 'div[tour_id="readtype|fastq_in"]'
+    element: 'div[tour_id="input_file"]'
     content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: bottom
@@ -199,35 +199,31 @@ Click <b>Next</b> to load it.<br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.6"]
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'In section <b>Input FASTQ file</b>, click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
-Trimmomatic will analyse only those datasets whose formats are compatible with its input.<br />
-If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />
-- Click on the pencil icon on the dataset entry you want to analyse<br />
-- Select the <b>Datatype</b> tab<br />
-- Select <b>fastqsanger</b><br />
-- Click <b>Save</b>.<br />
-When you are done converting dataset formats, reload Trimmomatic, and select all imported control and treated datasets.<br /><br />
-In this quality control step we will use some advanced settings for the present tool.<br /><br />
+    element: 'div[tour_id="readtype|fastq_in]'
+    content: 'Click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
+    element: 'div[tour_id="operations_0|operation|name"]'
     content: 'The <b>SLIDINGWINDOW</b> operation performs an iterative scanning of the sequence, trimming once the average quality falls below the provided threshold.<br />
 Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to <b>SLIDINGWINDOW</b>, and its values:<br />
 - <b>Number of bases to average across</b> to 4<br />
 - <b>Average quality required</b> to 20.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
+    postclick:
+      - '.ui-button-default.btn btn-secondary.float-none.form-repeat-add'
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'The <b>MINLEN</b> operation drops all sequences whose lenght falls below the provided threshold.<br />
+    element: 'div[tour_id="operations_1|operation|name"]'
+    content: 'Select <b>MINLEN</b>. The MINLEN operation drops all sequences whose lenght falls below the provided threshold.<br />
 Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to <b>MINLEN</b>, and its values:<br />
 - <b>Minimum length of reads to be kept</b> to 20.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
+    postclick:
+      - '.ui-button-default.btn btn-secondary.float-none.form-repeat-add'
 
   - title: '<b>Quality control</b>'
     element: '#left'
