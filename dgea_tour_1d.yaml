@@ -196,34 +196,27 @@ Click <b>Next</b> to load it.<br />'
     textinsert: prinseq
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fsickle%2Fsickle%2F1.33.1"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fprinseq%2Fprinseq%2F0.20.4']
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'In section <b>Single-end FASTQ reads</b>, click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
-Sickle will analyse only those datasets whose formats are compatible with its input.<br />If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />
-- Click on the pencil icon on the dataset entry you want to analyse<br />
-- Select the <b>Datatype</b> tab<br />
-- Select <b>fastqsanger</b><br />
-- Click <b>Save</b>.<br />
-When you are done converting dataset formats, reload Sickle, and select all imported control and treated datasets.<br /><br />
-In this quality control step we will use some advanced settings for the present tool.<br /><br />
+    element: 'div[tour_id="seq_type|input_singles"]'
+    content: 'Click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
+
+  - title: '<b>Quality control</b>'
+    element: 'div[tour_id="filter_treatments|length_filter_treatments|min_length_filter_treatments|min_length_filter_treatment_value"]'
+    content: 'The <b>Minimum length threshold to conserve sequences</b> indicates the allowed length (in nucleotides) that a sequence must have after quality threshold trimming.<br />
+It is generally recommended to keep only those sequences whose length can be still meaningful for the analysis.<br />
+Change this parameter to 40.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#left'
     content: 'The <b>Quality threshold</b> indicates the allowed base-quality.<br />
 It is generally recommended to keep only those nucleotides whose quality is above 20.<br />
 Change this parameter to 20.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
-
-  - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'The <b>Length threshold</b> indicates the allowed length (in nucleotides) that a sequence must have after quality threshold trimming.<br />
-Tt is generally recommended to keep only those sequences whose length can be still meaningful for the analysis.<br />
-Change this parameter to 40.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
