@@ -231,7 +231,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
+    element: 'div[tour_id="read_mod_options|quality_cutoff"]'
     content: 'With the current parametrisation, Cutadapt will:<br />
 - Automatically detect the adapter sequences to be trimmed<br />
 - Trim low-quality score sequence ends<br />
@@ -239,7 +239,7 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 - Discard reads whose length became shorter than 40 bp.<br />
 For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
-    placement: left
+    placement: bottom
     postclick:
       - '#execute'
 
