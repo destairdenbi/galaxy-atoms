@@ -1,0 +1,373 @@
+id: bs_tour_3a
+name: 'Quantification of methylated reads within a CpG context'
+description: 'Quantification of methylated reads within a CpG context using Samtools and MethylDackel'
+title_default: 'Quantification of methylated reads within a CpG context'
+steps:
+  - title: '<b>Outline</b>'
+    element: ''
+    content: 'In this tour we will infer genome-wide methilation rates in a CpG context.<br />Here, we will leverage on two tools: <b>Samtools</b>, to extract properly paired sequences from the aligned input data, and <b>MethylDackel</b> to quantify the methylated reads of the provided CpG context.<br />
+Click <b>Next</b> to start the analysis.<br />'
+    backdrop: true
+
+  - title: Step 54
+    element: '#tool-search-query'
+    content: search for samtools sort
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtools_sort%2Fsamtools_sort%2F2.0.3"]
+        .tool-old-link
+  - title: Step 55
+    element: 'div[tour_id="input1"]'
+    content: >-
+      select dataset collection - folder icon - first bismark processed data
+      collection
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 56
+    element: '#tool-search-query'
+    content: search for samtools sort
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtools_sort%2Fsamtools_sort%2F2.0.3"]
+        .tool-old-link
+  - title: Step 57
+    element: 'div[tour_id="input1"]'
+    content: >-
+      select dataset collection - folder icon - second bismark processed data
+      collection
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 58
+    element: '#tool-search-query'
+    content: search for samtools filter
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtool_filter2%2Fsamtool_filter2%2F1.8%2Bgalaxy1"]
+        .tool-old-link
+  - title: Step 59
+    element: 'div[tour_id="input1"]'
+    content: >-
+      select dataset collection - folder icon - samtools sort first processed
+      collection
+    placement: right
+  - title: Step 60
+    element: 'div[tour_id="flag|reqBits"]'
+    content: >-
+      enable flag filter for properly paired reads according to the aligner
+      (e.g. insert size)
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 61
+    element: '#tool-search-query'
+    content: search for samtools filter
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtool_filter2%2Fsamtool_filter2%2F1.8%2Bgalaxy1"]
+        .tool-old-link
+  - title: Step 62
+    element: 'div[tour_id="input1"]'
+    content: >-
+      select dataset collection - folder icon - samtools sort second processed
+      collection
+    placement: right
+  - title: Step 63
+    element: 'div[tour_id="flag|reqBits"]'
+    content: >-
+      enable flag filter for properly paired reads according to the aligner
+      (e.g. insert size)
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 64
+    element: '#tool-search-query'
+    content: search for MethylDackel
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fpileometh%2Fpileometh%2F0.3.0.1"]
+        .tool-old-link
+  - title: Step 65
+    element: 'div[tour_id="input_sortedAlignBAM"]'
+    content: >-
+      choose data collection - folder icon - of first samtools sorted and
+      filtered data collection
+    placement: right
+  - title: Step 66
+    element: 'div[tour_id="main_task|mergeContext"]'
+    content: merge contexts
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 67
+    element: '#tool-search-query'
+    content: search for MethylDackel
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fpileometh%2Fpileometh%2F0.3.0.1"]
+        .tool-old-link
+  - title: Step 68
+    element: 'div[tour_id="input_sortedAlignBAM"]'
+    content: >-
+      choose data collection - folder icon - of second samtools sorted and
+      filtered data collection
+    placement: right
+  - title: Step 69
+    element: 'div[tour_id="main_task|mergeContext"]'
+    content: merge contexts
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 70
+    element: '#tool-search-query'
+    content: search for select last lines
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_tail_tool%2F1.1.0"]
+        .tool-old-link
+  - title: Step 71
+    element: 'div[tour_id="infile"]'
+    content: >-
+      select dataset collection - folder icon - of first MethylDackel processed
+      data collection without any suffix like fraction/counts/methylkit/logit
+    placement: right
+  - title: Step 72
+    element: 'div[tour_id="num_lines"]'
+    content: keep everything from this line on - 2
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 73
+    element: '#tool-search-query'
+    content: search for select last lines
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_tail_tool%2F1.1.0"]
+        .tool-old-link
+  - title: Step 74
+    element: 'div[tour_id="infile"]'
+    content: >-
+      select dataset collection - folder icon - of second MethylDackel processed
+      data collection without any suffix like fraction/counts/methylkit/logit
+    placement: right
+  - title: Step 75
+    element: 'div[tour_id="num_lines"]'
+    content: keep everything from this line on - 2
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 76
+    element: '#tool-search-query'
+    content: concatenate dasets
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_cat%2F0.1.0"]
+        .tool-old-link
+  - title: Step 77
+    element: 'div[tour_id="inputs"]'
+    content: >-
+      select dataset collection - folder icon - of first not-header selected
+      data collection
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 78
+    element: '#tool-search-query'
+    content: concatenate dasets
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_cat%2F0.1.0"]
+        .tool-old-link
+  - title: Step 79
+    element: 'div[tour_id="inputs"]'
+    content: >-
+      select dataset collection - folder icon - of second not-header selected
+      data collection
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 80
+    element: '#tool-search-query'
+    content: search for sort data
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_sort_header_tool%2F1.1.1"]
+        .tool-old-link
+  - title: Step 81
+    element: 'div[tour_id="infile"]'
+    content: >-
+      select multiple datasets - second icon - of first and second concatenated
+      methylation data
+    placement: right
+  - title: Step 82
+    element: 'div[tour_id="sortkeys_0|style"]'
+    content: sort column one by version-sort
+    placement: right
+  - title: Step 83
+    content: insert column 2 and sort it numerically -n
+    placement: right
+  - title: Step 84
+    element: insert column 3 and sort it numerically -n
+    content: ''
+    placement: left
+    postclick:
+      - '#execute'
+  - title: Step 85
+    element: '#tool-search-query'
+    content: search for bedtools merge
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fbedtools%2Fbedtools_mergebed%2F2.27.1"]
+        .tool-old-link
+  - title: Step 86
+    element: 'div[tour_id="input"]'
+    content: >-
+      select multiple datasets as input - second icon - of first and second
+      sorted, concatenated methylation data
+    placement: right
+  - title: Step 87
+    content: insert and apply operation on column 4 - mean
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 88
+    element: '#tool-panel-upload-button'
+    content: upload regions of interest file - e.g. promoter regions
+    placement: right
+  - title: Step 89
+    element: '#regular .upload-view-default .upload-box input'
+    content: ''
+    placement: right
+  - title: Step 90
+    element: '#btn-local'
+    content: ''
+    placement: right
+  - title: Step 91
+    element: '#btn-start'
+    content: ''
+    placement: left
+  - title: Step 92
+    element: '#btn-close'
+    content: close upload dialog
+    placement: left
+  - title: Step 93
+    element: '#tool-search-query'
+    content: search for bedtools intersect
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fbedtools%2Fbedtools_intersectbed%2F2.27.1%2Bgalaxy1"]
+        .tool-old-link
+  - title: Step 94
+    element: 'div[tour_id="inputA"]'
+    content: select single dataset  - first icon - of promters
+    placement: right
+  - title: Step 95
+    element: 'div[tour_id="reduce_or_iterate|inputB"]'
+    content: >-
+      select multiple datasests  - second icon - of first and second merged,
+      meaned methylation data
+    placement: right
+  - title: Step 96
+    element: 'div[tour_id="overlap_mode"]'
+    content: click in the textbox an select option - perform a left outer join (-loj)
+    placement: right
+  - title: Step 97
+    element: 'div[tour_id="sorted"]'
+    content: enable sorted input
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 98
+    element: '#tool-search-query'
+    content: search for bedtools merge
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fbedtools%2Fbedtools_mergebed%2F2.27.1"]
+        .tool-old-link
+  - title: Step 99
+    element: 'div[tour_id="input"]'
+    content: >-
+      select multiple datasets - second icon - of promoter intersected, meaned
+      methylation data
+    placement: right
+  - title: Step 100
+    element: >-
+      button[class="ui-button-default btn btn-secondary float-none
+      form-repeat-add"]
+    content: apply operation on column 4 - distinct
+    placement: right
+  - title: Step 100
+    element: >-
+      button[class="ui-button-default btn btn-secondary float-none
+      form-repeat-add"]
+    content: apply operation on column 8 - mean
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 101
+    element: '#tool-search-query'
+    content: search for join two files
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_easyjoin_tool%2F1.1.1"]
+        .tool-old-link
+  - title: Step 102
+    element: 'div[tour_id="infile1"]'
+    content: >-
+      select single dataset - first icon - first merged, meaned promoter
+      methylation
+    placement: right
+  - title: Step 103
+    element: 'div[tour_id="column1"]'
+    content: select column 2 to join by position
+    placement: right
+  - title: Step 104
+    element: 'div[tour_id="infile2"]'
+    content: >-
+      select single dataset - first icon - second merged, meaned promoter
+      methylation
+    placement: right
+  - title: Step 105
+    element: 'div[tour_id="column2"]'
+    content: select column 2 to join by position
+    placement: right
+    postclick:
+      - '#execute'
+  - title: Step 107
+    element: '#tool-search-query'
+    content: search for text reformatting with awk
+    placement: right
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_awk_tool%2F1.1.1"]
+        .tool-old-link
+  - title: Step 108
+    element: 'div[tour_id="infile"]'
+    content: >-
+      select single dataset - first icon - of joined first and second mean
+      promoter methylation data sets
+    placement: right
+  - title: Step 109
+    element: 'div[tour_id="code"]'
+    content: >-
+      enter awk code to calculate log2 fold-change {print $4"\t"($5 < $9 ?
+      (log($9+1)-log($5+1))/log(2) : -(log($5+1)-log($9+1))/log(2))}
+    placement: right
+    postclick:
+      - '#execute'
