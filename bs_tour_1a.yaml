@@ -144,6 +144,13 @@ Click <b>Next</b> to overview your data.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#right'
+    content: 'You can now repeat this operation on the remaining collections.<br /><br />
+Click <b>Next</b> to overview your data.<br />'
+    placement: left
+
+
+  - title: '<b>Quality control</b>'
+    element: '#right'
     content: 'FastQC generates diverse plots to assess the quality of the input sequence reads.<br />
 Click on the last <b>Webpage</b> entry in your history, and click the eye icon of one of the FastQC reports to understand the quality of your data.<br /><br />
 Click <b>Next</b> to review the properties of your data.<br />'
@@ -311,6 +318,12 @@ Click <b>Next</b> to overview how the overall quality of your data has improved.
     placement: left
 
   - title: '<b>Quality control</b>'
+    element: '#right'
+    content: 'You can now repeat this operation on the remaining collections.<br /><br />
+Click <b>Next</b> to overview how the overall quality of your data has improved.<br />'
+    placement: left
+
+  - title: '<b>Quality control</b>'
     element: '#tool-search-query'
     content: 'Look for the <b>FastQC</b> tool.<br />
 FastQC is used once again to assess the overall quality of the <b>processed</b> data: the first run of FastQC assessed the quality of the provided datasets collection; then, based on the generated plots, the following trimming operation got rid of all those reads that FastQC highlighted as potential bias for the analysis (and ultimately the interpretation of results). Here, FastQC is used to assess the overall quality of the trimmed data.<br /><br />
@@ -351,10 +364,7 @@ Click <b>Next</b> to review the properties of your data.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#right'
-    content: 'You can now repeat all quality control steps for the remaining collections:<br />
-- Run <b>FastQC</b> with default parameters<br />
-- Run <b>Cutadapt</b> by selecting <b>Paired-end reads</b>, and changing the <b>Filter Options / Minimum length</b> to 20 and the <b>Read Modification Options / Quality cutoff</b> to 20<br />
-- Run <b>FastQC</b> with default parameters.<br /><br />
+    content: 'You can now repeat this operation on the remaining collections.<br /><br />
 Click <b>Next</b> to finalize the Quality control analysis.<br />'
     placement: left
 
