@@ -189,11 +189,11 @@ Click <b>Next</b> to start this process.'
 
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>Sickle</b> tool.<br />
+    content: 'Look for the <b>PRINSEQ</b> tool.<br />
 Sickle is an adapter/sequence trim/removal tool, which searches for low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
-    textinsert: sickle
+    textinsert: prinseq
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fsickle%2Fsickle%2F1.33.1"]
