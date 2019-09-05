@@ -207,9 +207,8 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
       - '.ui-button-default.ui-button-icon-plain'
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'Click on the section <b>Adapter Options</b>.<br /><br />
-The <b>Minimum overlap length</b> of the adapter sequence required to trim a sequence, indicates how many bp are required for the adapter to overlap with the sequence read to remove the sequence from the dataset.<br />
+    element: 'div[tour_id="adapter_options|overlap"]'
+    content: 'The <b>Minimum overlap length</b> of the adapter sequence required to trim a sequence, indicates how many bp are required for the adapter to overlap with the sequence read to remove the sequence from the dataset.<br />
 The default value is too stringent, and on average will result in removing 25% of the reads.<br />
 Change this parameter to 5.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
