@@ -72,15 +72,8 @@ Click <b>Next</b> to load it.<br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'In section <b>Short read data from your current history</b>, click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
-FastQC will analyse only those datasets whose formats are compatible with its input.<br />
-If some or all of the imported sequence files does not appear in the box, then you need to convert the missing ones to the correct format. In this case:<br />
-- Click on the pencil icon on the dataset entry you want to analyse<br />
-- Select the <b>Datatype</b> tab<br />
-- Select <b>fastqsanger</b><br />
-- Click <b>Save</b>.<br />
-When you are done converting dataset formats, reload FastQC, and select all imported control and treated datasets.<br /><br />
+    element: 'div[tour_id="input_file"]'
+    content: 'Click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
