@@ -205,10 +205,10 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'In section <b>Trim Galore! advanced settings</b>, select <b>Full parameter list</b>.<br /><br />
+    element: 'div[tour_id="params|settingsType"]'
+    content: 'Select <b>Full parameter list</b>.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#left'
