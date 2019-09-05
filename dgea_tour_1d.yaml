@@ -221,13 +221,13 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: "With the current parametrisation, Sickle will:<br />
+    element: 'div[tour_id="filter_treatments|quality_filter_treatments|mean_quality_filter_treatments|min_mean_quality_filter_treatments|min_mean_quality_filter_treatment_value"]'
+    content: "With the current parametrisation, PRINSEQ will:<br />
 - Trim low-quality score sequence (3' and 5')<br />
 - Discard reads whose length became shorter than 40 bp.<br />
 For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />"
-    placement: left
+    placement: bottom
     postclick:
       - '#execute'
 
