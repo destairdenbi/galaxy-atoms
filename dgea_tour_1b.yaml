@@ -232,11 +232,9 @@ Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is
 - <b>Minimum average quality required to keep a read</b> to 20.<br /><br />
 Click <b>Next</b> to overview the provided parametrization.<br />'
     placement: bottom
-    postclick:
-      - '.ui-button-default.btn btn-secondary.float-none.form-repeat-add'
 
   - title: '<b>Quality control</b>'
-    element: '#left'
+    element: 'div[tour_id="operations_2|operation|name"]'
     content: 'With the current parametrisation, Trimmomatic will:<br />
 - Trim reads with low average quality<br />
 - Discard reads whose length became shorter than 20 bp.<br />
