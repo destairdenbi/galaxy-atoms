@@ -1,7 +1,7 @@
 id: dgea_tour_1b
-name: 'Data preprocessing'
+name: 'Differential Gene Expression Analysis'
 description: 'Quality control and data preprocessing with FastQC and Trimmomatic'
-title_default: 'Data preprocessing'
+title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: ''
