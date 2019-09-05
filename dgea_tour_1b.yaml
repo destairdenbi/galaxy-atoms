@@ -152,19 +152,19 @@ Click <b>Next</b> to overview the next plot.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'The <b>Sequence length distribution</b> plot shows the distribution of sequence read length.<br />
+    element: '#center'
+    content: 'Under <b>Summary</b>, click on <b>Sequence length distribution</b>.<br /><br />The <b>Sequence length distribution</b> plot shows the distribution of sequence read length.<br />
 For NGS sequencers generating uniform sequence reads, this will result in a spike around a fixed length value.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/7%20Sequence%20Length%20Distribution.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'The <b>Sequence duplication levels</b> plot shows the relative number of sequences with different degrees of duplication. Here, the blue line represents the full sequence set, showing how its duplication levels are distributed; the red line instead, represents the de-duplicated sequences, plotting the proportions of deduplicated sequence sets which come from different duplication levels in the original data.<br />
+    element: '#center'
+    content: 'Under <b>Summary</b>, click on <b>Sequence duplication levels</b>.<br /><br />The <b>Sequence duplication levels</b> plot shows the relative number of sequences with different degrees of duplication. Here, the blue line represents the full sequence set, showing how its duplication levels are distributed; the red line instead, represents the de-duplicated sequences, plotting the proportions of deduplicated sequence sets which come from different duplication levels in the original data.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/8%20Duplicate%20Sequences.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#left'
