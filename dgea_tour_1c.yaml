@@ -212,16 +212,15 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 The default value is too stringent, and on average will result in removing 25% of the reads.<br />
 Change this parameter to 5.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'Click on the section <b>Filter Options</b>.<br /><br />
-The <b>Minimum length</b> of a sequence, indicates how many bp are required for the sequence before it is removed from the dataset.<br />
+    element: 'div[tour_id="filter_options|min"]'
+    content: 'The <b>Minimum length</b> of a sequence, indicates how many bp are required for the sequence before it is removed from the dataset.<br />
 The default value keeps every sequence of any length, however, it is generally recommended to keep only those sequences whose length can be still meaningful for the analysis.<br />
 Change this parameter to 40.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#left'
