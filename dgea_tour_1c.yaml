@@ -223,13 +223,12 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'Click on the section <b>Read Modification Options</b>.<br /><br />
-The <b>Quality cutoff</b> indicates the allowed quality threshold allowed on each ends of the read before adapter removal.<br />
+    element: 'div[tour_id="read_mod_options|quality_cutoff"]'
+    content: 'The <b>Quality cutoff</b> indicates the allowed quality threshold allowed on each ends of the read before adapter removal.<br />
 It is generally recommended to keep only those nucleotides whose quality cutoff is above 20.<br />
 Change this parameter to 20.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#left'
