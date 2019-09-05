@@ -226,12 +226,14 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
       - '.ui-button-default.btn btn-secondary.float-none.form-repeat-add'
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'The <b>AVGQUAL</b> operation drops all sequences whose average read quality falls below the provided threshold.<br />
+    element: 'div[tour_id="operations_2|operation|name"]'
+    content: 'Select <b>AVGQUAL</b>. The AVGQUAL operation drops all sequences whose average read quality falls below the provided threshold.<br />
 Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to <b>AVGQUAL</b>, and its values:<br />
 - <b>Minimum average quality required to keep a read</b> to 20.<br /><br />
 Click <b>Next</b> to overview the provided parametrization.<br />'
-    placement: left
+    placement: bottom
+    postclick:
+      - '.ui-button-default.btn btn-secondary.float-none.form-repeat-add'
 
   - title: '<b>Quality control</b>'
     element: '#left'
