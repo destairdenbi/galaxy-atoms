@@ -75,7 +75,7 @@ Click <b>Next</b> to load it.<br />'
     element: 'div[tour_id="input_file"]'
     content: 'Click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: 'div[tour_id="input_file"]'
