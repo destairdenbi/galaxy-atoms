@@ -135,12 +135,12 @@ Click <b>Next</b> to overview the next plot.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#left'
-    content: 'The <b>Per sequence GC content</b> plot shows the GC content distribution of the provided sample.<br />
+    element: '#center'
+    content: 'Under <b>Summary</b>, click on <b>Per sequence GC content</b>.<br /><br />The <b>Per sequence GC content</b> plot shows the GC content distribution of the provided sample.<br />
 This should follow a normal distribution. However, unusually shaped distribution might occur in case of a contaminated library. A shifted normal distribution instead indicates some systematic bias, independent of base position. Here, each provided sample aligns to the theoretical (blue line) CG distribution.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/5%20Per%20Sequence%20GC%20Content.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#left'
