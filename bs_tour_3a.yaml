@@ -73,64 +73,78 @@ Click <b>Next</b> to proceed extracting properly paired sequences<br />'
 
   - title: '<b>Extract properly paired sequences</b>'
     element: '#tool-search-query'
-    content: search for samtools sort
-    placement: right
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtools_sort%2Fsamtools_sort%2F2.0.3"]
-        .tool-old-link
-  - title: Step 57
-    element: 'div[tour_id="input1"]'
-    content: >-
-      select dataset collection - folder icon - second bismark processed data
-      collection
-    placement: right
-    postclick:
-      - '#execute'
-  - title: Step 58
-    element: '#tool-search-query'
-    content: search for samtools filter
+    content: 'Look for <b>Samtools filter</b>.<br /><br />
+Click <b>Next</b> to load it.<br />'
     placement: right
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtool_filter2%2Fsamtool_filter2%2F1.8%2Bgalaxy1"]
-        .tool-old-link
-  - title: Step 59
+
+  - title: '<b>Extract properly paired sequences</b>'
     element: 'div[tour_id="input1"]'
-    content: >-
-      select dataset collection - folder icon - samtools sort first processed
-      collection
-    placement: right
-  - title: Step 60
+    content: 'Click on the dataset collection icon, and select the 1st samtools-sort-processed dataset collection.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Extract properly paired sequences</b>'
     element: 'div[tour_id="flag|reqBits"]'
-    content: >-
-      enable flag filter for properly paired reads according to the aligner
-      (e.g. insert size)
-    placement: right
+    content: 'Select <b>yes</b>, then chose <b>Read is mapped in a proper pair</b>.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Extract properly paired sequences</b>'
+    element: 'div[tour_id="flag|reqBits"]'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: bottom
     postclick:
       - '#execute'
-  - title: Step 61
+
+  - title: '<b>Extract properly paired sequences</b>'
+    element: '#right'
+    content: 'Samtools filter processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to repeat the same operation on the 2nd Samtools-sort-processed dataset collection.<br />'
+    placement: left
+
+  - title: '<b>Extract properly paired sequences</b>'
     element: '#tool-search-query'
-    content: search for samtools filter
+    content: 'Look for <b>Samtools filter</b>.<br /><br />
+Click <b>Next</b> to load it.<br />'
     placement: right
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtool_filter2%2Fsamtool_filter2%2F1.8%2Bgalaxy1"]
-        .tool-old-link
-  - title: Step 62
+
+  - title: '<b>Extract properly paired sequences</b>'
     element: 'div[tour_id="input1"]'
-    content: >-
-      select dataset collection - folder icon - samtools sort second processed
-      collection
-    placement: right
-  - title: Step 63
+    content: 'Click on the dataset collection icon, and select the 2nd samtools-sort-processed dataset collection.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Extract properly paired sequences</b>'
     element: 'div[tour_id="flag|reqBits"]'
-    content: >-
-      enable flag filter for properly paired reads according to the aligner
-      (e.g. insert size)
-    placement: right
+    content: 'Select <b>yes</b>, then chose <b>Read is mapped in a proper pair</b>.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Extract properly paired sequences</b>'
+    element: 'div[tour_id="flag|reqBits"]'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: bottom
     postclick:
       - '#execute'
+
+  - title: '<b>Extract properly paired sequences</b>'
+    element: '#right'
+    content: 'Samtools filter processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to proceed extracting properly paired sequences<br />'
+    placement: left
+
+
+
   - title: Step 64
     element: '#tool-search-query'
     content: search for MethylDackel
