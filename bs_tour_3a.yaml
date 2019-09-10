@@ -76,6 +76,7 @@ Click <b>Next</b> to proceed extracting properly paired sequences<br />'
     content: 'Look for <b>Samtools filter</b>.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
+    textinsert: samtools filter
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtool_filter2%2Fsamtool_filter2%2F1.8%2Bgalaxy1"]
@@ -112,6 +113,7 @@ Click <b>Next</b> to repeat the same operation on the 2nd Samtools-sort-processe
     content: 'Look for <b>Samtools filter</b>.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
+    textinsert: samtools filter
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtool_filter2%2Fsamtool_filter2%2F1.8%2Bgalaxy1"]
