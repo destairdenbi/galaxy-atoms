@@ -11,8 +11,7 @@ Click <b>Next</b> to start the analysis.<br />'
 
   - title: '<b>Extract properly paired sequences</b>'
     element: '#tool-search-query'
-    content: 'Look for <b>Samtools sort</b>.<br />
-Sort aligned sequences by leftmost coordinates or by read name.<br /><br />
+    content: 'Look for <b>Samtools sort</b>.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: samtools sort
@@ -43,8 +42,7 @@ Click <b>Next</b> to repeat the same operation on the 2nd Bismark-processed data
 
   - title: '<b>Extract properly paired sequences</b>'
     element: '#tool-search-query'
-    content: 'Look for <b>Samtools sort</b>.<br />
-Sort aligned sequences by leftmost coordinates or by read name.<br /><br />
+    content: 'Look for <b>Samtools sort</b>.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: samtools sort
