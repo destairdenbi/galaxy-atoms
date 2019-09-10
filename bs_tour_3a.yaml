@@ -40,29 +40,16 @@ Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to repeat the same operation on the 2nd Bismark-processed dataset collection.<br />'
     placement: left
 
-  - title: '<b>Extract properly paired sequences</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>Samtools sort</b>.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    placement: right
-    textinsert: samtools sort
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtools_sort%2Fsamtools_sort%2F2.0.3"]
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="input1"]'
-    content: 'Click on the dataset collection icon, and select the 2nd Bismark-processed dataset collection.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
+    element: '#right'
+    content: 'Repeat the same operation for the 2nd Bismark-processed dataset collection:<br />
+- Click on the last result produced by <b>Samtools sort</b><br />
+- Click on the <b>Run this job again</b> icon<br />
+- Change the input dataset collection to the 2nd Bismark-processed dataset collection<br />
+- Execute.<br /><br />'
+    placement: left
 
-  - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="input1"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
-      - '#execute'
 
   - title: '<b>Extract properly paired sequences</b>'
     element: '#right'
