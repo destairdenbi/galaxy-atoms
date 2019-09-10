@@ -295,38 +295,69 @@ Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
     placement: left
 
-  - title: Step 76
+  - title: '<b>Quantify the methylated reads</b>'
     element: '#tool-search-query'
-    content: concatenate dasets
+    content: 'Look for <b>Concatenate datasets</b>.<br /><br />
+Click <b>Next</b> to load it.<br />'
+    textinsert: concatenate dasets
     placement: right
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_cat%2F0.1.0"]
-        .tool-old-link
-  - title: Step 77
+
+  - title: '<b>Quantify the methylated reads</b>'
     element: 'div[tour_id="inputs"]'
-    content: >-
-      select dataset collection - folder icon - of first not-header selected
-      data collection
+    content: 'Click on the dataset collection icon, and select the 1st select-last-line-processed dataset collection.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: right
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: 'div[tour_id="inputs"]'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: bottom
     postclick:
       - '#execute'
-  - title: Step 78
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: '#right'
+    content: 'Concatenate datasets processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to repeat the same operation on the 2nd select-last-line-processed dataset collection.<br />'
+    placement: left
+
+  - title: '<b>Quantify the methylated reads</b>'
     element: '#tool-search-query'
-    content: concatenate dasets
+    content: 'Look for <b>Concatenate datasets</b>.<br /><br />
+Click <b>Next</b> to load it.<br />'
+    textinsert: concatenate dasets
     placement: right
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_cat%2F0.1.0"]
-        .tool-old-link
-  - title: Step 79
+
+  - title: '<b>Quantify the methylated reads</b>'
     element: 'div[tour_id="inputs"]'
-    content: >-
-      select dataset collection - folder icon - of second not-header selected
-      data collection
+    content: 'Click on the dataset collection icon, and select the 2nd select-last-line-processed dataset collection.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: right
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: 'div[tour_id="inputs"]'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: bottom
     postclick:
       - '#execute'
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: '#right'
+    content: 'Concatenate datasets processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
+    placement: left
+
+
   - title: Step 80
     element: '#tool-search-query'
     content: search for sort data
