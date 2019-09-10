@@ -46,14 +46,15 @@ Click <b>Next</b> to repeat the same operation on the 2nd Bismark-processed data
 - Click on the last result produced by <b>Samtools sort</b><br />
 - Click on the <b>Run this job again</b> icon<br />
 - Change the input dataset collection to the 2nd Bismark-processed dataset collection<br />
-- Execute.<br /><br />'
+- Click <b>Execute</b>.<br /><br />
+Click <b>Next</b> to proceed extracting properly paired sequences.<br />'
     placement: left
 
   - title: '<b>Extract properly paired sequences</b>'
     element: '#right'
     content: 'Samtools sort processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to proceed extracting properly paired sequences<br />'
+Click <b>Next</b> to proceed extracting properly paired sequences.<br />'
     placement: left
 
   - title: '<b>Extract properly paired sequences</b>'
@@ -99,7 +100,8 @@ Click <b>Next</b> to repeat the same operation on the 2nd Samtools-sort-processe
 - Click on the last result produced by <b>Samtools filter</b><br />
 - Click on the <b>Run this job again</b> icon<br />
 - Change the input dataset collection to the 2nd Samtools-sort-processed dataset collection<br />
-- Execute.<br /><br />'
+- Click <b>Execute</b>.<br /><br />
+Click <b>Next</b> to proceed extracting properly paired sequences.<br />'
     placement: left
 
   - title: '<b>Extract properly paired sequences</b>'
@@ -152,7 +154,8 @@ Click <b>Next</b> to repeat the same operation on the 2nd Samtools-filter-proces
 - Click on the last result produced by <b>MethylDackel</b><br />
 - Click on the <b>Run this job again</b> icon<br />
 - Change the input dataset collection to the 2nd Samtools-filter-processed dataset collection<br />
-- Execute.<br /><br />'
+- Click <b>Execute</b>.<br /><br />
+Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
     placement: left
 
   - title: '<b>Quantify the methylated reads</b>'
@@ -200,34 +203,14 @@ Click <b>Next</b> to repeat the same operation on the 2nd MethylDackel-processed
     placement: left
 
   - title: '<b>Quantify the methylated reads</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>Select last lines from a dataset</b>.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    placement: right
-    textinsert: select last lines
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_tail_tool%2F1.1.0"]
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="infile"]'
-    content: 'Click on the dataset collection icon, and select the 2nd MethylDackel-processed dataset collection (no suffix).<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="num_lines"]'
-    content: 'Set the number of lines to 2.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="num_lines"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
-      - '#execute'
+    element: '#right'
+    content: 'Repeat the same operation for the 2nd MethylDackel-processed dataset collection:<br />
+- Click on the last result produced by <b>Select last lines</b><br />
+- Click on the <b>Run this job again</b> icon<br />
+- Change the input dataset collection to the 2nd MethylDackel-processed dataset collection (no suffix)<br />
+- Click <b>Execute</b>.<br /><br />
+Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
+    placement: left
 
   - title: '<b>Quantify the methylated reads</b>'
     element: '#right'
