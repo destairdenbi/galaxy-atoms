@@ -502,36 +502,55 @@ Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
     placement: left
 
-  - title: Step 101
+  - title: '<b>Quantify the methylated reads</b>'
     element: '#tool-search-query'
-    content: search for join two files
+    content: 'Look for <b>Join two files</b>.<br /><br />
+Click <b>Next</b> to load it.<br />'
+    textinsert: join two files
     placement: right
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_easyjoin_tool%2F1.1.1"]
-        .tool-old-link
-  - title: Step 102
+
+  - title: '<b>Quantify the methylated reads</b>'
     element: 'div[tour_id="infile1"]'
-    content: >-
-      select single dataset - first icon - first merged, meaned promoter
-      methylation
-    placement: right
-  - title: Step 103
+    content: 'Select the 1st BEDtools merged dataset.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quantify the methylated reads</b>'
     element: 'div[tour_id="column1"]'
-    content: select column 2 to join by position
-    placement: right
-  - title: Step 104
+    content: 'Select column 2.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quantify the methylated reads</b>'
     element: 'div[tour_id="infile2"]'
-    content: >-
-      select single dataset - first icon - second merged, meaned promoter
-      methylation
-    placement: right
-  - title: Step 105
+    content: 'Select the 2nd BEDtools merged dataset.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quantify the methylated reads</b>'
     element: 'div[tour_id="column2"]'
-    content: select column 2 to join by position
-    placement: right
+    content: 'Select column 2.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: 'div[tour_id="column2"]'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: bottom
     postclick:
       - '#execute'
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: '#right'
+    content: 'Join two files processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
+    placement: left
+
   - title: Step 107
     element: '#tool-search-query'
     content: search for text reformatting with awk
