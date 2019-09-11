@@ -551,25 +551,46 @@ Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
     placement: left
 
-  - title: Step 107
+  - title: '<b>Quantify the methylated reads</b>'
     element: '#tool-search-query'
-    content: search for text reformatting with awk
+    content: 'Look for <b>Text reformatting with awk</b>.<br /><br />
+Click <b>Next</b> to load it.<br />'
+    textinsert: text reformatting with awk
     placement: right
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_awk_tool%2F1.1.1"]
-        .tool-old-link
-  - title: Step 108
+
+  - title: '<b>Quantify the methylated reads</b>'
     element: 'div[tour_id="infile"]'
-    content: >-
-      select single dataset - first icon - of joined first and second mean
-      promoter methylation data sets
-    placement: right
-  - title: Step 109
+    content: 'Select the joined dataset.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quantify the methylated reads</b>'
     element: 'div[tour_id="code"]'
-    content: >-
-      enter awk code to calculate log2 fold-change {print $4"\t"($5 < $9 ?
-      (log($9+1)-log($5+1))/log(2) : -(log($5+1)-log($9+1))/log(2))}
-    placement: right
+    content: 'Enter the necessary awk code to calculate log2 fold-change.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    textinsert: |
+      {print $4"\t"($5 < $9 ? (log($9+1)-log($5+1))/log(2) : -(log($5+1)-log($9+1))/log(2))}
+    placement: bottom
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: 'div[tour_id="code"]'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: bottom
     postclick:
       - '#execute'
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: '#right'
+    content: 'The processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to proceed further with the downstream analysis.<br />'
+    placement: left
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: ''
+    content: 'The quantification of methylated reads within a CpG context has been completed.<br />'
+    backdrop: true
