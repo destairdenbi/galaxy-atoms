@@ -267,34 +267,54 @@ Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
     placement: left
 
-
-  - title: Step 80
+  - title: '<b>Quantify the methylated reads</b>'
     element: '#tool-search-query'
-    content: search for sort data
+    content: 'Look for the <b>Sort</b> tool.<br /><br />
+Click <b>Next</b> to load it.<br />'
+    textinsert: sort
     placement: right
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_sort_header_tool%2F1.1.1"]
-        .tool-old-link
-  - title: Step 81
+
+  - title: '<b>Quantify the methylated reads</b>'
     element: 'div[tour_id="infile"]'
-    content: >-
-      select multiple datasets - second icon - of first and second concatenated
-      methylation data
-    placement: right
-  - title: Step 82
+    content: 'Click on the Multiple datasets icon, and select both concatenated dataset collections.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quantify the methylated reads</b>'
     element: 'div[tour_id="sortkeys_0|style"]'
-    content: sort column one by version-sort
-    placement: right
-  - title: Step 83
-    content: insert column 2 and sort it numerically -n
-    placement: right
-  - title: Step 84
-    element: insert column 3 and sort it numerically -n
-    content: ''
-    placement: left
+    content: 'Select <b>Natural/Version sort</b>.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: '.ui-button-default.btn.btn-secondary.float-none.form-repeat-add'
+    content: 'Click on <b>Insert Column selections</b> to insert a new sort criteria:<br />
+- Set <b>on column</b> to <b>2</b><br />
+- Set <b>in</b> to <b>Ascending order</b><br />
+- Set <b>Flavor</b> to <b>Fast numeric sort</b>.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: '.ui-button-default.btn.btn-secondary.float-none.form-repeat-add'
+    content: 'Click on <b>Insert Column selections</b> to insert a new sort criteria:<br />
+- Set <b>on column</b> to <b>3</b><br />
+- Set <b>in</b> to <b>Ascending order</b><br />
+- Set <b>Flavor</b> to <b>Fast numeric sort</b>.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: '.ui-button-default.btn.btn-secondary.float-none.form-repeat-add'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: bottom
     postclick:
       - '#execute'
+
   - title: Step 85
     element: '#tool-search-query'
     content: search for bedtools merge
