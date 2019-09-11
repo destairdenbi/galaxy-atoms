@@ -322,25 +322,45 @@ Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
     placement: left
 
-  - title: Step 85
+  - title: '<b>Quantify the methylated reads</b>'
     element: '#tool-search-query'
-    content: search for bedtools merge
+    content: 'Look for <b>bedtools MergeBED</b> tool.<br /><br />
+Click <b>Next</b> to load it.<br />'
+    textinsert: bedtools mergebed
     placement: right
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fbedtools%2Fbedtools_mergebed%2F2.27.1"]
-        .tool-old-link
-  - title: Step 86
+
+  - title: '<b>Quantify the methylated reads</b>'
     element: 'div[tour_id="input"]'
-    content: >-
-      select multiple datasets as input - second icon - of first and second
-      sorted, concatenated methylation data
-    placement: right
-  - title: Step 87
-    content: insert and apply operation on column 4 - mean
-    placement: right
+    content: 'Click on the Multiple datasets icon, and select both sorted dataset collections.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: '.ui-button-default.btn.btn-secondary.float-none.form-repeat-add'
+    content: 'Click on <b>+ Insert Applying operations to columns from merged intervals</b>.<br /><br />
+- Set <b>Specify the column(s) that should be summarized</b> to <b>4</b><br />
+- Set <b>Specify the operation</b> to <b>Mean - numeric only</b>.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: '.ui-button-default.btn.btn-secondary.float-none.form-repeat-add'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: bottom
     postclick:
       - '#execute'
+
+  - title: '<b>Quantify the methylated reads</b>'
+    element: '#right'
+    content: 'BEDtools MergeBED processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
+    placement: left
+
   - title: Step 88
     element: '#tool-panel-upload-button'
     content: upload regions of interest file - e.g. promoter regions
