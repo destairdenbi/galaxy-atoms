@@ -315,6 +315,13 @@ Click <b>Next</b> to execute.<br />'
     postclick:
       - '#execute'
 
+  - title: '<b>Quantify the methylated reads</b>'
+    element: '#right'
+    content: 'Sort processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
+    placement: left
+
   - title: Step 85
     element: '#tool-search-query'
     content: search for bedtools merge
