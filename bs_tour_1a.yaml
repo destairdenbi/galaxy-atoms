@@ -162,9 +162,9 @@ Click <b>Next</b> to overview your data.<br />'
     element: '#right'
     content: 'FastQC generates diverse plots to assess the quality of the input<br />
 sequences.<br />
-Click on the last <b>Webpage</b> entry in your history, and click the<br />
-eye icon of one of the FastQC reports to understand the quality of<br />
-your data.<br /><br />
+Click on the last <b>Webpage</b> entry in your history, and click the eye<br />
+icon of one of the FastQC reports to understand the quality of your<br />
+data.<br /><br />
 Click <b>Next</b> to review the properties of your data.<br />'
     placement: left
 
