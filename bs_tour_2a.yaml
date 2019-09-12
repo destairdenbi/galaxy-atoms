@@ -1,7 +1,7 @@
 id: bs_tour_2a
-name: 'Mapping'
+name: 'Bisulfite Sequencing Analysis'
 description: 'Alignment of sequence reads against a reference genome using Bismark'
-title_default: 'Mapping'
+title_default: 'Bisulfite Sequencing Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: ''
