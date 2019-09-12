@@ -10,9 +10,8 @@ This represents the first task in analysing raw high throughput sequences,<br />
 because it provides an overview of the overall quality of data, as well as<br />
 a mean to remove low quality sequence reads that might ultimately bias the<br />
 interpretation of results.<br />
-Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality<br />
-of the provided sequences, and <b>Cutadapt</b>, to remove low quality<br />
-reads.<br /><br />
+Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the<br />
+provided sequences, and <b>Cutadapt</b>, to remove low quality reads.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
@@ -155,15 +154,9 @@ Click <b>Next</b> to execute.<br />'
     element: '#right'
     content: 'FastQC processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
+Please repeat this operation on the remaining collections.<br /><br />
 Click <b>Next</b> to overview your data.<br />'
     placement: left
-
-  - title: '<b>Quality control</b>'
-    element: '#right'
-    content: 'You can now repeat this operation on the remaining collections.<br /><br />
-Click <b>Next</b> to overview your data.<br />'
-    placement: left
-
 
   - title: '<b>Quality control</b>'
     element: '#right'
