@@ -1,7 +1,7 @@
 id: bs_tour_1a
-name: 'Data preprocessing'
+name: 'Bisulfite Sequencing Analysis'
 description: 'Quality control and data preprocessing with FastQC and Cutadapt'
-title_default: 'Data preprocessing'
+title_default: 'Bisulfite Sequencing Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: ''
