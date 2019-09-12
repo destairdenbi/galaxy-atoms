@@ -1,7 +1,7 @@
 id: dgea_tour_3a
-name: 'Differential gene expression'
+name: 'Differential Gene Expression Analysis'
 description: 'Differential gene expression analysis using featureCounts and DESeq2'
-title_default: 'Differential gene expression'
+title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: ''
