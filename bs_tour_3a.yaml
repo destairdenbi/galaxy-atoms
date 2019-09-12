@@ -1,7 +1,7 @@
 id: bs_tour_3a
-name: 'Quantification of methylated reads within a CpG context'
+name: 'Bisulfite Sequencing Analysis'
 description: 'Quantification of methylated reads within a CpG context using Samtools and MethylDackel'
-title_default: 'Quantification of methylated reads within a CpG context'
+title_default: 'Bisulfite Sequencing Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: ''
