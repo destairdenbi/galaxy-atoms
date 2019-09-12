@@ -162,17 +162,16 @@ Click <b>Next</b> to overview your data.<br />'
     element: '#right'
     content: 'FastQC generates diverse plots to assess the quality of the input<br />
 sequences.<br />
-Click on the last <b>Webpage</b> entry in your history, and click the eye<br />
-icon of one of the FastQC reports to understand the quality of your<br />
-data.<br /><br />
+Click on the last <b>Webpage</b> entry in your history, and click the eye icon<br />
+of one of the FastQC reports to understand the quality of your data.<br /><br />
 Click <b>Next</b> to review the properties of your data.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
     element: '#center'
     content: 'Under <b>Summary</b>, click on <b>Basic statistics</b>.<br /><br />
-The <b>Basic statistics</b> table provides the summary statistics of<br />
-the provided input dataset.<br />
+The <b>Basic statistics</b> table provides the summary statistics of the<br />
+provided input dataset.<br />
 More information on the <b>Basic Statistics</b> can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/1%20Basic%20Statistics.html" target="_blank">here</a>.<br /><br />
 Click <b>Next</b> to overview the next plot.<br />'
     placement: bottom
@@ -180,8 +179,8 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#center'
     content: 'Under <b>Summary</b>, click on <b>Per base sequence quality</b>.<br /><br />
-The <b>Per base sequence quality</b> plot shows the average quality<br />
-scores of all reads of each sequence of the provided input dataset.<br />
+The <b>Per base sequence quality</b> plot shows the average quality scores<br />
+of all reads of each sequence of the provided input dataset.<br />
 The Y axis shows the quality score: the higher, the better the base<br />
 call. The background color of the graph divides the base call<br />
 operation into:<br />
@@ -201,8 +200,8 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#center'
     content: 'Under <b>Summary</b>, click on <b>Per sequence quality scores</b>.<br /><br />
-The <b>Per sequence quality scores</b> plot shows if a subset of<br />
-sequences have universally low quality values.<br />
+The <b>Per sequence quality scores</b> plot shows if a subset of sequences<br />
+have universally low quality values.<br />
 If a significant subset of sequences in a run have overall low quality<br />
 scores, this suggests that some kind of systematic problem occurred<br />
 during the sequencing experiment. Here, the entire sequence set scores<br />
@@ -216,8 +215,8 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#center'
     content: 'Under <b>Summary</b>, click on <b>Per base sequence content</b>.<br /><br />
-The <b>Per base sequence content</b> plot shows the percentage of<br />
-occurrence of each base in each position of each sequence.<br />
+The <b>Per base sequence content</b> plot shows the percentage of occurrence<br />
+of each base in each position of each sequence.<br />
 The four bases should not be hugely imbalanced. However, some libraries<br />
 will always produce biased sequence composition when fragmentation does<br />
 not occur randomly. Here, each provided input dataset shows the desired<br />
@@ -228,10 +227,9 @@ Click <b>Next</b> to overview the next plot.<br />'
 
   - title: '<b>Quality control</b>'
     element: '#center'
-    content: '
-Under <b>Summary</b>, click on <b>Per sequence GC content</b>.<br /><br />
-The <b>Per sequence GC content</b> plot shows the GC content<br />
-distribution of the provided sample.<br />
+    content: 'Under <b>Summary</b>, click on <b>Per sequence GC content</b>.<br /><br />
+The <b>Per sequence GC content</b> plot shows the GC content distribution of<br />
+the provided sample.<br />
 This should follow a normal distribution. However, unusually shaped<br />
 distribution might occur in case of a contaminated library. A shifted<br />
 normal distribution instead indicates some systematic bias,<br />
@@ -244,8 +242,8 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#center'
     content: 'Under <b>Summary</b>, click on <b>Per base N content</b>.<br /><br />
-The <b>Per base N content</b> plot shows the percentage of N<br />
-occurrences in the sequence reads.<br />
+The <b>Per base N content</b> plot shows the percentage of Ns occurring within<br />
+the provided sequences.<br />
 If a sequencer is unable to make a base call with confidence, then it<br />
 will place an N, where N represents an ambiguous nucleotide: a base<br />
 which could not be correctly identified.<br />
@@ -260,8 +258,8 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#center'
     content: 'Under <b>Summary</b>, click on <b>Sequence length distribution</b>.<br /><br />
-The <b>Sequence length distribution</b> plot shows the distribution of<br />
-sequence read length.<br />
+The <b>Sequence length distribution</b> plot shows the distribution of sequence<br />
+read length.<br />
 For NGS sequencers generating uniform sequence reads, this will result<br />
 in a spike around a fixed length value.<br />
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/7%20Sequence%20Length%20Distribution.html" target="_blank">here</a>.<br /><br />
@@ -284,8 +282,8 @@ Click <b>Next</b> to overview the next plot.<br />'
   - title: '<b>Quality control</b>'
     element: '#center'
     content: 'Under <b>Summary</b>, click on <b>Overrepresented sequences</b>.<br /><br />
-The <b>Overrepresented sequences</b> plot shows all sequence making up for<br />
-more than 0.1% of the total number of sequences in the dataset.<br />
+The <b>Overrepresented sequences</b> plot shows all sequence making up for more<br />
+than 0.1% of the total number of sequences in the dataset.<br />
 If a sequence is overrepresented, this means that it is either highly<br />
 biologically significant, or that it is contaminant for the current<br />
 library. Here, each provided sequence dataset shows no overrepresented<br />
@@ -370,8 +368,9 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Quality control</b>'
     element: 'div[tour_id="read_mod_options|quality_cutoff"]'
-    content: 'The <b>Quality cutoff</b> indicates the allowed quality threshold allowed<br />
-on each ends of the read before adapter removal.<br />
+    content: '
+The <b>Quality cutoff</b> indicates the allowed quality threshold allowed on<br />
+each ends of the read before adapter removal.<br />
 It is generally recommended to keep only those nucleotides whose quality<br />
 cutoff is above 20.<br />
 Change this parameter to 20.<br /><br />
@@ -397,13 +396,7 @@ Click <b>Next</b> to execute.<br />'
     content: 'Cutadapt processing has begun, and the results are loading in your<br />
 history.<br />
 Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to overview how the overall quality of your data has<br />
-improved.<br />'
-    placement: left
-
-  - title: '<b>Quality control</b>'
-    element: '#right'
-    content: 'You can now repeat this operation on the remaining collections.<br /><br />
+Please repeat this operation on the remaining collections.<br /><br />
 Click <b>Next</b> to overview how the overall quality of your data has<br />
 improved.<br />'
     placement: left
@@ -412,9 +405,9 @@ improved.<br />'
     element: '#tool-search-query'
     content: 'Look for the <b>FastQC</b> tool.<br />
 FastQC is used once again to assess the overall quality of the<br />
-<b>processed</b> data: the first run of FastQC assessed the quality of<br />
-the provided datasets collection; then, based on the generated plots,<br />
-the following trimming operation got rid of all those reads that FastQC<br />
+<b>processed</b> data: the first run of FastQC assessed the quality of the<br />
+provided datasets collection; then, based on the generated plots, the<br />
+following trimming operation got rid of all those reads that FastQC<br />
 highlighted as potential bias for the analysis (and ultimately the<br />
 interpretation of results). Here, FastQC is used to assess the overall<br />
 quality of the trimmed data.<br /><br />
@@ -446,6 +439,7 @@ Click <b>Next</b> to execute.<br />'
     element: '#right'
     content: 'FastQC processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
+Please repeat this operation on the remaining collections.<br /><br />
 Click <b>Next</b> to overview your data.<br />'
     placement: left
 
@@ -453,16 +447,9 @@ Click <b>Next</b> to overview your data.<br />'
     element: '#right'
     content: 'FastQC generates diverse plots to assess the quality of the input<br />
 sequences.<br />
-Click on the last <b>Webpage</b> entry in your history, and click the<br />
-eye icon of one of the FastQC reports to understand the quality of<br />
-your data.<br /><br />
+Click on the last <b>Webpage</b> entry in your history, and click the eye icon<br />
+of one of the FastQC reports to understand the quality of your data.<br /><br />
 Click <b>Next</b> to review the properties of your data.<br />'
-    placement: left
-
-  - title: '<b>Quality control</b>'
-    element: '#right'
-    content: 'You can now repeat this operation on the remaining collections.<br /><br />
-Click <b>Next</b> to finalize the Quality control analysis.<br />'
     placement: left
 
   - title: '<b>Quality control</b>'
