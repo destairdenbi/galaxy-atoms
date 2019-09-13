@@ -1,11 +1,15 @@
 id: bs_tour_2a
-name: 'Mapping'
+name: 'BS-Seq analysis'
 description: 'Alignment of sequence reads against a reference genome using Bismark'
-title_default: 'Mapping'
+title_default: 'BS-Seq analysis'
 steps:
   - title: '<b>Outline</b>'
     element: ''
-    content: 'In this tour, we will align MethylC sequenced reads against a reference genome. This represents a necessary task for the quantification of methilated Cytosines in CpG and CHG genomic contexts which can be later used to infer and evaluate e.g. enhancer promoter or gene body methilation rates.<br />
+    content: 'In this tour we will align MethylC sequenced reads against a reference<br />
+genome. This represents a necessary task for the quantification of<br />
+methilated Cytosines in CpG and CHG genomic contexts which can be later<br />
+used to infer and evaluate e.g. enhancer promoter or gene body<br />
+methilation rates.<br />
 Here, we will leverage on <b>Bismark</b>.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
@@ -20,7 +24,8 @@ Click <b>Next</b> to import your data and start the analysis.<br />'
 
   - title: '<b>Import the reference genome</b>'
     element: '.upload-text-content:last'
-    content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />
+    content: 'Data can be imported from the local machine, as well as from diverse<br />
+online resources.<br /><br />
 Click <b>Next</b> to import the reference genome from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
     placement: bottom
     preclick:
@@ -58,8 +63,10 @@ Click <b>Next</b> to resume the analysis once you are done.<br />'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
     content: 'Look for the <b>Bismark</b> tool.<br />
-Bismark maps bisulfite treated sequencing reads to a genome of interest and performs methylation calls in a single step.<br />
-Here, we want to align the sequence reads from the imported samples, against the provided reference genome.<br /><br />
+Bismark maps bisulfite treated sequencing reads to a genome of interest<br />
+and performs methylation calls in a single step.<br />
+Here we want to align the sequences from the imported samples against<br />
+the provided reference genome.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: bismark
@@ -69,7 +76,8 @@ Click <b>Next</b> to load it.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: 'div[tour_id="refGenomeSource|genomeSource"]'
-    content: 'Select <b>Generate Bismark indexes from Genome (fasta) in your Galaxy history</b>.<br /><br />
+    content: 'Select <b>Generate Bismark indexes from Genome (fasta) in your Galaxy<br />
+history</b>.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: bottom
 
@@ -99,7 +107,9 @@ Click <b>Next</b> to overview further parametrisation options.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
+    content: 'For all remaining parametrisation options, we will use the provided<br />
+default settings. However, for further information, please refer to the<br />
+manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: bottom
     postclick:
@@ -107,66 +117,12 @@ Click <b>Next</b> to execute.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'Bismark processing has begun, and the results are loading in your history.<br />
+    content: '
+Bismark processing has begun, and the results are loading in your
+history.<br />
 Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to repeat the same operation on the 2nd read mates R1 and R2.<br />'
-    placement: left
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: '#tool-search-query'
-    content: 'Look for the <b>Bismark</b> tool.<br />
-Bismark maps bisulfite treated sequencing reads to a genome of interest and performs methylation calls in a single step.<br />
-Here, we want to align the sequence reads from the imported samples, against the provided reference genome.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    placement: right
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fbismark%2Fbismark_bowtie2%2F0.22.1%2Bgalaxy1"]
-        .tool-old-link
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="refGenomeSource|genomeSource"]'
-    content: 'Select <b>Generate Bismark indexes from Genome (fasta) in your Galaxy history</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="refGenomeSource|own_file"]'
-    content: 'Select the imported reference genome from your history.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|sPaired"]'
-    content: 'Select <b>Paired-end</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate1"]'
-    content: 'Click on the dataset collection icon, and select the 2nd read mate R1.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"]'
-    content: 'Click on the dataset collection icon, and select the 2nd read mate R2.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
-      - '#execute'
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'Bismark processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to overview your data.<br />'
+Please repeat this operation on the remaining collections.<br /><br />
+Click <b>Next</b> to continue the analysis.<br />'
     placement: left
 
   - title: '<b>Map sequences against a reference genome</b>'
