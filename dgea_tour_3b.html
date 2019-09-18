@@ -24,17 +24,14 @@ p    {color: #345CB3;}
                  <td>User base:</td>
                  <td>&#10026;&#10026;&#10026;&#10026;&#10026;</td>
              </tr>
-
              <tr>
                  <td>Sensitivity:</td>
                  <td>-</td>
              </tr>
-
              <tr>
                  <td>Speed:</td>
                  <td>&#10026;&#10026;</td>
              </tr>
-
              <tr>
                  <td>Configurability:</td>
                  <td>&#10026;&#10026;&#10026;</td>
@@ -44,6 +41,10 @@ p    {color: #345CB3;}
 
         <h4>Description:</h4>
         <p style="border:2px; border-radius: 5px; border-style:solid; border-color:#ED1D99; padding: 1em;">
+            FeatureCounts and HTSeq-Count are similar in terms of the required input. Both tools need an alignment
+            file in BAM or SAM format as well as a GTF or GFF file containing all genomic features and analyzing
+            single-ended reads, both algorithms returning similar results. However, analyzing paired-ended reads,
+            the resulting table can differ a lot.
             Compared to featureCounts, HTSeq-Count was released first and therefore, it is widely used in the community.
         </p>
 
