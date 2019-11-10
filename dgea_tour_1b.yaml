@@ -1,12 +1,12 @@
-id: dgea_tour_1b
-name: 'Differential Gene Expression Analysis'
-description: 'Quality control and data preprocessing with FastQC and Trimmomatic'
+id: dgea_tour_1d
+name: 'DIfferential Gene Expression Analysis'
+description: 'Quality control and data preprocessing with FastQC and PRINSEQ'
 title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: ''
     content: 'In this tour, we will carry out quality control analysis of RNA-Seq data. This represents the first task in analysing raw high throughput sequence reads, because it provides an overview of the overall quality of data, as well as a mean to remove low quality sequence reads that might ultimately bias the interpretation of results.<br />
-Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Trimmomatic</b>, to remove low sequence quality reads.<br /><br />
+Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>PRINSEQ</b>, to remove low sequence quality reads.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
@@ -22,7 +22,7 @@ Click <b>Next</b> to import your data and start the analysis.<br />'
     element: '.upload-text-content:last'
     content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />
 Click <b>Next</b> to import a training dataset from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
-    placement: bottom
+    placement: right
     preclick:
       - '.upload-button'
       - '#btn-new'
@@ -189,64 +189,51 @@ Click <b>Next</b> to start this process.'
 
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>Trimmomatic</b> tool.<br />
-Trimmomatic is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
+    content: 'Look for the <b>PRINSEQ</b> tool.<br />
+PRINSEQ is a tool for rapid quality control and data preprocessing of genomic and metagenomic datasets, which searches for low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
-    textinsert: trimmomatic
+    textinsert: prinseq
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.6"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fprinseq%2Fprinseq%2F0.20.4']
 
   - title: '<b>Quality control</b>'
-    element: 'div[tour_id="readtype|fastq_in]'
+    element: 'div[tour_id="seq_type|input_singles"]'
     content: 'Click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quality control</b>'
-    element: 'div[tour_id="operations_0|operation|name"]'
-    content: 'The <b>SLIDINGWINDOW</b> operation performs an iterative scanning of the sequence, trimming once the average quality falls below the provided threshold.<br />
-Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to <b>SLIDINGWINDOW</b>, and its values:<br />
-- <b>Number of bases to average across</b> to 4<br />
-- <b>Average quality required</b> to 20.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-    postclick:
-      - '.ui-button-default.btn btn-secondary.float-none.form-repeat-add'
-
-  - title: '<b>Quality control</b>'
-    element: 'div[tour_id="operations_1|operation|name"]'
-    content: 'Select <b>MINLEN</b>. The MINLEN operation drops all sequences whose lenght falls below the provided threshold.<br />
-Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to <b>MINLEN</b>, and its values:<br />
-- <b>Minimum length of reads to be kept</b> to 20.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-    postclick:
-      - '.ui-button-default.btn btn-secondary.float-none.form-repeat-add'
-
-  - title: '<b>Quality control</b>'
-    element: 'div[tour_id="operations_2|operation|name"]'
-    content: 'Select <b>AVGQUAL</b>. The AVGQUAL operation drops all sequences whose average read quality falls below the provided threshold.<br />
-Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to <b>AVGQUAL</b>, and its values:<br />
-- <b>Minimum average quality required to keep a read</b> to 20.<br /><br />
-Click <b>Next</b> to overview the provided parametrization.<br />'
-    placement: bottom
-
-  - title: '<b>Quality control</b>'
-    element: 'div[tour_id="operations_2|operation|name"]'
-    content: 'With the current parametrisation, Trimmomatic will:<br />
-- Trim reads with low average quality<br />
-- Discard reads whose length became shorter than 20 bp.<br />
-For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
     placement: left
+
+  - title: '<b>Quality control</b>'
+    element: 'div[tour_id="filter_treatments|length_filter_treatments|min_length_filter_treatments|min_length_filter_treatment_value"]'
+    content: 'The <b>Minimum length threshold to conserve sequences</b> indicates the allowed length (in nucleotides) that a sequence must have after quality threshold trimming.<br />
+It is generally recommended to keep only those sequences whose length can be still meaningful for the analysis.<br />
+Change this parameter to 40.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quality control</b>'
+    element: 'div[tour_id="filter_treatments|quality_filter_treatments|mean_quality_filter_treatments|min_mean_quality_filter_treatments|min_mean_quality_filter_treatment_value"]'
+    content: 'The <b>Minimum mean score threshold to conserve sequences</b> indicates the allowed base-quality.<br />
+It is generally recommended to keep only those nucleotides whose quality is above 20.<br />
+Change this parameter to 20.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Quality control</b>'
+    element: 'div[tour_id="filter_treatments|quality_filter_treatments|mean_quality_filter_treatments|min_mean_quality_filter_treatments|min_mean_quality_filter_treatment_value"]'
+    content: "With the current parametrisation, PRINSEQ will:<br />
+- Trim low-quality score sequence (3' and 5')<br />
+- Discard reads whose length became shorter than 40 bp.<br />
+For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />"
+    placement: bottom
     postclick:
       - '#execute'
 
   - title: '<b>Quality control</b>'
     element: '#right'
-    content: 'Trimmomatic processing has begun, and the results are loading in your history.<br />
+    content: 'PRINSEQ processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview how the overall quality of your data has improved.<br />'
     placement: left

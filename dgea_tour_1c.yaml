@@ -1,12 +1,12 @@
-id: dgea_tour_1c
+id: dgea_tour_1b
 name: 'Differential Gene Expression Analysis'
-description: 'Quality control and data preprocessing with FastQC and Cutadapt'
+description: 'Quality control and data preprocessing with FastQC and Trimmomatic'
 title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: ''
     content: 'In this tour, we will carry out quality control analysis of RNA-Seq data. This represents the first task in analysing raw high throughput sequence reads, because it provides an overview of the overall quality of data, as well as a mean to remove low quality sequence reads that might ultimately bias the interpretation of results.<br />
-Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Cutadapt</b>, to remove low sequence quality reads.<br /><br />
+Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Trimmomatic</b>, to remove low sequence quality reads.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
@@ -189,63 +189,64 @@ Click <b>Next</b> to start this process.'
 
   - title: '<b>Quality control</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>Cutadapt</b> tool.<br />
-Cutadapt is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
+    content: 'Look for the <b>Trimmomatic</b> tool.<br />
+Trimmomatic is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
-    textinsert: cutadapt
+    textinsert: trimmomatic
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.16.6"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.36.6"]
 
   - title: '<b>Quality control</b>'
-    element: 'div[tour_id="library|input_1]'
+    element: 'div[tour_id="readtype|fastq_in]'
     content: 'Click on the <b>Multiple datasets</b> icon to select all imported control and treated datasets.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: bottom
+
+  - title: '<b>Quality control</b>'
+    element: 'div[tour_id="operations_0|operation|name"]'
+    content: 'The <b>SLIDINGWINDOW</b> operation performs an iterative scanning of the sequence, trimming once the average quality falls below the provided threshold.<br />
+Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to <b>SLIDINGWINDOW</b>, and its values:<br />
+- <b>Number of bases to average across</b> to 4<br />
+- <b>Average quality required</b> to 20.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
     postclick:
-      - '.ui-button-default.ui-button-icon-plain'
+      - '.ui-button-default.btn btn-secondary.float-none.form-repeat-add'
 
   - title: '<b>Quality control</b>'
-    element: 'div[tour_id="adapter_options|overlap"]'
-    content: 'The <b>Minimum overlap length</b> of the adapter sequence required to trim a sequence, indicates how many bp are required for the adapter to overlap with the sequence read to remove the sequence from the dataset.<br />
-The default value is too stringent, and on average will result in removing 25% of the reads.<br />
-Change this parameter to 5.<br /><br />
+    element: 'div[tour_id="operations_1|operation|name"]'
+    content: 'Select <b>MINLEN</b>. The MINLEN operation drops all sequences whose lenght falls below the provided threshold.<br />
+Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to <b>MINLEN</b>, and its values:<br />
+- <b>Minimum length of reads to be kept</b> to 20.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+    postclick:
+      - '.ui-button-default.btn btn-secondary.float-none.form-repeat-add'
+
+  - title: '<b>Quality control</b>'
+    element: 'div[tour_id="operations_2|operation|name"]'
+    content: 'Select <b>AVGQUAL</b>. The AVGQUAL operation drops all sequences whose average read quality falls below the provided threshold.<br />
+Set this operation in the <b>Trimmomatic operation</b> box, or in case no box is left, add it by clicking on <b>Insert Trimmomatic Operation</b>, then set the operation to <b>AVGQUAL</b>, and its values:<br />
+- <b>Minimum average quality required to keep a read</b> to 20.<br /><br />
+Click <b>Next</b> to overview the provided parametrization.<br />'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: 'div[tour_id="filter_options|min"]'
-    content: 'The <b>Minimum length</b> of a sequence, indicates how many bp are required for the sequence before it is removed from the dataset.<br />
-The default value keeps every sequence of any length, however, it is generally recommended to keep only those sequences whose length can be still meaningful for the analysis.<br />
-Change this parameter to 40.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quality control</b>'
-    element: 'div[tour_id="read_mod_options|quality_cutoff"]'
-    content: 'The <b>Quality cutoff</b> indicates the allowed quality threshold allowed on each ends of the read before adapter removal.<br />
-It is generally recommended to keep only those nucleotides whose quality cutoff is above 20.<br />
-Change this parameter to 20.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quality control</b>'
-    element: 'div[tour_id="read_mod_options|quality_cutoff"]'
-    content: 'With the current parametrisation, Cutadapt will:<br />
-- Automatically detect the adapter sequences to be trimmed<br />
-- Trim low-quality score sequence ends<br />
-- Remove sequences whose overlap with adapter sequences is at least 5 bp<br />
-- Discard reads whose length became shorter than 40 bp.<br />
+    element: 'div[tour_id="operations_2|operation|name"]'
+    content: 'With the current parametrisation, Trimmomatic will:<br />
+- Trim reads with low average quality<br />
+- Discard reads whose length became shorter than 20 bp.<br />
 For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
-    placement: bottom
+    placement: left
     postclick:
       - '#execute'
 
   - title: '<b>Quality control</b>'
     element: '#right'
-    content: 'Cutadapt processing has begun, and the results are loading in your history.<br />
+    content: 'Trimmomatic processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview how the overall quality of your data has improved.<br />'
     placement: left
