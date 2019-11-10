@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<style>
-table {color: #ED1D99;}
-h4   {color: #345CB3;}
-p    {color: #345CB3;}
-</style>
-<head>
+  <style>
+    table {color: #ED1D99;}
+    h4 {color: #345CB3;}
+    p {color: #345CB3;}
+  </style>
+  <head>
     <meta charset="UTF-8">
-    <title>HTSeq-Count and DESeq2</title>
-</head>
-<body>
-    <h4>HTSeq-Count and DESeq2</h4>
-
+    <title>HTSeq-count and DESeq2</title>
+  </head>
+  <body>
+    <h4>HTSeq-count and DESeq2</h4>
     <FONT SIZE="2">
-         <h4><img src="./destair_logo.png" height="15" /> Tool Rating:</h4>
-         <div style="text-indent:10px;">
-         <table>
-             <tr>
-                 <td>Ease of use:</td>
-                 <td>&#10026;&#10026;&#10026;&#10026;&#10026;</td>
-             </tr>
-             <tr>
-                 <td>User base:</td>
-                 <td>&#10026;&#10026;&#10026;&#10026;&#10026;</td>
-             </tr>
-             <tr>
-                 <td>Sensitivity:</td>
-                 <td>-</td>
-             </tr>
-             <tr>
-                 <td>Speed:</td>
-                 <td>&#10026;&#10026;</td>
-             </tr>
-             <tr>
-                 <td>Configurability:</td>
-                 <td>&#10026;&#10026;&#10026;</td>
-             </tr>
-         </table>
-         </div>
-
-        <h4>Description:</h4>
-        <p style="border:2px; border-radius: 5px; border-style:solid; border-color:#ED1D99; padding: 1em;">
-            FeatureCounts and HTSeq-Count are similar in terms of the required input. Both tools need an alignment
-            file in BAM or SAM format as well as a GTF or GFF file containing all genomic features and analyzing
-            single-ended reads, both algorithms returning similar results. However, analyzing paired-ended reads,
-            the resulting table can differ a lot.
-            Compared to featureCounts, HTSeq-Count was released first and therefore, it is widely used in the community.
-        </p>
-
-        <h4>Reference:</h4>
-        <a href="https://htseq.readthedocs.io/en/release_0.11.1/count.html">HTSeq-Count</a>
-        <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8">DESeq2</a>
+      <h4><img src="./destair_logo.png" height="15" /> Tool Rating:</h4>
+      <div style="text-indent:10px;">
+        <table>
+          <tr>
+            <td>Ease of use:</td>
+            <td>&#10026;&#10026;&#10026;&#10026;&#10026;</td>
+          </tr>
+          <tr>
+            <td>User base:</td>
+            <td>&#10026;&#10026;&#10026;&#10026;&#10026;</td>
+          </tr>
+          <tr>
+            <td>Sensitivity:</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Speed:</td>
+            <td>&#10026;&#10026;</td>
+          </tr>
+          <tr>
+            <td>Configurability:</td>
+            <td>&#10026;&#10026;&#10026;</td>
+          </tr>
+        </table>
+      </div>
+      <h4>Description:</h4>
+      <p style="border:2px; border-radius: 5px; border-style:solid; border-color:#ED1D99; padding: 1em;">
+        <b>HTSeq-count</b> is very similar to its alternative featureCounts: both require the provided input alignment
+        files to be in BAM or SAM format, as well as a genome feature file in GTF or GFF format. Although these tools
+        return similar results, counts can vary considerably in case of paired-ended data. FeatureCounts is faster than
+        its counterpart HTSeq-count, and its count table takes into account feature overlaps. On the contrary,
+        HTSeq-count is slower and more consirvative in terms of counting fragments whose alignment overlaps multiple features.
+        Compared to featureCounts, HTSeq-count is older, and therefore widely used in the community.
+        <br /><br />
+        <b>DESeq2</b> is a tool to carry out differential gene expression analysis. This tool computes ranking and visualization of count data for hypothesis testing under multiple sampling conditions.
+      </p>
+      <h4>Reference:</h4>
+      <a href="https://htseq.readthedocs.io/en/release_0.11.1/count.html">HTSeq-count</a>
+      <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-014-0550-8">DESeq2</a>
     </FONT>
-</body>
+  </body>
 </html>
