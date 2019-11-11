@@ -1,0 +1,125 @@
+id: bs_tour_0
+name: 'BS-Seq analysis'
+description: 'Data upload'
+title_default: 'BS-Seq analysis'
+steps:
+  - title: '<b>Outline</b>'
+    element: ''
+    content: 'In this tour we will upload NGS data to be analysed for methylation levels.<br />
+Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy framework.<br /><br />
+Click <b>Next</b> to start the analysis.<br />'
+    backdrop: true
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: '#tool-panel-upload-button .fa.fa-upload'
+    content: 'The import button imports data into Galaxy.<br /><br />
+Click <b>Next</b> to import your data.<br />'
+    placement: right
+    postclick:
+      - '.upload-button'
+      - '#btn-new'
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: '.upload-text-content:last'
+    content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />
+Click <b>Next</b> to import training datasets from <a href="https://github.com" target="_blank">GitHub</a>.<br />'
+    placement: bottom
+    textinsert: |
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N1.R1.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N1.R2.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N2.R1.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N2.R2.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N3.R1.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N3.R2.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N4.R1.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N4.R2.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N1.R1.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N1.R2.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N2.R1.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N2.R2.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N3.R1.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N3.R2.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N4.R1.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N4.R2.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/hg38.goi.fa
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/hg38.promoter.bed
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: '#btn-start'
+    content: 'Multiple datasets can be imported.<br /><br />
+Click <b>Next</b> to import the training datasets.<br />'
+    placement: top
+    postclick:
+      - '#btn-start'
+      - '#btn-close'
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: '#right'
+    content: 'The datasets are uploading in your history.<br />
+These comprise:<br />
+- Eight datasets collecting read mate-pairs at the 1st Trimester<br />
+- Eight datasets collecting read mate-pairs at the 3rd Trimester<br />
+- The reference genome<br />
+- The CpG context file.<br />
+Uploaded datasets are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to continue.<br />'
+    placement: left
+
+  - title: '<b>Best practice :)</b>'
+    element: '#right'
+    content: 'Are your datasets named with meaningful names?<br /><br />
+Rename your datasets:<br />
+- Click on the pencil icon on the dataset entry you want to analyse<br />
+- Modify the name in the first box<br />
+- Click <b>Save</b>.<br /><br />
+Click <b>Next</b> to resume the analysis once you are done.<br />'
+    placement: left
+
+  - title: '<b>Create a collection</b>'
+    element: '#right'
+    content: '
+Multiple datasets can be organized as a collection to group them under<br />
+a single name. This is especially useful to avoid errors during the<br />
+analysis. In particular, collections help to:<br />
+- Save time running the same operation on multiple datasets<br />
+- Rename the collection instead of renaming every single file<br />
+- Keep the history as clean as possible.<br /><br />
+Click <b>Next</b> to start.<br />'
+    placement: left
+
+  - title: '<b>Create a collection</b>'
+    element: '#right'
+    content: 'We want to create as many collections as sample conditions (treatment 1<br />
+and 3) and sample mate pairs (forward and reverse):<br />
+- Click on the <b>Operations on multiple datasets</b> icon<br />
+- Click <b>All</b> to select every dataset<br />
+- Click <b>For all selected...</b>, and select <b>Build Collection from
+  Rules</b>.<br /><br />
+Click <b>Next</b> to set the criteria for building the collections.<br />'
+    placement: left
+
+  - title: '<b>Create a collection</b>'
+    element: ''
+    content: 'First, we retrieve the collection name from dataset names:<br />
+- Click on <b>+ Column</b>, and select <b>Using a Regular Expression</b><br />
+- In the <b>From Column</b> drop-down menu, select <b>B</b><br />
+- Click on <b>Create column from expression replacement</b><br />
+- In <b>Regular Expression</b>, enter the string <b>(rbs_\dT).+(R\d)</b><br />
+- In <b>Replacement Expression</b>, enter the string <b>\1\2</b><br />
+- Click <b>Apply</b> to apply the criteria.<br /><br />
+Second, we group by condition and mate pairing:<br />
+- Click on <b>+ Rules</b>, and select <b>Add / Modify Column Definitions</b><br />
+- Click on <b>+ Add Definition</b>, and select <b>Collection Name</b><br />
+- In the <b>Collection Name</b> drop-down menu, select <b>C</b><br />
+- Click <b>Apply</b> to apply the criteria.<br /><br />
+Finally, since a history entry will be created for each collection, we can<br />
+keep the history clean by hiding the originally imported datasets:<br />
+- Click <b>Hide the original elements</b><br />
+- Click <b>Create</b> to create the final collections.<br /><br />
+You are all set! Click <b>Next</b> to analyse your dataset collections.<br />'
+    placement: bottom
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: ''
+    content: 'The data upload and rganization has been completed.<br />'
+    backdrop: true

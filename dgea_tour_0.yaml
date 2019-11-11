@@ -1,0 +1,71 @@
+id: dgea_tour_0
+name: 'Differential Gene Expression Analysis'
+description: 'Data upload'
+title_default: 'Differential Gene Expression Analysis'
+steps:
+  - title: '<b>Outline</b>'
+    element: ''
+    content: 'In this tour, we will upload NGS data to be analysed for Differential gene expression testing.<br />
+Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy framework.<br /><br />
+Click <b>Next</b> to start the upload.<br />'
+    backdrop: true
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: '#tool-panel-upload-button .fa.fa-upload'
+    content: 'The import button imports data into Galaxy.<br /><br />
+Click <b>Next</b> to import your data.<br />'
+    placement: right
+    postclick:
+      - '.upload-button'
+      - '#btn-new'
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: '.upload-text-content:last'
+    content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />
+Click <b>Next</b> to import training datasets from <a href="https://zenodo.org/" target="_blank">Zenodo</a>.<br />'
+    placement: bottom
+    textinsert: |
+      https://zenodo.org/record/1207238/files/control_1.fastqsanger
+      https://zenodo.org/record/1207238/files/control_2.fastqsanger
+      https://zenodo.org/record/1207238/files/control_3.fastqsanger
+      https://zenodo.org/record/1207238/files/treated_1.fastqsanger
+      https://zenodo.org/record/1207238/files/treated_2.fastqsanger
+      https://zenodo.org/record/1207238/files/treated_3.fastqsanger
+      https://zenodo.org/record/1207238/files/Saccharomyces_cerevisiae_BK006934.fna
+      https://zenodo.org/record/1207238/files/Saccharomyces_cerevisiae.gff
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: '#btn-start'
+    content: 'Multiple datasets can be imported.<br /><br />
+Click <b>Next</b> to import the training datasets.<br />'
+    placement: top
+    postclick:
+      - '#btn-start'
+      - '#btn-close'
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: '#right'
+    content: 'The datasets are uploading in your history.<br />
+These comprise:<br />
+- Three control datasets<br />
+- Three treatment datasets<br />
+- The reference genome<br />
+- The gene feature file.<br />
+Uploaded datasets are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to continue.<br />'
+    placement: left
+
+  - title: '<b>Best practice :)</b>'
+    element: '#right'
+    content: 'Are your datasets named with meaningful names?<br /><br />
+Rename your datasets:<br />
+- Click on the pencil icon on the dataset entry you want to analyse<br />
+- Modify the name in the first box<br />
+- Click <b>Save</b>.<br /><br />
+Click <b>Next</b> to continue.<br />'
+    placement: left
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: ''
+    content: 'The data upload has been completed.<br />'
+    backdrop: true
