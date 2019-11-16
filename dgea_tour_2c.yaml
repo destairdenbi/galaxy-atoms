@@ -1,4 +1,4 @@
-id: dgea_tour_2d
+id: dgea_tour_2c
 name: 'Differential Gene Expression Analysis'
 description: 'Alignment of sequence reads against a reference genome using Segemehl'
 title_default: 'Differential Gene Expression Analysis'

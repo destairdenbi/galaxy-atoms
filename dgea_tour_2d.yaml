@@ -1,4 +1,4 @@
-id: dgea_tour_2b
+id: dgea_tour_2d
 name: 'Differential Gene Expression Analysis'
 description: 'Alignment of sequence reads against a reference genome using STAR'
 title_default: 'Differential Gene Expression Analysis'
