@@ -28,7 +28,7 @@ Click <b>Next</b> to load it.<br />'
     textinsert: featurecounts
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Ffeaturecounts%2Ffeaturecounts%2F1.6.3%2Bgalaxy2"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Ffeaturecounts%2Ffeaturecounts%2F1.6.4%2Bgalaxy1"]
 
   - title: '<b>Counting mapped reads</b>'
     element: '#left'
@@ -73,7 +73,7 @@ Click <b>Next</b> to load it.<br />'
     textinsert: deseq2
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fdeseq2%2Fdeseq2%2F2.11.40.1"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fdeseq2%2Fdeseq2%2F2.11.40.6"]
 
   - title: '<b>Differential gene expression analysis</b>'
     element: '#left'
