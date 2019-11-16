@@ -1,4 +1,4 @@
-id: dgea_tour_1a
+id: dgea_tour_1d
 name: 'Differential Gene Expression Analysis'
 description: 'Quality control and data preprocessing with FastQC and Trim Galore!'
 title_default: 'Differential Gene Expression Analysis'

@@ -1,4 +1,4 @@
-id: dgea_tour_1d
+id: dgea_tour_1b
 name: 'DIfferential Gene Expression Analysis'
 description: 'Quality control and data preprocessing with FastQC and PRINSEQ'
 title_default: 'Differential Gene Expression Analysis'
