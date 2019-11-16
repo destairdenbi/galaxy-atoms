@@ -1,4 +1,4 @@
-id: dgea_tour_2a
+id: dgea_tour_2b
 name: 'Differential Gene Expression Analysis'
 description: 'Alignment of sequence reads against a reference genome using HISAT2'
 title_default: 'Differential Gene Expression Analysis'
