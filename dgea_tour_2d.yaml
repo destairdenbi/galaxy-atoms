@@ -20,7 +20,7 @@ Click <b>Next</b> to load it.<br />'
     textinsert: rna star
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Frgrnastar%2Frna_star%2F2.5.2b-2"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Frgrnastar%2Frna_star%2F2.7.2b"]
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
