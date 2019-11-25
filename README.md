@@ -59,7 +59,7 @@ you set up the Galaxy workflow generator to contribute with new atoms.
 
 ### Set up Docker
 
-Set up Docker by following the same [installation requirements](https://github.com/bagnacan/destair-galaxy-workflow-generator#installation-requirements)
+Set up Docker by following the same [installation requirements](https://github.com/destairdenbi/galaxy-workflow-generator#installation-requirements)
 needed to run the Galaxy workflow generator.
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
@@ -70,7 +70,7 @@ New tools can be added in the Galaxy workflow generator.
 
 Clone the [Galaxy workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator)
 ```
-$ git clone https://github.com/bagnacan/destair-galaxy-workflow-generator.git
+$ git clone https://github.com/destairdenbi/galaxy-workflow-generator.git
 ```
 
 Enter the cloned repository, and edit the ``tools.yaml`` file. New entries are
