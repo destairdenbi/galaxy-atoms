@@ -79,6 +79,7 @@ The minimum set of metadata to be provided for each tool comprise:
 - name
 - owner
 - tool_panel_section_label
+
 If unsure, please refer to the [Galaxy Toolshed](https://toolshed.g2.bx.psu.edu/).  
 
 Once edited, you can build the Docker container locally
