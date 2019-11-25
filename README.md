@@ -2,9 +2,9 @@
 
 # Atoms
 
-This repository contains all de.STAIR atoms developed to assist Galaxy users
-in the analysis of RNA-Seq and BS/RRBS-Seq data.  
-The atoms are incorporated in the [Galaxy workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator).
+This repository contains the de.STAIR atoms that are incorporated in the
+[Galaxy workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator),
+to assist users in the analysis of RNA-Seq and BS/RRBS-Seq data.
 
 - [How it works](#how-it-works)
 - [How to contribute](#how-to-contribute)
@@ -17,9 +17,11 @@ The atoms are incorporated in the [Galaxy workflow generator](https://github.com
 ## How it works
 
 Atoms are interactive Galaxy tours that illustrate one or more tools within the
-context of an experimental setup. Alternative atoms are therefore provided to
-describe the usage and parameterization of alternative tools to solve the same
-biocomputational problem.  
+context of an experimental setup.  
+Alternative atoms are therefore provided to describe the usage and
+parameterization of alternative tools to solve the same biocomputational
+problem.  
+
 In the Galaxy workflow generator, each atom describes a tool (or series
 thereof) to solve a *task* of the desired data analysis.  
 
@@ -27,6 +29,7 @@ For instance, to carry out the tasks of an RNA-Seq analysis:
 1. Quality control and data preprocessing
 2. Genome alignment
 3. Transcript quantification and differential gene expression
+
 alternative atoms can be built using the following Galaxy tools:
 
 <p align="center">
@@ -35,9 +38,11 @@ alternative atoms can be built using the following Galaxy tools:
     width="600px"
     alt="Sample alternative atoms to complete a task in an RNA-Seq analysis"
     valign="top"/>
-  Where <sup>X,Y,Z,W</sup> are alternative parameterizations.
+  <br />
+  <div align="center">
+Where <sup>X,Y,Z,W</sup> are alternative parameterizations.
+  </div>
 </p>
-
 
 Doing so, users can be informed about the availability of alternative
 strategies to carry out the desired analysis, and select the most appropriate
@@ -105,8 +110,5 @@ Once the container is ready, you will be able to copy the new atom in
 ```
 
 You can now find the new atom by navigating the Galaxy interface under the header
-section
-```
-Help -> Interactive Tours
-```
+section ``Help -> Interactive Tours``.
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
