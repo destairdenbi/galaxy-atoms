@@ -14,6 +14,37 @@ The atoms are incorporated in the [Galaxy workflow generator](https://github.com
   - [Test new atoms](#test-new-atoms)
 
 
+## How it works
+
+Atoms are interactive Galaxy tours that illustrate one or more tools within the
+context of an experimental setup. Alternative atoms are therefore provided to
+describe the usage and parameterization of alternative tools to solve the same
+biocomputational problem.  
+In the Galaxy workflow generator, each atom describes a tool (or series
+thereof) to solve a *task* of the desired data analysis.  
+
+For instance, to carry out the tasks of an RNA-Seq analysis:
+1. Quality control and data preprocessing
+2. Genome alignment
+3. Transcript quantification and differential gene expression
+alternative atoms can be built using the following Galaxy tools:
+
+<p align="center">
+  <img align="center"
+    src="web/atoms.png"
+    width="600px"
+    alt="Sample alternative atoms to complete a task in an RNA-Seq analysis"
+    valign="top"/>
+  Where <sup>X,Y,Z,W</sup> are alternative parameterizations.
+</p>
+
+
+Doing so, users can be informed about the availability of alternative
+strategies to carry out the desired analysis, and select the most appropriate
+atom within the context of their experimental setup.
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
+
 ## How to contribute
 
 Atoms can be tested, modified, and extended. The following sections will help
