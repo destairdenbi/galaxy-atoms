@@ -7,10 +7,10 @@
   </style>
   <head>
     <meta charset="UTF-8">
-    <title>HTSeq-count and DESeq2</title>
+    <title>HISAT2</title>
   </head>
   <body>
-    <h4>HTSeq-count and DESeq2</h4>
+    <h4>HISAT2</h4>
     <FONT SIZE="2">
       <h4><img src="logo_destair.png" height="15" /> Tool Rating:</h4>
       <div style="text-indent:10px;">
@@ -21,36 +21,31 @@
           </tr>
           <tr>
             <td>User base:</td>
-            <td>&#10026;&#10026;&#10026;&#10026;&#10026;</td>
+            <td>&#10026;&#10026;&#10026;</td>
           </tr>
           <tr>
             <td>Sensitivity:</td>
-            <td>-</td>
+            <td>&#10026;&#10026;&#10026;</td>
           </tr>
           <tr>
             <td>Speed:</td>
-            <td>&#10026;&#10026;</td>
+            <td>&#10026;&#10026;&#10026;&#10026;</td>
           </tr>
           <tr>
             <td>Configurability:</td>
-            <td>&#10026;&#10026;&#10026;</td>
+            <td>&#10026;&#10026;&#10026;&#10026;</td>
           </tr>
         </table>
       </div>
       <h4>Description:</h4>
       <p style="border:2px; border-radius: 5px; border-style:solid; border-color:#ED1D99; padding: 1em;">
-        <b>HTSeq-count</b> is very similar to its alternative featureCounts: both require the provided input alignment
-        files to be in BAM or SAM format, as well as a genome feature file in GTF or GFF format. Although these tools
-        return similar results, counts can vary considerably in case of paired-ended data. FeatureCounts is faster than
-        its counterpart HTSeq-count, and its count table takes into account feature overlaps. On the contrary,
-        HTSeq-count is slower and more consirvative in terms of counting fragments whose alignment overlaps multiple features.
-        Compared to featureCounts, HTSeq-count is older, and therefore widely used in the community.
-        <br /><br />
-        <b>DESeq2</b> is a tool to carry out differential gene expression analysis. This tool computes ranking and visualization of count data for hypothesis testing under multiple sampling conditions.
+        <b>HISAT2</b> (Hierarchical Indexing for Spliced Alignment of Transcripts) is a successor of the HISAT alignmer,
+        and is optimized for memory usage and speed. This tool is therefore recommended for large data sets.<br />
+        HISAT2 is able to process single- and paired-end reads in FASTQ-format, and works with whole-genome, exome, and
+        transcriptome data.
       </p>
       <h4>Reference:</h4>
-      <a target="_blank" href="https://doi.org/10.1093/bioinformatics/btu638">HTSeq-count</a>
-      <a target="_blank" href="https://doi.org/10.1186/s13059-014-0550-8">DESeq2</a>
+      <a target="_blank" href="https://doi.org/10.1038/nprot.2016.095">HISAT2</a>
     </FONT>
   </body>
 </html>

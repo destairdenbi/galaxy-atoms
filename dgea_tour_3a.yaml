@@ -1,55 +1,53 @@
 id: dgea_tour_3a
 name: 'Differential Gene Expression Analysis'
-description: 'Differential gene expression analysis using featureCounts and DESeq2'
+description: 'Alignment of sequence reads against a reference genome using BWA
 title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: ''
-    content: 'In this tour, we will carry out transcript quantification, and differential gene expression analysis using RNA-Seq data.<br />
-Here, we will leverage on two tools: <b>featureCounts</b>, to count the number of sequence reads overlapping with predetermined genomic features (e.g. exons, genes, promoter regions), and <b>DESeq2</b>, to assess the level of gene expression.<br /><br />
+    content: 'In this tour, we will align sequence reads against a reference genome. This represents a necessary task for the quantification and estimation of gene expression, because it provides a mapping between the processed reads and a reference genome, which can be later used in conjunction with statistical methods to evaluate transcript abundance.<br />
+Here, we will leverage on <b>BWA</b>, an efficient RNA-Seq aligner.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
-  - title: '<b>Counting mapped reads</b>'
-    element: '#right'
-    content: 'Before proceeding, we want to instruct Galaxy that all alignment results, as well as the gene feature file, refer to the same genome build. For each of these entries in your history:<br />
-- Click on the pencil icon of the dataset entry<br />
-- In section <b>Database/Build</b>, select <b>S. cerevisae str. S288C</b><br />
-- Click <b>Save</b>.<br /><br />
-Click <b>Next</b> to start the analysis.<br />'
-    placement: left
-
-  - title: '<b>Counting mapped reads</b>'
+  - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>featureCounts</b> tool.<br />
-featureCounts calculates the number of reads that have been mapped against the genomic feature of a reference genome. Here, a feature is a positional range on a chromosome, or a union of such ranges, representing exons, genes, promoter regions, etc.<br /><br />
+    content: 'Look for the <b>BWA</b> tool.<br />
+BWA is an efficient aligner for mapping sequence reads against a reference genome.<br />
+Here, we want to align the sequence reads from the control and treated samples, against the provided reference genome.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
-    textinsert: featurecounts
+    textinsert: bwa
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Ffeaturecounts%2Ffeaturecounts%2F1.6.4%2Bgalaxy1"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fbwa%2Fbwa%2F0.7.17.4"]
 
-  - title: '<b>Counting mapped reads</b>'
+  - title: '<b>Map sequences against a reference genome</b>'
     element: '#left'
-    content: 'In section <b>Alignment file</b>, click on the <b>Multiple datasets</b> icon, and select all alignment results in the BAM format.<br /><br />
+    content: 'In section <b>Will you select a reference genome from your history or use a built-in index?</b>, select <b>Use a genome from history and build index</b>, and in section <b>Use the following dataset as the reference sequence</b>, specify the uploaded reference genome.<br />
+If the reference genome does not appear in the box, then you need to first convert it to the correct format. In this case:<br />
+- Click on the pencil icon of the reference genome entry in your history<br />
+- Select the <b>Datatype</b> tab<br />
+- Select <b>FASTA</b><br />
+- Click <b>Save</b>.<br />
+When you are done converting, reload BWA, and the reference genome.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
-  - title: '<b>Counting mapped reads</b>'
+  - title: '<b>Map sequences against a reference genome</b>'
     element: '#left'
-    content: 'In section <b>Gene annotation file</b>, chose <b>in your history</b>, and select the uploaded gene feature file in the GFF format.<br /><br />
+    content: 'In section <b>Single or Paired-end reads</b>, select <b>Single</b>, then in section <b>Select fastq dataset</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br />
+If all control and treated datasets do not appear in the box, then you need to first convert them to the correct format. In this case:<br />
+- Click on the pencil icon of one treated or control dataset entry in your history<br />
+- Select the <b>Datatype</b> tab<br />
+- Select <b>FASTA</b><br />
+- Click <b>Save</b><br />
+- Repeat the operation for each treated and control datasets.<br />
+When you are done converting, reload BWA, and the reference genome.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
-  - title: '<b>Counting mapped reads</b>'
-    element: '#left'
-    content: 'The gene feature file organises the gene identifiers under the label "ID". To enable featureCounts referring to such identifiers, we need to explicitly point featureCounts towards the gene "ID" column.<br />
-Click on <b>Advanced options</b> and, in section <b>GFF gene identifier</b>, change the default value to <b>ID</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
-
-  - title: '<b>Counting mapped reads</b>'
+  - title: '<b>Map sequences against a reference genome</b>'
     element: '#left'
     content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
@@ -57,55 +55,14 @@ Click <b>Next</b> to execute.<br />'
     postclick:
       - '#execute'
 
-  - title: '<b>Counting mapped reads</b>'
+  - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'featureCounts processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to use the read counts for differential gene expression analysis.<br />'
-    placement: left
-
-  - title: '<b>Differential gene expression analysis</b>'
-    element: '#tool-search-query'
-    content: 'Look for the <b>DESeq2</b> tool.<br />
-DESeq2 applies statistical methods to the genomic features-aligned read counts, to carry out gene expression analysis.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    placement: right
-    textinsert: deseq2
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fdeseq2%2Fdeseq2%2F2.11.40.6"]
-
-  - title: '<b>Differential gene expression analysis</b>'
-    element: '#left'
-    content: 'DESeq2 can handle multiple factors affecting an experiment, each of which has two levels (or states). For instance, we can describe our experiment in terms of its treatment factor, which is conditioned by two different healthy states: control, and treated. Thus, we will describe our experiment accordingly.<br />
-In section <b>Specify a factor name</b>, change the default name with <b>Treatment</b>.<br />
-In its two subsections <b>Specify a factor level</b>, change the first default value to <b>Control</b>, and the second to <b>Treated</b>. Then, click on the <b>Multiple datasets</b> icon of each factor level, and select all control and treated samples respectively.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
-
-  - title: '<b>Differential gene expression analysis</b>'
-    element: '#left'
-    content: 'In section <b>Output normalized counts table</b>, select <b>yes</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
-
-
-  - title: '<b>Differential gene expression analysis</b>'
-    element: '#left'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: left
-    postclick:
-      - '#execute'
-
-  - title: '<b>Differential gene expression analysis</b>'
-    element: '#right'
-    content: 'DESeq2 processing has begun, and the results are loading in your history.<br />
+    content: 'BWA processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview your data.<br />'
     placement: left
 
-  - title: '<b>Differential gene expression analysis</b>'
+  - title: '<b>Map sequences against a reference genome</b>'
     element: ''
-    content: 'The differential gene expression analysis has been completed.<br />'
+    content: 'The alignment of sequence reads against a reference genome has been completed.<br />'
     backdrop: true
