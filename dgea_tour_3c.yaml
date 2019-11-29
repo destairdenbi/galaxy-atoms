@@ -1,47 +1,59 @@
-id: dgea_tour_3b
+id: dgea_tour_3c
 name: 'Differential Gene Expression Analysis'
-description: 'Alignment of sequence reads against a reference genome using HISAT2'
+description: 'Alignment of sequence reads against a reference genome using Segemehl'
 title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: ''
     content: 'In this tour, we will align sequence reads against a reference genome. This represents a necessary task for the quantification and estimation of gene expression, because it provides a mapping between the processed reads and a reference genome, which can be later used in conjunction with statistical methods to evaluate transcript abundance.<br />
-Here, we will leverage on <b>HISAT2</b>, an efficient RNA-Seq aligner.<br /><br />
+Here, we will leverage on <b>Segemehl</b>, an efficient RNA-Seq aligner.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>HISAT2</b> tool.<br />
-HISAT2 is an efficient aligner for mapping sequence reads against a reference genome.<br />
+    content: 'Look for the <b>Segemehl</b> tool.<br />
+Segemehl is an efficient aligner for mapping sequence reads against a reference genome.<br />
 Here, we want to align the sequence reads from the control and treated samples, against the provided reference genome.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
-    textinsert: hisat2
+    textinsert: segemehl
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fhisat2%2Fhisat2%2F2.1.0%2Bgalaxy5"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Frnateam%2Fsegemehl%2Fsegemehl%2F0.2.0.4"]
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'In section <b>Source for the reference genome</b>, select <b>Use a genome from history</b>, and specify the uploaded reference genome.<br />
+    element: '#left'
+    content: 'In section <b>Will you select a reference genome from your history or use a built-in index?</b>, select <b>Use one from the history</b>, and in section <b>Select the reference genome</b>, specify the uploaded reference genome.<br />
 If the reference genome does not appear in the box, then you need to first convert it to the correct format. In this case:<br />
 - Click on the pencil icon of the reference genome entry in your history<br />
 - Select the <b>Datatype</b> tab<br />
 - Select <b>FASTA</b><br />
 - Click <b>Save</b>.<br />
-When you are done converting, reload HISAT2, and the reference genome.<br /><br />
+When you are done converting, reload Segemehl, and the reference genome.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'In section <b>Single-end or paired-end reads?</b>, chose <b>Single-end</b>. Then, in section <b>FASTA/Q file</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br /><br />
+    element: '#left'
+    content: 'In section <b>Reads in FASTQ/FASTA files</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br />
+If all control and treated datasets do not appear in the box, then you need to first convert them to the correct format. In this case:<br />
+- Click on the pencil icon of one treated or control dataset entry in your history<br />
+- Select the <b>Datatype</b> tab<br />
+- Select <b>fastqsanger</b><br />
+- Click <b>Save</b><br />
+- Repeat the operation for each treated and control datasets.<br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: left
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
+    element: '#left'
+    content: 'In section <b>Detect split/spliced reads</b>, select <b>Split reads</b> to detect spliced variants within the samples.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: left
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#left'
     content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
     placement: left
@@ -50,7 +62,7 @@ Click <b>Next</b> to execute.<br />'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'HISAT2 processing has begun, and the results are loading in your history.<br />
+    content: 'Segemehl processing has begun, and the results are loading in your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview your data.<br />'
     placement: left
