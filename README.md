@@ -127,7 +127,7 @@ section ``Help -> Interactive Tours``.
 - [Set up the de.STAIR atoms](https://github.com/destairdenbi/galaxy-webhooks#set-up-the-destair-atoms)
 - If the contributed atom does not implement a task of an RNA-Seq or
 BS/RRBS-Seq analysis, then you will need to create a new linker file for the
-new analysis. Look at the examples in the repository.
+new analysis. Look at the examples in the repository
 - Otherwise, name the contributed atom with the label ``dgea_Xx.yaml``, or
 ``bs_Xx.yaml``. Where ``X`` is the task number, and ``x`` a tool letter
 - [Set up the de.STAIR plugin](https://github.com/destairdenbi/galaxy-webhooks#set-up-the-destair-plugin)
