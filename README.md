@@ -100,7 +100,14 @@ You can easily create atoms by leveraging on the [Galaxy tour builder](https://g
 
 ### Test new atoms
 
-Run the Galaxy Docker container by creating a *bind mount*
+New atoms can be tested by running a Galaxy Docker container using a *bind
+mount*, or by running the [Galay workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator)
+using the interactive [plugin](https://github.com/destairdenbi/galaxy-webhooks).
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
+#### Bind mount method
+
+Run the Galaxy Docker container by creating a bind mount:
 ```
 $ docker run -d -p 8080:80 -v /absolute/path/to/local/directory/:/export/ quay.io/destair/galaxy-workflow-generator:latest
 ```
@@ -112,4 +119,17 @@ Once the container is ready, you will be able to copy the new atom in
 
 You can now find the new atom by navigating the Galaxy interface under the header
 section ``Help -> Interactive Tours``.
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
+#### Interactive plugin method
+
+- [Set up the Galaxy environment](https://github.com/destairdenbi/galaxy-webhooks#set-up-the-galaxy-environment)
+- [Set up the de.STAIR atoms](https://github.com/destairdenbi/galaxy-webhooks#set-up-the-destair-atoms)
+- If the contributed atom does not implement a task of an RNA-Seq or
+BS/RRBS-Seq analysis, then you will need to create a new linker file for the
+new analysis. Look at the examples in the repository
+- Otherwise, name the contributed atom with the label ``dgea_Xx.yaml``, or
+``bs_Xx.yaml``. Where ``X`` is the task number, and ``x`` a tool letter
+- [Set up the de.STAIR plugin](https://github.com/destairdenbi/galaxy-webhooks#set-up-the-destair-plugin)
+- [Run the Galaxy framework](https://github.com/destairdenbi/galaxy-webhooks#run-the-galaxy-framework)
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
