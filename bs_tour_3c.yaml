@@ -32,7 +32,6 @@ Click <b>Next</b> to load it.<br />'
   - title: '<b>Map sequences against a reference genome</b>'
     element: 'div[tour_id="reference_genome|source"]'
     content: 'Select <b>Use a genome from history</b>.<br /><br />
- and specify the uploaded reference genome.<br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
     placement: bottom
 
