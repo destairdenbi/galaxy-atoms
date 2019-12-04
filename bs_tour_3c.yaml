@@ -1,0 +1,89 @@
+id: dgea_tour_3c
+name: 'BS-Seq analysis'
+description: 'Alignment of sequence reads against a reference genome using HISAT2'
+title_default: 'BS-Seq analysis'
+steps:
+  - title: '<b>Outline</b>'
+    element: ''
+    content: 'In this tour we will align MethylC sequenced reads against a
+reference<br />
+genome. This represents a necessary task for the quantification of<br />
+methilated Cytosines in CpG and CHG genomic contexts which can be later<br />
+used to infer and evaluate e.g. enhancer promoter or gene body<br />
+methilation rates.<br />
+Here, we will leverage on <b>HISAT2</b>.<br /><br />
+Click <b>Next</b> to start the analysis.<br />'
+    backdrop: true
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#tool-search-query'
+    content: 'Look for the <b>HISAT2</b> tool.<br />
+HISAT2 is an efficient aligner for mapping sequence reads against a reference
+genome.<br />
+Here we want to align the sequences from the imported samples against<br />
+the provided reference genome.<br /><br />
+Click <b>Next</b> to load it.<br />'
+    placement: right
+    textinsert: hisat2
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fhisat2%2Fhisat2%2F2.1.0%2Bgalaxy5"]
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="reference_genome|source"]'
+    content: 'Select <b>Use a genome from history</b>.<br /><br />
+ and specify the uploaded reference genome.<br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="reference_genome|history_item"]'
+    content: 'Select the imported reference genome from your history.
+<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="library|type"]'
+    content: 'Select <b>Paired-end</b>.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="library|input_1"]'
+    content: 'Click on the dataset collection icon, and select the 1st read
+mate R1.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="library|input_2"]'
+    content: 'Click on the dataset collection icon, and select the 2nd read
+mate R2.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="library|input_2"]'
+    content: 'For all remaining parametrisation options, we will use the
+provided<br />
+default settings. However, for further information, please refer to the<br />
+manual provided below the tool box.<br /><br />
+Click <b>Next</b> to execute.<br />'
+    placement: bottom
+    postclick:
+      - '#execute'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right'
+    content: 'HISAT2 processing has begun, and the results are loading in your
+history.<br />
+Results are available as soon as their entries turn green.<br /><br />
+Click <b>Next</b> to overview your data.<br />'
+    placement: left
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: ''
+    content: 'The alignment of sequence reads against a reference genome has
+been completed.<br />'
+    backdrop: true
