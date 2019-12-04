@@ -1,4 +1,4 @@
-id: dgea_tour_3b
+id: bs_tour_3b
 name: 'BS-Seq analysis'
 description: 'Alignment of sequence reads against a reference genome using BWA'
 title_default: 'BS-Seq analysis'
