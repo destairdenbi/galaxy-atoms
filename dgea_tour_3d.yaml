@@ -5,16 +5,22 @@ title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: ''
-    content: 'In this tour, we will align sequence reads against a reference genome. This represents a necessary task for the quantification and estimation of gene expression, because it provides a mapping between the processed reads and a reference genome, which can be later used in conjunction with statistical methods to evaluate transcript abundance.<br />
-Here, we will leverage on <b>STAR</b>, an ultrafast and low error rate RNA-Seq aligner.<br /><br />
+    content: 'In this tour we will align sequence reads against a reference
+genome.<br />
+Here, we will leverage on <b>STAR</b>, an ultrafast and low error rate RNA-Seq
+aligner.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
     content: 'Look for the <b>STAR</b> tool.<br />
-STAR is an ultrafast and sensitive RNA-Seq aligner, that maps sequence reads against a reference genome.<br />
-Here, we want to align the sequence reads from the control and treated samples, against the provided reference genome.<br /><br />
+STAR is an ultrafast and sensitive RNA-Seq aligner, that maps sequence reads
+against<br />
+a reference genome.<br />
+Here, we want to align the sequence reads from the control and treated samples,
+against<br />
+the provided reference genome.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: rna star
@@ -23,46 +29,62 @@ Click <b>Next</b> to load it.<br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Frgrnastar%2Frna_star%2F2.7.2b"]
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'In section <b>Single-end or paired-end reads</b>, chose <b>Single-end</b>. Then, in section <b>RNA-Seq FASTQ/FASTA file</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br /><br />
+    element: 'div[tour_id="singlePaired|sPaired"]'
+    content: 'Select <b>Single-end</b>.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'In section <b>Custom or built-in reference genome</b>, select <b>Use reference genome from history and create temporary index</b>, then in section <b>Select a reference genome</b>, specify the uploaded reference genome.<br />
-If the reference genome does not appear in the box, then you need to first convert it to the correct format. In this case:<br />
-- Click on the pencil icon of the reference genome entry in your history<br />
-- Select the <b>Datatype</b> tab<br />
-- Select <b>FASTA</b><br />
-- Click <b>Save</b>.<br />
-When you are done converting, reload STAR, and reselect all imported control and treated datasets, as well as the reference genome.<br /><br />
+    element: 'div[tour_id="singlePaired|input1"]'
+    content: 'Click on the <b>Multiple datasets</b> icon, and select all
+control<br />
+and treated samples.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'In section <b>Gene model (gff3,gtf) file for splice junctions</b>, select the gene feature file GFF entry from your history.<br />
-If the gene feature file does not appear in the box, then you need to first convert it to the correct format. In this case:<br />
-- Click on the pencil icon of the gene feature entry in your history<br />
-- Select the <b>Datatype</b> tab<br />
-- Select <b>GTF</b><br />
-- Click <b>Save</b>.<br />
-When you are done converting, reload STAR, and reselect all imported control and treated datasets, the reference genome, and the gene feature file.<br /><br />
+    element: 'div[tour_id="refGenomeSource|geneSource"]'
+    content: 'Select <b>Use reference genome from history and create temporary
+index</b>.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
+    element: 'div[tour_id="refGenomeSource|genomeFastaFiles"]'
+    content: 'Select the imported reference genome from your history.
+<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="refGenomeSource|GTFconditional|GTFselect"]'
+    content: 'Select <b>build index with gene model</b>.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="refGenomeSource|GTFconditional|sjdbGTFfile"]'
+    content: 'Select the imported gene feature file from your history.
+<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="refGenomeSource|GTFconditional|sjdbGTFfile"]'
+    content: 'For all remaining parametrisation options, we will use the
+provided<br />
+default settings. However, for further information, please refer to the manual
+provided<br />
+below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
-    placement: left
+    placement: bottom
     postclick:
       - '#execute'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'STAR processing has begun, and the results are loading in your history.<br />
+    content: 'STAR processing has begun, and the results are loading in your
+history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview your data.<br />'
     placement: left
