@@ -5,16 +5,21 @@ title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: ''
-    content: 'In this tour, we will align sequence reads against a reference genome. This represents a necessary task for the quantification and estimation of gene expression, because it provides a mapping between the processed reads and a reference genome, which can be later used in conjunction with statistical methods to evaluate transcript abundance.<br />
-Here, we will leverage on <b>Segemehl</b>, an efficient RNA-Seq aligner.<br /><br />
+    content: 'In this tour we will align sequence reads against a reference
+genome.<br />
+Here, we will leverage on <b>Segemehl</b>, an efficient RNA-Seq aligner.
+<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     backdrop: true
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
     content: 'Look for the <b>Segemehl</b> tool.<br />
-Segemehl is an efficient aligner for mapping sequence reads against a reference genome.<br />
-Here, we want to align the sequence reads from the control and treated samples, against the provided reference genome.<br /><br />
+Segemehl is an efficient aligner for mapping sequence reads against a reference
+genome.<br />
+Here, we want to align the sequence reads from the control and treated
+samples,<br />
+against the provided reference genome.<br /><br />
 Click <b>Next</b> to load it.<br />'
     placement: right
     textinsert: segemehl
@@ -23,46 +28,55 @@ Click <b>Next</b> to load it.<br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Frnateam%2Fsegemehl%2Fsegemehl%2F0.2.0.4"]
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#left'
-    content: 'In section <b>Will you select a reference genome from your history or use a built-in index?</b>, select <b>Use one from the history</b>, and in section <b>Select the reference genome</b>, specify the uploaded reference genome.<br />
-If the reference genome does not appear in the box, then you need to first convert it to the correct format. In this case:<br />
-- Click on the pencil icon of the reference genome entry in your history<br />
-- Select the <b>Datatype</b> tab<br />
-- Select <b>FASTA</b><br />
-- Click <b>Save</b>.<br />
-When you are done converting, reload Segemehl, and the reference genome.<br /><br />
+    element: 'div[tour_id="refGenomeSource|genomeSource"]'
+    content: 'Select <b>Use one from the history</b>.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#left'
-    content: 'In section <b>Reads in FASTQ/FASTA files</b>, click on the <b>Multiple datasets</b> icon, and select all control and treated samples.<br />
-If all control and treated datasets do not appear in the box, then you need to first convert them to the correct format. In this case:<br />
-- Click on the pencil icon of one treated or control dataset entry in your history<br />
-- Select the <b>Datatype</b> tab<br />
-- Select <b>fastqsanger</b><br />
-- Click <b>Save</b><br />
-- Repeat the operation for each treated and control datasets.<br />
+    element: 'div[tour_id="refGenomeSource|own_reference_genome"]'
+    content: 'Select the imported reference genome from your history.
+<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#left'
-    content: 'In section <b>Detect split/spliced reads</b>, select <b>Split reads</b> to detect spliced variants within the samples.<br /><br />
+    element: 'div[tour_id="library|type"]'
+    content: 'Select <b>Single-end</b>.<br /><br />
 Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    placement: bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#left'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
+    element: 'div[tour_id="library|input_query"]'
+    content: 'Click on the <b>Multiple datasets</b> icon, and select all
+control<br />
+and treated samples.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="splitreads|splits"]'
+    content: 'Select <b>Split reads</b> to detect spliced variants within the
+samples.<br /><br />
+Click <b>Next</b> to overview further parametrisation options.<br />'
+    placement: bottom
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="splitreads|splits"]'
+    content: 'For all remaining parametrisation options, we will use the
+provided<br />
+default settings. However, for further information, please refer to the manual
+provided<br />
+below the tool box.<br /><br />
 Click <b>Next</b> to execute.<br />'
-    placement: left
+    placement: bottom
     postclick:
       - '#execute'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'Segemehl processing has begun, and the results are loading in your history.<br />
+    content: 'Segemehl processing has begun, and the results are loading in
+your history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview your data.<br />'
     placement: left
