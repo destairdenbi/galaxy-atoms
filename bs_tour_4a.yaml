@@ -1,6 +1,6 @@
 id: bs_tour_4a
 name: 'BS-Seq analysis'
-description: 'Quantification of methylated reads within a CpG context using Samtools and MethylDackel'
+description: 'Quantification of methylated reads within a CpG context using Samtools, MethylDackel, and bedtools'
 title_default: 'BS-Seq analysis'
 steps:
   - title: '<b>Outline</b>'
