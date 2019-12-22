@@ -4,7 +4,7 @@ description: 'Alignment of sequence reads against a reference genome using HISAT
 title_default: 'BS-Seq analysis'
 steps:
   - title: '<b>Outline</b>'
-    element: ''
+    element: '#masthead'
     content: 'In this tour we will align MethylC sequenced reads against a
 reference<br />
 genome. This represents a necessary task for the quantification of<br />
@@ -13,7 +13,7 @@ used to infer and evaluate e.g. enhancer promoter or gene body<br />
 methilation rates.<br />
 Here, we will leverage on <b>HISAT2</b>.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
-    backdrop: true
+    placement :bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
@@ -82,7 +82,7 @@ Click <b>Next</b> to overview your data.<br />'
     placement: left
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: ''
+    element: '#masthead'
     content: 'The alignment of sequence reads against a reference genome has
 been completed.<br />'
-    backdrop: true
+    placement :bottom

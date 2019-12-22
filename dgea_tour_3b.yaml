@@ -4,13 +4,13 @@ description: 'Alignment of sequence reads against a reference genome using HISAT
 title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
-    element: ''
+    element: '#masthead'
     content: 'In this tour we will align sequence reads against a reference
 genome.<br />
 Here, we will leverage on <b>HISAT2</b>, an efficient RNA-Seq aligner.
 <br /><br />
 Click <b>Next</b> to start the analysis.<br />'
-    backdrop: true
+    placement: bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
@@ -18,52 +18,44 @@ Click <b>Next</b> to start the analysis.<br />'
 HISAT2 is an efficient aligner for mapping sequence reads against a reference
 genome.<br />
 Here, we want to align the sequence reads from the control and treated<br />
-samples, against the provided reference genome.<br /><br />
-Click <b>Next</b> to load it.<br />'
+samples, against the provided reference genome.<br />'
     placement: right
     textinsert: hisat2
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fhisat2%2Fhisat2%2F2.1.0%2Bgalaxy5"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fhisat2%2Fhisat2%2F2.1.0"]
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="reference_genome|source"]'
-    content: 'Select <b>Use a genome from history</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
+    element: 'div[tour_id="reference_genome|source"] .ui-form-field .ui-select'
+    content: '<text style="color:red">Select: <b>Use a genome from history</b></text>'
+    placement: top
+    pointer: true
+
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="reference_genome|history_item"]'
-    content: 'Select the imported reference genome from your history.
-<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
+    element: 'div[tour_id="library|input_1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton:last > :nth-child(2)'
+    content: 'Select multiple datasets.<br /><br />'
+    placement: top
+    onnextclick:
+      - 'div[tour_id="library|input_1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton:last > :nth-child(2)'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="library|type"]'
-    content: 'Select <b>Single-end</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
+    element: 'div[tour_id="library|input_1"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select:last'
+    content: 'Select all trimmed control and treated datasets.<br /><br />'
+    placement: top
+    select:
+      - 'div[tour_id="library|input_1"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select:last > .select > :nth-child(-n+8)'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="library|input_1"]'
-    content: 'Click on the <b>Multiple datasets</b> icon, and select all
-control<br />
-and treated samples.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="library|input_1"]'
+    element: '#execute'
     content: 'For all remaining parametrisation options, we will use the
-provided<br />
-default settings. However, for further information, please refer to the manual
-provided<br />
-below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
+provided default settings.<br /> However, for further information, please refer to the manual
+provided below the tool box.<br /><br />'
+    placement: top
     postclick:
       - '#execute'
+
+
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
@@ -72,8 +64,16 @@ history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview your data.<br />'
     placement: left
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        mincount: 1
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: ''
+    element: '#masthead'
     content: 'The alignment of sequence reads against a reference genome has been completed.<br />'
-    backdrop: true
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0

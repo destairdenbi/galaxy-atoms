@@ -4,12 +4,12 @@ description: 'Alignment of sequence reads against a reference genome using BWA'
 title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
-    element: ''
+    element: '#masthead'
     content: 'In this tour we will align sequence reads against a reference
 genome.<br />
 Here, we will leverage on <b>BWA</b>, an efficient RNA-Seq aligner.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
-    backdrop: true
+    placement: bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
@@ -26,43 +26,40 @@ Click <b>Next</b> to load it.<br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fbwa%2Fbwa%2F0.7.17.4"]
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="reference_source|reference_source_selector"]'
-    content: 'Select <b>Use a genome from history and build index</b>.
-<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="reference_source|ref_file"]'
-    content: 'Select the imported reference genome from your history.
-<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
+    element: 'div[tour_id="reference_source|reference_source_selector"] .ui-form-field .ui-select'
+    content: '<text style="color:red">Select: <b>Use a genome from history and build index</b></text>'
+    placement: top
+    pointer: true
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: 'div[tour_id="input_type|input_type_selector"]'
-    content: 'Select <b>Single fastq</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
+    content: '<text style="color:red">Select: <b>Single fastq</b></text>'
+    placement: top
+    pointer: true
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="input_type|fastq_input1"]'
-    content: 'Click on the <b>Multiple datasets</b> icon, and select all
-control<br />
-and treated samples.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
+    element: 'div[tour_id="input_type|fastq_input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton:last > :nth-child(2)'
+    content: 'Select multiple datasets.<br /><br />'
+    placement: top
+    onnextclick:
+      - 'div[tour_id="input_type|fastq_input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton:last > :nth-child(2)'
+
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="input_type|fastq_input1"]'
+    element: 'div[tour_id="input_type|fastq_input1"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select:last'
+    content: 'Select all trimmed control and treated datasets.<br /><br />'
+    placement: top
+    select:
+      - 'div[tour_id="input_type|fastq_input1"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select:last > .select > :nth-child(-n+8)'
+
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#execute'
     content: 'For all remaining parametrisation options, we will use the
-provided<br />
-default settings. However, for further information, please refer to the manual
-provided<br />
-below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
+default settings.<br />However, for further information, please refer to the manual
+provided below the tool box.<br /><br />'
+    placement: top
+    onnextclick:
       - '#execute'
 
   - title: '<b>Map sequences against a reference genome</b>'
@@ -72,8 +69,16 @@ history.<br />
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview your data.<br />'
     placement: left
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        mincount: 1
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: ''
+    element: '#masthead'
     content: 'The alignment of sequence reads against a reference genome has been completed.<br />'
-    backdrop: true
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0

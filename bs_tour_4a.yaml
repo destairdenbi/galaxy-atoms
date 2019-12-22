@@ -4,10 +4,10 @@ description: 'Quantification of methylated reads within a CpG context using Samt
 title_default: 'BS-Seq analysis'
 steps:
   - title: '<b>Outline</b>'
-    element: ''
+    element: '#masthead'
     content: 'In this tour we will infer genome-wide methilation rates in a CpG context.<br />Here, we will leverage on two tools: <b>Samtools</b>, to extract properly paired sequences from the aligned input data, and <b>MethylDackel</b> to quantify the methylated reads of the provided CpG context.<br />
 Click <b>Next</b> to start the analysis.<br />'
-    backdrop: true
+    placement :bottom
 
   - title: '<b>Extract properly paired sequences</b>'
     element: '#tool-search-query'
@@ -554,6 +554,6 @@ Click <b>Next</b> to proceed further with the downstream analysis.<br />'
     placement: left
 
   - title: '<b>Quantify the methylated reads</b>'
-    element: ''
+    element: '#masthead'
     content: 'The quantification of methylated reads within a CpG context has been completed.<br />'
-    backdrop: true
+    placement :bottom

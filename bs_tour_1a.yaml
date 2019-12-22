@@ -4,75 +4,92 @@ description: 'Data upload'
 title_default: 'BS-Seq analysis'
 steps:
   - title: '<b>Outline</b>'
-    element: ''
+    element: '#masthead'
     content: 'In this tour we will upload NGS data to be analysed for methylation levels.<br />
 Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy framework.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
-    backdrop: true
+    placement: bottom
 
   - title: '<b>Import the sequence datasets</b>'
-    element: '#tool-panel-upload-button .fa.fa-upload'
-    content: 'The import button imports data into Galaxy.<br /><br />
-Click <b>Next</b> to import your data.<br />'
+    element: '.fa.fa-upload'
+    content: Imports data into Galaxy.
     placement: right
-    postclick:
-      - '.upload-button'
-      - '#btn-new'
-
+    onnextclick:
+      - '.fa.fa-upload'
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content'
+        count: 0
   - title: '<b>Import the sequence datasets</b>'
-    element: '.upload-text-content:last'
-    content: 'Data can be imported from the local machine, as well as from diverse online resources.<br /><br />
-Click <b>Next</b> to import training datasets from <a href="https://github.com" target="_blank">GitHub</a>.<br />'
+    element: >-
+      .tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(5)
+      > .title
+    content: 'From remote source'
+    placement: bottom
+    onloadclick:
+      - '.tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(3) > .title'
+    onnextclick:
+      - '.tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(5) > .title'
+  - title: '<b>Import the sequence datasets</b>'
+    element: .upload-text-content
+    content: 'Enter URLs'
     placement: bottom
     textinsert: |
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N1.R1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N1.R2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N2.R1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N2.R2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N3.R1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N3.R2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N4.R1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_1T.N4.R2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N1.R1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N1.R2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N2.R1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N2.R2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N3.R1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N3.R2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N4.R1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/rbs_3T.N4.R2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/hg38.goi.fa
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/bs_tour/hg38.promoter.bed
-
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N1.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N1.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N2.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N2.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N3.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N3.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N4.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N4.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N1.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N1.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N2.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N2.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N3.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N3.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N4.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N4.fastq.gz
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/hg38.goi.fa
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/hg38.goi.gtf
+      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/hg38.promoter.bed
   - title: '<b>Import the sequence datasets</b>'
     element: '#btn-start'
-    content: 'Multiple datasets can be imported.<br /><br />
-Click <b>Next</b> to import the training datasets.<br />'
-    placement: top
-    postclick:
+    content: Start the upload.
+    placement: bottom
+    onnextclick:
       - '#btn-start'
+  - title: '<b>Import the sequence datasets</b>'
+    element: '#btn-close'
+    content: Close the dialog.
+    placement: bottom
+    onnextclick:
       - '#btn-close'
+.tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(1) > .title'
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content'
+        mincount: 1
 
   - title: '<b>Import the sequence datasets</b>'
     element: '#right'
     content: 'The datasets are uploading in your history.<br />
 These comprise:<br />
-- Eight datasets collecting read mate-pairs at the 1st Trimester<br />
-- Eight datasets collecting read mate-pairs at the 3rd Trimester<br />
-- The reference genome<br />
+- Eight datasets collecting read mate-pairs at the 1st Trimester (control)<br />
+- Eight datasets collecting read mate-pairs at the 3rd Trimester (treatment)<br />
+- The reference genome and annotation<br />
 - The CpG context file.<br />
 Uploaded datasets are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to continue.<br />'
     placement: left
 
-  - title: '<b>Best practice :)</b>'
+  - title: '<b>Import the sequence datasets</b>'
     element: '#right'
-    content: 'Are your datasets named with meaningful names?<br /><br />
-Rename your datasets:<br />
-- Click on the pencil icon on the dataset entry you want to analyse<br />
-- Modify the name in the first box<br />
-- Click <b>Save</b>.<br /><br />
-Click <b>Next</b> to resume the analysis once you are done.<br />'
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0
+    content: 'Your data was successfully uploaded'
     placement: left
 
   - title: '<b>Create a collection</b>'
@@ -89,37 +106,223 @@ Click <b>Next</b> to start.<br />'
 
   - title: '<b>Create a collection</b>'
     element: '#right'
-    content: 'We want to create as many collections as sample conditions (treatment 1<br />
-and 3) and sample mate pairs (forward and reverse):<br />
-- Click on the <b>Operations on multiple datasets</b> icon<br />
-- Click <b>All</b> to select every dataset<br />
-- Click <b>For all selected...</b>, and select <b>Build Collection from
-  Rules</b>.<br /><br />
-Click <b>Next</b> to set the criteria for building the collections.<br />'
+    content: 'We want to create as many collections as sample conditions <br />
+(control/treatment and sample mate pairs (forward/reverse)<br />'
     placement: left
 
-  - title: '<b>Create a collection</b>'
-    element: ''
-    content: 'First, we retrieve the collection name from dataset names:<br />
-- Click on <b>+ Column</b>, and select <b>Using a Regular Expression</b><br />
-- In the <b>From Column</b> drop-down menu, select <b>B</b><br />
-- Click on <b>Create column from expression replacement</b><br />
-- In <b>Regular Expression</b>, enter the string <b>(rbs_\dT).+(R\d)</b><br />
-- In <b>Replacement Expression</b>, enter the string <b>\1\2</b><br />
-- Click <b>Apply</b> to apply the criteria.<br /><br />
-Second, we group by condition and mate pairing:<br />
-- Click on <b>+ Rules</b>, and select <b>Add / Modify Column Definitions</b><br />
-- Click on <b>+ Add Definition</b>, and select <b>Collection Name</b><br />
-- In the <b>Collection Name</b> drop-down menu, select <b>C</b><br />
-- Click <b>Apply</b> to apply the criteria.<br /><br />
-Finally, since a history entry will be created for each collection, we can<br />
-keep the history clean by hiding the originally imported datasets:<br />
-- Click <b>Hide the original elements</b><br />
-- Click <b>Create</b> to create the final collections.<br /><br />
-You are all set! Click <b>Next</b> to analyse your dataset collections.<br />'
+  - title: <b>Create collections</b>
+    element: .fa.fa-check-square-o
+    content: 'Select multiple datasets'
+    placement: left
+    onnextclick:
+      - '.fa.fa-check-square-o'
+  - title: <b>Create collections</b>
+    element: .select-all
+    content: 'Select all'
+    placement: left
+    onnextclick:
+      - '.select-all'
+  - title: <b>Create collections</b>
+    element: '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle'
+    content: 'Choose an option'
+    placement: top
+  - title: <b>Create collections</b>
+    element: '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle'
+    content: 'Create collections from rules'
+    placement: top
+    onloadclick:
+      - '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle'
+    onnextclick:
+      - '.float-right > :nth-child(9) > a'
+  - title: <b>Create collections</b>
+    element: .creator-reset-btn
+    content: 'Reset default definitions'
     placement: bottom
+    onnextclick:
+      - '.creator-reset-btn'
 
-  - title: '<b>Import the sequence datasets</b>'
-    element: ''
+
+
+
+  - title: <b>Create collections</b>
+    element: .rule-menu-column-button
+    content: 'Create a new table column (1/3)'
+    placement: bottom
+  - title: <b>Create collections</b>
+    element: .rule-menu-column-button
+    content: 'Add column from metadata'
+    placement: bottom
+    onloadclick:
+      - '.rule-menu-column-button'
+    onnextclick:
+      - '.rule-link-add-column-metadata'
+  - title: <b>Create collections</b>
+    element: select
+    content: '<text style="color:red">Select: <b>Name</b></text>'
+    placement: right
+    pointer: true
+  - title: <b>Create collections</b>
+    element: .rule-editor-ok
+    content: 'Apply'
+    placement: right
+    onnextclick:
+      - '.rule-editor-ok'
+
+
+  - title: <b>Create collections</b>
+    element: .rule-menu-filter-button
+    content: 'Filter for fastq data rows'
+    placement: bottom
+  - title: <b>Create collections</b>
+    element: .rule-menu-filter-button
+    content: 'Using a regular expression'
+    placement: bottom
+    onloadclick:
+      - '.rule-menu-filter-button'
+    onnextclick:
+      - '.rule-link-add-filter-regex'
+  - title: <b>Create collections</b>
+    element: '.rule-regular-expression'
+    content: '<text style="color:red">Enter: <b>fastq</b></text>'
+    placement: right
+    pointer: true
+  - title: <b>Create collections</b>
+    element: .rule-editor-ok
+    content: 'Apply on column A'
+    placement: right
+    onnextclick:
+      - '.rule-editor-ok'
+
+
+  - title: <b>Create collections</b>
+    element: .rule-menu-column-button
+    content: 'Create a new table column (2/3)'
+    placement: bottom
+  - title: <b>Create collections</b>
+    element: .rule-menu-column-button
+    content: 'Add column from basename of URL'
+    placement: bottom
+    onloadclick:
+      - '.rule-menu-column-button'
+    onnextclick:
+      - '.rule-link-add-column-basename'
+  - title: <b>Create collections</b>
+    element: .rule-editor-ok
+    content: 'Apply on column A'
+    placement: right
+    onnextclick:
+      - '.rule-editor-ok'
+
+
+
+  - title: <b>Create collections</b>
+    element: .rule-menu-column-button
+    content: 'Create a new table column (3/3)'
+    placement: bottom
+  - title: <b>Create collections</b>
+    element: .rule-menu-column-button
+    content: 'Trim suffix'
+    placement: bottom
+    onloadclick:
+      - '.rule-menu-column-button'
+    onnextclick:
+      - '.rule-link-add-column-substr'
+
+  - title: <b>Create collections</b>
+    element: .rule-column-selector
+    content: '<text style="color:red">Select: <b>B</b></text>'
+    placement: right
+    pointer: true
+
+  - title: <b>Create collections</b>
+    element: '.rule-editor > :nth-child(2) > select'
+    content: '<text style="color:red">Select: <b>Strip off suffix specified</b></text>'
+    placement: right
+    pointer: true
+
+  - title: <b>Create collections</b>
+    element: ':nth-child(3) > input'
+    content: '<text style="color:red">Enter: <b>12</b></text>'
+    placement: right
+    pointer: true
+
+  - title: <b>Create collections</b>
+    element: .rule-editor-ok
+    content: 'Apply on column B'
+    placement: right
+    onnextclick:
+      - '.rule-editor-ok'
+
+
+
+
+  - title: <b>Create collections</b>
+    element: .rule-menu-rules-button
+    content: 'Create a new rule'
+    placement: bottom
+  - title: <b>Create collections</b>
+    element: .rule-menu-rules-button
+    content: 'Add rules'
+    placement: bottom
+    onloadclick:
+      - '.rule-menu-rules-button'
+    onnextclick:
+      - '.rule-link-mapping'
+  - title: <b>Create collections</b>
+    element: .dropdown-toggle.btn.btn-primary.mr-1
+    content: 'Add a definition (1/2)'
+    placement: top
+  - title: <b>Create collections</b>
+    element: .dropdown-toggle.btn.btn-primary.mr-1
+    content: 'Select list identifier'
+    placement: top
+    onloadclick:
+      - '.dropdown-toggle.btn.btn-primary.mr-1'
+    onnextclick:
+      - '.rule-add-mapping-list-identifiers'
+
+  - title: <b>Create collections</b>
+    element: .rule-column-selector.rule-map-list-identifiers
+    content: '<text style="color:red">Select column <b>B</b></text>'
+    placement: right
+    pointer: true
+
+  - title: <b>Create collections</b>
+    element: .dropdown-toggle.btn.btn-primary.mr-1
+    content: 'Add a definition (2/2)'
+    placement: top
+  - title: <b>Create collections</b>
+    element: .dropdown-toggle.btn.btn-primary.mr-1
+    content: 'Select collection name'
+    placement: top
+    onloadclick:
+      - '.dropdown-toggle.btn.btn-primary.mr-1'
+    onnextclick:
+      - '.rule-add-mapping-collection-name'
+  - title: <b>Create collections</b>
+    element: .rule-column-selector.rule-map-collection-name
+    content: '<text style="color:red">Select column <b>C</b></text>'
+    placement: right
+    pointer: true
+  - title: <b>Create collections</b>
+    element: .rule-mapping-ok
+    content: 'Apply'
+    placement: right
+    onnextclick:
+      - '.rule-mapping-ok'
+  - title: <b>Create collections</b>
+    element: .create-collection
+    content: 'Finally, create collections'
+    placement: bottom
+    onnextclick:
+      - '.create-collection'
+
+  - title: <b>Create collections</b>
+    element: '#masthead'
     content: 'The data upload and rganization has been completed.<br />'
-    backdrop: true
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-queued'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-running'
+        count: 0

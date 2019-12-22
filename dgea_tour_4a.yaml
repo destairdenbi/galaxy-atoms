@@ -4,11 +4,11 @@ description: 'Differential gene expression analysis using featureCounts and DESe
 title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
-    element: ''
+    element: '#masthead'
     content: 'In this tour, we will carry out transcript quantification, and differential gene expression analysis using RNA-Seq data.<br />
 Here, we will leverage on two tools: <b>featureCounts</b>, to count the number of sequence reads overlapping with predetermined genomic features (e.g. exons, genes, promoter regions), and <b>DESeq2</b>, to assess the level of gene expression.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
-    backdrop: true
+    placement :bottom
 
   - title: '<b>Counting mapped reads</b>'
     element: '#right'
@@ -106,6 +106,6 @@ Click <b>Next</b> to overview your data.<br />'
     placement: left
 
   - title: '<b>Differential gene expression analysis</b>'
-    element: ''
+    element: '#masthead'
     content: 'The differential gene expression analysis has been completed.<br />'
-    backdrop: true
+    placement :bottom

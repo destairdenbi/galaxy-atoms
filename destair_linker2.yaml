@@ -1,8 +1,8 @@
 id: destair_linker_2
-name: 'de.STAIR Visualization linker'
-description: 'Heatmap visualization of DESeq results'
-title_default: 'de.STAIR Visualization linker'
+name: 'de.STAIR RRBS/BS linker'
+description: 'RRBS/BS-Seq analysis'
+title_default: 'de.STAIR BS linker'
 tags:
-  - 'visualization_tour'
+  - 'bs_tour'
 steps:
   - content: 'just a linker'
