@@ -1,23 +1,167 @@
 id: dgea_tour_4b
-name: 'Differential gene expression'
-description: 'Differential gene expression analysis using HTSeq-Count and DESeq2'
-title_default: 'Differential gene expression'
+name: 'Differential Gene Expression Analysis'
+description: 'Differential gene expression analysis using HTSeq-count and DESeq2'
+title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead'
     content: 'In this tour, we will carry out transcript quantification, and differential gene expression analysis using RNA-Seq data.<br />
-Here, we will leverage on two tools: <b>HTSeq-Count</b>, to count the number of sequence reads overlapping with predetermined genomic features (e.g. exons, genes, promoter regions), and <b>DESeq2</b>, to assess the level of gene expression.<br /><br />
+Here, we will leverage on two tools: <b>HTSeq-count</b>, to count the number of sequence reads overlapping with predetermined genomic features (e.g. exons, genes, promoter regions), and <b>DESeq2</b>, to assess the level of gene expression.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
-    placement :bottom
+    placement: bottom
 
-  - title: '<b>Counting mapped reads</b>'
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#tool-search-query'
+    content: 'Look for the <b>Text reformatting with awk</b> tool.<br />
+Awk is a programming langugae which can be easily applied on data files to e.g. parse, alter and reformat column wise values.<br />
+During the following steps, the first 1000 positive and first 1000 negative strand encoded exons will be extracted from the annotation and storad in BED format.'
+    placement: right
+    textinsert: text reformatting awk
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_awk_tool%2F1.1.1"]
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: 'div[tour_id="infile"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
+    content: 'Switch to multiple dataset view<br />'
+    placement: bottom
+    onnextclick:
+      - 'div[tour_id="infile"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
+
+
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: 'div[tour_id="infile"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select'
+    content: 'Select the genome annotation file<br /><br />'
+    placement: bottom
+    select:
+      - 'div[tour_id="infile"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select > .select > :nth-last-child(10)'
+
+
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: 'div[tour_id="code"] .ui-form-field .ui-textarea'
+    content: '<text style="color:red">Enter: <b>!/^#/ && $3=="exon"{if($7=="+"){ p[px++] = $1"\t"$4"\t"$5"\t.\t.\t"$7 }else{ n[nx++] = $1"\t"$4"\t"$5"\t.\t.\t"$7 } if(nx>1000 && px>1000){ exit } } END{ for(i in p){ print p[i] } for(i in n){ print n[i] } }</b></text>'
+    placement: top
+    pointer: true
+#    textinsert: |
+#      !/^#/ && $3=="exon"{if($7=="+"){ p[px++] = $1"\t"$4"\t"$5"\t.\t.\t"$7 }else{ n[nx++] = $1"\t"$4"\t"$5"\t.\t.\t"$7 } if(nx>1000 && px>1000){ exit } } END{ for(i in p){ print p[i] } for(i in n){ print n[i] } }
+
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#execute'
+    content: 'Execute exon extraction and file conversion.'
+    placement: top
+    onnextclick:
+      - '#execute'
+
+  - title: '<b>Infer experiment strandness</b>'
     element: '#right'
-    content: 'Before proceeding, we want to instruct Galaxy that all alignment results, as well as the gene feature file, refer to the same genome build. For each of these entries in your history:<br />
-- Click on the pencil icon of the dataset entry<br />
-- In section <b>Database/Build</b>, select <b>S. cerevisae str. S288C</b><br />
-- Click <b>Save</b>.<br /><br />
-Click <b>Next</b> to start the analysis.<br />'
+    content: 'Awk processing has begun.<br />Results are available as soon as their entries turn green.<br />'
     placement: left
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#masthead'
+    content: 'Exon extraction has been completed.<br />'
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#current-history-panel > .list-items > :nth-child(1) > .primary-actions > .edit-btn'
+    content: 'Click the edit button<br />to define datatype as BED'
+    placement: left
+    onnextclick:
+      - '#current-history-panel > .list-items > :nth-child(1) > .primary-actions > .edit-btn'
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#tab-title-text-datatype'
+    content: 'Switch to datatypes pane'
+    placement: top
+    onnextclick:
+      - '#tab-title-text-datatype'
+  - title: '<b>Infer experiment strandness</b>'
+    element: >-
+      div[tour_id="datatype"] .ui-form-field .ui-select
+    content: '<text style="color:red">Select: <b>bed</b></text>'
+    placement: top
+    pointer: true
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#submit_datatype'
+    content: 'Apply'
+    placement: top
+    onnextclick:
+      - '#submit_datatype'
+
+
+
+
+
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#tool-search-query'
+    content: 'Look for the <b>infer experiment</b> tool.<br />
+Infer experiment calculates the fractions of forward and inversely mapped reads onto genomic features with known orientation.'
+    placement: right
+    textinsert: infer experiment
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fnilesh%2Frseqc%2Frseqc_infer_experiment%2F2.6.4.1"]
+
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: 'div[tour_id="mapq"]'
+    placement: top
+    content: '<text style="color:red">Enter: <b>0</b></text>'
+    pointer: true
+
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#execute'
+    content: 'Execute experiment strandness inference based on one alignment file (mapping).'
+    placement: top
+    onnextclick:
+      - '#execute'
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#right'
+    content: 'Experiment strandness inference has begun.<br />Results are available as soon as their entries turn green.<br />'
+    placement: left
+#    onloadwait:
+#      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+#        mincount: 1
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#masthead'
+    content: 'Experiment strandness inference has been completed.<br />'
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#current-history-panel > .list-items > :nth-child(1) > .primary-actions > .display-btn'
+    content: 'Open Report'
+    placement: left
+    onnextclick:
+      - '#current-history-panel > .list-items > :nth-child(1) > .primary-actions > .display-btn'
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#masthead'
+    content: 'Infer experiment shows fractions of forward and inversely mapped reads on features of known orientation.'
+    placement: bottom
+
+  - title: '<b>Infer experiment strandness</b>'
+    element: '#iframe-helper'
+    placement: bottom
+    iframeelement: 'pre'
+    content: '<text style="color:red"><b>Necessary information for upcoming tool parameterization!</b></text><br />If both values are ~0.5, then the library was not strand-specific prepared.<br />If the first value is siginificantly increased, then the library was prepared FR - forward.<br /> If the second value is increased, then the experiment was designed FR - reversely stranded'
+
 
   - title: '<b>Counting mapped reads</b>'
     element: '#tool-search-query'
@@ -31,29 +175,36 @@ Click <b>Next</b> to load it.<br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fhtseq_count%2Fhtseq_count%2F0.9.1"]
 
   - title: '<b>Counting mapped reads</b>'
-    element: '#left'
-    content: 'In section <b>Aligned SAM/BAM File</b>, click on the the <b>Multiple datasets</b> icon, and select all alignment results in the BAM format.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    element: 'div[tour_id="samfile"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
+    content: 'Select multiple datasets.<br /><br />'
+    placement: top
+    onnextclick:
+      - 'div[tour_id="samfile"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
+
 
   - title: '<b>Counting mapped reads</b>'
-    element: '#left'
-    content: 'In section <b>GFF File</b>, select the uploaded gene feature file in the GFF format.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    element: 'div[tour_id="samfile"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select'
+    content: 'Select all mapped control and treated datasets.<br /><br />'
+    placement: top
+    select:
+      - 'div[tour_id="samfile"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select > .select > :nth-child(n+1)'
 
   - title: '<b>Counting mapped reads</b>'
-    element: '#left'
-    content: 'The gene feature file organises the gene identifiers under the label "ID". To enable HTSeq-Count referring to such identifiers, we need to explicitly point HTSeq-Count towards the gene "ID" column.<br />
-In section <b>ID Attribute</b>, change the default value to <b>ID</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    element: 'div[tour_id="gfffile"]'
+    content: '<text style="color:red"><b>Select initially uploaded genome annotation file</b></text>'
+    placement: top
+    pointer: true
 
   - title: '<b>Counting mapped reads</b>'
-    element: '#left'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: left
+    element: 'div[tour_id="stranded"]'
+    content: '<text style="color:red"><b>Select experiment strandness according to previous inference</b></text>'
+    placement: top
+    pointer: true
+
+  - title: '<b>Counting mapped reads</b>'
+    element: '#execute'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br />However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    placement: top
     postclick:
       - '#execute'
 
@@ -63,6 +214,21 @@ Click <b>Next</b> to execute.<br />'
 Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to use the read counts for differential gene expression analysis.<br />'
     placement: left
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        mincount: 1
+
+  - title: '<b>Counting mapped reads</b>'
+    element: '#masthead'
+    content: 'Read quantification has been completed.<br />'
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0
+
+
 
   - title: '<b>Differential gene expression analysis</b>'
     element: '#tool-search-query'
@@ -76,36 +242,75 @@ Click <b>Next</b> to load it.<br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fdeseq2%2Fdeseq2%2F2.11.40.6"]
 
   - title: '<b>Differential gene expression analysis</b>'
-    element: '#left'
-    content: 'DESeq2 can handle multiple factors affecting an experiment, each of which has two levels (or states). For instance, we can describe our experiment in terms of its treatment factor, which is conditioned by two different healthy states: control, and treated. Thus, we will describe our experiment accordingly.<br />
-In section <b>Specify a factor name</b>, change the default name with <b>Treatment</b>.<br />
-In its two subsections <b>Specify a factor level</b>, change the first default value to <b>Control</b>, and the second to <b>Treated</b>. Then, click on the <b>Multiple datasets</b> icon of each factor level, and select all control and treated samples respectively.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    element: '#masthead'
+    content: 'DESeq2 can handle multiple factors affecting an experiment in parallel. Each factor has at least two disjunct states/levels. For instance, we can describe our experiment in terms of a single treatment factor, which is conditioned by two different healthy states: control, and treated. Thus, we will describe our experiment accordingly. For normalization, DESeq2 takes all factors into account. Result tables will hold fold-changes of the first defined factor and its first two states.<br />'
+    placement: bottom
 
   - title: '<b>Differential gene expression analysis</b>'
-    element: '#left'
-    content: 'In section <b>Output normalized counts table</b>, select <b>yes</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: left
+    element: 'div[tour_id="select_data|rep_factorName_0|factorName"]'
+    content: '<text style="color:red">Enter: <b>treatment</b></text>'
+    pointer: true
+    placement: top
+
+  - title: '<b>Differential gene expression analysis</b>'
+    element: 'div[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|factorLevel"]'
+    content: '<text style="color:red">Enter: <b>treated</b></text>'
+    pointer: true
+    placement: top
+
+  - title: '<b>Differential gene expression analysis</b>'
+    element: 'div[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"]'
+    content: 'Backtrack files and select all datasets corresponding to treated samples'
+    placement: top
+    select:
+      - 'div[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select > .select > :nth-child(-n+8):nth-child(even)'
+    unselect:
+      - 'div[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select > .select > :nth-child(1)'
+
+  - title: '<b>Differential gene expression analysis</b>'
+    element: 'div[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|factorLevel"]'
+    content: '<text style="color:red">Enter: <b>control</b></text>'
+    pointer: true
+    placement: top
 
 
   - title: '<b>Differential gene expression analysis</b>'
-    element: '#left'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: left
+    element: 'div[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"]'
+    content: 'Backtrack files and select all datasets corresponding to control samples'
+    placement: top
+    select:
+      - 'div[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select > .select > :nth-child(n+9):nth-child(-n+16):nth-child(even)'
+    unselect:
+      - 'div[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select > .select > :nth-child(1)'
+
+
+
+
+
+  - title: '<b>Differential gene expression analysis</b>'
+    element: '#execute'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br />However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    placement: top
     postclick:
       - '#execute'
 
   - title: '<b>Differential gene expression analysis</b>'
     element: '#right'
     content: 'DESeq2 processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to overview your data.<br />'
+Results are available as soon as their entries turn green.<br />'
     placement: left
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        mincount: 1
 
   - title: '<b>Differential gene expression analysis</b>'
     element: '#masthead'
     content: 'The differential gene expression analysis has been completed.<br />'
-    placement :bottom
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0
+
+

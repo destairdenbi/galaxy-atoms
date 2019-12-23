@@ -66,8 +66,7 @@ provided below the tool box.<br /><br />'
     element: '#right'
     content: 'BWA processing has begun, and the results are loading in your
 history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to overview your data.<br />'
+Results are available as soon as their entries turn green.<br /><br />'
     placement: left
     onloadwait:
       - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
