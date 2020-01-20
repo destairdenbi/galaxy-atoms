@@ -17,8 +17,8 @@ Click <b>Next</b> to start the upload.<br />'
     onnextclick:
       - '.fa.fa-upload'
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content'
-        count: 0
+      - element: '.history-size:contains("empty")'
+
   - title: <b>Import the sequence datasets</b>
     element: >-
       .tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(5)
@@ -72,12 +72,17 @@ Uploaded datasets are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to continue.<br />'
     placement: left
 
+
   - title: '<b>Import the sequence datasets</b>'
     element: '#right'
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
         count: 0
       - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
         count: 0
     content: 'Your data was successfully uploaded'
     placement: left

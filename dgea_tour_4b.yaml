@@ -60,15 +60,21 @@ During the following steps, the first 1000 positive and first 1000 negative stra
     element: '#right'
     content: 'Awk processing has begun.<br />Results are available as soon as their entries turn green.<br />'
     placement: left
+    onloadwait:
+      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Text reformatting")'
 
   - title: '<b>Infer experiment strandness</b>'
     element: '#masthead'
     content: 'Exon extraction has been completed.<br />'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
         count: 0
       - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
         count: 0
 
   - title: '<b>Infer experiment strandness</b>'
@@ -130,18 +136,21 @@ Infer experiment calculates the fractions of forward and inversely mapped reads 
     element: '#right'
     content: 'Experiment strandness inference has begun.<br />Results are available as soon as their entries turn green.<br />'
     placement: left
-#    onloadwait:
-#      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
-#        mincount: 1
+    onloadwait:
+      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Infer Experiment")'
 
   - title: '<b>Infer experiment strandness</b>'
     element: '#masthead'
     content: 'Experiment strandness inference has been completed.<br />'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
         count: 0
       - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
         count: 0
 
   - title: '<b>Infer experiment strandness</b>'
@@ -215,17 +224,20 @@ Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to use the read counts for differential gene expression analysis.<br />'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
-        mincount: 1
+      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("htseq-count")'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#masthead'
     content: 'Read quantification has been completed.<br />'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
         count: 0
       - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
         count: 0
 
 
@@ -300,17 +312,24 @@ Click <b>Next</b> to load it.<br />'
 Results are available as soon as their entries turn green.<br />'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
-        mincount: 1
+      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("DESeq2")'
 
   - title: '<b>Differential gene expression analysis</b>'
     element: '#masthead'
     content: 'The differential gene expression analysis has been completed.<br />'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
         count: 0
       - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
         count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        count: 0
 
+  - title: '<b>Differential gene expression analysis</b>'
+    element: '#masthead'
+    content: 'You successfully completed this Galaxy atom<br />'
+    placement: bottom
 

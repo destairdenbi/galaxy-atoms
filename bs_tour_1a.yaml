@@ -17,8 +17,8 @@ Click <b>Next</b> to start the analysis.<br />'
     onnextclick:
       - '.fa.fa-upload'
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content'
-        count: 0
+      - element: '.history-size:contains("empty")'
+
   - title: '<b>Import the sequence datasets</b>'
     element: >-
       .tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(5)
@@ -65,7 +65,6 @@ Click <b>Next</b> to start the analysis.<br />'
     placement: bottom
     onnextclick:
       - '#btn-close'
-.tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(1) > .title'
     onloadwait:
       - element: '#current-history-panel > .list-items > .list-item.dataset.history-content'
         mincount: 1
@@ -77,17 +76,21 @@ These comprise:<br />
 - Eight datasets collecting read mate-pairs at the 1st Trimester (control)<br />
 - Eight datasets collecting read mate-pairs at the 3rd Trimester (treatment)<br />
 - The reference genome and annotation<br />
-- The CpG context file.<br />
-Uploaded datasets are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to continue.<br />'
+- The CpG context file (10kb upstream region per gene of interest).<br />
+Uploaded datasets are available as soon as their entries turn green.<br /><br />'
     placement: left
+
 
   - title: '<b>Import the sequence datasets</b>'
     element: '#right'
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
         count: 0
       - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
         count: 0
     content: 'Your data was successfully uploaded'
     placement: left
@@ -107,15 +110,15 @@ Click <b>Next</b> to start.<br />'
   - title: '<b>Create a collection</b>'
     element: '#right'
     content: 'We want to create as many collections as sample conditions <br />
-(control/treatment and sample mate pairs (forward/reverse)<br />'
+(control/treatment) and sample mate pairs (forward/reverse)<br />'
     placement: left
 
   - title: <b>Create collections</b>
-    element: .fa.fa-check-square-o
+    element: '.actions > .icon-btn.show-selectors-btn > .fa.fa-check-square-o'
     content: 'Select multiple datasets'
     placement: left
     onnextclick:
-      - '.fa.fa-check-square-o'
+      - '.actions > .icon-btn.show-selectors-btn > .fa.fa-check-square-o'
   - title: <b>Create collections</b>
     element: .select-all
     content: 'Select all'
@@ -157,7 +160,7 @@ Click <b>Next</b> to start.<br />'
     onnextclick:
       - '.rule-link-add-column-metadata'
   - title: <b>Create collections</b>
-    element: select
+    element: '.rule-editor > :nth-child(1)'
     content: '<text style="color:red">Select: <b>Name</b></text>'
     placement: right
     pointer: true
@@ -241,7 +244,7 @@ Click <b>Next</b> to start.<br />'
     pointer: true
 
   - title: <b>Create collections</b>
-    element: ':nth-child(3) > input'
+    element: '.rule-editor :nth-child(3) > input'
     content: '<text style="color:red">Enter: <b>12</b></text>'
     placement: right
     pointer: true
@@ -262,7 +265,7 @@ Click <b>Next</b> to start.<br />'
     placement: bottom
   - title: <b>Create collections</b>
     element: .rule-menu-rules-button
-    content: 'Add rules'
+    content: 'Add column definitions'
     placement: bottom
     onloadclick:
       - '.rule-menu-rules-button'
@@ -317,12 +320,24 @@ Click <b>Next</b> to start.<br />'
     onnextclick:
       - '.create-collection'
 
+
+  - title: <b>Create collections</b>
+    element: '#right'
+    content: 'There are four collections in your history panel.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content'
+        mincount: 1
+
+  - title: <b>Create collections</b>
+    element: '.actions > .icon-btn.show-selectors-btn > .fa.fa-check-square-o'
+    content: 'Close the selection view'
+    placement: left
+    onnextclick:
+      - '.actions > .icon-btn.show-selectors-btn > .fa.fa-check-square-o'
+
+
   - title: <b>Create collections</b>
     element: '#masthead'
     content: 'The data upload and rganization has been completed.<br />'
     placement: bottom
-    onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-queued'
-        count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-running'
-        count: 0

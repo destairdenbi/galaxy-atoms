@@ -65,15 +65,24 @@ Results are available as soon as their entries turn green.<br /><br />
 Click <b>Next</b> to overview your data.<br />'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
-        mincount: 1
+      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("HISAT2")'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#masthead'
     content: 'The alignment of sequence reads against a reference genome has been completed.<br />'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
         count: 0
       - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
         count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        count: 0
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#masthead'
+    content: 'You successfully completed this Galaxy atom<br />'
+    placement: bottom
+
