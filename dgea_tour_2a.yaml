@@ -5,8 +5,8 @@ title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead'
-    content: 'In this tour, we will carry out quality control analysis of RNA-Seq data. This represents the first task in analysing raw high throughput sequence reads, because it provides an overview of the overall quality of data, as well as a mean to remove low quality sequence reads that might ultimately bias the interpretation of results.<br />
-Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Cutadapt</b>, to remove low sequence quality reads.<br /><br />
+    content: 'In this tour, we will carry out quality control analysis of RNA-Seq data. This represents the first task in analysing raw high throughput sequence reads, because it provides an overview of the overall quality of data, as well as a mean to remove low quality sequence content of reads that might ultimately bias the interpretation of results.<br />
+Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Cutadapt</b>, to remove low quality sequences.<br /><br />
 Click <b>Next</b> to start the analysis.<br />'
     position: bottom
 
@@ -49,15 +49,18 @@ Click <b>Next</b> to load it.<br />'
 Results are available as soon as their entries turn green.<br />'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
-        mincount: 1
+      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("FastQC")'
 
   - title: '<b>Quality control</b>'
     element: '#right'
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
         count: 0
       - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
         count: 0
     content: 'FastQC processing completed.'
     placement: left
@@ -183,20 +186,6 @@ Cutadapt is an adapter/sequence trim/removal tool, which searches for contaminan
     select:
       - 'div[tour_id="library|input_1"] .ui-form-field .ui-select-content .ui-select-multiple.ui-select .select > :nth-child(n+2)'
 
-  - title: '<b>Quality control</b>'
-    element: ':nth-child(5) > .portlet-header > .portlet-operations > .ui-button-default'
-    placement: left
-    content: 'Expand adapter options'
-    onnextclick:
-      - ':nth-child(5) > .portlet-header > .portlet-operations > .ui-button-default'
-
-  - title: '<b>Quality control</b>'
-    element: 'div[tour_id="adapter_options|overlap"]'
-    content: 'The <b>Minimum overlap length</b> of the adapter sequence required to trim a sequence, indicates how many bp are required for the adapter to overlap with the sequence read to remove the sequence from the dataset.<br />The default value is too stringent, and on average will result in removing 25% of the reads.<br /><text style="color:red">Enter: <b>5</b></text><br />'
-    placement: top
-    pointer: true
-    onnextclick:
-      - ':nth-child(5) > .portlet-header > .portlet-operations > .ui-button-default'
 
   - title: '<b>Quality control</b>'
     element: ':nth-child(6) > .portlet-header > .portlet-operations > .ui-button-default'
@@ -235,7 +224,6 @@ Cutadapt is an adapter/sequence trim/removal tool, which searches for contaminan
     postclick:
       - '#execute'
     content: 'With the current parametrisation, Cutadapt will:<br />
-- Automatically detect the adapter sequences to be trimmed<br />
 - Trim low-quality score sequence ends<br />
 - Remove sequences whose overlap with adapter sequences is at least 5 bp<br />
 - Discard reads whose length became shorter than 20 bp.<br />
@@ -248,16 +236,23 @@ For all remaining parametrisation options, we will use the provided default sett
 Results are available as soon as their entries turn green.<br />'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
-        mincount: 1
+      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Cutadapt")'
 
   - title: '<b>Quality control</b>'
     element: '#masthead'
     content: 'The quality control and data preprocessing analysis has been completed.<br />'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
         count: 0
       - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
         count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+        count: 0
 
+  - title: '<b>Quality control</b>'
+    element: '#masthead'
+    content: 'You successfully completed this Galaxy atom<br />'
+    placement: bottom

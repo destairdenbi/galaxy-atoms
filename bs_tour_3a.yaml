@@ -1,85 +1,265 @@
 id: bs_tour_3a
 name: 'BS-Seq analysis'
-description: 'Alignment of sequence reads against a reference genome using Bismark'
+description: 'Quality trimming with Trimmomatic'
 title_default: 'BS-Seq analysis'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead'
-    content: 'In this tour we will align MethylC sequenced reads against a reference<br />
-genome. This represents a necessary task for the quantification of<br />
-methilated Cytosines in CpG and CHG genomic contexts which can be later<br />
-used to infer and evaluate e.g. enhancer promoter or gene body<br />
-methilation rates.<br />
-Here, we will leverage on <b>Bismark</b>.<br /><br />
-Click <b>Next</b> to start the analysis.<br />'
-    placement :bottom
+    content: 'In this tour, we will perform quality trimming on BS-Seq data to remove low quality sequence content from sequencing reads that might ultimately bias the interpretation of results.<br />
+Here, we will leverage on <b>Cutadapt</b>.<br />'
+    position: bottom
 
-  - title: '<b>Map sequences against a reference genome</b>'
+  - title: '<b>Quality trimming</b>'
     element: '#tool-search-query'
-    content: 'Look for the <b>Bismark</b> tool.<br />
-Bismark maps bisulfite treated sequencing reads to a genome of interest<br />
-and performs methylation calls in a single step.<br />
-Here we want to align the sequences from the imported samples against<br />
-the provided reference genome.<br /><br />
-Click <b>Next</b> to load it.<br />'
+    content: 'Look for the <b>Trimmomatic</b> tool.<br />
+Trimmomatic is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br /><br />'
     placement: right
-    textinsert: bismark
+    textinsert: trimmomatic
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fbismark%2Fbismark_bowtie2%2F0.22.1%2Bgalaxy4"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.38.0"]
 
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="refGenomeSource|genomeSource"]'
-    content: 'Select <b>Generate Bismark indexes from Genome (fasta) in your Galaxy<br />
-history</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
+  - title: '<b>Quality trimming</b>'
+    element: 'div[tour_id="readtype|single_or_paired"]'
+    content: '<text style="color:red">Select: <b>Paired-end (two seperate input files)</b></text>'
+    pointer: true
     placement: bottom
 
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="refGenomeSource|own_file"]'
-    content: 'Select the imported reference genome from your history.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
+  - title: '<b>Quality trimming</b>'
+    element: 'div[tour_id="readtype|fastq_r1_in"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+    content: 'Select dataset collection.<br /><br />'
+    placement: bottom
+    onnextclick:
+      - 'div[tour_id="readtype|fastq_r1_in"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+
+  - title: '<b>Quality trimming</b>'
+    element: 'div[tour_id="readtype|fastq_r1_in"]'
+    content: '<text style="color:red">Select: <b>noadapter.ctr.R1</b></text>'
+    pointer: true
     placement: bottom
 
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|sPaired"]'
-    content: 'Select <b>Paired-end</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
+  - title: '<b>Quality trimming</b>'
+    element: 'div[tour_id="readtype|fastq_r2_in"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+    content: 'Select dataset collection.<br /><br />'
+    placement: bottom
+    onnextclick:
+      - 'div[tour_id="readtype|fastq_r2_in"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+
+  - title: '<b>Quality trimming</b>'
+    element: 'div[tour_id="readtype|fastq_r2_in"]'
+    content: '<text style="color:red">Select: <b>noadapter.ctr.R2</b></text>'
+    pointer: true
     placement: bottom
 
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate1"]'
-    content: 'Click on the dataset collection icon, and select the 1st read mate R1.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
+  - title: '<b>Quality trimming</b>'
+    element: '.float-none'
+    content: 'Next to the SLIDINGWINDOW operation, which performs an iterative scanning of the sequence, trimming once the average quality falls below a threshold of 20, Trimmomatic needs to be further parameterized.<br />'
+    placement: top
+    onnextclick:
+      - '.float-none'
 
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"]'
-    content: 'Click on the dataset collection icon, and select the 1st read mate R2.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
+  - title: '<b>Quality trimming</b>'
+    element: 'div[tour_id="operations_1|operation|name"]'
+    content: '<text style="color:red">Select: <b>MINLEN</b></text><br />The MINLEN operation drops all sequences whose lenght falls below the provided threshold. A minimum read length of 20 indicates enough sequence information content for downstream analyses. <br />'
+    placement: top
+    pointer: true
 
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"]'
-    content: 'For all remaining parametrisation options, we will use the provided<br />
-default settings. However, for further information, please refer to the<br />
-manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
+  - title: '<b>Quality trimming</b>'
+    element: '#execute'
+    content: 'With the current parametrisation, Trimmomatic will:<br />
+- Trim reads with low average quality<br />
+- Discard reads whose length became shorter than 20 bp.<br />
+For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    placement: top
     postclick:
       - '#execute'
 
-  - title: '<b>Map sequences against a reference genome</b>'
+  - title: '<b>Quality trimming</b>'
     element: '#right'
-    content: '
-Bismark processing has begun, and the results are loading in your
-history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Please repeat this operation on the remaining collections.<br /><br />
-Click <b>Next</b> to continue the analysis.<br />'
+    content: 'Trimmomatic processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br />'
     placement: left
+    onloadwait:
+      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Trimmomatic")'
 
-  - title: '<b>Map sequences against a reference genome</b>'
+
+# redo for treat
+
+
+
+  - title: '<b>Quality trimming</b>'
+    element: '#tool-search-query'
+    content: 'Meanwhile trim low quality score read sequences of the treatment datasets.<br /><br />'
+    placement: right
+    textinsert: trimmomatic
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fpjbriggs%2Ftrimmomatic%2Ftrimmomatic%2F0.38.0"]
+
+  - title: '<b>Quality trimming</b>'
+    element: 'div[tour_id="readtype|single_or_paired"]'
+    content: '<text style="color:red">Select: <b>Paired-end (two seperate input files)</b></text>'
+    pointer: true
+    placement: bottom
+
+  - title: '<b>Quality trimming</b>'
+    element: 'div[tour_id="readtype|fastq_r1_in"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+    content: 'Select dataset collection.<br /><br />'
+    placement: bottom
+    onnextclick:
+      - 'div[tour_id="readtype|fastq_r1_in"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+
+  - title: '<b>Quality trimming</b>'
+    element: 'div[tour_id="readtype|fastq_r1_in"]'
+    content: '<text style="color:red">Select: <b>noadapter.treat.R1</b></text>'
+    pointer: true
+    placement: bottom
+
+  - title: '<b>Quality trimming</b>'
+    element: 'div[tour_id="readtype|fastq_r2_in"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+    content: 'Select dataset collection.<br /><br />'
+    placement: bottom
+    onnextclick:
+      - 'div[tour_id="readtype|fastq_r2_in"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+
+  - title: '<b>Quality trimming</b>'
+    element: 'div[tour_id="readtype|fastq_r2_in"]'
+    content: '<text style="color:red">Select: <b>noadapter.treat.R2</b></text>'
+    pointer: true
+    placement: bottom
+
+  - title: '<b>Quality trimming</b>'
+    element: '.float-none'
+    content: 'Next to the SLIDINGWINDOW operation, which performs an iterative scanning of the sequence, trimming once the average quality falls below a threshold of 20, Trimmomatic needs to be further parameterized.<br />'
+    placement: top
+    onnextclick:
+      - '.float-none'
+
+  - title: '<b>Quality trimming</b>'
+    element: 'div[tour_id="operations_1|operation|name"]'
+    content: '<text style="color:red">Select: <b>MINLEN</b></text><br />The MINLEN operation drops all sequences whose lenght falls below the provided threshold. A minimum read length of 20 indicates enough sequence information content for downstream analyses. <br />'
+    placement: top
+    pointer: true
+
+  - title: '<b>Quality trimming</b>'
+    element: '#execute'
+    content: 'With the current parametrisation, Trimmomatic will:<br />
+- Trim reads with low average quality<br />
+- Discard reads whose length became shorter than 20 bp.<br />
+For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    placement: top
+    postclick:
+      - '#execute'
+
+  - title: '<b>Quality trimming</b>'
+    element: '#right'
+    content: 'Trimmomatic processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br />'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Trimmomatic")'
+
+
+# wait and tag
+
+
+  - title: '<b>Quality trimming</b>'
     element: '#masthead'
-    content: 'The alignment of sequence reads against a reference genome has been completed.<br />'
-    placement :bottom
+    content: 'The quality control and data preprocessing analysis has been completed.<br />'
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-loading'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-new'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-running'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-queued'
+        count: 0
+
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#current-history-panel > .list-items > :nth-child(3) > .title-bar > .title'
+    content: 'To keep track of the data being processed, we will use tags (1/4).<br />'
+    placement: top
+    onnextclick:
+      - '#current-history-panel > .list-items > :nth-child(3) > .title-bar > .title'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#current-history-panel > .list-panel > .controls > .tags-display'
+    content: '<text style="color:red">Enter and confirm by return keypress: <b>trimmed.treat.R2</b></text>'
+    placement: top
+    pointer: true
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    content: 'Return to history main view'
+    placement: bottom
+    onnextclick:
+      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#current-history-panel > .list-items > :nth-child(4) > .title-bar > .title'
+    content: 'To keep track of the data being processed, we will use tags (2/4).<br />'
+    placement: top
+    onnextclick:
+      - '#current-history-panel > .list-items > :nth-child(4) > .title-bar > .title'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#current-history-panel > .list-panel > .controls > .tags-display'
+    content: '<text style="color:red">Enter and confirm by return keypress: <b>trimmed.treat.R1</b></text>'
+    placement: top
+    pointer: true
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    content: 'Return to history main view'
+    placement: bottom
+    onnextclick:
+      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#current-history-panel > .list-items > :nth-child(7) > .title-bar > .title'
+    content: 'To keep track of the data being processed, we will use tags (3/4).<br />'
+    placement: top
+    onnextclick:
+      - '#current-history-panel > .list-items > :nth-child(7) > .title-bar > .title'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#current-history-panel > .list-panel > .controls > .tags-display'
+    content: '<text style="color:red">Enter and confirm by return keypress: <b>trimmed.ctr.R2</b></text>'
+    placement: top
+    pointer: true
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    content: 'Return to history main view'
+    placement: bottom
+    onnextclick:
+      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#current-history-panel > .list-items > :nth-child(8) > .title-bar > .title'
+    content: 'To keep track of the data being processed, we will use tags (4/4).<br />'
+    placement: top
+    onnextclick:
+      - '#current-history-panel > .list-items > :nth-child(8) > .title-bar > .title'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#current-history-panel > .list-panel > .controls > .tags-display'
+    content: '<text style="color:red">Enter and confirm by return keypress: <b>trimmed.ctr.R1</b></text>'
+    placement: top
+    pointer: true
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    content: 'Return to history main view'
+    placement: bottom
+    onnextclick:
+      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+
+  - title: '<b>Quality trimming</b>'
+    element: '#masthead'
+    content: 'You successfully completed this Galaxy atom<br />'
+    placement: bottom
+

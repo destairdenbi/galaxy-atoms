@@ -1,559 +1,224 @@
 id: bs_tour_4a
 name: 'BS-Seq analysis'
-description: 'Quantification of methylated reads within a CpG context using Samtools, MethylDackel, and bedtools'
+description: 'Alignment of sequence reads against a reference genome using Bismark'
 title_default: 'BS-Seq analysis'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead'
-    content: 'In this tour we will infer genome-wide methilation rates in a CpG context.<br />Here, we will leverage on two tools: <b>Samtools</b>, to extract properly paired sequences from the aligned input data, and <b>MethylDackel</b> to quantify the methylated reads of the provided CpG context.<br />
-Click <b>Next</b> to start the analysis.<br />'
-    placement :bottom
+    content: 'In this tour we will align MethylC sequenced reads against a reference<br />
+genome. This represents a necessary task for the quantification of<br />
+methilated Cytosines in genomic CpG, CHG and CHH contexts which can be later<br />
+used to infer and evaluate e.g. enhancer promoter or gene body<br />
+methylation rates.<br />
+Here, we will leverage on <b>Bismark</b>.<br /><br />'
+    placement: bottom
 
-  - title: '<b>Extract properly paired sequences</b>'
+  - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
-    content: 'Look for <b>Samtools sort</b>.<br /><br />
-Click <b>Next</b> to load it.<br />'
+    content: 'Look for the <b>Bismark Mapper</b> tool.<br />
+Bismark maps bisulfite treated sequencing reads to a genome of interest<br />
+and performs methylation calls in a single step.<br />
+Here we want to align the preprocessed sequences of control samples against<br />
+the provided reference genome.<br /><br />'
     placement: right
-    textinsert: samtools sort
+    textinsert: bismark mapper
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtools_sort%2Fsamtools_sort%2F2.0.3"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fbismark%2Fbismark_bowtie2%2F0.22.1%2Bgalaxy1"]
 
-  - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="input1"]'
-    content: 'Click on the dataset collection icon, and select the 1st Bismark-processed dataset collection.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
 
-  - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="input1"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
+
+# bismark params
+
+
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="refGenomeSource|genomeSource"]'
     placement: bottom
+    content: '<text style="color:red">Select: <b>Generate Bismark indexes from Genome (fasta) in your Galaxy history</b></text>'
+    pointer: true
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="singlePaired|sPaired"]'
+    placement: top
+    content: '<text style="color:red">Select: <b>Paired-end</b></text>'
+    pointer: true
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="singlePaired|mate_list_0|input_mate1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+    content: 'Select dataset collection.<br /><br />'
+    placement: bottom
+    onnextclick:
+      - 'div[tour_id="singlePaired|mate_list_0|input_mate1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="singlePaired|mate_list_0|input_mate1"]'
+    placement: top
+    content: '<text style="color:red">Select: <b>trimmed.ctr.R1</b></text>'
+    pointer: true
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+    content: 'Select dataset collection.<br /><br />'
+    placement: bottom
+    onnextclick:
+      - 'div[tour_id="singlePaired|mate_list_0|input_mate2"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"]'
+    placement: top
+    content: '<text style="color:red">Select: <b>trimmed.ctr.R2</b></text>'
+    pointer: true
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#execute'
+    content: 'For all remaining parametrisation options, we will use the provided<br />
+default settings. However, for further information, please refer to the<br />
+manual provided below the tool box.<br /><br />'
+    placement: top
     postclick:
       - '#execute'
 
-  - title: '<b>Extract properly paired sequences</b>'
+  - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'Samtools sort processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to repeat the same operation on the 2nd Bismark-processed dataset collection.<br />'
+    content: 'Bismark processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />'
     placement: left
+    onloadwait:
+      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Bismark Mapper")'
 
-  - title: '<b>Extract properly paired sequences</b>'
-    element: '#right'
-    content: 'Repeat the same operation for the 2nd Bismark-processed dataset collection:<br />
-- Click on the last result produced by <b>Samtools sort</b><br />
-- Click on the <b>Run this job again</b> icon<br />
-- Change the input dataset collection to the 2nd Bismark-processed dataset collection<br />
-- Click <b>Execute</b>.<br /><br />
-Click <b>Next</b> to proceed extracting properly paired sequences.<br />'
-    placement: left
 
-  - title: '<b>Extract properly paired sequences</b>'
-    element: '#right'
-    content: 'Samtools sort processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to proceed extracting properly paired sequences.<br />'
-    placement: left
 
-  - title: '<b>Extract properly paired sequences</b>'
+# now for treatment
+
+
+
+  - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query'
-    content: 'Look for <b>Samtools filter</b>.<br /><br />
-Click <b>Next</b> to load it.<br />'
+    content: 'Meanwhile align the preprocessed treatment samples against<br />
+the provided reference genome.<br /><br />'
     placement: right
-    textinsert: samtools filter
+    textinsert: bismark mapper
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtool_filter2%2Fsamtool_filter2%2F1.8%2Bgalaxy1"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fbismark%2Fbismark_bowtie2%2F0.22.1%2Bgalaxy1"]
 
-  - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="input1"]'
-    content: 'Click on the dataset collection icon, and select the 1st samtools-sort-processed dataset collection.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="refGenomeSource|genomeSource"]'
     placement: bottom
+    content: '<text style="color:red">Select: <b>Generate Bismark indexes from Genome (fasta) in your Galaxy history</b></text>'
+    pointer: true
 
-  - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="flag|reqBits"]'
-    content: 'Select <b>yes</b>, then chose <b>Read is mapped in a proper pair</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="singlePaired|sPaired"]'
+    placement: top
+    content: '<text style="color:red">Select: <b>Paired-end</b></text>'
+    pointer: true
 
-  - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="flag|reqBits"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="singlePaired|mate_list_0|input_mate1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+    content: 'Select dataset collection.<br /><br />'
     placement: bottom
+    onnextclick:
+      - 'div[tour_id="singlePaired|mate_list_0|input_mate1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="singlePaired|mate_list_0|input_mate1"]'
+    placement: top
+    content: '<text style="color:red">Select: <b>trimmed.treat.R1</b></text>'
+    pointer: true
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+    content: 'Select dataset collection.<br /><br />'
+    placement: bottom
+    onnextclick:
+      - 'div[tour_id="singlePaired|mate_list_0|input_mate2"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"]'
+    placement: top
+    content: '<text style="color:red">Select: <b>trimmed.treat.R2</b></text>'
+    pointer: true
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#execute'
+    content: 'For all remaining parametrisation options, we will use the provided<br />
+default settings. However, for further information, please refer to the<br />
+manual provided below the tool box.<br /><br />'
+    placement: top
     postclick:
       - '#execute'
 
-  - title: '<b>Extract properly paired sequences</b>'
+  - title: '<b>Map sequences against a reference genome</b>'
     element: '#right'
-    content: 'Samtools filter processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to repeat the same operation on the 2nd Samtools-sort-processed dataset collection.<br />'
+    content: 'Bismark processing has begun, and the results are loading in your history.<br />
+Results are available as soon as their entries turn green.<br /><br />'
     placement: left
+    onloadwait:
+      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Bismark Mapper")'
 
-  - title: '<b>Extract properly paired sequences</b>'
-    element: '#right'
-    content: 'Repeat the same operation for the 2nd Samtools-sort-processed dataset collection:<br />
-- Click on the last result produced by <b>Samtools filter</b><br />
-- Click on the <b>Run this job again</b> icon<br />
-- Change the input dataset collection to the 2nd Samtools-sort-processed dataset collection<br />
-- Click <b>Execute</b>.<br /><br />
-Click <b>Next</b> to proceed extracting properly paired sequences.<br />'
-    placement: left
 
-  - title: '<b>Extract properly paired sequences</b>'
-    element: '#right'
-    content: 'Samtools filter processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to proceed extracting properly paired sequences.<br />'
-    placement: left
 
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>MethylDackel</b>.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    placement: right
-    textinsert: methyldackel
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fpileometh%2Fpileometh%2F0.3.0.1"]
+# wait and tag
 
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="input_sortedAlignBAM"]'
-    content: 'Click on the dataset collection icon, and select the 1st samtools-filter-processed dataset collection.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
 
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="main_task|mergeContext"]'
-    content: 'Select <b>yes</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
 
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="main_task|mergeContext"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
-      - '#execute'
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'MethylDackel processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to repeat the same operation on the 2nd Samtools-filter-processed dataset collection.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'Repeat the same operation for the 2nd Samtools-filter-processed dataset collection:<br />
-- Click on the last result produced by <b>MethylDackel</b><br />
-- Click on the <b>Run this job again</b> icon<br />
-- Change the input dataset collection to the 2nd Samtools-filter-processed dataset collection<br />
-- Click <b>Execute</b>.<br /><br />
-Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'MethylDackel processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>Select last lines from a dataset</b>.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    placement: right
-    textinsert: select last lines
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_tail_tool%2F1.1.0"]
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="infile"]'
-    content: 'Click on the dataset collection icon, and select the 1st MethylDackel-processed dataset collection (no suffix).<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="num_lines"]'
-    content: 'Set the number of lines to 2.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="num_lines"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
-      - '#execute'
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'Select last lines processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to repeat the same operation on the 2nd MethylDackel-processed dataset collection.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'Repeat the same operation for the 2nd MethylDackel-processed dataset collection:<br />
-- Click on the last result produced by <b>Select last lines</b><br />
-- Click on the <b>Run this job again</b> icon<br />
-- Change the input dataset collection to the 2nd MethylDackel-processed dataset collection (no suffix)<br />
-- Click <b>Execute</b>.<br /><br />
-Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'Select last lines processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>Concatenate datasets</b>.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    textinsert: concatenate dasets
-    placement: right
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_cat%2F0.1.0"]
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="inputs"]'
-    content: 'Click on the dataset collection icon, and select the 1st select-last-line-processed dataset collection.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: right
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="inputs"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
-      - '#execute'
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'Concatenate datasets processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to repeat the same operation on the 2nd select-last-line-processed dataset collection.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'Repeat the same operation for the 2nd select-last-line-processed dataset collection:<br />
-- Click on the last result produced by <b>Concatenate datasets</b><br />
-- Click on the <b>Run this job again</b> icon<br />
-- Change the input dataset collection to the 2nd select-last-line-processed dataset collection (no suffix)<br />
-- Click <b>Execute</b>.<br /><br />
-Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'Concatenate datasets processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#tool-search-query'
-    content: 'Look for the <b>Sort</b> tool.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    textinsert: sort
-    placement: right
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_sort_header_tool%2F1.1.1"]
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="infile"]'
-    content: 'Click on the Multiple datasets icon, and select both concatenated dataset collections.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="sortkeys_0|style"]'
-    content: 'Select <b>Natural/Version sort</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '.ui-button-default.btn.btn-secondary.float-none.form-repeat-add'
-    content: 'Click on <b>Insert Column selections</b> to insert a new sort criteria:<br />
-- Set <b>on column</b> to <b>2</b><br />
-- Set <b>in</b> to <b>Ascending order</b><br />
-- Set <b>Flavor</b> to <b>Fast numeric sort</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '.ui-button-default.btn.btn-secondary.float-none.form-repeat-add'
-    content: 'Click on <b>Insert Column selections</b> to insert a new sort criteria:<br />
-- Set <b>on column</b> to <b>3</b><br />
-- Set <b>in</b> to <b>Ascending order</b><br />
-- Set <b>Flavor</b> to <b>Fast numeric sort</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '.ui-button-default.btn.btn-secondary.float-none.form-repeat-add'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
-      - '#execute'
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'Sort processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>BEDtools MergeBED</b> tool.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    textinsert: bedtools mergebed
-    placement: right
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fbedtools%2Fbedtools_mergebed%2F2.27.1"]
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="input"]'
-    content: 'Click on the Multiple datasets icon, and select both sorted dataset collections.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '.ui-button-default.btn.btn-secondary.float-none.form-repeat-add'
-    content: 'Click on <b>+ Insert Applying operations to columns from merged intervals</b>.<br /><br />
-- Set <b>Specify the column(s) that should be summarized</b> to <b>4</b><br />
-- Set <b>Specify the operation</b> to <b>Mean - numeric only</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '.ui-button-default.btn.btn-secondary.float-none.form-repeat-add'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
-      - '#execute'
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'BEDtools MergeBED processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
-    placement: left
-
-  - title: '<b>Import the CpG context</b>'
-    element: '#tool-panel-upload-button .fa.fa-upload'
-    content: 'The import button imports data into Galaxy.<br /><br />
-Click <b>Next</b> to import the CpG context.<br />'
-    placement: right
-    postclick:
-      - '.upload-button'
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>BEDtools Intersect interval</b> tool.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    textinsert: bedtools intersect interval
-    placement: right
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fbedtools%2Fbedtools_intersectbed%2F2.27.1%2Bgalaxy1"]
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="inputA"]'
-    content: 'Select the imported CpG context from your history.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="reduce_or_iterate|inputB"]'
-    content: 'Click on the Multiple datasets icon, and select both BEDtools merged dataset collections.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="overlap_mode"]'
-    content: 'Select <b>Perform a left outer join (-loj)</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="sorted"]'
-    content: 'Click <b>Yes</b>..<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="sorted"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
-      - '#execute'
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'BEDtools Intersect processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>BEDtools MergeBED</b> tool.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    textinsert: bedtools mergebed
-    placement: right
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fbedtools%2Fbedtools_mergebed%2F2.27.1"]
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="input"]'
-    content: 'Click on the Multiple datasets icon, and select both BEDtools Intersected dataset collections.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'button[class="ui-button-default btn btn-secondary float-none form-repeat-add"]'
-    content: 'Click on <b>+ Insert Applying operations to columns from merged intervals</b>.<br /><br />
-- Set <b>Specify the column(s) that should be summarized</b> to <b>4</b><br />
-- Set <b>Specify the operation</b> to <b>distinct</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'button[class="ui-button-default btn btn-secondary float-none form-repeat-add"]'
-    content: 'Click on <b>+ Insert Applying operations to columns from merged intervals</b>.<br /><br />
-- Set <b>Specify the column(s) that should be summarized</b> to <b>8</b><br />
-- Set <b>Specify the operation</b> to <b>Mean - numeric only</b>.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'button[class="ui-button-default btn btn-secondary float-none form-repeat-add"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
-      - '#execute'
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'BEDtools MergeBED processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>Join two files</b>.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    textinsert: join two files
-    placement: right
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_easyjoin_tool%2F1.1.1"]
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="infile1"]'
-    content: 'Select the 1st BEDtools merged dataset.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="column1"]'
-    content: 'Select column 2.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="infile2"]'
-    content: 'Select the 2nd BEDtools merged dataset.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="column2"]'
-    content: 'Select column 2.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="column2"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
-      - '#execute'
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'Join two files processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to proceed quantifying the methylated reads.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>Text reformatting with awk</b>.<br /><br />
-Click <b>Next</b> to load it.<br />'
-    textinsert: text reformatting with awk
-    placement: right
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_awk_tool%2F1.1.1"]
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="infile"]'
-    content: 'Select the joined dataset.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="code"]'
-    content: 'Enter the necessary awk code to calculate log2 fold-change.<br /><br />
-Click <b>Next</b> to overview further parametrisation options.<br />'
-    textinsert: |
-      {print $4"\t"($5 < $9 ? (log($9+1)-log($5+1))/log(2) : -(log($5+1)-log($9+1))/log(2))}
-    placement: bottom
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: 'div[tour_id="code"]'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
-    placement: bottom
-    postclick:
-      - '#execute'
-
-  - title: '<b>Quantify the methylated reads</b>'
-    element: '#right'
-    content: 'The processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to proceed further with the downstream analysis.<br />'
-    placement: left
-
-  - title: '<b>Quantify the methylated reads</b>'
+  - title: '<b>Map sequences against a reference genome</b>'
     element: '#masthead'
-    content: 'The quantification of methylated reads within a CpG context has been completed.<br />'
-    placement :bottom
+    content: 'The Mapping tasks have been completed.<br />'
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-loading'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-new'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-running'
+        count: 0
+      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-queued'
+        count: 0
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#current-history-panel > .list-items > .list-item > .title-bar > .title > span:contains("mapped reads"):first'
+    content: 'To keep track of the data being processed, we will use tags (1/2).<br />'
+    placement: top
+    onnextclick:
+      - '#current-history-panel > .list-items > .list-item > .title-bar > .title > span:contains("mapped reads"):first'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#current-history-panel > .list-panel > .controls > .tags-display'
+    content: '<text style="color:red">Enter and confirm by return keypress: <b>mapped.treat</b></text>'
+    placement: top
+    pointer: true
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    content: 'Return to history main view'
+    placement: bottom
+    onnextclick:
+      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#current-history-panel > .list-items > .list-item > .title-bar > .title > span:contains("mapped reads"):last'
+    content: 'To keep track of the data being processed, we will use tags (2/2).<br />'
+    placement: top
+    onnextclick:
+      - '#current-history-panel > .list-items > .list-item > .title-bar > .title > span:contains("mapped reads"):last'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#current-history-panel > .list-panel > .controls > .tags-display'
+    content: '<text style="color:red">Enter and confirm by return keypress: <b>mapped.ctr</b></text>'
+    placement: top
+    pointer: true
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    content: 'Return to history main view'
+    placement: bottom
+    onnextclick:
+      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#masthead'
+    content: 'You successfully completed this Galaxy atom<br />'
+    placement: bottom
