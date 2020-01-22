@@ -66,7 +66,11 @@ needed to run the Galaxy workflow generator.
 
 ### When some tools are missing
 
-New tools can be added in the Galaxy workflow generator.  
+New tools can be added in the Galaxy workflow generator flavor by installing them either 
+
+1) from the admin panel (may load to unexpected errors upon execution) or
+
+2) via re-building the docker image
 
 Clone the [Galaxy workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator)
 ```
@@ -79,13 +83,22 @@ The minimum set of metadata to be provided for each tool comprise:
 - name
 - owner
 - tool_panel_section_label
+- revisions
 
 If unsure, please refer to the [Galaxy Toolshed](https://toolshed.g2.bx.psu.edu/).  
 
 Once edited, you can build the Docker container locally
 ```
-docker build .
+$ docker build destair-local:latest .
 ```
+Now run your local image and access it via a webbrowser from the following address ``localhost:8080``.
+```
+$ docker run -d -p 8080:80 --name destair -v /absolute/path/to/local/directory/:/export destair-local:latest
+```
+
+for more parameters and further help, consult
+[these instructions](https://github.com/destairdenbi/galaxy-workflow-generator#run-the-container).
+
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 
@@ -95,41 +108,55 @@ Atoms are interactive tours that illustrate one or more Galaxy tools. For ease
 of use within the context of specific experimental setups, we suggest to build
 atoms that solve entire tasks of a target analysis.  
 You can easily create atoms by leveraging on the [Galaxy tour builder](https://github.com/TailorDev/galaxy-tourbuilder).
+
+If the contributed atom does not implement a task of an analysis already provided, then you will need to create a new linker file for the
+new analysis. Look at the examples in the repository
+
+Otherwise, name the contributed atom with the label ``dgea_Xx.yaml``, or
+``bs_Xx.yaml``. Where ``X`` is the task number, and ``x`` an identifier of your choice.
+
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 
 ### Test new atoms
 
 New atoms can be tested by running a Galaxy Docker container using a *bind
-mount*, or by running the [Galay workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator)
+mount*, or by running the [Galaxy workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator)
 using the interactive [plugin](https://github.com/destairdenbi/galaxy-webhooks).
+
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
-#### Bind mount method
+#### Option 1: Docker bind mount method
 
 Run the Galaxy Docker container by creating a bind mount:
 ```
-$ docker run -d -p 8080:80 -v /absolute/path/to/local/directory/:/export/ quay.io/destair/galaxy-workflow-generator:latest
+$ docker run -d -p 8080:80 --name destair -v /absolute/path/to/local/directory/:/export/ quay.io/destair/galaxy-workflow-generator:latest
 ```
+for more parameters and further help, consult
+[these instructions](https://github.com/destairdenbi/galaxy-workflow-generator#run-the-container).
 
-Once the container is ready, you will be able to copy the new atom in
+
+Once the container is ready, you will be able to copy the new atom into
 ```
 /absolute/path/to/local/directory/export/galaxy-central/config/plugins/tours/
 ```
+Now either restart the running Galaxy instance and access it via a webbrowser from the following address ``localhost:8080``
+```
+$ docker exec destair supervisorctl restart galaxy:
+```
+or login to your Galaxy instance as administrator and run our de.STAIR plugin once with ``Update tours DB`` admin option checked.
 
-You can now find the new atom by navigating the Galaxy interface under the header
+New atoms will be automatically offered by our plugin and can be found by navigating the Galaxy interface under the header
 section ``Help -> Interactive Tours``.
+
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
-#### Interactive plugin method
+#### Option 2: Local Galaxy setup method
 
 - [Set up the Galaxy environment](https://github.com/destairdenbi/galaxy-webhooks#set-up-the-galaxy-environment)
 - [Set up the de.STAIR atoms](https://github.com/destairdenbi/galaxy-webhooks#set-up-the-destair-atoms)
-- If the contributed atom does not implement a task of an RNA-Seq or
-BS/RRBS-Seq analysis, then you will need to create a new linker file for the
-new analysis. Look at the examples in the repository
-- Otherwise, name the contributed atom with the label ``dgea_Xx.yaml``, or
-``bs_Xx.yaml``. Where ``X`` is the task number, and ``x`` a tool letter
+- contribute new atoms as stated above
 - [Set up the de.STAIR plugin](https://github.com/destairdenbi/galaxy-webhooks#set-up-the-destair-plugin)
 - [Run the Galaxy framework](https://github.com/destairdenbi/galaxy-webhooks#run-the-galaxy-framework)
+
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
