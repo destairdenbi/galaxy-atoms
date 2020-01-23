@@ -89,7 +89,7 @@ If unsure, please refer to the [Galaxy Toolshed](https://toolshed.g2.bx.psu.edu/
 
 Once edited, you can build the Docker container locally
 ```
-$ docker build destair-local:latest .
+$ docker build -t destair-local:latest .
 ```
 Now run your local image and access it via a webbrowser from the following address ``localhost:8080``.
 ```
