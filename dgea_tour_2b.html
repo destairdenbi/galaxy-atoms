@@ -12,7 +12,7 @@
   <body>
     <h4>FastQC and PRINSEQ</h4>
     <FONT SIZE="2">
-      <h4><img src="./destair_logo.png" height="15" /> Tool Rating:</h4>
+      <h4><img src="./logo_destair.png" height="15" /> Tool Rating:</h4>
       <div style="text-indent:10px;">
         <table>
           <tr>
@@ -29,7 +29,7 @@
           </tr>
           <tr>
             <td>Speed:</td>
-            <td>&#10026;&#10026;&#10026;&#10026;&#10026;</td>
+            <td>&#10026;</td>
           </tr>
           <tr>
             <td>Configurability:</td>
@@ -44,10 +44,12 @@
         of sequencing data sets.
         <br /><br />
         With its high speed, sensitivity, and customizable settings,
-        <b>PRINSEQ</b> enables users to perform fast filtering and trimming of
+        <b>PRINSEQ</b> enables users to perform filtering and trimming of
         FASTQ files. This tool also provides a graphical overview of the
         quality of the provided input data sets. Thus, like FastQC, PRINSEQ can
-        also be used to assess the quality of FASTQ files.
+        also be used to assess the quality of FASTQ files. Unfortunately PRINSEQ is not able
+        to handle multiple threads. Available parallelized versions of PRINSEQ are third-party 
+        implementations and thus not available in Galaxy.
       </p>
       <h4>Reference:</h4>
       <a target="_blank" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>
@@ -55,3 +57,4 @@
     </FONT>
   </body>
 </html>
+

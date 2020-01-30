@@ -4,34 +4,32 @@ description: 'Data upload'
 title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
-    element: '#masthead'
-    content: 'In this tour, we will upload NGS data to be analysed for Differential gene expression testing.<br />
-Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy framework.<br /><br />
-Click <b>Next</b> to start the upload.<br />'
+    element: '#masthead:visible'
+    content: 'In this tour, we will upload NGS data to be analysed for differential gene expression.<br>
+Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy framework.'
     placement: bottom
 
-  - title: <b>Import the sequence datasets</b>
-    element: '.fa.fa-upload'
-    content: Imports data into Galaxy.
+  - title: '<b>Import the sequence datasets</b>'
+    element: '.fa.fa-upload:visible'
+    content: 'Import data into Galaxy.'
     placement: right
     onnextclick:
-      - '.fa.fa-upload'
+      - '.fa.fa-upload:visible'
     onloadwait:
-      - element: '.history-size:contains("empty")'
+      - element: '.history-size:contains("empty"):visible'
 
-  - title: <b>Import the sequence datasets</b>
-    element: >-
-      .tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(5)
-      > .title
-    content: 'From remote source'
+  - title: '<b>Import the sequence datasets</b>'
+    element: '#btn-new:visible'
+    content: 'Fetch from a remote source.'
     placement: bottom
     onloadclick:
-      - '.tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(3) > .title'
+      - '#btn-reset:visible'
     onnextclick:
-      - '.tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(5) > .title'
-  - title: <b>Import the sequence datasets</b>
-    element: .upload-text-content
-    content: 'Enter URLs'
+      - '#btn-new:visible'
+
+  - title: '<b>Import the sequence datasets</b>'
+    element: '.upload-text-content:visible'
+    content: 'Enter URLs.'
     placement: bottom
     textinsert: |
       https://github.com/destairdenbi/trainings/raw/master/raw_data/rna/SE/rna_ctr.N1.fastq.gz
@@ -45,49 +43,47 @@ Click <b>Next</b> to start the upload.<br />'
       https://github.com/destairdenbi/trainings/raw/master/raw_data/rna/hg38.goi.fa
       https://github.com/destairdenbi/trainings/raw/master/raw_data/rna/hg38.goi.gtf
 
-  - title: <b>Start</b>
-    element: '#btn-start'
+  - title: '<b>Start</b>'
+    element: '#btn-start:visible'
     content: Start the upload.
     placement: bottom
     onnextclick:
-      - '#btn-start'
-  - title: <b>Close</b>
-    element: '#btn-close'
-    content: Close the dialog.
+      - '#btn-start:visible'
+
+  - title: '<b>Close</b>'
+    element: '#btn-close:visible'
+    content: 'Close the dialog.'
     placement: bottom
     onnextclick:
-      - '#btn-close'
+      - '#btn-close:visible'
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content'
+      - element: '#current-history-panel .list-item.dataset.history-content:visible'
         mincount: 1
 
   - title: '<b>Import the sequence datasets</b>'
-    element: '#right'
-    content: 'The datasets are uploading in your history.<br />
-These comprise:<br />
-- Four control datasets<br />
-- Four treatment datasets<br />
-- The reference genome and annotation<br />
-Uploaded datasets are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to continue.<br />'
+    element: '#right:visible'
+    content: 'The datasets are uploading in your history.<br>
+These comprise:<br>
+- Four control datasets<br>
+- Four treatment datasets<br>
+- The reference genome and annotation'
     placement: left
 
-
   - title: '<b>Import the sequence datasets</b>'
-    element: '#right'
+    element: '#right:visible'
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
         count: 0
-    content: 'Your data was successfully uploaded'
+    content: 'Your data was successfully uploaded.'
     placement: left
 
   - title: '<b>Import the sequence datasets</b>'
-    element: '#masthead'
-    content: 'The data upload has been completed.<br />'
+    element: '#masthead:visible'
+    content: 'The data upload has been completed.<br>'
     placement: bottom

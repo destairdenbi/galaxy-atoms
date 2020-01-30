@@ -4,24 +4,15 @@ description: 'Alignment of sequence reads against a reference genome using STAR'
 title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
-    element: '#masthead'
-    content: 'In this tour we will align sequence reads against a reference
-genome.<br />
-Here, we will leverage on <b>STAR</b>, an ultrafast and low error rate RNA-Seq
-aligner.<br /><br />
-Click <b>Next</b> to start the analysis.<br />'
+    element: '#masthead:visible'
+    content: 'In this tour we will align sequence reads against a reference genome.<br>
+Here, we will leverage on <b>STAR</b>, an ultrafast and low error rate RNA-Seq aligner.'
     placement: bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#tool-search-query'
-    content: 'Look for the <b>STAR</b> tool.<br />
-STAR is an ultrafast and sensitive RNA-Seq aligner, that maps sequence reads
-against<br />
-a reference genome.<br />
-Here, we want to align the sequence reads from the control and treated samples,
-against<br />
-the provided reference genome.<br /><br />
-Click <b>Next</b> to load it.<br />'
+    element: '#tool-search-query:visible'
+    content: 'Search for the <b>STAR</b> tool.<br>
+STAR aligns the sequence reads from the control and treated samples, against the provided reference genome.'
     placement: right
     textinsert: rna star
     postclick:
@@ -30,60 +21,59 @@ Click <b>Next</b> to load it.<br />'
 
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
-    content: 'Select multiple datasets.<br /><br />'
+    element: '[tour_id="singlePaired|input1"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+    content: 'Select multiple datasets.'
     placement: top
     onnextclick:
-      - 'div[tour_id="singlePaired|input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
+      - '[tour_id="singlePaired|input1"] .btn-group.ui-radiobutton > :nth-child(2):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|input1"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select'
-    content: 'Select all trimmed control and treated datasets.<br /><br />'
+    element: '[tour_id="singlePaired|input1"] .ui-select-multiple.ui-select:visible'
+    content: 'Select all trimmed control and treated datasets.'
     placement: top
     select:
-      - 'div[tour_id="singlePaired|input1"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select > .select > :nth-child(-n+8)'
+#      - '[tour_id="singlePaired|input1"] .ui-select-multiple.ui-select .select > :nth-child(-n+8):visible'
+      - '[tour_id="singlePaired|input1"] .ui-select-multiple.ui-select .select option:contains(" on "):visible'
+    unselect:
+      - '[tour_id="singlePaired|input1"] .ui-select-multiple.ui-select .select option:contains("Rejected"):visible'
 
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="refGenomeSource|geneSource"]'
-    content: '<text style="color:red">Select: <b>Use reference genome from history and create temporary index</b></text><br />'
+    element: '[tour_id="refGenomeSource|geneSource"]:visible'
+    content: '<h4>Select: <b>Use reference genome from history and create temporary index</b></h4>'
     placement: top
     pointer: true
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the
-provided default settings.<br />However, for further information, please refer to the manual
-provided elow the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided elow the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'STAR processing has begun, and the results are loading in your
-history.<br />
-Results are available as soon as their entries turn green.<br /><br />
-Click <b>Next</b> to overview your data.<br />'
+    element: '#right:visible'
+    content: 'STAR processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("RNA STAR")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("RNA STAR"):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#masthead'
-    content: 'The alignment of sequence reads against a reference genome has been completed.<br />'
+    element: '#masthead:visible'
+    content: 'The alignment of sequence reads against a reference genome has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
         count: 0
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#masthead'
-    content: 'You successfully completed this Galaxy atom<br />'
+    element: '#masthead:visible'
+    content: 'You successfully completed this Galaxy atom.'
     placement: bottom
