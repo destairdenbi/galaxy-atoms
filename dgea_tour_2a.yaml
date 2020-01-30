@@ -4,255 +4,315 @@ description: 'Quality control and data preprocessing with FastQC and Cutadapt'
 title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
-    element: '#masthead'
-    content: 'In this tour, we will carry out quality control analysis of RNA-Seq data. This represents the first task in analysing raw high throughput sequence reads, because it provides an overview of the overall quality of data, as well as a mean to remove low quality sequence content of reads that might ultimately bias the interpretation of results.<br />
-Here, we will leverage on two tools: <b>FastQC</b>, to assess the quality of the provided sequences, and <b>Cutadapt</b>, to remove low quality sequences.<br /><br />
-Click <b>Next</b> to start the analysis.<br />'
+    element: '#masthead:visible'
+    content: 'In this tour, we will carry out quality control analysis of RNA-Seq data.
+ This represents the first task in analyzing raw high throughput sequence reads.
+ It provides an overview of the overall quality of data, as well as a mean to remove
+ low quality sequence content of reads that might ultimately bias results interpretation.<br>
+Here, we will leverage on two tools:<br>
+- <b>FastQC</b>, to assess the quality of the sequences<br>
+- <b>Cutadapt</b>, to remove low quality sequence content.'
     position: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#tool-search-query'
-    content: 'Look for the <b>FastQC</b> tool.<br />
-FastQC plots the overall quality of the input datasets, providing a starting point for interpreting NGS data.<br /><br />
-Click <b>Next</b> to load it.<br />'
+    element: '#tool-search-query:visible'
+    content: 'Search for the <b>FastQC</b> tool.<br>
+FastQC plots the overall quality of the input data, which provides a good starting point
+ for interpreting NGS data and downstream tool parameterization.'
     placement: right
     textinsert: fastqc
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]
-
+    onnextclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]'
 
   - title: '<b>Quality control</b>'
-    element: 'div[tour_id="input_file"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
-    content: 'Select multiple datasets.<br /><br />'
+    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+    content: 'Select multiple datasets.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="input_file"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
+      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(2):visible'
 
   - title: '<b>Quality control</b>'
-    element: 'div[tour_id="input_file"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select'
-    content: 'Select all imported control and treated datasets.<br /><br />'
+    element: '[tour_id="input_file"] .ui-select-multiple.ui-select:visible'
+    content: 'Select all imported control and treated datasets.'
     placement: bottom
     select:
-      - 'div[tour_id="input_file"] .ui-form-field .ui-select-content .ui-select-multiple.ui-select .select > :nth-child(n+1)'
+      - '[tour_id="input_file"] .ui-select-multiple.ui-select .select > :nth-child(n+1):visible'
 
   - title: '<b>Quality control</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use default settings.<br/ > However, for further information, please refer to the manual provided below the tool box.<br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Quality control</b>'
-    element: '#right'
-    content: 'FastQC processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br />'
+    element: '#right:visible'
+    content: 'FastQC processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("FastQC")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC"):visible'
 
   - title: '<b>Quality control</b>'
-    element: '#right'
+    element: '#right:visible'
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
         count: 0
     content: 'FastQC processing completed.'
     placement: left
 
   - title: '<b>Quality control</b>'
-    element: '#current-history-panel > .list-items > :nth-child(2) > .primary-actions > .display-btn > .fa'
-    content: 'Open a FastQC report.'
+    element: '#current-history-panel .list-items > :nth-child(2) .display-btn:visible'
+    content: 'Open a report.'
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(2) > .primary-actions > .display-btn > .fa'
+      - '#current-history-panel .list-items > :nth-child(2) .display-btn:visible'
     placement: left
 
   - title: '<b>Quality control</b>'
-    element: '#masthead'
-    content: 'FastQC generated diverse plots to assess the quality, adapter content, contamination of the input sequence reads.'
+    element: '#masthead:visible'
+    content: 'FastQC generated diverse plots to assess<br>
+- sequence quality<br>
+- adapter content<br>
+- contamination<br>'
     placement: bottom
 
   - title: '<b>Quality control</b>'
-    element: '#iframe-helper'
-    content: 'The <b>Per base sequence quality</b> plot shows the average quality scores of all reads of each sequence of the provided input dataset.<br /> The Y axis shows the quality score: the higher, the better the base call. The background color of the graph divides the base call operation into:<br />
-- Very good quality (green)<br />
-- Reasonable quality (orange)<br />
-- Poor quality (red).<br />
-The quality of each call usually degrades as the sequencing run progresses. Here however, each provided input dataset shows lower average quality scores at the beginning of each sequence. Although these scores still account for reasonable quality reads, a reason behind this trend might be that the image scanner focus had to be recalibrated during the first sequence run cycles.<br /> More information on the <b>Per base sequence quality</b> plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/2%20Per%20Base%20Sequence%20Quality.html" target="_blank">here</a>.<br />'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per base sequence quality</b> plot shows the average quality scores of all reads.
+ The Y axis shows the quality score: the higher, the better the base call.
+ The background color of the graph divides the base call operation into:<br>
+- Very good quality (green)<br>
+- Reasonable quality (orange)<br>
+- Poor quality (red).<br>
+The quality of each call usually degrades as the sequencing run progresses.
+ Here however, each provided input dataset shows lower average quality scores at
+ the beginning of each sequence. Although these scores still account for reasonable
+ quality reads, a reason behind this trend might be that the image scanner focus
+ had to be recalibrated during the first sequence run cycles.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/2%20Per%20Base%20Sequence%20Quality.html" target="_blank">here</a>.'
     placement: right
-    iframeelement: '.summary > ul > :nth-child(2) > img'
+    iframeelement: '.summary ul > :nth-child(2) img:visible'
     onloadclick:
-      - '.summary > ul > :nth-child(2) > a'
+      - '.summary ul > :nth-child(2) a:visible'
 
 
   - title: '<b>Quality control</b>'
-    element: '#iframe-helper'
-    content: 'The <b>Per sequence quality scores</b> plot shows if a subset of sequences have universally low quality values.<br />If a significant subset of sequences in a run have overall low quality scores, this suggests that some kind of systematic problem occured during the sequencing experiment. Here, the entire sequence set scores well, showing the desired overall behavior for a sequence set: a peak (large sequence subset) showing a good score, and a short tail (sequence subset) scoring lower, although still well.<br /> More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/3%20Per%20Sequence%20Quality%20Scores.html" target="_blank">here</a>.<br />'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per sequence quality scores</b> plot shows if a subset of reads has low qualities.
+ If a significant subset of sequences in a run have overall low quality scores, this indicates
+ some kind of systematic problem occured during the sequencing experiment. Here, the entire
+ sequence set scores well, showing the desired overall behavior for a sequence set:<br>
+- a peak (large sequence subset) showing a good score<br>
+- a short tail (sequence subset) scoring lower, although still well.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/3%20Per%20Sequence%20Quality%20Scores.html" target="_blank">here</a>.'
     placement: right
-    iframeelement: '.summary > ul > :nth-child(3) > img'
+    iframeelement: '.summary ul > :nth-child(3) img:visible'
     onloadclick:
-      - '.summary > ul > :nth-child(3) > a'
+      - '.summary ul > :nth-child(3) a:visible'
 
   - title: '<b>Quality control</b>'
-    element: '#iframe-helper'
-    content: 'The <b>Per base sequence content</b> plot shows the percentage of occurrence of each base in each position of each sequence.<br /> The four bases should not be hugely imbalanced. However, some libraries will always produce biased sequence composition when fragmentation does not occur randomly. Here, each provided input dataset shows the desired trend.<br /> More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/4%20Per%20Base%20Sequence%20Content.html" target="_blank">here</a>.<br />'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per base sequence content</b> plot shows the percentage of base occurrence at each position.
+ The four bases should not be hugely imbalanced. However, some libraries always lead to biased sequence
+ content, caused by a not perfect random priming. Here, each input dataset shows the desired trend.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/4%20Per%20Base%20Sequence%20Content.html" target="_blank">here</a>.'
     placement: right
-    iframeelement: '.summary > ul > :nth-child(4) > img'
+    iframeelement: '.summary ul > :nth-child(4) img:visible'
     onloadclick:
-      - '.summary > ul > :nth-child(4) > a'
+      - '.summary ul > :nth-child(4) a:visible'
 
   - title: '<b>Quality control</b>'
-    element: '#iframe-helper'
-    content: 'The <b>Per sequence GC content</b> plot shows the GC content distribution of the provided sample.<br />This should follow a normal distribution. However, unusually shaped distribution might occur in case of a contaminated library. A shifted normal distribution instead indicates some systematic bias, independent of base position. Here, each provided sample aligns to the theoretical (blue line) CG distribution.<br />More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/5%20Per%20Sequence%20GC%20Content.html" target="_blank">here</a>.<br />'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per sequence GC content</b> plot shows the GC content distribution of the provided sample.
+ This should follow a normal distribution. However, unusually shaped distribution might occur
+ in case of a contaminated library. A shifted normal distribution instead indicates some
+ systematic bias, independent of base position. Here, each provided sample aligns to the
+theoretical (blue line) CG distribution.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/5%20Per%20Sequence%20GC%20Content.html" target="_blank">here</a>.'
     placement: right
-    iframeelement: '.summary > ul > :nth-child(5) > img'
+    iframeelement: '.summary ul > :nth-child(5) img:visible'
     onloadclick:
-      - '.summary > ul > :nth-child(5) > a'
+      - '.summary ul > :nth-child(5) a:visible'
 
   - title: '<b>Quality control</b>'
-    element: '#iframe-helper'
-    content: 'The <b>Per base N content</b> plot shows the percentage of N occurrences in the sequence reads.<br />If a sequencer is unable to make a base call with confidence, then it will place an N, where N represents an ambiguous nucleotide: a base which could not be correctly identified.<br />High number of Ns are a sign of low quality sequence reads, which might be due to transient problems occurring during the sequencing experiment. Here, each provided sample shows the ideal percentage of N at each position in the sequence set, accounting for a good sequencing run.<br />More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/6%20Per%20Base%20N%20Content.html" target="_blank">here</a>.<br />'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per base N content</b> plot shows the percentage of N occurrences in the sequence reads.
+ If a sequencer is unable to make a base call with confidence, then it will place an N, where
+ N represents an ambiguous nucleotide: a base which could not be correctly identified.
+ High number of Ns are a sign of low quality sequence reads, which might be due to transient
+ problems during the sequencing experiment. Here, each sample shows the ideal percentage of N
+ at each position in the sequence set, accounting for a good sequencing run.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/6%20Per%20Base%20N%20Content.html" target="_blank">here</a>.'
     placement: right
-    iframeelement: '.summary > ul > :nth-child(6) > img'
+    iframeelement: '.summary ul > :nth-child(6) img:visible'
     onloadclick:
-      - '.summary > ul > :nth-child(6) > a'
+      - '.summary ul > :nth-child(6) a:visible'
 
   - title: '<b>Quality control</b>'
-    element: '#iframe-helper'
-    content: 'The <b>Sequence length distribution</b> plot shows the distribution of sequence read length.<br />For NGS sequencers generating uniform sequence reads, this will result in a spike around a fixed length value.<br />More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/7%20Sequence%20Length%20Distribution.html" target="_blank">here</a>.<br />'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Sequence length distribution</b> plot shows the distribution of sequence read length.
+ For NGS sequencers generating uniform read length, this will result in a spike at a fixed value.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/7%20Sequence%20Length%20Distribution.html" target="_blank">here</a>.'
     placement: right
-    iframeelement: '.summary > ul > :nth-child(7) > img'
+    iframeelement: '.summary ul > :nth-child(7) img:visible'
     onloadclick:
-      - '.summary > ul > :nth-child(7) > a'
+      - '.summary ul > :nth-child(7) a:visible'
 
   - title: '<b>Quality control</b>'
-    element: '#iframe-helper'
-    content: 'The <b>Sequence duplication levels</b> plot shows the relative number of sequences with different degrees of duplication. Here, the blue line represents the full sequence set, showing how its duplication levels are distributed; the red line instead, represents the de-duplicated sequences, plotting the proportions of deduplicated sequence sets which come from different duplication levels in the original data.<br />More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/8%20Duplicate%20Sequences.html" target="_blank">here</a>.<br />'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Sequence duplication levels</b> plot shows the relative number of sequences
+ with different degrees of duplication.
+ The blue line represents the full sequence set, showing how its duplication levels
+ are distributed. The red line represents the de-duplicated sequences, i.e. the
+ proportions of de-duplicated sequence sets which come from different duplication
+ levels in the original data.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/8%20Duplicate%20Sequences.html" target="_blank">here</a>.'
     placement: right
-    iframeelement: '.summary > ul > :nth-child(8) > img'
+    iframeelement: '.summary ul > :nth-child(8) img:visible'
     onloadclick:
-      - '.summary > ul > :nth-child(8) > a'
+      - '.summary ul > :nth-child(8) a:visible'
 
   - title: '<b>Quality control</b>'
-    element: '#iframe-helper'
-    content: 'The <b>Overrepresented sequences</b> section shows all sequence making up for more than 0.1% of the total number of sequences in the dataset.<br />If a sequence is overrepresented, this means that it is either highly biologically significant, or that it is contaminant for the current library. Here, each provided sequence dataset shows no overrepresented sequences.<br />More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/9%20Overrepresented%20Sequences.html" target="_blank">here</a>.<br />'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Overrepresented sequences</b> section shows all sequence making up for more than
+ 0.1% of the total number of sequences in the dataset.
+ If a sequence is overrepresented, this means that it is either highly biologically
+ significant, or that it is contaminant for the current library. Here, each provided
+ sequence dataset shows no overrepresented sequences.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/9%20Overrepresented%20Sequences.html" target="_blank">here</a>.'
     placement: right
-    iframeelement: '.summary > ul > :nth-child(9) > img'
+    iframeelement: '.summary ul > :nth-child(9) img:visible'
     onloadclick:
-      - '.summary > ul > :nth-child(9) > a'
+      - '.summary ul > :nth-child(9) a:visible'
 
   - title: '<b>Quality control</b>'
-    element: '#iframe-helper'
-    content: 'The <b>Adapter content</b> plot shows the amount of residual tag sequences within the sample.<br />Base frequencies across the reads should follow a uniform distribution, on the contrary, uneven distributions (high frequencies for certain bases over several positions) indicate remaining sequence artifacts within the dataset.<br />More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/10%20Adapter%20Content.html" target="_blank">here</a>.<br />'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Adapter content</b> plot shows the amount of residual tag sequences within the sample.
+ Base frequencies across the reads should follow a uniform distribution. On the contrary,
+ uneven distributions (high frequencies for certain bases over several positions) indicate
+ remaining sequence artifacts within the dataset.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/10%20Adapter%20Content.html" target="_blank">here</a>.'
     placement: right
-    iframeelement: '.summary > ul > :nth-child(10) > img'
+    iframeelement: '.summary ul > :nth-child(10) img:visible'
     onloadclick:
-      - '.summary > ul > :nth-child(10) > a'
-
+      - '.summary ul > :nth-child(10) a:visible'
 
   - title: '<b>Quality control</b>'
-    element: '#masthead'
-    content: 'Now that the quality of the input dataset have been assessed, it is necessary to improve the overall quality of the input reads by a quality trimming approach.<br />'
+    element: '#masthead:visible'
+    content: 'Now that the quality of the input dataset have been assessed, it is necessary to
+ improve the overall quality of the input reads by a quality trimming approach.'
     placement: bottom
 
+
+
+# trimming
+
+
+
   - title: '<b>Quality control</b>'
-    element: '#tool-search-query'
-    content: 'Look for the <b>Cutadapt</b> tool.<br />
-Cutadapt is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.<br />'
+    element: '#tool-search-query:visible'
+    content: 'Search for the <b>Cutadapt</b> tool.<br>
+Cutadapt is an adapter/sequence trim/removal tool, which searches for contaminants,
+ adapters, and low quality score reads, and ultimately removes them to improve the
+ overall quality of the input datasets.'
     placement: right
     textinsert: cutadapt
-    postclick:
-      - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.16.6"]
+    onnextclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.16.6"]'
 
   - title: '<b>Quality control</b>'
-    element: 'div[tour_id="library|input_1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
-    content: 'Select multiple datasets.<br /><br />'
+    element: '[tour_id="library|input_1"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+    content: 'Select multiple datasets.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="library|input_1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
+      - '[tour_id="library|input_1"] .btn-group.ui-radiobutton > :nth-child(2):visible'
     onloadclick:
-      - ':nth-child(2) > :nth-child(2) > .ui-portlet-section > .portlet-header > .portlet-operations > .ui-button-default'
+      - ':nth-child(2) > :nth-child(2) .ui-portlet-section .portlet-header .portlet-operations .ui-button-default:visible'
 
   - title: '<b>Quality control</b>'
-    element: 'div[tour_id="library|input_1"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select'
-    content: 'Select all imported control and treated fastq datasets.<br /><br />'
+    element: '[tour_id="library|input_1"] .ui-select-multiple.ui-select:visible'
+    content: 'Select all imported control and treated fastq datasets.'
     placement: bottom
     select:
-      - 'div[tour_id="library|input_1"] .ui-form-field .ui-select-content .ui-select-multiple.ui-select .select > :nth-child(n+2)'
-
+      - '[tour_id="library|input_1"] .ui-select-multiple.ui-select .select > :nth-child(n+2):visible'
 
   - title: '<b>Quality control</b>'
-    element: ':nth-child(6) > .portlet-header > .portlet-operations > .ui-button-default'
+    element: ':nth-child(6) .portlet-header .portlet-operations .ui-button-default:visible'
     placement: left
     content: 'Expand filter options'
     onnextclick:
-      - ':nth-child(6) > .portlet-header > .portlet-operations > .ui-button-default'
-
+      - ':nth-child(6) .portlet-header .portlet-operations .ui-button-default:visible'
 
   - title: '<b>Quality control</b>'
-    element: 'div[tour_id="filter_options|min"]'
-    content: 'The <b>Minimum length</b> of a sequence, indicates how many bp are required for the sequence before it is removed from the dataset.<br />The default value keeps every sequence of any length, however, it is generally recommended to keep only those sequences whose length indicates enought sequence information content for downstream analyses.<br /><text style="color:red">Enter: <b>20</b></text><br />'
+    element: '[tour_id="filter_options|min"]:visible'
+    content: 'The <b>Minimum length</b> of a sequence, defines how many bp are required to keep
+ the sequence in the dataset after trimming.
+ The default value does not remove any sequence. However, it is generally recommended
+ to keep only those sequences whose length indicates enought sequence information
+ content for downstream analyses.<br>
+<h4>Enter: <b>20</b></h4>'
     placement: top
     pointer: true
-    onnextclick:
-      - ':nth-child(6) > .portlet-header > .portlet-operations > .ui-button-default'
+#    onnextclick:
+#      - ':nth-child(6) .portlet-header .portlet-operations .ui-button-default:visible'
 
   - title: '<b>Quality control</b>'
-    element: ':nth-child(7) > .portlet-header > .portlet-operations > .ui-button-default'
+    element: ':nth-child(7) .portlet-header .portlet-operations .ui-button-default:visible'
     placement: left
     content: 'Expand read modification options'
     onnextclick:
-      - ':nth-child(7) > .portlet-header > .portlet-operations > .ui-button-default'
+      - ':nth-child(7) .portlet-header .portlet-operations .ui-button-default:visible'
 
   - title: '<b>Quality control</b>'
-    element: 'div[tour_id="read_mod_options|quality_cutoff"]'
-    content: 'The <b>Quality cutoff</b> indicates the allowed quality threshold allowed on each ends of the read before adapter removal.<br />It is generally recommended to keep only those nucleotides within a sliding window whose mean quality is above 20.<br /><text style="color:red">Enter: <b>20</b></text><br />'
+    element: '[tour_id="read_mod_options|quality_cutoff"]:visible'
+    content: 'One <b>Quality cutoff</b> value assess the minimum allowed quality on the reads 3prime end.
+ Cutadapt subtracts the defined threshold from each quality value and calculates partial sums beginning
+ from the end. Any base with a quality value blow 0 will be clipped.<br>
+<h4>Enter: <b>20</b></h4>'
     placement: top
     pointer: true
-    onnextclick:
-      - ':nth-child(7) > .portlet-header > .portlet-operations > .ui-button-default'
+#    onnextclick:
+#      - ':nth-child(7) .portlet-header .portlet-operations .ui-button-default:visible'
 
   - title: '<b>Quality control</b>'
-    element: '#execute'
+    element: '#execute:visible'
     placement: top
-    postclick:
-      - '#execute'
-    content: 'With the current parametrisation, Cutadapt will:<br />
-- Trim low-quality score sequence ends<br />
-- Remove sequences whose overlap with adapter sequences is at least 5 bp<br />
-- Discard reads whose length became shorter than 20 bp.<br />
-For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br />'
-
+    onnextclick:
+      - '#execute:visible'
+    content: 'With the current parametrisation, Cutadapt will:<br>
+- Trim low-quality score sequence ends<br>
+- Discard reads whose length became shorter than 20 bp.<br>
+For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
 
   - title: '<b>Quality control</b>'
-    element: '#right'
-    content: 'Cutadapt processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br />'
+    element: '#right:visible'
+    content: 'Cutadapt processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Cutadapt")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Cutadapt"):visible'
 
   - title: '<b>Quality control</b>'
-    element: '#masthead'
-    content: 'The quality control and data preprocessing analysis has been completed.<br />'
+    element: '#masthead:visible'
+    content: 'The quality control and data preprocessing analysis has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
         count: 0
 
   - title: '<b>Quality control</b>'
-    element: '#masthead'
-    content: 'You successfully completed this Galaxy atom<br />'
+    element: '#masthead:visible'
+    content: 'You successfully completed this Galaxy atom.'
     placement: bottom

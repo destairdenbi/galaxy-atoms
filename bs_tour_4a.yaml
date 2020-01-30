@@ -4,22 +4,15 @@ description: 'Alignment of sequence reads against a reference genome using Bisma
 title_default: 'BS-Seq analysis'
 steps:
   - title: '<b>Outline</b>'
-    element: '#masthead'
-    content: 'In this tour we will align MethylC sequenced reads against a reference<br />
-genome. This represents a necessary task for the quantification of<br />
-methilated Cytosines in genomic CpG, CHG and CHH contexts which can be later<br />
-used to infer and evaluate e.g. enhancer promoter or gene body<br />
-methylation rates.<br />
-Here, we will leverage on <b>Bismark</b>.<br /><br />'
+    element: '#masthead:visible'
+    content: 'In this tour we will align MethylC sequenced reads against a reference genome. This represents a necessary task for the quantification of methilated Cytosines in genomic CpG, CHG and CHH contexts which can be later used to infer and evaluate e.g. enhancer promoter or gene body methylation rates.<br>
+Here, we will leverage on <b>Bismark</b>.'
     placement: bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#tool-search-query'
-    content: 'Look for the <b>Bismark Mapper</b> tool.<br />
-Bismark maps bisulfite treated sequencing reads to a genome of interest<br />
-and performs methylation calls in a single step.<br />
-Here we want to align the preprocessed sequences of control samples against<br />
-the provided reference genome.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'Search for the <b>Bismark Mapper</b> tool.<br>
+Bismark aligns the preprocessed sequences of control samples against the provided reference genome.'
     placement: right
     textinsert: bismark mapper
     postclick:
@@ -33,59 +26,57 @@ the provided reference genome.<br /><br />'
 
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="refGenomeSource|genomeSource"]'
+    element: '[tour_id="refGenomeSource|genomeSource"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>Generate Bismark indexes from Genome (fasta) in your Galaxy history</b></text>'
+    content: '<h4>Select: <b>Generate Bismark indexes from Genome (fasta) in your Galaxy history</b></h4>'
     pointer: true
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|sPaired"]'
+    element: '[tour_id="singlePaired|sPaired"]:visible'
     placement: top
-    content: '<text style="color:red">Select: <b>Paired-end</b></text>'
+    content: '<h4>Select: <b>Paired-end</b></h4>'
     pointer: true
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
-    placement: bottom
-    onnextclick:
-      - 'div[tour_id="singlePaired|mate_list_0|input_mate1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate1"]'
-    placement: top
-    content: '<text style="color:red">Select: <b>trimmed.ctr.R1</b></text>'
-    pointer: true
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="singlePaired|mate_list_0|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="singlePaired|mate_list_0|input_mate2"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+      - '[tour_id="singlePaired|mate_list_0|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"]'
+    element: '[tour_id="singlePaired|mate_list_0|input_mate1"]:visible'
     placement: top
-    content: '<text style="color:red">Select: <b>trimmed.ctr.R2</b></text>'
+    content: '<h4>Select: <b>trimmed.ctr.R1</b></h4>'
     pointer: true
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided<br />
-default settings. However, for further information, please refer to the<br />
-manual provided below the tool box.<br /><br />'
+    element: '[tour_id="singlePaired|mate_list_0|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="singlePaired|mate_list_0|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|mate_list_0|input_mate2"]:visible'
+    placement: top
+    content: '<h4>Select: <b>trimmed.ctr.R2</b></h4>'
+    pointer: true
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'Bismark processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Bismark processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Bismark Mapper")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Bismark Mapper"):visible'
 
 
 
@@ -94,9 +85,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#tool-search-query'
-    content: 'Meanwhile align the preprocessed treatment samples against<br />
-the provided reference genome.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'Meanwhile align the preprocessed treatment samples against the provided reference genome.'
     placement: right
     textinsert: bismark mapper
     postclick:
@@ -104,59 +94,57 @@ the provided reference genome.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fbismark%2Fbismark_bowtie2%2F0.22.1%2Bgalaxy1"]
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="refGenomeSource|genomeSource"]'
+    element: '[tour_id="refGenomeSource|genomeSource"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>Generate Bismark indexes from Genome (fasta) in your Galaxy history</b></text>'
+    content: '<h4>Select: <b>Generate Bismark indexes from Genome (fasta) in your Galaxy history</b></h4>'
     pointer: true
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|sPaired"]'
+    element: '[tour_id="singlePaired|sPaired"]:visible'
     placement: top
-    content: '<text style="color:red">Select: <b>Paired-end</b></text>'
+    content: '<h4>Select: <b>Paired-end</b></h4>'
     pointer: true
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
-    placement: bottom
-    onnextclick:
-      - 'div[tour_id="singlePaired|mate_list_0|input_mate1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate1"]'
-    placement: top
-    content: '<text style="color:red">Select: <b>trimmed.treat.R1</b></text>'
-    pointer: true
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="singlePaired|mate_list_0|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="singlePaired|mate_list_0|input_mate2"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+      - '[tour_id="singlePaired|mate_list_0|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: 'div[tour_id="singlePaired|mate_list_0|input_mate2"]'
+    element: '[tour_id="singlePaired|mate_list_0|input_mate1"]:visible'
     placement: top
-    content: '<text style="color:red">Select: <b>trimmed.treat.R2</b></text>'
+    content: '<h4>Select: <b>trimmed.treat.R1</b></h4>'
     pointer: true
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided<br />
-default settings. However, for further information, please refer to the<br />
-manual provided below the tool box.<br /><br />'
+    element: '[tour_id="singlePaired|mate_list_0|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="singlePaired|mate_list_0|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|mate_list_0|input_mate2"]:visible'
+    placement: top
+    content: '<h4>Select: <b>trimmed.treat.R2</b></h4>'
+    pointer: true
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#right'
-    content: 'Bismark processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Bismark processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Bismark Mapper")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Bismark Mapper"):visible'
 
 
 
@@ -165,60 +153,60 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#masthead'
-    content: 'The Mapping tasks have been completed.<br />'
+    element: '#masthead:visible'
+    content: 'The Mapping tasks have been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#current-history-panel > .list-items > .list-item > .title-bar > .title > span:contains("mapped reads"):first'
-    content: 'To keep track of the data being processed, we will use tags (1/2).<br />'
+    element: '#current-history-panel .list-items .name:contains("mapped reads"):first:visible'
+    content: 'To keep track of the data being processed, we will use tags (1/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > .list-item > .title-bar > .title > span:contains("mapped reads"):first'
+      - '#current-history-panel .list-items .name:contains("mapped reads"):first:visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>mapped.treat</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>mapped.treat</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#current-history-panel > .list-items > .list-item > .title-bar > .title > span:contains("mapped reads"):last'
-    content: 'To keep track of the data being processed, we will use tags (2/2).<br />'
+    element: '#current-history-panel .list-items .name:contains("mapped reads"):last:visible'
+    content: 'To keep track of the data being processed, we will use tags (2/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > .list-item > .title-bar > .title > span:contains("mapped reads"):last'
+      - '#current-history-panel .list-items .name:contains("mapped reads"):last:visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>mapped.ctr</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>mapped.ctr</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '#masthead'
-    content: 'You successfully completed this Galaxy atom<br />'
+    element: '#masthead:visible'
+    content: 'You successfully completed this Galaxy atom.'
     placement: bottom

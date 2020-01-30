@@ -4,8 +4,11 @@ description: 'Quantification of methylated reads within a CpG context using Samt
 title_default: 'BS-Seq analysis'
 steps:
   - title: '<b>Outline</b>'
-    element: '#masthead'
-    content: 'In this tour we will infer genome-wide methylation rates in a CpG context.<br />Here, we will leverage on two tools: <b>Samtools</b>, to extract uniquely mapped and properly paired sequences from aligned input data, and <b>MethylDackel</b> to quantify the methylated reads of the provided CpG context file of gene upstream regions.<br />'
+    element: '#masthead:visible'
+    content: 'In this tour we will infer genome-wide methylation rates in a CpG context.<br>
+Here, we will leverage on two tools:<br>
+- <b>Samtools</b>, to extract uniquely mapped and properly paired sequences from aligned input data and mark duplicons<br>
+- <b>MethylDackel</b> to quantify the methylated reads of the provided CpG context file.'
     placement: bottom
 
 
@@ -15,9 +18,8 @@ steps:
 
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>Filter SAM or BAM by Samtools</b>.<br /><br />
-Click <b>Next</b> to load it.<br />'
+    element: '#tool-search-query:visible'
+    content: 'Look for <b>Filter SAM or BAM by Samtools</b>.'
     placement: right
     textinsert: filter sam or bam
     postclick:
@@ -25,59 +27,60 @@ Click <b>Next</b> to load it.<br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtool_filter2%2Fsamtool_filter2%2F1.8%2Bgalaxy1"]
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+      - '[tour_id="input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="input1"]'
+    element: '[tour_id="input1"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>mapped.ctr</b></text>'
+    content: '<h4>Select: <b>mapped.ctr</b></h4>'
     pointer: true
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="mapq"]'
+    element: '[tour_id="mapq"]:visible'
     placement: top
-    content: 'To mask uniquely mapped reads, mapping tools usually assign mapping qualities greater 0 except e.g. STAR (255). <br /><text style="color:red">Enter: <b>1</b></text>'
+    content: 'To mask uniquely mapped reads, mapping tools usually assign mapping qualities greater 0 except e.g. STAR (255).<br>
+<h4>Enter: <b>1</b></h4>'
     pointer: true
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="flag|filter"]'
+    element: '[tour_id="flag|filter"]:visible'
     placement: top
-    content: '<text style="color:red">Select: <b>yes</b></text>'
+    content: '<h4>Select: <b>yes</b></h4>'
     pointer: true
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="flag|reqBits"]'
+    element: '[tour_id="flag|reqBits"]:visible'
     content: 'Since input data is paired-end, select read mapped in a proper pair.'
     placement: top
     select:
-      - 'div[tour_id="flag|reqBits"] > .ui-form-field > div > .ui-options > .ui-options-list > :nth-child(2) > input'
+      - '[tour_id="flag|reqBits"] .ui-form-field .ui-options .ui-options-list > :nth-child(2) input'
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="flag|skipBits"]'
+    element: '[tour_id="flag|skipBits"]:visible'
     content: 'Optionally skip reads which were not aligned or flagged as secondary, supplementary respectively.'
     placement: top
     select:
-      - 'div[tour_id="flag|skipBits"] > .ui-form-field > div > .ui-options > .ui-options-list > :nth-child(3) > input'
-      - 'div[tour_id="flag|skipBits"] > .ui-form-field > div > .ui-options > .ui-options-list > :nth-child(9) > input'
+      - '[tour_id="flag|skipBits"] .ui-form-field .ui-options .ui-options-list > :nth-child(3) input'
+      - '[tour_id="flag|skipBits"] .ui-form-field .ui-options .ui-options-list > :nth-child(9) input'
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#execute'
-    content: 'For all remaining parametrization options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrization options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#right'
-    content: 'Samtools filter processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Samtools filter processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Filter SAM or BAM")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Filter SAM or BAM"):visible'
 
 
 
@@ -85,8 +88,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#tool-search-query'
-    content: 'Meanwhile apply read filter steps for treatment samples, too<br />'
+    element: '#tool-search-query:visible'
+    content: 'Meanwhile apply read filter steps for treatment samples, too.'
     placement: right
     textinsert: filter sam or bam
     postclick:
@@ -94,59 +97,60 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtool_filter2%2Fsamtool_filter2%2F1.8%2Bgalaxy1"]
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+      - '[tour_id="input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="input1"]'
+    element: '[tour_id="input1"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>mapped.treat</b></text>'
+    content: '<h4>Select: <b>mapped.treat</b></h4>'
     pointer: true
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="mapq"]'
+    element: '[tour_id="mapq"]:visible'
     placement: top
-    content: 'To mask uniquely mapped reads, mapping tools usually assign mapping qualities greater 0 except e.g. STAR (255). <br /><text style="color:red">Enter: <b>1</b></text>'
+    content: 'To mask uniquely mapped reads, mapping tools usually assign mapping qualities greater 0 except e.g. STAR (255).<br>
+<h4>Enter: <b>1</b></h4>'
     pointer: true
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="flag|filter"]'
+    element: '[tour_id="flag|filter"]:visible'
     placement: top
-    content: '<text style="color:red">Select: <b>yes</b></text>'
+    content: '<h4>Select: <b>yes</b></h4>'
     pointer: true
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="flag|reqBits"]'
+    element: '[tour_id="flag|reqBits"]:visible'
     content: 'Since input data is paired-end, select read mapped in a proper pair.'
     placement: top
     select:
-      - 'div[tour_id="flag|reqBits"] > .ui-form-field > div > .ui-options > .ui-options-list > :nth-child(2) > input'
+      - '[tour_id="flag|reqBits"] .ui-form-field .ui-options .ui-options-list > :nth-child(2) input'
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: 'div[tour_id="flag|skipBits"]'
+    element: '[tour_id="flag|skipBits"]:visible'
     content: 'Optionally skip reads which were not aligned or flagged as secondary, supplementary respectively.'
     placement: top
     select:
-      - 'div[tour_id="flag|skipBits"] > .ui-form-field > div > .ui-options > .ui-options-list > :nth-child(3) > input'
-      - 'div[tour_id="flag|skipBits"] > .ui-form-field > div > .ui-options > .ui-options-list > :nth-child(9) > input'
+      - '[tour_id="flag|skipBits"] .ui-form-field .ui-options .ui-options-list > :nth-child(3) input'
+      - '[tour_id="flag|skipBits"] .ui-form-field .ui-options .ui-options-list > :nth-child(9) input'
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#execute'
-    content: 'For all remaining parametrization options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrization options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#right'
-    content: 'Samtools filter processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Samtools filter processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Filter SAM or BAM")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Filter SAM or BAM"):visible'
 
 
 
@@ -155,58 +159,58 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#masthead'
-    content: 'The read filter tasks have been completed.<br />'
+    element: '#masthead:visible'
+    content: 'The read filter tasks have been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title'
-    content: 'To keep track of the data being processed, we will use tags (1/2).<br />'
+    element: '#current-history-panel .list-items > :nth-child(1) .title-bar .title:visible'
+    content: 'To keep track of the data being processed, we will use tags (1/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title'
+      - '#current-history-panel .list-items > :nth-child(1) .title-bar .title:visible'
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>filtered.treat</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>filtered.treat</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#current-history-panel > .list-items > :nth-child(2) > .title-bar > .title'
-    content: 'To keep track of the data being processed, we will use tags (2/2).<br />'
+    element: '#current-history-panel .list-items > :nth-child(2) .title-bar .title:visible'
+    content: 'To keep track of the data being processed, we will use tags (2/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(2) > .title-bar > .title'
+      - '#current-history-panel .list-items > :nth-child(2) .title-bar .title:visible'
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>filtered.ctr</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>filtered.ctr</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Extract properly paired sequences</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
 
 
@@ -215,8 +219,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>Samtools sort</b>.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'Look for <b>Samtools sort</b>.'
     placement: right
     textinsert: samtools sort
     postclick:
@@ -224,39 +228,38 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtools_sort%2Fsamtools_sort%2F2.0.3"]
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: 'div[tour_id="input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+      - '[tour_id="input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: 'div[tour_id="input1"]'
+    element: '[tour_id="input1"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>filtered.ctr</b></text>'
+    content: '<h4>Select: <b>filtered.ctr</b></h4>'
     pointer: true
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: 'div[tour_id="prim_key_cond|prim_key_select"]'
+    element: '[tour_id="prim_key_cond|prim_key_select"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>name (-n)</b></text>'
+    content: '<h4>Select: <b>name (-n)</b></h4>'
     pointer: true
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#right'
-    content: 'Samtools sort processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Samtools sort processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Samtools sort")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools sort"):visible'
 
 
 
@@ -265,8 +268,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#tool-search-query'
-    content: 'Meanwhile apply Samtools sort on treatment samples<br />'
+    element: '#tool-search-query:visible'
+    content: 'Meanwhile apply Samtools sort on treatment samples.'
     placement: right
     textinsert: samtools sort
     postclick:
@@ -274,39 +277,39 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtools_sort%2Fsamtools_sort%2F2.0.3"]
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: 'div[tour_id="input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+      - '[tour_id="input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: 'div[tour_id="input1"]'
+    element: '[tour_id="input1"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>filtered.treat</b></text>'
+    content: '<h4>Select: <b>filtered.treat</b></h4>'
     pointer: true
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: 'div[tour_id="prim_key_cond|prim_key_select"]'
+    element: '[tour_id="prim_key_cond|prim_key_select"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>name (-n)</b></text>'
+    content: '<h4>Select: <b>name (-n)</b></h4>'
     pointer: true
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#right'
-    content: 'Samtools sort processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Samtools sort processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Samtools sort")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools sort"):visible'
 
 
 
@@ -315,58 +318,58 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#masthead'
-    content: 'Sorting the filtered alignments has been completed.<br />'
+    element: '#masthead:visible'
+    content: 'Sorting the filtered alignments has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title'
-    content: 'To keep track of the data being processed, we will use tags (1/2).<br />'
+    element: '#current-history-panel .list-items > :nth-child(1) .title-bar .title:visible'
+    content: 'To keep track of the data being processed, we will use tags (1/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title'
+      - '#current-history-panel .list-items > :nth-child(1) .title-bar .title:visible'
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>namesorted.treat</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>namesorted.treat</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#current-history-panel > .list-items > :nth-child(2) > .title-bar > .title'
-    content: 'To keep track of the data being processed, we will use tags (2/2).<br />'
+    element: '#current-history-panel .list-items > :nth-child(2) .title-bar .title:visible'
+    content: 'To keep track of the data being processed, we will use tags (2/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(2) > .title-bar > .title'
+      - '#current-history-panel .list-items > :nth-child(2) .title-bar .title:visible'
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>namesorted.ctr</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>namesorted.ctr</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
 
 
@@ -374,8 +377,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Add tags</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>Samtools fixmate</b>.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'Look for <b>Samtools fixmate</b>.'
     placement: right
     textinsert: samtools fixmate
     postclick:
@@ -383,39 +386,39 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fsamtools_fixmate%2Fsamtools_fixmate%2F1.9"]
 
   - title: '<b>Add tags</b>'
-    element: 'div[tour_id="bamfile"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="bamfile"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="bamfile"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+      - '[tour_id="bamfile"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Add tags</b>'
-    element: 'div[tour_id="bamfile"]'
+    element: '[tour_id="bamfile"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>namesorted.ctr</b></text>'
+    content: '<h4>Select: <b>namesorted.ctr</b></h4>'
     pointer: true
 
   - title: '<b>Add tags</b>'
-    element: 'div[tour_id="addms"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton'
-    content: 'Add scores to mate pairs according to their CIGAR strings.<br />'
+    element: '[tour_id="addms"] .btn-group.ui-radiobutton:visible'
+    content: 'Add scores to mate pairs according to their CIGAR strings.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="addms"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton > :nth-child(1)'
+      - '[tour_id="addms"] .btn-group.ui-radiobutton > :nth-child(1):visible'
 
   - title: '<b>Add tags</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Add tags</b>'
-    element: '#right'
-    content: 'Adding tags by Samtools fixmate has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Adding tags by Samtools fixmate has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Samtools fixmate")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools fixmate"):visible'
 
 
 
@@ -424,8 +427,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Add tags</b>'
-    element: '#tool-search-query'
-    content: 'Meanwhile apply Samtools fixmate on alignments of treatment samples.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'Meanwhile apply Samtools fixmate on alignments of treatment samples.'
     placement: right
     textinsert: samtools fixmate
     postclick:
@@ -433,39 +436,39 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fsamtools_fixmate%2Fsamtools_fixmate%2F1.9"]
 
   - title: '<b>Add tags</b>'
-    element: 'div[tour_id="bamfile"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="bamfile"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="bamfile"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+      - '[tour_id="bamfile"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Add tags</b>'
-    element: 'div[tour_id="bamfile"]'
+    element: '[tour_id="bamfile"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>namesorted.treat</b></text>'
+    content: '<h4>Select: <b>namesorted.treat</b></h4>'
     pointer: true
 
   - title: '<b>Add tags</b>'
-    element: 'div[tour_id="addms"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton'
-    content: 'Add scores to mate pairs according to their CIGAR strings.<br />'
+    element: '[tour_id="addms"] .btn-group.ui-radiobutton:visible'
+    content: 'Add scores to mate pairs according to their CIGAR strings.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="addms"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton > :nth-child(1)'
+      - '[tour_id="addms"] .btn-group.ui-radiobutton > :nth-child(1):visible'
 
   - title: '<b>Add tags</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Add tags</b>'
-    element: '#right'
-    content: 'Adding tags by Samtools fixmate has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Adding tags by Samtools fixmate has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Samtools fixmate")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools fixmate"):visible'
 
 
 
@@ -474,58 +477,58 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Add tags</b>'
-    element: '#masthead'
-    content: 'Adding tags has been completed.<br />'
+    element: '#masthead:visible'
+    content: 'Adding tags has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
 
   - title: '<b>Add tags</b>'
-    element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title'
-    content: 'To keep track of the data being processed, we will use tags (1/2).<br />'
+    element: '#current-history-panel .list-items > :nth-child(1) .title-bar .title:visible'
+    content: 'To keep track of the data being processed, we will use tags (1/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title'
+      - '#current-history-panel .list-items > :nth-child(1) .title-bar .title:visible'
 
   - title: '<b>Add tags</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>tagged.treat</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>tagged.treat</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Add tags</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
   - title: '<b>Add tags</b>'
-    element: '#current-history-panel > .list-items > :nth-child(2) > .title-bar > .title'
-    content: 'To keep track of the data being processed, we will use tags (2/2).<br />'
+    element: '#current-history-panel .list-items > :nth-child(2) .title-bar .title:visible'
+    content: 'To keep track of the data being processed, we will use tags (2/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(2) > .title-bar > .title'
+      - '#current-history-panel .list-items > :nth-child(2) .title-bar .title:visible'
 
   - title: '<b>Add tags</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>tagged.ctr</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>tagged.ctr</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Add tags</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
 
 
@@ -534,8 +537,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Mark duplicates</b>'
-    element: '#tool-search-query'
-    content: 'To finally, mark PCR or optical duplicates, look for <b>Samtools markdup</b>.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'To finally, mark PCR or optical duplicates, look for <b>Samtools markdup</b>.'
     placement: right
     textinsert: samtools markdup
     postclick:
@@ -543,38 +546,39 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fsamtools_markdup%2Fsamtools_markdup%2F1.9%2Bgalaxy2"]
 
   - title: '<b>Mark duplicates</b>'
-    element: 'div[tour_id="bamfile"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="bamfile"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="bamfile"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+      - '[tour_id="bamfile"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Mark duplicates</b>'
-    element: 'div[tour_id="bamfile"]'
+    element: '[tour_id="bamfile"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>tagged.ctr</b></text>'
+    content: '<h4>Select: <b>tagged.ctr</b></h4>'
     pointer: true
 
   - title: '<b>Mark duplicates</b>'
-    element: 'div[tour_id="maxlen"]'
+    element: '[tour_id="maxlen"]:visible'
     placement: top
-    content: 'According to our input dataset<br /><text style="color:red">Enter: <b>100</b></text>'
+    content: 'According to common input dataset<br>
+<h4>Enter: <b>100</b></h4>'
     pointer: true
 
   - title: '<b>Mark duplicates</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Mark duplicates</b>'
-    element: '#right'
-    content: 'Mark duplicates by Samtools has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Mark duplicates by Samtools has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Samtools markdup")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools markdup"):visible'
 
 
 
@@ -583,8 +587,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Mark duplicates</b>'
-    element: '#tool-search-query'
-    content: 'To finally, mark PCR or optical duplicates, look for <b>Samtools markdup</b>.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'To finally, mark PCR or optical duplicates, look for <b>Samtools markdup</b>.'
     placement: right
     textinsert: samtools markdup
     postclick:
@@ -592,38 +596,39 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fsamtools_markdup%2Fsamtools_markdup%2F1.9%2Bgalaxy2"]
 
   - title: '<b>Mark duplicates</b>'
-    element: 'div[tour_id="bamfile"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="bamfile"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="bamfile"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+      - '[tour_id="bamfile"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Mark duplicates</b>'
-    element: 'div[tour_id="bamfile"]'
+    element: '[tour_id="bamfile"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>tagged.treat</b></text>'
+    content: '<h4>Select: <b>tagged.treat</b></h4>'
     pointer: true
 
   - title: '<b>Mark duplicates</b>'
-    element: 'div[tour_id="maxlen"]'
+    element: '[tour_id="maxlen"]:visible'
     placement: top
-    content: 'According to our input dataset<br /><text style="color:red">Enter: <b>100</b></text>'
+    content: 'According to common input dataset<br>
+<h4>Enter: <b>100</b></h4>'
     pointer: true
 
   - title: '<b>Mark duplicates</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Mark duplicates</b>'
-    element: '#right'
-    content: 'Mark duplicates by Samtools has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Mark duplicates by Samtools has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Samtools markdup")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools markdup"):visible'
 
 
 
@@ -632,58 +637,58 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Mark duplicates</b>'
-    element: '#masthead'
-    content: 'Masking optical duplicates has been completed.<br />'
+    element: '#masthead:visible'
+    content: 'Masking optical duplicates has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
 
   - title: '<b>Mark duplicates</b>'
-    element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title'
-    content: 'To keep track of the data being processed, we will use tags (1/2).<br />'
+    element: '#current-history-panel .list-items > :nth-child(1) .title-bar .title:visible'
+    content: 'To keep track of the data being processed, we will use tags (1/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title'
+      - '#current-history-panel .list-items > :nth-child(1) .title-bar .title:visible'
 
   - title: '<b>Mark duplicates</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>dupmarked.treat</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>dupmarked.treat</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Mark duplicates</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
   - title: '<b>Mark duplicates</b>'
-    element: '#current-history-panel > .list-items > :nth-child(2) > .title-bar > .title'
-    content: 'To keep track of the data being processed, we will use tags (2/2).<br />'
+    element: '#current-history-panel .list-items > :nth-child(2) .title-bar .title:visible'
+    content: 'To keep track of the data being processed, we will use tags (2/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(2) > .title-bar > .title'
+      - '#current-history-panel .list-items > :nth-child(2) .title-bar .title:visible'
 
   - title: '<b>Mark duplicates</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>dupmarked.ctr</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>dupmarked.ctr</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Mark duplicates</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
 
 
@@ -693,8 +698,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#tool-search-query'
-    content: 'Again, look for <b>Samtools sort</b> to sort alignments by coordinate.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'Again, look for <b>Samtools sort</b> to sort alignments by coordinate.'
     placement: right
     textinsert: samtools sort
     postclick:
@@ -702,33 +707,33 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtools_sort%2Fsamtools_sort%2F2.0.3"]
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: 'div[tour_id="input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+      - '[tour_id="input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: 'div[tour_id="input1"]'
+    element: '[tour_id="input1"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>dupmarked.ctr</b></text>'
+    content: '<h4>Select: <b>dupmarked.ctr</b></h4>'
     pointer: true
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#right'
-    content: 'Samtools sort processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Samtools sort processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Samtools sort")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools sort"):visible'
 
 
 
@@ -737,8 +742,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#tool-search-query'
-    content: 'Meanwhile apply Samtools sort by coordinate on treatment samples<br />'
+    element: '#tool-search-query:visible'
+    content: 'Meanwhile apply Samtools sort by coordinate on treatment samples.'
     placement: right
     textinsert: samtools sort
     postclick:
@@ -746,33 +751,33 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fsamtools_sort%2Fsamtools_sort%2F2.0.3"]
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: 'div[tour_id="input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="input1"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
+      - '[tour_id="input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: 'div[tour_id="input1"]'
+    element: '[tour_id="input1"]:visible'
     placement: bottom
-    content: '<text style="color:red">Select: <b>dupmarked.treat</b></text>'
+    content: '<h4>Select: <b>dupmarked.treat</b></h4>'
     pointer: true
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#right'
-    content: 'Samtools sort processing has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Samtools sort processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Samtools sort")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools sort"):visible'
 
 
 
@@ -781,58 +786,58 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#masthead'
-    content: 'Sorting the masked alignments has been completed.<br />'
+    element: '#masthead:visible'
+    content: 'Sorting the masked alignments has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title'
-    content: 'To keep track of the data being processed, we will use tags (1/2).<br />'
+    element: '#current-history-panel .list-items > :nth-child(1) .title-bar .title:visible'
+    content: 'To keep track of the data being processed, we will use tags (1/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title'
+      - '#current-history-panel .list-items > :nth-child(1) .title-bar .title:visible'
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>coordsorted.treat</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>coordsorted.treat</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#current-history-panel > .list-items > :nth-child(2) > .title-bar > .title'
-    content: 'To keep track of the data being processed, we will use tags (2/2).<br />'
+    element: '#current-history-panel .list-items > :nth-child(2) .title-bar .title:visible'
+    content: 'To keep track of the data being processed, we will use tags (2/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(2) > .title-bar > .title'
+      - '#current-history-panel .list-items > :nth-child(2) .title-bar .title:visible'
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>coordsorted.ctr</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>coordsorted.ctr</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Sort properly paired sequences</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
 
 
@@ -842,8 +847,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>MethylDackel</b>.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'Search for <b>MethylDackel</b> to call the methylation levels at each reference CpG, GHH or CHG site.'
     placement: right
     textinsert: methyldackel
     postclick:
@@ -851,81 +856,84 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fpileometh%2Fpileometh%2F0.3.0.1"]
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="reference_source|reference_source_selector"]'
-    content: '<text style="color:red">Select: <b>History</b></text>'
+    element: '[tour_id="reference_source|reference_source_selector"]:visible'
+    content: '<h4>Select: <b>History</b></h4>'
     placement: bottom
     pointer: true
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="input_sortedAlignBAM"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
-    placement: bottom
-    onnextclick:
-      - 'div[tour_id="input_sortedAlignBAM"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-
-  - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="input_sortedAlignBAM"]'
-    placement: top
-    content: '<text style="color:red">Select: <b>coordsorted.ctr</b></text>'
-    pointer: true
-
-  - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="main_task|mergeContext"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton'
-    content: 'Report a single methylation rate per CpG inferred from both strands instead of two.<br />'
+    element: '[tour_id="input_sortedAlignBAM"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="main_task|mergeContext"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton > :nth-child(1)'
+      - '[tour_id="input_sortedAlignBAM"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="advanced_options|options"]'
+    element: '[tour_id="input_sortedAlignBAM"]:visible'
     placement: top
-    content: 'In case of RRBS data and because of already properly postprocessed input alignments, some additional options need to be adapted.<br /><text style="color:red">Select: <b>Display advanced options</b></text>'
+    content: '<h4>Select: <b>coordsorted.ctr</b></h4>'
     pointer: true
 
-
   - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="advanced_options|keepDupes"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton'
-    content: '<b>Only in case of RRBS data sets</b>, ignore duplicons. Similar to RNA-Seq, fragment enrichment methods lead to true optical duplicons. Thus removal may cause up to 50% data loss.<br />'
+    element: '[tour_id="main_task|mergeContext"] .btn-group.ui-radiobutton:visible'
+    content: 'Report a single methylation rate per CpG inferred from both strands instead of two.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="advanced_options|keepDupes"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton > :nth-child(1)'
-
-
-  - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="advanced_options|min_mapq"]'
-    placement: top
-    content: 'Due to properly postprocessed alignments and in favor of true alignments with mapping quality below 10<br /><text style="color:red">Enter: <b>0</b></text>'
-    pointer: true
+      - '[tour_id="main_task|mergeContext"] .btn-group.ui-radiobutton > :nth-child(1):visible'
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="advanced_options|CHG"]'
+    element: '[tour_id="advanced_options|options"]:visible'
     placement: top
-    content: 'Switch to Yes in case of extended context methylation inference.<br />Default: No'
+    content: 'In case of RRBS data and because of already properly postprocessed input alignments, some additional options need to be adapted.<br>
+<h4>Select: <b>Display advanced options</b></h4>'
     pointer: true
 
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="advanced_options|ignoreFlags"]'
+    element: '[tour_id="advanced_options|keepDupes"] .btn-group.ui-radiobutton:visible'
+    content: '<b>Only in case of RRBS data sets</b>, ignore duplicons. Similar to RNA-Seq, fragment enrichment methods lead to true optical duplicons. Thus removal may cause up to 50% data loss.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="advanced_options|keepDupes"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+
+
+  - title: '<b>Infer methylation of CpGs</b>'
+    element: '[tour_id="advanced_options|min_mapq"]:visible'
     placement: top
-    content: 'Due to properly postprocessed alignments and to not override previously altered duplicon settings<br /><text style="color:red">Enter: <b>0</b></text>'
+    content: 'Due to properly postprocessed alignments and in favor of true alignments with mapping quality below 10<br>
+<h4>Enter: <b>0</b></h4>'
+    pointer: true
+
+  - title: '<b>Infer methylation of CpGs</b>'
+    element: '[tour_id="advanced_options|CHG"]:visible'
+    placement: top
+    content: '<h4>Switch to Yes in case of extended context methylation inference.</h4><br>
+Default: No'
     pointer: true
 
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#execute'
-    content: 'For all remaining parametrization options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
+    element: '[tour_id="advanced_options|ignoreFlags"]:visible'
+    placement: top
+    content: 'Due to properly postprocessed alignments and to not override previously altered duplicon settings<br>
+<h4>Enter: <b>0</b></h4>'
+    pointer: true
+
+
+  - title: '<b>Infer methylation of CpGs</b>'
+    element: '#execute:visible'
+    content: 'For all remaining parametrization options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#right'
-    content: 'Methylation rate inference has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Methylation rate inference has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("MethylDackel")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("MethylDackel"):visible'
 
 
 
@@ -934,8 +942,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#tool-search-query'
-    content: 'Meanwhile predict methylation rates for treatment samples, thus start <b>MethylDackel</b> again.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'Meanwhile predict methylation rates for treatment samples, thus start <b>MethylDackel</b> again.'
     placement: right
     textinsert: methyldackel
     postclick:
@@ -943,81 +951,84 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fpileometh%2Fpileometh%2F0.3.0.1"]
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="reference_source|reference_source_selector"]'
-    content: '<text style="color:red">Select: <b>History</b></text>'
+    element: '[tour_id="reference_source|reference_source_selector"]:visible'
+    content: '<h4>Select: <b>History</b></h4>'
     placement: bottom
     pointer: true
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="input_sortedAlignBAM"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-    content: 'Select dataset collection.<br /><br />'
-    placement: bottom
-    onnextclick:
-      - 'div[tour_id="input_sortedAlignBAM"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(3)'
-
-  - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="input_sortedAlignBAM"]'
-    placement: top
-    content: '<text style="color:red">Select: <b>coordsorted.treat</b></text>'
-    pointer: true
-
-  - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="main_task|mergeContext"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton'
-    content: 'Report a single methylation rate per CpG inferred from both strands instead of two.<br />'
+    element: '[tour_id="input_sortedAlignBAM"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="main_task|mergeContext"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton > :nth-child(1)'
+      - '[tour_id="input_sortedAlignBAM"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="advanced_options|options"]'
+    element: '[tour_id="input_sortedAlignBAM"]:visible'
     placement: top
-    content: 'In case of RRBS data and because of already properly postprocessed input alignments, some additional options need to be adapted.<br /><text style="color:red">Select: <b>Display advanced options</b></text>'
+    content: '<h4>Select: <b>coordsorted.treat</b></h4>'
     pointer: true
 
-
   - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="advanced_options|keepDupes"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton'
-    content: '<b>Only in case of RRBS data sets</b>, ignore duplicons. Similar to RNA-Seq, fragment enrichment methods lead to true optical duplicons. Thus removal may cause up to 50% data loss.<br />'
+    element: '[tour_id="main_task|mergeContext"] .btn-group.ui-radiobutton:visible'
+    content: 'Report a single methylation rate per CpG inferred from both strands instead of two.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="advanced_options|keepDupes"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton > :nth-child(1)'
-
-
-  - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="advanced_options|min_mapq"]'
-    placement: top
-    content: 'Due to properly postprocessed alignments and in favor of true alignments with mapping quality below 10<br /><text style="color:red">Enter: <b>0</b></text>'
-    pointer: true
+      - '[tour_id="main_task|mergeContext"] .btn-group.ui-radiobutton > :nth-child(1):visible'
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="advanced_options|CHG"]'
+    element: '[tour_id="advanced_options|options"]:visible'
     placement: top
-    content: 'Switch to Yes in case of extended context methylation inference.<br />Default: No'
+    content: 'In case of RRBS data and because of already properly postprocessed input alignments, some additional options need to be adapted.<br>
+<h4>Select: <b>Display advanced options</b></h4>'
     pointer: true
 
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: 'div[tour_id="advanced_options|ignoreFlags"]'
+    element: '[tour_id="advanced_options|keepDupes"] .btn-group.ui-radiobutton:visible'
+    content: '<b>Only in case of RRBS data sets</b>, ignore duplicons. Similar to RNA-Seq, fragment enrichment methods lead to true optical duplicons. Thus removal may cause up to 50% data loss.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="advanced_options|keepDupes"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+
+
+  - title: '<b>Infer methylation of CpGs</b>'
+    element: '[tour_id="advanced_options|min_mapq"]:visible'
     placement: top
-    content: 'Due to properly postprocessed alignments and to not override previously altered duplicon settings<br /><text style="color:red">Enter: <b>0</b></text>'
+    content: 'Due to properly postprocessed alignments and in favor of true alignments with mapping quality below 10<br>
+<h4>Enter: <b>0</b></h4>'
+    pointer: true
+
+  - title: '<b>Infer methylation of CpGs</b>'
+    element: '[tour_id="advanced_options|CHG"]:visible'
+    placement: top
+    content: '<h4>Switch to Yes in case of extended context methylation inference.</h4><br>
+Default: No'
     pointer: true
 
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#execute'
-    content: 'For all remaining parametrization options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />
-Click <b>Next</b> to execute.<br />'
+    element: '[tour_id="advanced_options|ignoreFlags"]:visible'
+    placement: top
+    content: 'Due to properly postprocessed alignments and to not override previously altered duplicon settings<br>
+<h4>Enter: <b>0</b></h4>'
+    pointer: true
+
+
+  - title: '<b>Infer methylation of CpGs</b>'
+    element: '#execute:visible'
+    content: 'For all remaining parametrization options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#right'
-    content: 'Methylation rate inference has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Methylation rate inference has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("MethylDackel")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("MethylDackel"):visible'
 
 
 
@@ -1026,58 +1037,58 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#masthead'
-    content: 'Methylation rate inference has been completed.<br />'
+    element: '#masthead:visible'
+    content: 'Methylation rate inference has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset-collection.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title'
-    content: 'To keep track of the data being processed, we will use tags (1/2).<br />'
+    element: '#current-history-panel .list-items > :nth-child(1) .title-bar .title:visible'
+    content: 'To keep track of the data being processed, we will use tags (1/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title'
+      - '#current-history-panel .list-items > :nth-child(1) .title-bar .title:visible'
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>methrates.treat</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>methrates.treat</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#current-history-panel > .list-items > :nth-child(2) > .title-bar > .title'
-    content: 'To keep track of the data being processed, we will use tags (2/2).<br />'
+    element: '#current-history-panel .list-items > :nth-child(2) .title-bar .title:visible'
+    content: 'To keep track of the data being processed, we will use tags (2/2).'
     placement: top
     onnextclick:
-      - '#current-history-panel > .list-items > :nth-child(2) > .title-bar > .title'
+      - '#current-history-panel .list-items > :nth-child(2) .title-bar .title:visible'
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#current-history-panel > .list-panel > .controls > .tags-display'
-    content: '<text style="color:red">Enter and confirm by return keypress: <b>methrates.ctr</b></text>'
-    placement: top
+    element: '#current-history-panel .list-panel .controls .tags-display:visible'
+    content: '<h4>Click and enter: <b>methrates.ctr</b></h4>'
+    placement: bottom
     pointer: true
 
   - title: '<b>Infer methylation of CpGs</b>'
-    element: '#current-history-panel > .list-panel > .controls > .navigation > .back'
+    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
     content: 'Return to history main view'
     placement: bottom
     onnextclick:
-      - '#current-history-panel > .list-panel > .controls > .navigation > .back'
+      - '#current-history-panel .list-panel .controls .navigation .back:visible'
 
 
 
@@ -1086,8 +1097,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '#tool-search-query'
-    content: 'To extract CpG methylation of gene upstream regions, look for <b>bedtools intersect</b>.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'To extract CpG methylation of provided gene upstream regions (potential promoter), look for <b>bedtools intersect</b>.'
     placement: right
     textinsert: bedtools intersect
     postclick:
@@ -1095,66 +1106,66 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fbedtools%2Fbedtools_intersectbed%2F2.27.1%2Bgalaxy1"]
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="inputA"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
-    content: 'Switch to multiple dataset view<br />'
+    element: '[tour_id="inputA"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+    content: 'Switch to multiple dataset view.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="inputA"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
+      - '[tour_id="inputA"] .btn-group.ui-radiobutton > :nth-child(2):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="inputA"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select'
-    content: 'Select the promoter aka upstream regions file<br /><br />'
+    element: '[tour_id="inputA"] .ui-select-multiple.ui-select:visible'
+    content: 'Select the promoter aka upstream regions file.'
     placement: bottom
     select:
-      - 'div[tour_id="inputA"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select > .select > option:contains("promoter.bed")'
+      - '[tour_id="inputA"] .ui-select-multiple.ui-select .select option:contains("promoter.bed"):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="reduce_or_iterate|reduce_or_iterate_selector"]'
-    content: '<text style="color:red">Select: <b>Single output containing intersections of an input B</b></text>'
+    element: '[tour_id="reduce_or_iterate|reduce_or_iterate_selector"]:visible'
+    content: '<h4>Select: <b>Single output containing intersections of an input B</b></h4>'
     placement: top
     pointer: true
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="reduce_or_iterate|inputB"]:last > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="reduce_or_iterate|inputB"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="reduce_or_iterate|inputB"]:last > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
+      - '[tour_id="reduce_or_iterate|inputB"] .btn-group.ui-radiobutton > :nth-child(2):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="reduce_or_iterate|inputB"]:last'
-    content: 'Backtrack and select control dataset collection.<br /><br />'
+    element: '[tour_id="reduce_or_iterate|inputB"] .ui-select-multiple.ui-select:visible'
+    content: 'Backtrack and select control dataset collection.'
     placement: top
     select:
-      - 'div[tour_id="reduce_or_iterate|inputB"]:last > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select > .select > :nth-child(2)'
+      - '[tour_id="reduce_or_iterate|inputB"] .ui-select-multiple.ui-select .select > :nth-child(2):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="overlap_mode"] > .ui-form-field'
-    content: '<text style="color:red">Click into field and select last entry: <b>Perform a left outer join</b></text>'
+    element: '[tour_id="overlap_mode"] .ui-form-field:visible'
+    content: '<h4>Click into field and select last entry: <b>Perform a left outer join</b></h4>'
     placement: top
     pointer: true
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="sorted"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton'
+    element: '[tour_id="sorted"] .btn-group.ui-radiobutton:visible'
     content: 'Assume sorted input to speedup intersection.'
     placement: top
     onnextclick:
-      - 'div[tour_id="sorted"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton > :nth-child(1)'
+      - '[tour_id="sorted"] .btn-group.ui-radiobutton > :nth-child(1):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '#right'
-    content: 'Intersection has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Intersection has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("bedtools Intersect")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("bedtools Intersect"):visible'
 
 
 
@@ -1163,8 +1174,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '#tool-search-query'
-    content: 'Meanwhile extract CpG methylation of gene upstream regions for treatment samples, thus look again for <b>bedtools intersect</b>.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'Meanwhile extract CpG methylation of gene upstream regions for treatment samples, thus look again for <b>bedtools intersect</b>.'
     placement: right
     textinsert: bedtools intersect
     postclick:
@@ -1172,79 +1183,79 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fbedtools%2Fbedtools_intersectbed%2F2.27.1%2Bgalaxy1"]
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="inputA"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
-    content: 'Switch to multiple dataset view<br />'
+    element: '[tour_id="inputA"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+    content: 'Switch to multiple dataset view.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="inputA"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
+      - '[tour_id="inputA"] .btn-group.ui-radiobutton > :nth-child(2):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="inputA"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select'
-    content: 'Select the promoter aka upstream regions file<br /><br />'
+    element: '[tour_id="inputA"] .ui-select-multiple.ui-select:visible'
+    content: 'Select the promoter aka upstream regions file.'
     placement: bottom
     select:
-      - 'div[tour_id="inputA"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select > .select > option:contains("promoter.bed")'
+      - '[tour_id="inputA"] .ui-select-multiple.ui-select .select option:contains("promoter.bed"):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="reduce_or_iterate|reduce_or_iterate_selector"]'
-    content: '<text style="color:red">Select: <b>Single output containing intersections of an input B</b></text>'
+    element: '[tour_id="reduce_or_iterate|reduce_or_iterate_selector"]:visible'
+    content: '<h4>Select: <b>Single output containing intersections of an input B</b></h4>'
     placement: top
     pointer: true
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="reduce_or_iterate|inputB"]:last > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
-    content: 'Select dataset collection.<br /><br />'
+    element: '[tour_id="reduce_or_iterate|inputB"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="reduce_or_iterate|inputB"]:last > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
+      - '[tour_id="reduce_or_iterate|inputB"] .btn-group.ui-radiobutton > :nth-child(2):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="reduce_or_iterate|inputB"]:last'
-    content: 'Backtrack and select treatment dataset collection.<br /><br />'
+    element: '[tour_id="reduce_or_iterate|inputB"] .ui-select-multiple.ui-select:visible'
+    content: 'Backtrack and select treatment dataset collection.'
     placement: top
     select:
-      - 'div[tour_id="reduce_or_iterate|inputB"]:last > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select > .select > :nth-child(1)'
+      - '[tour_id="reduce_or_iterate|inputB"] .ui-select-multiple.ui-select .select > :nth-child(1):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="overlap_mode"] > .ui-form-field'
-    content: '<text style="color:red">Click into field and select last entry: <b>Perform a left outer join</b></text>'
+    element: '[tour_id="overlap_mode"] .ui-form-field:visible'
+    content: '<h4>Click into field and select last entry: <b>Perform a left outer join</b></h4>'
     placement: top
     pointer: true
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="sorted"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton'
+    element: '[tour_id="sorted"] .btn-group.ui-radiobutton:visible'
     content: 'Assume sorted input to speedup intersection.'
     placement: top
     onnextclick:
-      - 'div[tour_id="sorted"] > .ui-form-field > .ui-options > .btn-group.ui-radiobutton > :nth-child(1)'
+      - '[tour_id="sorted"] .btn-group.ui-radiobutton > :nth-child(1):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '#right'
-    content: 'Intersection has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Intersection has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("bedtools Intersect")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("bedtools Intersect"):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '#masthead'
-    content: 'Intersection with upstream regions has been completed.<br />'
+    element: '#masthead:visible'
+    content: 'Intersection with upstream regions has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
         count: 0
 
 
@@ -1253,8 +1264,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>bedtools merge</b> to calculate mean methylation levels.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'Look for <b>bedtools merge</b> to calculate mean methylation levels.'
     placement: right
     textinsert: bedtools mergebed
     postclick:
@@ -1262,92 +1273,93 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fbedtools%2Fbedtools_mergebed%2F2.27.1"]
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="input"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
-    content: 'Select multiple datasets.<br /><br />'
+    element: '[tour_id="input"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+    content: 'Select multiple datasets.'
     placement: bottom
     onnextclick:
-      - 'div[tour_id="input"] > .ui-form-field > .ui-select-content > .ui-options > .btn-group.ui-radiobutton > :nth-child(2)'
+      - '[tour_id="input"] .btn-group.ui-radiobutton > :nth-child(2):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="input"]'
-    content: 'Select both, control and treated intersection datasets.<br /><br />'
+    element: '[tour_id="input"] .ui-select-multiple.ui-select:visible'
+    content: 'Select both, control and treated intersection datasets.'
     placement: bottom
     select:
-      - 'div[tour_id="input"] > .ui-form-field > .ui-select-content > .ui-select-multiple.ui-select > .select > :nth-child(-n+2)'
+      - '[tour_id="input"] .ui-select-multiple.ui-select .select > :nth-child(-n+2):visible'
 
 
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '.float-none'
+    element: '.float-none:visible'
     content: 'Add a rule which keeps the gene ID information.'
     placement: top
     onnextclick:
-      - '.float-none'
+      - '.float-none:visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="c_and_o_argument_repeat_0|col"]'
-    content: '<text style="color:red">To keep the gene ID select: <b>Column 4</b></text>'
+    element: '[tour_id="c_and_o_argument_repeat_0|col"]:visible'
+    content: '<h4>To keep the gene ID select: <b>Column 4</b></h4>'
     placement: top
     pointer: true
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="c_and_o_argument_repeat_0|operation"]'
-    content: '<text style="color:red">Scroll down and select: <b>distinct</b></text>'
+    element: '[tour_id="c_and_o_argument_repeat_0|operation"]:visible'
+    content: '<h4>Scroll down and select: <b>distinct</b></h4>'
     placement: top
     pointer: true
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '.float-none'
+    element: '.float-none:visible'
     content: 'Add a rule which keeps the gene ID information.'
     placement: top
     onnextclick:
-      - '.float-none'
+      - '.float-none:visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="c_and_o_argument_repeat_1|col"]'
-    content: '<text style="color:red">To keep and mean the methylation rates, scroll down and <br />select: <b>Column 9</b></text>'
+    element: '[tour_id="c_and_o_argument_repeat_1|col"]:visible'
+    content: '<h4>To keep and mean the methylation rates, scroll down and <br>
+select: <b>Column 9</b></h4>'
     placement: top
     pointer: true
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: 'div[tour_id="c_and_o_argument_repeat_1|operation"]'
-    content: '<text style="color:red">Select: <b>Mean</b></text>'
+    element: '[tour_id="c_and_o_argument_repeat_1|operation"]:visible'
+    content: '<h4>Select: <b>Mean</b></h4>'
     placement: top
     pointer: true
 
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '#right'
-    content: 'Merging data tables and mean methylation calculation has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Merging data tables and mean methylation calculation has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Merged")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Merged"):visible'
 
   - title: '<b>Infer promoter methylation level</b>'
-    element: '#masthead'
-    content: 'Mean methylation calculation has been completed.<br />'
+    element: '#masthead:visible'
+    content: 'Mean methylation calculation has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
         count: 0
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>Join two files</b>.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'Look for <b>Join two files</b>.'
     placement: right
     textinsert: join two files
     postclick:
@@ -1355,51 +1367,51 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_easyjoin_tool%2F1.1.1"]
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: 'div[tour_id="infile1"]'
-    content: '<text style="color:red">Backtrack and select <b>the second merged dataset</b> i.e. the control data</text>'
+    element: '[tour_id="infile1"]:visible'
+    content: '<h4>Backtrack and select <b>the second merged dataset</b> i.e. the control data</h4>'
     placement: bottom
     pointer: true
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: 'div[tour_id="column1"]'
-    content: '<text style="color:red">Select the unique start position: <b>Column 2</b></text>'
+    element: '[tour_id="column1"]:visible'
+    content: '<h4>Select the unique start position: <b>Column 2</b></h4>'
     placement: bottom
     pointer: true
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: 'div[tour_id="column2"]'
-    content: '<text style="color:red">Select the unique start position: <b>Column 2</b></text>'
+    element: '[tour_id="column2"]:visible'
+    content: '<h4>Select the unique start position: <b>Column 2</b></h4>'
     placement: bottom
     pointer: true
 
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: '#execute'
-    content: 'For all remaining parametrisation options, we will use the provided default settings. However, for further information, please refer to the manual provided below the tool box.<br /><br />'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
+However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: '#right'
-    content: 'Joining tables has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Joining tables has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Join")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Join"):visible'
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: '#masthead'
-    content: 'Joining has been completed.<br />'
+    element: '#masthead:visible'
+    content: 'Joining has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
         count: 0
 
 
@@ -1410,8 +1422,8 @@ Results are available as soon as their entries turn green.<br /><br />'
 
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: '#tool-search-query'
-    content: 'Look for <b>Text reformatting with awk</b>.<br /><br />'
+    element: '#tool-search-query:visible'
+    content: 'Look for <b>Text reformatting with awk</b>.'
     placement: right
     textinsert: text reformatting
     postclick:
@@ -1419,42 +1431,41 @@ Results are available as soon as their entries turn green.<br /><br />'
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_awk_tool%2F1.1.1"]
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: 'div[tour_id="code"]'
-    content: '<text style="color:red">Enter:<br /><b>BEGIN{print "gene_id\tctr_methrate\ttreat_methrate\tlog2fc"}{print $4"\t"$5"\t"$9"\t"($5 < $9 ? (log($9+1)-log($5+1))/log(2) : -(log($5+1)-log($9+1))/log(2))}</b></text>'
+    element: '[tour_id="code"]:visible'
+    content: '<h4>Enter:<br><b>BEGIN{print "gene_id\tctr_methrate\ttreat_methrate\tlog2fc"}{print $4"\t"$5"\t"$9"\t"($5 < $9 ? (log($9+1)-log($5+1))/log(2) : -(log($5+1)-log($9+1))/log(2))}</b></h4>'
     placement: top
     pointer: true
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: '#execute'
-    content: 'Extract methylation columns and calculate log2 fold-change.<br />'
+    element: '#execute:visible'
+    content: 'Extract methylation columns and calculate log2 fold-change.'
     placement: top
     postclick:
-      - '#execute'
+      - '#execute:visible'
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: '#right'
-    content: 'Log2 fold-change calculation has begun, and the results are loading in your history.<br />
-Results are available as soon as their entries turn green.<br /><br />'
+    element: '#right:visible'
+    content: 'Log2 fold-change calculation has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel > .list-items > :nth-child(1) > .title-bar > .title > span:contains("Text reformatting")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Text reformatting"):visible'
 
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: '#masthead'
-    content: 'Log2 fold-change calculation has been completed.<br />'
+    element: '#masthead:visible'
+    content: 'Log2 fold-change calculation has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-loading'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-new'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-running'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel > .list-items > .list-item.dataset.history-content.state-queued'
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
         count: 0
 
   - title: '<b>Infer log2 fold-change</b>'
-    element: '#masthead'
-    content: 'You successfully completed this Galaxy atom<br />'
+    element: '#masthead:visible'
+    content: 'You successfully completed this Galaxy atom.'
     placement: bottom
