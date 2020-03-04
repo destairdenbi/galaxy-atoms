@@ -82,13 +82,13 @@ These comprise:<br>
   - title: '<b>Import the sequence datasets</b>'
     element: '#right:visible'
     onloadwait:
-      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
+      - element: '#current-history-panel .state-loading:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
+      - element: '#current-history-panel .state-new:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
+      - element: '#current-history-panel .state-running:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
+      - element: '#current-history-panel .state-queued:visible'
         count: 0
     content: 'Your data was successfully uploaded'
     placement: left
@@ -110,11 +110,11 @@ Thus, we want to create as many collections as sample conditions (control/treatm
     onnextclick:
       - '.actions .icon-btn.show-selectors-btn .fa.fa-check-square-o:visible'
   - title: <b>Create collections</b>
-    element: .select-all
+    element: '.select-all' # must not check for visibility
     content: 'Select all'
     placement: left
     onnextclick:
-      - '.select-all:visible'
+      - '.select-all' # must not check for visibility
 
   - title: <b>Create collections</b>
     element: '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle:visible'
@@ -128,37 +128,42 @@ Thus, we want to create as many collections as sample conditions (control/treatm
     onloadclick:
       - '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle:visible'
     onnextclick:
-      - '.float-right > :nth-child(9) a'
+      - '.float-right > :nth-child(9) a' # must not check for visibility
 
   - title: <b>Create collections</b>
-    element: .creator-reset-btn
+    element: '.creator-reset-btn:visible'
     content: 'Reset default definitions'
     placement: bottom
     onnextclick:
       - '.creator-reset-btn:visible'
 
-
-
-
   - title: <b>Create collections</b>
-    element: .rule-menu-column-button
+    element: '.rule-menu-column-button:visible'
     content: 'Create a new table column (1/3)'
     placement: bottom
   - title: <b>Create collections</b>
-    element: .rule-menu-column-button
+    element: '.rule-menu-column-button:visible'
     content: 'Add column from metadata'
     placement: bottom
     onloadclick:
       - '.rule-menu-column-button:visible'
     onnextclick:
-      - '.rule-link-add-column-metadata'
+      - '.rule-link-add-column-metadata' # must not check for visibility
+
   - title: <b>Create collections</b>
-    element: '.rule-editor > :nth-child(1):visible'
-    content: '<h4>Select: <b>Name</b></h4>'
+    element: '.rule-editor select:visible'
+    content: 'Select "Name"'
     placement: right
-    pointer: true
+
   - title: <b>Create collections</b>
-    element: .rule-editor-ok
+    element: '.rule-editor select:visible'
+    content: 'Select "Name"'
+    placement: right
+    select:
+      - '.rule-editor select option:contains("Name"):visible'
+
+  - title: <b>Create collections</b>
+    element: '.rule-editor-ok:visible'
     content: 'Apply'
     placement: right
     onnextclick:
@@ -166,24 +171,26 @@ Thus, we want to create as many collections as sample conditions (control/treatm
 
 
   - title: <b>Create collections</b>
-    element: .rule-menu-filter-button
+    element: '.rule-menu-filter-button:visible'
     content: 'Filter for fastq data rows'
     placement: bottom
   - title: <b>Create collections</b>
-    element: .rule-menu-filter-button
+    element: '.rule-menu-filter-button:visible'
     content: 'Using a regular expression'
     placement: bottom
     onloadclick:
       - '.rule-menu-filter-button:visible'
     onnextclick:
-      - '.rule-link-add-filter-regex'
+      - '.rule-link-add-filter-regex' # must not check for visibility
+
   - title: <b>Create collections</b>
     element: '.rule-regular-expression:visible'
-    content: '<h4>Enter: <b>fastq</b></h4>'
+    content: 'Enter: "fastq"'
     placement: right
-    pointer: true
+    textinsert: 'fastq'
+
   - title: <b>Create collections</b>
-    element: .rule-editor-ok
+    element: '.rule-editor-ok:visible'
     content: 'Apply on column A'
     placement: right
     onnextclick:
@@ -191,69 +198,77 @@ Thus, we want to create as many collections as sample conditions (control/treatm
 
 
   - title: <b>Create collections</b>
-    element: .rule-menu-column-button
+    element: '.rule-menu-column-button:visible'
     content: 'Create a new table column (2/3)'
     placement: bottom
   - title: <b>Create collections</b>
-    element: .rule-menu-column-button
+    element: '.rule-menu-column-button:visible'
     content: 'Add column from basename of URL'
     placement: bottom
     onloadclick:
       - '.rule-menu-column-button:visible'
     onnextclick:
-      - '.rule-link-add-column-basename'
+      - '.rule-link-add-column-basename' # must not check for visibility
   - title: <b>Create collections</b>
-    element: .rule-editor-ok
+    element: '.rule-editor-ok:visible'
     content: 'Apply on column A'
     placement: right
     onnextclick:
       - '.rule-editor-ok:visible'
 
-
-
   - title: <b>Create collections</b>
-    element: .rule-menu-column-button
+    element: '.rule-menu-column-button:visible'
     content: 'Create a new table column (3/3)'
     placement: bottom
   - title: <b>Create collections</b>
-    element: .rule-menu-column-button
+    element: '.rule-menu-column-button:visible'
     content: 'Trim suffix'
     placement: bottom
     onloadclick:
       - '.rule-menu-column-button:visible'
     onnextclick:
-      - '.rule-link-add-column-substr'
+      - '.rule-link-add-column-substr' # must not check for visibility
 
   - title: <b>Create collections</b>
-    element: .rule-column-selector
-    content: '<h4>Select: <b>B</b></h4>'
+    element: '.rule-column-selector:visible'
+    content: 'Open the dropdown'
     placement: right
-    pointer: true
+    onnextclick:
+      - '.rule-column-selector .select2-arrow:visible'
+  - title: <b>Create collections</b>
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select "B"'
+    textinsert: 'B'
+    placement: right
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: <b>Create collections</b>
     element: '.rule-editor > :nth-child(2) select:visible'
-    content: '<h4>Select: <b>Strip off suffix specified</b></h4>'
+    content: 'Select "Strip off suffix specified"'
     placement: right
-    pointer: true
+  - title: <b>Create collections</b>
+    element: '.rule-editor > :nth-child(2) select:visible'
+    content: 'Select "Strip off suffix specified"'
+    placement: right
+    select:
+      - '.rule-editor select option:contains("Strip off suffix specified"):visible'
 
   - title: <b>Create collections</b>
     element: '.rule-editor :nth-child(3) input:visible'
-    content: '<h4>Enter: <b>12</b></h4>'
+    content: 'Enter: "12"'
     placement: right
-    pointer: true
+    textinsert: '12'
 
   - title: <b>Create collections</b>
-    element: .rule-editor-ok
+    element: '.rule-editor-ok:visible'
     content: 'Apply on column B'
     placement: right
     onnextclick:
       - '.rule-editor-ok:visible'
 
-
-
-
   - title: <b>Create collections</b>
-    element: .rule-menu-rules-button
+    element: '.rule-menu-rules-button'
     content: 'Create a new rule'
     placement: bottom
   - title: <b>Create collections</b>
@@ -265,54 +280,73 @@ Thus, we want to create as many collections as sample conditions (control/treatm
     onnextclick:
       - '.rule-link-mapping'
   - title: <b>Create collections</b>
-    element: .dropdown-toggle.btn.btn-primary.mr-1
+    element: '.dropdown-toggle.btn.btn-primary.mr-1:visible'
     content: 'Add a definition (1/2)'
     placement: top
   - title: <b>Create collections</b>
-    element: .dropdown-toggle.btn.btn-primary.mr-1
+    element: '.dropdown-toggle.btn.btn-primary.mr-1:visible'
     content: 'Select list identifier'
     placement: top
     onloadclick:
       - '.dropdown-toggle.btn.btn-primary.mr-1:visible'
     onnextclick:
-      - '.rule-add-mapping-list-identifiers'
+      - '.rule-add-mapping-list-identifiers' # must not check for visibility
+
+
 
   - title: <b>Create collections</b>
-    element: .rule-column-selector.rule-map-list-identifiers
-    content: '<h4>Select column <b>B</b></h4>'
+    element: '.rule-column-selector:visible'
+    content: 'Open the dropdown'
     placement: right
-    pointer: true
+    onnextclick:
+      - '.rule-column-selector .select2-arrow:visible'
+  - title: <b>Create collections</b>
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select "B"'
+    textinsert: 'B'
+    placement: right
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: <b>Create collections</b>
-    element: .dropdown-toggle.btn.btn-primary.mr-1
+    element: '.dropdown-toggle.btn.btn-primary.mr-1:visible'
     content: 'Add a definition (2/2)'
     placement: top
   - title: <b>Create collections</b>
-    element: .dropdown-toggle.btn.btn-primary.mr-1
+    element: '.dropdown-toggle.btn.btn-primary.mr-1:visible'
     content: 'Select collection name'
     placement: top
     onloadclick:
       - '.dropdown-toggle.btn.btn-primary.mr-1:visible'
     onnextclick:
-      - '.rule-add-mapping-collection-name'
+      - '.rule-add-mapping-collection-name' # must not check for visibility
+
   - title: <b>Create collections</b>
-    element: .rule-column-selector.rule-map-collection-name
-    content: '<h4>Select column <b>C</b></h4>'
+    element: '.rules-container :nth-child(2) .rule-column-selector:visible'
+    content: 'Open the dropdown'
     placement: right
-    pointer: true
+    onnextclick:
+      - '.rule-column-selector .select2-arrow:visible'
   - title: <b>Create collections</b>
-    element: .rule-mapping-ok
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select "C"'
+    textinsert: 'C'
+    placement: right
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: <b>Create collections</b>
+    element: '.rule-mapping-ok:visible'
     content: 'Apply'
     placement: right
     onnextclick:
       - '.rule-mapping-ok:visible'
   - title: <b>Create collections</b>
-    element: .create-collection
-    content: 'Finally, create collections'
+    element: '.create-collection:visible'
+    content: 'Finally, create'
     placement: bottom
     onnextclick:
       - '.create-collection:visible'
-
 
   - title: <b>Create collections</b>
     element: '#right:visible'
@@ -329,8 +363,7 @@ Thus, we want to create as many collections as sample conditions (control/treatm
     onnextclick:
       - '.actions .icon-btn.show-selectors-btn .fa.fa-check-square-o:visible'
 
-
   - title: <b>Create collections</b>
     element: '#masthead:visible'
-    content: 'The data upload and rganization has been completed.'
+    content: 'The data upload and reorganization has been completed.'
     placement: bottom
