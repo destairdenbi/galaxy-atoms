@@ -160,7 +160,7 @@ Thus, we want to create as many collections as sample conditions (control/treatm
     content: 'Select "Name"'
     placement: right
     select:
-      - '.rule-editor select option:contains("Name"):visible'
+      - '.rule-editor select option:contains("Name")' # must not check for visibility
 
   - title: <b>Create collections</b>
     element: '.rule-editor-ok:visible'
@@ -252,7 +252,7 @@ Thus, we want to create as many collections as sample conditions (control/treatm
     content: 'Select "Strip off suffix specified"'
     placement: right
     select:
-      - '.rule-editor select option:contains("Strip off suffix specified"):visible'
+      - '.rule-editor select option:contains("Strip off suffix specified")' # must not check for visibility
 
   - title: <b>Create collections</b>
     element: '.rule-editor :nth-child(3) input:visible'
