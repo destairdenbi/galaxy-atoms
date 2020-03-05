@@ -5,365 +5,797 @@ title_default: 'BS-Seq analysis'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'
-    content: 'In this tour we will upload NGS data to be analysed for methylation levels.<br>
-Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy framework.'
-    placement: bottom
+    content: 'In this tour, we will carry out quality control analysis of
+BS-Seq data. This represents the first task in analyzing raw high throughput
+sequence reads. It provides an overview of the overall quality of data, as
+well as a mean to remove low quality sequence and adapter content of reads that
+might ultimately bias results interpretation.<br>
+Here, we will leverage on two tools:<br>
+- <b>FastQC</b>, to assess the quality of the sequences<br>
+- <b>Cutadapt</b>, to remove low quality sequence content.'
+    position: bottom
 
-  - title: '<b>Import the sequence datasets</b>'
-    element: '.fa.fa-upload:visible'
-    content: Imports data into Galaxy.
+# Quality control
+
+  - title: '<b>Quality control</b>'
+    element: '#tool-search-query:visible'
+    content: 'Search for the <b>FastQC</b> tool.<br>
+FastQC plots the overall quality of the input data, which provides a good
+starting point for interpreting NGS data and downstream tool parameterization.'
     placement: right
+    textinsert: fastqc
     onnextclick:
-      - '.fa.fa-upload:visible'
-    onloadwait:
-      - element: '.history-size:contains("empty"):visible'
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]'
 
-  - title: '<b>Import the sequence datasets</b>'
-    element: >-
-      .tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(5)
-      > .title
-    content: 'From remote source'
-    placement: bottom
-    onloadclick:
-      - '.tab-pane.active .upload-view-default .upload-buttons > :nth-child(3) .title:visible'
-    onnextclick:
-      - '.tab-pane.active .upload-view-default .upload-buttons > :nth-child(5) .title:visible'
-  - title: '<b>Import the sequence datasets</b>'
-    element: .upload-text-content
-    content: 'Enter URLs'
-    placement: bottom
-    textinsert: |
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N3.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N3.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N4.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N4.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N3.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N3.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N4.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N4.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/hg38.goi.fa
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/hg38.goi.gtf
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/hg38.promoter.bed
-  - title: '<b>Import the sequence datasets</b>'
-    element: '#btn-start:visible'
-    content: Start the upload.
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+    content: 'Select multiple datasets.'
     placement: bottom
     onnextclick:
-      - '#btn-start:visible'
-  - title: '<b>Import the sequence datasets</b>'
-    element: '#btn-close:visible'
-    content: Close the dialog.
+      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .ui-select-multiple.ui-select:visible'
+    content: 'Select all imported control and treated datasets.'
     placement: bottom
-    onnextclick:
-      - '#btn-close:visible'
-    onloadwait:
-      - element: '#current-history-panel .list-item.dataset.history-content:visible'
-        mincount: 1
-
-  - title: '<b>Import the sequence datasets</b>'
-    element: '#right:visible'
-    content: 'The datasets are uploading in your history.<br>
-These comprise:<br>
-- Eight datasets collecting read mate-pairs at the 1st Trimester (control)<br>
-- Eight datasets collecting read mate-pairs at the 3rd Trimester (treatment)<br>
-- The reference genome and annotation<br>
-- The CpG context file (10kb upstream region per gene of interest).'
-    placement: left
-
-
-  - title: '<b>Import the sequence datasets</b>'
-    element: '#right:visible'
-    onloadwait:
-      - element: '#current-history-panel .state-loading:visible'
-        count: 0
-      - element: '#current-history-panel .state-new:visible'
-        count: 0
-      - element: '#current-history-panel .state-running:visible'
-        count: 0
-      - element: '#current-history-panel .state-queued:visible'
-        count: 0
-    content: 'Your data was successfully uploaded'
-    placement: left
-
-  - title: '<b>Create a collection</b>'
-    element: '#right:visible'
-    content: ' Multiple datasets can be organized as a collection to group them under a single name.
- This is especially useful to avoid errors during the analysis. In particular, collections help to:<br>
-- Save time running the same operation on multiple datasets<br>
-- Rename the collection instead of renaming every single file<br>
-- Keep the history as clean as possible.<br>
-Thus, we want to create as many collections as sample conditions (control/treatment) and sample mate pairs (forward/reverse).'
-    placement: left
-
-  - title: <b>Create collections</b>
-    element: '.actions .icon-btn.show-selectors-btn .fa.fa-check-square-o:visible'
-    content: 'Select multiple datasets'
-    placement: left
-    onnextclick:
-      - '.actions .icon-btn.show-selectors-btn .fa.fa-check-square-o:visible'
-  - title: <b>Create collections</b>
-    element: '.select-all' # must not check for visibility
-    content: 'Select all'
-    placement: left
-    onnextclick:
-      - '.select-all' # must not check for visibility
-
-  - title: <b>Create collections</b>
-    element: '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle:visible'
-    content: 'Choose an option'
-    placement: top
-
-  - title: <b>Create collections</b>
-    element: '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle:visible'
-    content: 'Create collections from rules'
-    placement: top
-    onloadclick:
-      - '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle:visible'
-    onnextclick:
-      - '.float-right > :nth-child(9) a' # must not check for visibility
-
-  - title: <b>Create collections</b>
-    element: '.creator-reset-btn:visible'
-    content: 'Reset default definitions'
-    placement: bottom
-    onnextclick:
-      - '.creator-reset-btn:visible'
-
-  - title: <b>Create collections</b>
-    element: '.rule-menu-column-button:visible'
-    content: 'Create a new table column (1/3)'
-    placement: bottom
-  - title: <b>Create collections</b>
-    element: '.rule-menu-column-button:visible'
-    content: 'Add column from metadata'
-    placement: bottom
-    onloadclick:
-      - '.rule-menu-column-button:visible'
-    onnextclick:
-      - '.rule-link-add-column-metadata' # must not check for visibility
-
-  - title: <b>Create collections</b>
-    element: '.rule-editor select:visible'
-    content: 'Select "Name"'
-    placement: right
-
-  - title: <b>Create collections</b>
-    element: '.rule-editor select:visible'
-    content: 'Select "Name"'
-    placement: right
     select:
-      - '.rule-editor select option:contains("Name")' # must not check for visibility
+      - '[tour_id="input_file"] .ui-select-multiple.ui-select .select > :nth-child(n+1):visible'
 
-  - title: <b>Create collections</b>
-    element: '.rule-editor-ok:visible'
-    content: 'Apply'
-    placement: right
-    onnextclick:
-      - '.rule-editor-ok:visible'
-
-
-  - title: <b>Create collections</b>
-    element: '.rule-menu-filter-button:visible'
-    content: 'Filter for fastq data rows'
-    placement: bottom
-  - title: <b>Create collections</b>
-    element: '.rule-menu-filter-button:visible'
-    content: 'Using a regular expression'
-    placement: bottom
-    onloadclick:
-      - '.rule-menu-filter-button:visible'
-    onnextclick:
-      - '.rule-link-add-filter-regex' # must not check for visibility
-
-  - title: <b>Create collections</b>
-    element: '.rule-regular-expression:visible'
-    content: 'Enter: "fastq"'
-    placement: right
-    textinsert: 'fastq'
-
-  - title: <b>Create collections</b>
-    element: '.rule-editor-ok:visible'
-    content: 'Apply on column A'
-    placement: right
-    onnextclick:
-      - '.rule-editor-ok:visible'
-
-
-  - title: <b>Create collections</b>
-    element: '.rule-menu-column-button:visible'
-    content: 'Create a new table column (2/3)'
-    placement: bottom
-  - title: <b>Create collections</b>
-    element: '.rule-menu-column-button:visible'
-    content: 'Add column from basename of URL'
-    placement: bottom
-    onloadclick:
-      - '.rule-menu-column-button:visible'
-    onnextclick:
-      - '.rule-link-add-column-basename' # must not check for visibility
-  - title: <b>Create collections</b>
-    element: '.rule-editor-ok:visible'
-    content: 'Apply on column A'
-    placement: right
-    onnextclick:
-      - '.rule-editor-ok:visible'
-
-  - title: <b>Create collections</b>
-    element: '.rule-menu-column-button:visible'
-    content: 'Create a new table column (3/3)'
-    placement: bottom
-  - title: <b>Create collections</b>
-    element: '.rule-menu-column-button:visible'
-    content: 'Trim suffix'
-    placement: bottom
-    onloadclick:
-      - '.rule-menu-column-button:visible'
-    onnextclick:
-      - '.rule-link-add-column-substr' # must not check for visibility
-
-  - title: <b>Create collections</b>
-    element: '.rule-column-selector:visible'
-    content: 'Open the dropdown'
-    placement: right
-    onnextclick:
-      - '.rule-column-selector .select2-arrow:visible'
-  - title: <b>Create collections</b>
-    element: '.select2-drop .select2-input:visible'
-    content: 'Search and select "B"'
-    textinsert: 'B'
-    placement: right
-    onloadclick:
-      - '.select2-drop .select2-results > :nth-child(1):visible'
-
-  - title: <b>Create collections</b>
-    element: '.rule-editor > :nth-child(2) select:visible'
-    content: 'Select "Strip off suffix specified"'
-    placement: right
-  - title: <b>Create collections</b>
-    element: '.rule-editor > :nth-child(2) select:visible'
-    content: 'Select "Strip off suffix specified"'
-    placement: right
-    select:
-      - '.rule-editor select option:contains("Strip off suffix specified")' # must not check for visibility
-
-  - title: <b>Create collections</b>
-    element: '.rule-editor :nth-child(3) input:visible'
-    content: 'Enter: "12"'
-    placement: right
-    textinsert: '12'
-
-  - title: <b>Create collections</b>
-    element: '.rule-editor-ok:visible'
-    content: 'Apply on column B'
-    placement: right
-    onnextclick:
-      - '.rule-editor-ok:visible'
-
-  - title: <b>Create collections</b>
-    element: '.rule-menu-rules-button'
-    content: 'Create a new rule'
-    placement: bottom
-  - title: <b>Create collections</b>
-    element: .rule-menu-rules-button
-    content: 'Add column definitions'
-    placement: bottom
-    onloadclick:
-      - '.rule-menu-rules-button:visible'
-    onnextclick:
-      - '.rule-link-mapping'
-  - title: <b>Create collections</b>
-    element: '.dropdown-toggle.btn.btn-primary.mr-1:visible'
-    content: 'Add a definition (1/2)'
+  - title: '<b>Quality control</b>'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use default
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
     placement: top
-  - title: <b>Create collections</b>
-    element: '.dropdown-toggle.btn.btn-primary.mr-1:visible'
-    content: 'Select list identifier'
-    placement: top
-    onloadclick:
-      - '.dropdown-toggle.btn.btn-primary.mr-1:visible'
-    onnextclick:
-      - '.rule-add-mapping-list-identifiers' # must not check for visibility
+    postclick:
+      - '#execute:visible'
 
-
-
-  - title: <b>Create collections</b>
-    element: '.rule-column-selector:visible'
-    content: 'Open the dropdown'
-    placement: right
-    onnextclick:
-      - '.rule-column-selector .select2-arrow:visible'
-  - title: <b>Create collections</b>
-    element: '.select2-drop .select2-input:visible'
-    content: 'Search and select "B"'
-    textinsert: 'B'
-    placement: right
-    onloadclick:
-      - '.select2-drop .select2-results > :nth-child(1):visible'
-
-  - title: <b>Create collections</b>
-    element: '.dropdown-toggle.btn.btn-primary.mr-1:visible'
-    content: 'Add a definition (2/2)'
-    placement: top
-  - title: <b>Create collections</b>
-    element: '.dropdown-toggle.btn.btn-primary.mr-1:visible'
-    content: 'Select collection name'
-    placement: top
-    onloadclick:
-      - '.dropdown-toggle.btn.btn-primary.mr-1:visible'
-    onnextclick:
-      - '.rule-add-mapping-collection-name' # must not check for visibility
-
-  - title: <b>Create collections</b>
-    element: '.rules-container :nth-child(2) .rule-column-selector:visible'
-    content: 'Open the dropdown'
-    placement: right
-    onnextclick:
-      - '.rule-column-selector .select2-arrow:visible'
-  - title: <b>Create collections</b>
-    element: '.select2-drop .select2-input:visible'
-    content: 'Search and select "C"'
-    textinsert: 'C'
-    placement: right
-    onloadclick:
-      - '.select2-drop .select2-results > :nth-child(1):visible'
-
-  - title: <b>Create collections</b>
-    element: '.rule-mapping-ok:visible'
-    content: 'Apply'
-    placement: right
-    onnextclick:
-      - '.rule-mapping-ok:visible'
-  - title: <b>Create collections</b>
-    element: '.create-collection:visible'
-    content: 'Finally, create'
-    placement: bottom
-    onnextclick:
-      - '.create-collection:visible'
-
-  - title: <b>Create collections</b>
+  - title: '<b>Quality control</b>'
     element: '#right:visible'
-    content: 'There are four collections in your history panel.'
+    content: 'FastQC processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-item.dataset-collection.history-content:visible'
-        mincount: 1
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC"):visible'
 
-  - title: <b>Create collections</b>
-    element: '.actions .icon-btn.show-selectors-btn .fa.fa-check-square-o:visible'
-    content: 'Close the selection view'
+  - title: '<b>Quality control</b>'
+    element: '#right:visible'
+    onloadwait:
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
+        count: 0
+    content: 'FastQC processing completed.'
     placement: left
-    onnextclick:
-      - '.actions .icon-btn.show-selectors-btn .fa.fa-check-square-o:visible'
 
-  - title: <b>Create collections</b>
+  - title: '<b>Quality control</b>'
+    element: '#current-history-panel .list-items > :nth-child(2) .display-btn:visible'
+    content: 'Open a report.'
+    onnextclick:
+      - '#current-history-panel .list-items > :nth-child(2) .display-btn:visible'
+    placement: left
+
+  - title: '<b>Quality control</b>'
     element: '#masthead:visible'
-    content: 'The data upload and reorganization has been completed.'
+    content: 'FastQC generated diverse plots to assess:<br>
+- Sequence quality<br>
+- Adapter content<br>
+- Contamination<br>'
+    placement: bottom
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per base sequence quality</b> plot shows the average
+quality scores of all reads.<br>
+The Y axis shows the quality score: the higher, the better the base call.
+The background color of the graph divides the base call operation into:<br>
+- Very good quality (green)<br>
+- Reasonable quality (orange)<br>
+- Poor quality (red).<br>
+The quality of each call usually degrades as the sequencing run progresses.
+Here however, each provided input dataset shows lower average quality scores at
+the beginning of each sequence. Although these scores still account for
+reasonable quality reads, a reason behind this trend might be that the image
+scanner focus had to be recalibrated during the first sequence run cycles.<br>
+More information on this plot can be found
+<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/2%20Per%20Base%20Sequence%20Quality.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(2) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(2) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per sequence quality scores</b> plot shows if a subset of
+reads has low qualities.<br>
+If a significant subset of sequences in a run have overall low quality scores,
+this indicates some kind of systematic problem occured during the sequencing
+experiment. Here, the entire sequence set scores well, showing the desired
+overall behavior for a sequence set:<br>
+- a peak (large sequence subset) showing a good score<br>
+- a short tail (sequence subset) scoring lower, although still well.<br>
+More information on this plot can be found
+<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/3%20Per%20Sequence%20Quality%20Scores.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(3) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(3) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per base sequence content</b> plot shows the percentage of
+occurrence of each base in each position of each sequence.<br>
+The four bases <b>should be imbalanced</b> due to the Bisulfite convertion. In
+case of RRBS data, the first four read positions show a clear biased due to the
+MspI-(CCGG)-cutting-site. Furthermore, some libraries also ligate a 5prime, up
+to three nucleotides long, diversity adapter, which should be previously
+trimmed off according to the manufacturers guideline.<br>
+More information on this plot can be found
+<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/4%20Per%20Base%20Sequence%20Content.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(4) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(4) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per sequence GC content</b> plot shows the GC content
+distribution of the provided sample.<br>
+Typically, this should follow a normal distribution. However, due to the
+Bisulfite convertion, an <b>nusually shaped distribution is nothing to worry
+about</b>. Here, each provided sample aligns to the theoretical (blue line) CG
+distribution.<br>
+More information on this plot can be found
+<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/5%20Per%20Sequence%20GC%20Content.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(5) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(5) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per base N content</b> plot shows the percentage of N
+occurrences in the sequence reads.<br>
+If a sequencer is unable to make a base call with confidence, then it will
+place an N, where N represents an ambiguous nucleotide: a base which could
+not be correctly identified. High number of Ns are a sign of low quality
+sequence reads, which might be due to transient problems during the sequencing
+experiment. Here, each sample shows the ideal percentage of N at each position
+in the sequence set, accounting for a good sequencing run.<br>
+More information on this plot can be found
+<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/6%20Per%20Base%20N%20Content.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(6) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(6) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Sequence length distribution</b> plot shows the
+distribution of sequence read length.<br>
+For NGS sequencers generating uniform read length, this will result in a spike
+at a fixed value.<br>
+More information on this plot can be found
+<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/7%20Sequence%20Length%20Distribution.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(7) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(7) a:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(7) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Sequence duplication levels</b> plot shows the relative
+number of sequences with different degrees of duplication.<br>
+The blue line represents the full sequence set, showing how its duplication
+levels are distributed. The red line represents the de-duplicated sequences,
+i.e. the proportions of de-duplicated sequence sets which come from different
+duplication levels in the original data.<br>
+Bisulfite sequencing data derives from short fragments. Thus, an increased
+<b>3prime duplication level is referable to sequenced adapter content</b>.
+In addition, <b>RRBS data sets usually tend to have duplicons</b> which must
+not be removed, unless PCR duplicons can be truly identified using random
+barcodes.<br>
+Please consult your library preparation guidelines and manufacturers manual on
+data preprocessing.<br>
+More information on this plot can be found
+<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/8%20Duplicate%20Sequences.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(8) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(8) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Overrepresented sequences</b> section shows all sequence
+making up for more than 0.1% of the total number of sequences in the dataset.
+<br>
+If a sequence is overrepresented, this means that it is either highly
+biologically significant, or that it is contaminant for the current library.
+Here, each provided sequence dataset shows no overrepresented sequences.<br>
+More information on this plot can be found
+<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/9%20Overrepresented%20Sequences.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(9) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(9) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Adapter content</b> plot shows the amount of residual tag
+sequences within the sample.<br>
+Base frequencies across the reads should follow a uniform distribution. On the
+contrary, uneven distributions (high frequencies for certain bases over several
+positions) indicate remaining sequence artifacts within the dataset. Due to
+usually short fragment sizes, <b>3prime adapter content can occur</b>.<br>
+More information on this plot can be found
+<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/10%20Adapter%20Content.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(10) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(10) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#masthead:visible'
+    content: 'Now that the quality of the input dataset have been assessed, it
+is necessary to clip off adapter sequences.'
+    placement: bottom
+
+# Adapter clipping
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#tool-search-query:visible'
+    content: 'Search for the <b>Cutadapt</b> tool.<br>
+Cutadapt is an adapter/sequence trim/removal tool, which searches for
+contaminants, adapters, and low quality score reads, and ultimately removes
+them to improve the overall quality of the input datasets.'
+    placement: right
+    textinsert: cutadapt
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.16.6"]
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|type"]:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired-end</b>.'
+    textinsert: 'Paired-end'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|input_1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="library|input_1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|input_1"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|input_1"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>rrbs_ctr.R1</b>.'
+    textinsert: 'rrbs_ctr.R1'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|input_2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="library|input_2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|input_2"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|input_2"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>rrbs_ctr.R2</b>.'
+    textinsert: 'rrbs_ctr.R2'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: ':nth-child(3) > :nth-child(3) .portlet-content .portlet-body > :nth-child(1) > :nth-child(1) .ui-form-field > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+    placement: top
+    content: 'Insert Illumina universal 3prime adapter'
+    onnextclick:
+      - ':nth-child(3) > :nth-child(3) .portlet-content .portlet-body > :nth-child(1) > :nth-child(1) .ui-form-field > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r1|adapters_0|adapter_source|adapter_source_list"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|r1|adapters_0|adapter_source|adapter_source_list"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Enter custom sequence</b>.'
+    textinsert: 'Enter custom sequence'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r1|adapters_0|adapter_source|adapter"] .ui-input:visible'
+    placement: top
+    content: 'Specify <b>AGATCGGAAGAGC</b>.'
+    textinsert: 'AGATCGGAAGAGC'
+
+  - title: '<b>Adapter clipping</b>'
+    element: ':nth-child(3) > :nth-child(3) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(3) > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+    placement: top
+    content: 'Add a second adapter.<br>
+In RRBS-Seq data, a methylation bias is introduced due to an end-repair step in
+the library preparation necessary because of an unpaired overhang at the
+MspI-(CCGG)-cutting-site.<br>
+If a read has adapter content, the CpG/TpG island should be clipped as well.
+Therefore, we use a the previously entered adapter sequence prefixed by the
+sequence YG in IUPAC code.'
+    onnextclick:
+      - ':nth-child(3) > :nth-child(3) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(3) > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r1|adapters_1|adapter_source|adapter_source_list"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|r1|adapters_1|adapter_source|adapter_source_list"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Enter custom sequence</b>.'
+    textinsert: 'Enter custom sequence'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r1|adapters_1|adapter_source|adapter"] .ui-input:visible'
+    placement: top
+    content: 'Specify <b>YGAGATCGGAAGAGC</b>.'
+    textinsert: 'YGAGATCGGAAGAGC'
+
+  - title: '<b>Adapter clipping</b>'
+    element: ':nth-child(3) > :nth-child(3) > :nth-child(1) .portlet-operations .ui-button-default:visible'
+    content: 'Close this options menu for better readability.'
+    placement: left
+    onnextclick:
+      - ':nth-child(3) > :nth-child(3) > :nth-child(1) .portlet-operations .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: ':nth-child(4) .portlet-content .portlet-body > :nth-child(1) > :nth-child(1) .ui-form-field > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+    placement: top
+    content: 'Analogously, insert Illumina universal 3prime adapter for the second read mate.'
+    onnextclick:
+      - ':nth-child(4) .portlet-content .portlet-body > :nth-child(1) > :nth-child(1) .ui-form-field > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r2|adapters2_0|adapter_source2|adapter_source_list2"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|r2|adapters2_0|adapter_source2|adapter_source_list2"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Enter custom sequence</b>.'
+    textinsert: 'Enter custom sequence'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r2|adapters2_0|adapter_source2|adapter2"] .ui-input:visible'
+    placement: top
+    content: 'Specify <b>AGATCGGAAGAGC</b>.'
+    textinsert: 'AGATCGGAAGAGC'
+
+  - title: '<b>Adapter clipping</b>'
+    element: ':nth-child(4) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(3) > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+    placement: top
+    content: 'Add a second adapter.<br>
+In RRBS-Seq data, a methylation bias is introduced due to an end-repair step in
+the library preparation necessary because of an unpaired overhang at the
+MspI-(CCGG)-cutting-site. If a read has adapter content, the CpG/TpG island
+should be clipped as well. Therefore, we use a the previously entered adapter
+sequence prefixed by the IUPAC code YG.'
+    onnextclick:
+      - ':nth-child(4) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(3) > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r2|adapters2_1|adapter_source2|adapter_source_list2"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|r2|adapters2_1|adapter_source2|adapter_source_list2"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select: <b>Enter custom sequence</b>.'
+    textinsert: 'Enter custom sequence'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r2|adapters2_1|adapter_source2|adapter2"] .ui-input:visible'
+    placement: top
+    content: 'Specify <b>YGAGATCGGAAGAGC</b>.'
+    textinsert: 'YGAGATCGGAAGAGC'
+
+  - title: '<b>Adapter clipping</b>'
+    element: ':nth-child(3) > :nth-child(4) > :nth-child(1) .portlet-operations .ui-button-default:visible'
+    content: 'Close this options menu for better readability.'
+    placement: left
+    onnextclick:
+      - ':nth-child(3) > :nth-child(4) > :nth-child(1) .portlet-operations .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.portlet-body :nth-child(5) .portlet-header .portlet-operations .ui-button-default:visible'
+    placement: left
+    content: 'Expand the adapter options.'
+    onnextclick:
+      - '.portlet-body :nth-child(5) .portlet-header .portlet-operations .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="adapter_options|overlap"] .ui-input:visible'
+    placement: top
+    content: 'The <b>Minimum overlap length</b> of the adapter sequence
+required to trim a sequence, indicates how many bp are required for the adapter
+to overlap with the sequence read to remove the sequence from the dataset.<br>
+The default value is too stringent, and on average will result in removing 25%
+of the reads.<br>
+Specify <b>5</b>.'
+    textinsert: '5'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.portlet-body :nth-child(5) .portlet-header .portlet-operations .ui-button-default:visible'
+    content: 'Close this options menu for better readability.'
+    placement: left
+    onnextclick:
+      - '.portlet-body :nth-child(5) .portlet-header .portlet-operations .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#execute:visible'
+    placement: top
+    content: 'With the current parametrisation, Cutadapt will clip the adapter
+sequences<br>
+For all remaining parametrisation options, we will use the provided default
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
+    postclick:
+      - '#execute:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#right:visible'
+    placement: left
+    content: 'Cutadapt processing has begun, and the results are loading in
+your history.'
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Cutadapt"):visible'
+
+# again for treatment
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#tool-search-query:visible'
+    content: 'Analogously, we need to perform adapter clipping on treated
+dataset collections using <b>Cutadapt</b>.'
+    placement: right
+    textinsert: cutadapt
+    postclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.16.6"]
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|type"]:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired-end</b>.'
+    textinsert: 'Paired-end'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|input_1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="library|input_1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|input_1"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|input_1"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>rrbs_treat.R1</b>.'
+    textinsert: 'rrbs_treat.R1'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|input_2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="library|input_2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|input_2"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|input_2"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>rrbs_treat.R2</b>.'
+    textinsert: 'rrbs_treat.R2'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: ':nth-child(3) > :nth-child(3) .portlet-content .portlet-body > :nth-child(1) > :nth-child(1) .ui-form-field > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+    placement: top
+    content: 'Insert Illumina universal 3prime adapter'
+    onnextclick:
+      - ':nth-child(3) > :nth-child(3) .portlet-content .portlet-body > :nth-child(1) > :nth-child(1) .ui-form-field > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r1|adapters_0|adapter_source|adapter_source_list"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|r1|adapters_0|adapter_source|adapter_source_list"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Enter custom sequence</b>.'
+    textinsert: 'Enter custom sequence'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r1|adapters_0|adapter_source|adapter"] .ui-input:visible'
+    placement: top
+    content: 'Specify <b>AGATCGGAAGAGC</b>.'
+    textinsert: 'AGATCGGAAGAGC'
+
+  - title: '<b>Adapter clipping</b>'
+    element: ':nth-child(3) > :nth-child(3) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(3) > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+    placement: top
+    content: 'Add a second adapter.<br>
+In RRBS-Seq data, a methylation bias is introduced due to an end-repair step in
+the library preparation necessary because of an unpaired overhang at the
+MspI-(CCGG)-cutting-site.<br>
+If a read has adapter content, the CpG/TpG island should be clipped as well.
+Therefore, we use a the previously entered adapter sequence prefixed by the
+sequence YG in IUPAC code.'
+    onnextclick:
+      - ':nth-child(3) > :nth-child(3) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(3) > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r1|adapters_1|adapter_source|adapter_source_list"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|r1|adapters_1|adapter_source|adapter_source_list"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Enter custom sequence</b>.'
+    textinsert: 'Enter custom sequence'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r1|adapters_1|adapter_source|adapter"] .ui-input:visible'
+    placement: top
+    content: 'Specify <b>YGAGATCGGAAGAGC</b>.'
+    textinsert: 'YGAGATCGGAAGAGC'
+
+  - title: '<b>Adapter clipping</b>'
+    element: ':nth-child(3) > :nth-child(3) > :nth-child(1) .portlet-operations .ui-button-default:visible'
+    content: 'Close this options menu for better readability.'
+    placement: left
+    onnextclick:
+      - ':nth-child(3) > :nth-child(3) > :nth-child(1) .portlet-operations .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: ':nth-child(4) .portlet-content .portlet-body > :nth-child(1) > :nth-child(1) .ui-form-field > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+    placement: top
+    content: 'Analogously, insert Illumina universal 3prime adapter for the second read mate.'
+    onnextclick:
+      - ':nth-child(4) .portlet-content .portlet-body > :nth-child(1) > :nth-child(1) .ui-form-field > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r2|adapters2_0|adapter_source2|adapter_source_list2"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|r2|adapters2_0|adapter_source2|adapter_source_list2"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Enter custom sequence</b>.'
+    textinsert: 'Enter custom sequence'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r2|adapters2_0|adapter_source2|adapter2"] .ui-input:visible'
+    placement: top
+    content: 'Specify <b>AGATCGGAAGAGC</b>.'
+    textinsert: 'AGATCGGAAGAGC'
+
+  - title: '<b>Adapter clipping</b>'
+    element: ':nth-child(4) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(3) > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+    placement: top
+    content: 'Add a second adapter.<br>
+In RRBS-Seq data, a methylation bias is introduced due to an end-repair step in
+the library preparation necessary because of an unpaired overhang at the
+MspI-(CCGG)-cutting-site. If a read has adapter content, the CpG/TpG island
+should be clipped as well. Therefore, we use a the previously entered adapter
+sequence prefixed by the IUPAC code YG.'
+    onnextclick:
+      - ':nth-child(4) > :nth-child(2) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(3) > :nth-child(1) > :nth-child(2) .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r2|adapters2_1|adapter_source2|adapter_source_list2"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|r2|adapters2_1|adapter_source2|adapter_source_list2"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select: <b>Enter custom sequence</b>.'
+    textinsert: 'Enter custom sequence'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="library|r2|adapters2_1|adapter_source2|adapter2"] .ui-input:visible'
+    placement: top
+    content: 'Specify <b>YGAGATCGGAAGAGC</b>.'
+    textinsert: 'YGAGATCGGAAGAGC'
+
+  - title: '<b>Adapter clipping</b>'
+    element: ':nth-child(3) > :nth-child(4) > :nth-child(1) .portlet-operations .ui-button-default:visible'
+    content: 'Close this options menu for better readability.'
+    placement: left
+    onnextclick:
+      - ':nth-child(3) > :nth-child(4) > :nth-child(1) .portlet-operations .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.portlet-body :nth-child(5) .portlet-header .portlet-operations .ui-button-default:visible'
+    placement: left
+    content: 'Expand the adapter options.'
+    onnextclick:
+      - '.portlet-body :nth-child(5) .portlet-header .portlet-operations .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '[tour_id="adapter_options|overlap"] .ui-input:visible'
+    placement: top
+    content: 'The <b>Minimum overlap length</b> of the adapter sequence
+required to trim a sequence, indicates how many bp are required for the adapter
+to overlap with the sequence read to remove the sequence from the dataset.<br>
+The default value is too stringent, and on average will result in removing 25%
+of the reads.<br>
+Specify <b>5</b>.'
+    textinsert: '5'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '.portlet-body :nth-child(5) .portlet-header .portlet-operations .ui-button-default:visible'
+    content: 'Close this options menu for better readability.'
+    placement: left
+    onnextclick:
+      - '.portlet-body :nth-child(5) .portlet-header .portlet-operations .ui-button-default:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#execute:visible'
+    placement: top
+    content: 'With the current parametrisation, Cutadapt will clip the adapter
+sequences<br>
+For all remaining parametrisation options, we will use the provided default
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
+    postclick:
+      - '#execute:visible'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#right:visible'
+    placement: left
+    content: 'Cutadapt processing has begun, and the results are loading in
+your history.'
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Cutadapt"):visible'
+
+# rename collections
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#masthead:visible'
+    content: 'Adapter clipping has been completed.'
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-new:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-running:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
+        count: 0
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#right'
+    placement: left
+    content: 'To keep track of the data being processed, we now rename these
+collections.'
+    rename:
+      - element: '#current-history-panel .list-items > :nth-child(1):visible'
+        name: 'noadapter treat R2'
+      - element: '#current-history-panel .list-items > :nth-child(2):visible'
+        name: 'noadapter treat R1'
+      - element: '#current-history-panel .list-items > :nth-child(3):visible'
+        name: 'noadapter ctr R2'
+      - element: '#current-history-panel .list-items > :nth-child(4):visible'
+        name: 'noadapter ctr R1'
+    autoclick:
+      - '#history-refresh-button'
+
+  - title: '<b>Adapter clipping</b>'
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("noadapter treat R2"):visible'
+        count: 1
+    element: '#right'
+    placement: left
+    content: 'The collections have been renamed.'
+
+  - title: '<b>Adapter clipping</b>'
+    element: '#masthead:visible'
+    content: 'You successfully completed this Galaxy atom.'
     placement: bottom
