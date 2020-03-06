@@ -16,7 +16,7 @@ Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy fra
     onnextclick:
       - '.fa.fa-upload:visible'
     onloadwait:
-      - element: '.history-size:contains("empty"):visible'
+      - element: '.history-size:contains("empty")'
 
   - title: '<b>Import the sequence datasets</b>'
     element: '#btn-new:visible'

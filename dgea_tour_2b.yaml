@@ -51,7 +51,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'FastQC processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC")'
 
   - title: '<b>Quality control</b>'
     element: '#right:visible'
@@ -284,7 +284,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'PRINSEQ processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("PRINSEQ"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("PRINSEQ")'
 
 
   - title: '<b>Quality control</b>'

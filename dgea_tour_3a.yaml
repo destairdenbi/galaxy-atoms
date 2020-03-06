@@ -45,9 +45,9 @@ BWA aligns the sequenced reads from the control and treated samples, against the
     placement: top
     select:
 #      - '[tour_id="input_type|fastq_input1"] .ui-select-multiple.ui-select .select > :nth-child(-n+8):visible'
-      - '[tour_id="input_type|fastq_input1"] .ui-select-multiple.ui-select .select option:contains(" on "):visible'
+      - '[tour_id="input_type|fastq_input1"] .ui-select-multiple.ui-select .select option:contains(" on ")'
     unselect:
-      - '[tour_id="input_type|fastq_input1"] .ui-select-multiple.ui-select .select option:contains("Rejected"):visible'
+      - '[tour_id="input_type|fastq_input1"] .ui-select-multiple.ui-select .select option:contains("Rejected")'
 
 
   - title: '<b>Map sequences against a reference genome</b>'
@@ -63,7 +63,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'BWA processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Map with BWA"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Map with BWA")'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#masthead:visible'
