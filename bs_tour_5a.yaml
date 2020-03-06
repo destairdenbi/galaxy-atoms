@@ -80,7 +80,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Samtools filter processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Filter SAM or BAM"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Filter SAM or BAM")'
 
 
 
@@ -150,7 +150,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Samtools filter processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Filter SAM or BAM"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Filter SAM or BAM")'
 
 
 
@@ -259,7 +259,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Samtools sort processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools sort"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools sort")'
 
 
 
@@ -309,7 +309,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Samtools sort processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools sort"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools sort")'
 
 
 
@@ -418,7 +418,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Adding tags by Samtools fixmate has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools fixmate"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools fixmate")'
 
 
 
@@ -468,7 +468,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Adding tags by Samtools fixmate has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools fixmate"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools fixmate")'
 
 
 
@@ -578,7 +578,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Mark duplicates by Samtools has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools markdup"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools markdup")'
 
 
 
@@ -628,7 +628,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Mark duplicates by Samtools has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools markdup"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools markdup")'
 
 
 
@@ -733,7 +733,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Samtools sort processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools sort"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools sort")'
 
 
 
@@ -777,7 +777,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Samtools sort processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools sort"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Samtools sort")'
 
 
 
@@ -933,7 +933,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Methylation rate inference has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("MethylDackel"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("MethylDackel")'
 
 
 
@@ -1028,7 +1028,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Methylation rate inference has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("MethylDackel"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("MethylDackel")'
 
 
 
@@ -1117,7 +1117,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Select the promoter aka upstream regions file.'
     placement: bottom
     select:
-      - '[tour_id="inputA"] .ui-select-multiple.ui-select .select option:contains("promoter.bed"):visible'
+      - '[tour_id="inputA"] .ui-select-multiple.ui-select .select option:contains("promoter.bed")'
 
   - title: '<b>Infer promoter methylation level</b>'
     element: '[tour_id="reduce_or_iterate|reduce_or_iterate_selector"]:visible'
@@ -1165,7 +1165,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Intersection has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("bedtools Intersect"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("bedtools Intersect")'
 
 
 
@@ -1194,7 +1194,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Select the promoter aka upstream regions file.'
     placement: bottom
     select:
-      - '[tour_id="inputA"] .ui-select-multiple.ui-select .select option:contains("promoter.bed"):visible'
+      - '[tour_id="inputA"] .ui-select-multiple.ui-select .select option:contains("promoter.bed")'
 
   - title: '<b>Infer promoter methylation level</b>'
     element: '[tour_id="reduce_or_iterate|reduce_or_iterate_selector"]:visible'
@@ -1242,7 +1242,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Intersection has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("bedtools Intersect"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("bedtools Intersect")'
 
   - title: '<b>Infer promoter methylation level</b>'
     element: '#masthead:visible'
@@ -1341,7 +1341,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Merging data tables and mean methylation calculation has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Merged"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Merged")'
 
   - title: '<b>Infer promoter methylation level</b>'
     element: '#masthead:visible'
@@ -1398,7 +1398,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Joining tables has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Join"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Join")'
 
   - title: '<b>Infer log2 fold-change</b>'
     element: '#masthead:visible'
@@ -1448,7 +1448,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'Log2 fold-change calculation has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Text reformatting"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Text reformatting")'
 
 
   - title: '<b>Infer log2 fold-change</b>'

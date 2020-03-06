@@ -63,7 +63,7 @@ In the following steps, the first 1000 positive and first 1000 negative strand e
     content: 'Awk processing has begun.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Text reformatting"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Text reformatting")'
 
   - title: '<b>Infer experiment strandness</b>'
     element: '#masthead:visible'
@@ -139,7 +139,7 @@ Infer experiment calculates the fractions of forward and inversely mapped reads 
     content: 'Experiment strandness inference has begun.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Infer Experiment"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Infer Experiment")'
 
   - title: '<b>Infer experiment strandness</b>'
     element: '#masthead:visible'
@@ -233,7 +233,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'HTSeq-Count processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("htseq-count"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("htseq-count")'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#masthead:visible'
@@ -320,7 +320,7 @@ However, for further information, please refer to the manual provided below the 
     content: 'DESeq2 processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("DESeq2"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("DESeq2")'
 
   - title: '<b>Differential gene expression analysis</b>'
     element: '#masthead:visible'
