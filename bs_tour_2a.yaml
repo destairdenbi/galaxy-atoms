@@ -56,7 +56,7 @@ tool box.'
     content: 'FastQC processing has begun, and the results are loading in your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC")' 
 
   - title: '<b>Quality control</b>'
     element: '#right:visible'
@@ -499,7 +499,7 @@ tool box.'
     content: 'Cutadapt processing has begun, and the results are loading in
 your history.'
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Cutadapt"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Cutadapt")'
 
 # again for treatment
 
@@ -753,7 +753,7 @@ tool box.'
     content: 'Cutadapt processing has begun, and the results are loading in
 your history.'
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Cutadapt"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Cutadapt")'
 
 # rename collections
 
@@ -790,7 +790,7 @@ collections.'
 
   - title: '<b>Adapter clipping</b>'
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("noadapter treat R2"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("noadapter treat R2")'
         count: 1
     element: '#right'
     placement: left
