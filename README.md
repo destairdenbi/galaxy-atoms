@@ -66,11 +66,9 @@ needed to run the Galaxy workflow generator.
 
 ### When some tools are missing
 
-New tools can be added in the Galaxy workflow generator flavor by installing them either 
-
-1) from the admin panel (may load to unexpected errors upon execution) or
-
-2) via re-building the docker image
+New tools can be added in the Galaxy workflow generator by installing them...
+1. From the admin panel (may load to unexpected errors upon execution)
+2. Via re-building the docker image
 
 Clone the [Galaxy workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator)
 ```
@@ -91,7 +89,8 @@ Once edited, you can build the Docker container locally
 ```
 $ docker build -t destair-local:latest .
 ```
-Now run your local image and access it via a webbrowser from the following address ``localhost:8080``.
+Now run your local image and access it via a webbrowser from the following
+address ``localhost:8080``.
 ```
 $ docker run -d -p 8080:80 --name destair -v /absolute/path/to/local/directory/:/export destair-local:latest
 ```
@@ -104,16 +103,29 @@ for more parameters and further help, consult
 
 ### When every tool is there
 
-Atoms are interactive tours that illustrate one or more Galaxy tools. For ease
-of use within the context of specific experimental setups, we suggest to build
-atoms that solve entire tasks of a target analysis.  
-You can easily create atoms by leveraging on the [Galaxy tour builder](https://github.com/TailorDev/galaxy-tourbuilder).
+Atoms are interactive tours that illustrate one or more Galaxy tools.  
+For ease of use within the context of specific experimental setups, we suggest
+to build atoms that solve entire tasks of a target analysis, *i.e.* Adapter
+clipping, Quality control, Genome alignment, Transcript quantification, and so
+on.  
 
-If the contributed atom does not implement a task of an analysis already provided, then you will need to create a new linker file for the
-new analysis. Look at the examples in the repository
+You can create atoms by leveraging on the [Galaxy Tour Builder](https://github.com/TailorDev/galaxy-tourbuilder).
+However, be aware that the Tour Builder cannot identify elements with a missing
+``tour_id`` attribute, which means that the resulting tour's bubbles will not
+always be placed on the HTML elements of interest. This limitation is
+particularly visible on those elements that require an explicit user input,
+such as dropdown menu selectors, checkboxes, etc.  
+To overcome this problem, we defined some templates that can be used to place
+the interactive tour's bubble on the actual HTML elements of interest.  
+Check our [TEMPLATES.md](https://github.com/destairdenbi/galaxy-atoms/blob/master/TEMPLATES.md)
+file for examples and use cases.  
 
+If your atom needs to be placed within an analysis which is not yet included in
+the Galaxy workflow generator, you need to create a new *linker file*. Look at
+the examples in the repository.  
 Otherwise, name the contributed atom with the label ``dgea_Xx.yaml``, or
-``bs_Xx.yaml``. Where ``X`` is the task number, and ``x`` an identifier of your choice.
+``bs_Xx.yaml``. Where ``X`` is the task number, and ``x`` an identifier of your
+choice.
 
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
@@ -140,14 +152,17 @@ Once the container is ready, you will be able to copy the new atom into
 ```
 /absolute/path/to/local/directory/export/galaxy-central/config/plugins/tours/
 ```
-Now either restart the running Galaxy instance and access it via a webbrowser from the following address ``localhost:8080``
+Now either restart the running Galaxy instance and access it via a web browser
+from the following address ``localhost:8080``
 ```
 $ docker exec destair supervisorctl restart galaxy:
 ```
-or login to your Galaxy instance as administrator and run our de.STAIR plugin once with ``Update tours DB`` admin option checked.
+or login to your Galaxy instance as administrator and run our de.STAIR plugin
+once with ``Update tours DB`` admin option checked.
 
-New atoms will be automatically offered by our plugin and can be found by navigating the Galaxy interface under the header
-section ``Help -> Interactive Tours``.
+New atoms will be automatically offered by our plugin and can be found by
+navigating the Galaxy interface under the header section ``Help -> Interactive
+Tours``.
 
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
@@ -155,7 +170,7 @@ section ``Help -> Interactive Tours``.
 
 - [Set up the Galaxy environment](https://github.com/destairdenbi/galaxy-webhooks#set-up-the-galaxy-environment)
 - [Set up the de.STAIR atoms](https://github.com/destairdenbi/galaxy-webhooks#set-up-the-destair-atoms)
-- contribute new atoms as stated above
+- Contribute new atoms as stated above
 - [Set up the de.STAIR plugin](https://github.com/destairdenbi/galaxy-webhooks#set-up-the-destair-plugin)
 - [Run the Galaxy framework](https://github.com/destairdenbi/galaxy-webhooks#run-the-galaxy-framework)
 
