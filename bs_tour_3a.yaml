@@ -50,8 +50,8 @@ Trimmomatic is an adapter/sequence trim/removal tool, which searches for contami
 
   - title: '<b>Quality trimming</b>'
     element: '.select2-drop .select2-input:visible'
-    content: 'Search and select <b>noadapter.ctr.R1</b>.'
-    textinsert: 'noadapter.ctr.R1'
+    content: 'Search and select <b>noadapter ctr R1</b>.'
+    textinsert: 'noadapter ctr R1'
     placement: left
     onloadclick:
       - '.select2-drop .select2-results > :nth-child(1):visible'
@@ -72,8 +72,8 @@ Trimmomatic is an adapter/sequence trim/removal tool, which searches for contami
 
   - title: '<b>Quality trimming</b>'
     element: '.select2-drop .select2-input:visible'
-    content: 'Search and select <b>noadapter.ctr.R2</b>.'
-    textinsert: 'noadapter.ctr.R2'
+    content: 'Search and select <b>noadapter ctr R2</b>.'
+    textinsert: 'noadapter ctr R2'
     placement: left
     onloadclick:
       - '.select2-drop .select2-results > :nth-child(1):visible'
@@ -130,7 +130,8 @@ tool box.'
 your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Trimmomatic"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Trimmomatic")'
+        count: 1
 
 # redo for treat
 
@@ -175,8 +176,8 @@ dataset collections using <Trimmomatic</>.'
 
   - title: '<b>Quality trimming</b>'
     element: '.select2-drop .select2-input:visible'
-    content: 'Search and select <b>noadapter.treat.R1</b>.'
-    textinsert: 'noadapter.treat.R1'
+    content: 'Search and select <b>noadapter treat R1</b>.'
+    textinsert: 'noadapter treat R1'
     placement: left
     onloadclick:
       - '.select2-drop .select2-results > :nth-child(1):visible'
@@ -197,8 +198,8 @@ dataset collections using <Trimmomatic</>.'
 
   - title: '<b>Quality trimming</b>'
     element: '.select2-drop .select2-input:visible'
-    content: 'Search and select <b>noadapter.treat.R2</b>.'
-    textinsert: 'noadapter.treat.R2'
+    content: 'Search and select <b>noadapter treat R2</b>.'
+    textinsert: 'noadapter treat R2'
     placement: left
     onloadclick:
       - '.select2-drop .select2-results > :nth-child(1):visible'
@@ -255,7 +256,8 @@ tool box.'
 your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Trimmomatic"):visible'
+      - element: '#current-history-panel .list-items .name:contains("Trimmomatic")'
+        count: 8
 
 # rename collections
 
@@ -280,27 +282,27 @@ your history.'
 collections.'
     rename:
       - element: '#current-history-panel .list-items > :nth-child(1):visible'
-        name: 'below-threshold.trimmed.treat.R2'
+        name: 'singletons treat R2'
       - element: '#current-history-panel .list-items > :nth-child(2):visible'
-        name: 'below-threshold.trimmed.treat.R1'
+        name: 'singletons treat R1'
       - element: '#current-history-panel .list-items > :nth-child(3):visible'
-        name: 'trimmed.treat.R2'
+        name: 'trimmed treat R2'
       - element: '#current-history-panel .list-items > :nth-child(4):visible'
-        name: 'trimmed.treat.R1'
+        name: 'trimmed treat R1'
       - element: '#current-history-panel .list-items > :nth-child(5):visible'
-        name: 'below-threshold.trimmed.ctr.R2'
+        name: 'singletons ctr R2'
       - element: '#current-history-panel .list-items > :nth-child(6):visible'
-        name: 'below-threshold.trimmed.ctr.R1'
+        name: 'singletons ctr R1'
       - element: '#current-history-panel .list-items > :nth-child(7):visible'
-        name: 'trimmed.ctr.R2'
+        name: 'trimmed ctr R2'
       - element: '#current-history-panel .list-items > :nth-child(8):visible'
-        name: 'trimmed.ctr.R1'
+        name: 'trimmed ctr R1'
     autoclick:
       - '#history-refresh-button'
 
   - title: '<b>Rename datasets</b>'
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("below-threshold.trimmed.treat.R2"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("singletons treat R2")'
         count: 1
     element: '#right'
     placement: left
