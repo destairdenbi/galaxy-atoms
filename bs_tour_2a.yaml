@@ -57,6 +57,7 @@ tool box.'
     placement: left
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC")' 
+        count: 1
 
   - title: '<b>Quality control</b>'
     element: '#right:visible'
@@ -500,6 +501,7 @@ tool box.'
 your history.'
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Cutadapt")'
+        count: 1
 
 # again for treatment
 
@@ -753,7 +755,8 @@ tool box.'
     content: 'Cutadapt processing has begun, and the results are loading in
 your history.'
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Cutadapt")'
+      - element: '#current-history-panel .list-items .name:contains("Cutadapt")'
+        count: 4
 
 # rename collections
 

@@ -17,6 +17,7 @@ Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy fra
       - '.fa.fa-upload:visible'
     onloadwait:
       - element: '.history-size:contains("empty")' # must not check for visibility
+        count: 1
 
   - title: '<b>Import the sequence datasets</b>'
     element: >-
