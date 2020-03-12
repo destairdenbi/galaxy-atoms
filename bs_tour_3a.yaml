@@ -21,9 +21,18 @@ Trimmomatic is an adapter/sequence trim/removal tool, which searches for contami
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="readtype|single_or_paired"]:visible'
-    content: '<h4>Select: <b>Paired-end (two seperate input files)</b></h4>'
-    pointer: true
-    placement: bottom
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="readtype|single_or_paired"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired-end (two separate input files)</b>.'
+    textinsert: 'Paired-end (two separate input files)'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="readtype|fastq_r1_in"] .btn-group.ui-radiobutton > :nth-child(3):visible'
@@ -33,10 +42,19 @@ Trimmomatic is an adapter/sequence trim/removal tool, which searches for contami
       - '[tour_id="readtype|fastq_r1_in"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Quality trimming</b>'
-    element: '[tour_id="readtype|fastq_r1_in"]:visible'
-    content: '<h4>Select: <b>noadapter.ctr.R1</b></h4>'
-    pointer: true
-    placement: bottom
+    element: '[tour_id="readtype|fastq_r1_in"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="readtype|fastq_r1_in"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>noadapter.ctr.R1</b>.'
+    textinsert: 'noadapter.ctr.R1'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="readtype|fastq_r2_in"] .btn-group.ui-radiobutton > :nth-child(3):visible'
@@ -46,52 +64,80 @@ Trimmomatic is an adapter/sequence trim/removal tool, which searches for contami
       - '[tour_id="readtype|fastq_r2_in"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Quality trimming</b>'
-    element: '[tour_id="readtype|fastq_r2_in"]:visible'
-    content: '<h4>Select: <b>noadapter.ctr.R2</b></h4>'
-    pointer: true
-    placement: bottom
+    element: '[tour_id="readtype|fastq_r2_in"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="readtype|fastq_r2_in"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>noadapter.ctr.R2</b>.'
+    textinsert: 'noadapter.ctr.R2'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '.portlet-title-text:last:visible'
+    placement: top
+    content: 'The <b>SLIDINGWINDOW</b> operation performs an iterative scanning
+of a sequence, and trims it once the average quality falls below a quality
+score threshold of 20.'
 
   - title: '<b>Quality trimming</b>'
     element: '.float-none:visible'
-    content: 'Next to the <b>SLIDINGWINDOW</b> operation, which performs an iterative scanning of the sequence, trimming once the average quality falls below a threshold of 20, Trimmomatic needs to be further parameterized.'
     placement: top
+    content: 'It is recommended to add an operation that drops all sequences
+whose lenght falls below the provided threshold.'
     onnextclick:
       - '.float-none:visible'
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="operations_1|operation|name"]:visible'
-    content: 'It is recommended to add an operation that drops all sequences whose lenght falls below the provided threshold. A minimum read length of 20 indicates enough sequence information content for downstream analyses.<br>
-<h4>Select: <b>MINLEN</b></h4>'
-
+    content: 'Open the dropdown menu.'
     placement: top
-    pointer: true
+    onnextclick:
+      - '[tour_id="operations_1|operation|name"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>MINLEN</b>.<br>
+A minimum read length of 20 indicates enough sequence information content for
+downstream analyses. The operation will remove all those sequences whose length
+does not reach the 20 nucleotides.'
+    textinsert: 'MINLEN'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Quality trimming</b>'
     element: '#execute:visible'
-    content: 'With the current parametrisation, Trimmomatic will:<br>
+    content: 'With the current parameterisation, Trimmomatic will:<br>
 - Trim reads with low average quality<br>
-- Discard reads whose length became shorter than 20 bp.<br>
-For all remaining parametrisation options, we will use the provided default settings.<br>
-However, for further information, please refer to the manual provided below the tool box.'
+- Discard reads whose length became shorter than the indicated threshold.<br>
+For all remaining parametrisation options, we will use the provided default
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
     placement: top
     postclick:
       - '#execute:visible'
 
   - title: '<b>Quality trimming</b>'
     element: '#right:visible'
-    content: 'Trimmomatic processing has begun, and the results are loading in your history.'
+    content: 'Trimmomatic processing has begun, and the results are loading in
+your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Trimmomatic")'
-
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Trimmomatic"):visible'
 
 # redo for treat
 
-
-
   - title: '<b>Quality trimming</b>'
     element: '#tool-search-query:visible'
-    content: 'Meanwhile trim low quality score read sequences of the treatment datasets.'
+    content: 'Analogously, we need to perform the quality trimming on treated
+dataset collections using <Trimmomatic</>.'
     placement: right
     textinsert: trimmomatic
     postclick:
@@ -100,9 +146,18 @@ However, for further information, please refer to the manual provided below the 
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="readtype|single_or_paired"]:visible'
-    content: '<h4>Select: <b>Paired-end (two seperate input files)</b></h4>'
-    pointer: true
-    placement: bottom
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="readtype|single_or_paired"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired-end (two separate input files)</b>.'
+    textinsert: 'Paired-end (two separate input files)'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="readtype|fastq_r1_in"] .btn-group.ui-radiobutton > :nth-child(3):visible'
@@ -112,10 +167,19 @@ However, for further information, please refer to the manual provided below the 
       - '[tour_id="readtype|fastq_r1_in"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Quality trimming</b>'
-    element: '[tour_id="readtype|fastq_r1_in"]:visible'
-    content: '<h4>Select: <b>noadapter.treat.R1</b></h4>'
-    pointer: true
-    placement: bottom
+    element: '[tour_id="readtype|fastq_r1_in"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="readtype|fastq_r1_in"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>noadapter.treat.R1</b>.'
+    textinsert: 'noadapter.treat.R1'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="readtype|fastq_r2_in"] .btn-group.ui-radiobutton > :nth-child(3):visible'
@@ -125,50 +189,79 @@ However, for further information, please refer to the manual provided below the 
       - '[tour_id="readtype|fastq_r2_in"] .btn-group.ui-radiobutton > :nth-child(3):visible'
 
   - title: '<b>Quality trimming</b>'
-    element: '[tour_id="readtype|fastq_r2_in"]:visible'
-    content: '<h4>Select: <b>noadapter.treat.R2</b></h4>'
-    pointer: true
-    placement: bottom
+    element: '[tour_id="readtype|fastq_r2_in"] .ui-select .select2-container:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="readtype|fastq_r2_in"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>noadapter.treat.R2</b>.'
+    textinsert: 'noadapter.treat.R2'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '.portlet-title-text:last:visible'
+    placement: top
+    content: 'The <b>SLIDINGWINDOW</b> operation performs an iterative scanning
+of a sequence, and trims it once the average quality falls below a quality
+score threshold of 20.'
 
   - title: '<b>Quality trimming</b>'
     element: '.float-none:visible'
-    content: 'Next to the <b>SLIDINGWINDOW</b> operation, which performs an iterative scanning of the sequence, trimming once the average quality falls below a threshold of 20, Trimmomatic needs to be further parameterized.'
     placement: top
+    content: 'It is recommended to add an operation that drops all sequences
+whose lenght falls below the provided threshold.'
     onnextclick:
       - '.float-none:visible'
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="operations_1|operation|name"]:visible'
-    content: 'It is recommended to add an operation that drops all sequences whose lenght falls below the provided threshold. A minimum read length of 20 indicates enough sequence information content for downstream analyses.<br>
-<h4>Select: <b>MINLEN</b></h4>'
+    content: 'Open the dropdown menu.'
     placement: top
-    pointer: true
+    onnextclick:
+      - '[tour_id="operations_1|operation|name"] .ui-select .select2-container .select2-choice:visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>MINLEN</b>.<br>
+A minimum read length of 20 indicates enough sequence information content for
+downstream analyses. The operation will remove all those sequences whose length
+does not reach the 20 nucleotides.'
+    textinsert: 'MINLEN'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Quality trimming</b>'
     element: '#execute:visible'
-    content: 'With the current parametrisation, Trimmomatic will:<br>
+    content: 'With the current parameterisation, Trimmomatic will:<br>
 - Trim reads with low average quality<br>
-- Discard reads whose length became shorter than 20 bp.<br>
-For all remaining parametrisation options, we will use the provided default settings.<br>
-However, for further information, please refer to the manual provided below the tool box.'
+- Discard reads whose length became shorter than the indicated threshold.<br>
+For all remaining parametrisation options, we will use the provided default
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
     placement: top
     postclick:
       - '#execute:visible'
 
   - title: '<b>Quality trimming</b>'
     element: '#right:visible'
-    content: 'Trimmomatic processing has begun, and the results are loading in your history.'
+    content: 'Trimmomatic processing has begun, and the results are loading in
+your history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Trimmomatic")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Trimmomatic"):visible'
 
+# rename collections
 
-# wait and tag
-
-
-  - title: '<b>Quality trimming</b>'
+  - title: '<b>Rename datasets</b>'
     element: '#masthead:visible'
-    content: 'The quality control and data preprocessing analysis has been completed.'
+    content: 'The quality trimming has been completed.'
     placement: bottom
     onloadwait:
       - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
@@ -180,89 +273,40 @@ However, for further information, please refer to the manual provided below the 
       - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
 
+  - title: '<b>Rename datasets</b>'
+    element: '#right'
+    placement: left
+    content: 'To keep track of the data being processed, we now rename these
+collections.'
+    rename:
+      - element: '#current-history-panel .list-items > :nth-child(1):visible'
+        name: 'below-threshold.trimmed.treat.R2'
+      - element: '#current-history-panel .list-items > :nth-child(2):visible'
+        name: 'below-threshold.trimmed.treat.R1'
+      - element: '#current-history-panel .list-items > :nth-child(3):visible'
+        name: 'trimmed.treat.R2'
+      - element: '#current-history-panel .list-items > :nth-child(4):visible'
+        name: 'trimmed.treat.R1'
+      - element: '#current-history-panel .list-items > :nth-child(5):visible'
+        name: 'below-threshold.trimmed.ctr.R2'
+      - element: '#current-history-panel .list-items > :nth-child(6):visible'
+        name: 'below-threshold.trimmed.ctr.R1'
+      - element: '#current-history-panel .list-items > :nth-child(7):visible'
+        name: 'trimmed.ctr.R2'
+      - element: '#current-history-panel .list-items > :nth-child(8):visible'
+        name: 'trimmed.ctr.R1'
+    autoclick:
+      - '#history-refresh-button'
 
-  - title: '<b>Adapter clipping</b>'
-    element: '#current-history-panel .list-items > :nth-child(3) .title-bar .title:visible'
-    content: 'To keep track of the data being processed, we will use tags (1/4).'
-    placement: top
-    onnextclick:
-      - '#current-history-panel .list-items > :nth-child(3) .title-bar .title:visible'
-
-  - title: '<b>Adapter clipping</b>'
-    element: '#current-history-panel .list-panel .controls .tags-display:visible'
-    content: '<h4>Click and enter: <b>trimmed.treat.R2</b></h4>'
-    placement: bottom
-    pointer: true
-
-  - title: '<b>Adapter clipping</b>'
-    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
-    content: 'Return to history main view'
-    placement: bottom
-    onnextclick:
-      - '#current-history-panel .list-panel .controls .navigation .back:visible'
-
-  - title: '<b>Adapter clipping</b>'
-    element: '#current-history-panel .list-items > :nth-child(4) .title-bar .title:visible'
-    content: 'To keep track of the data being processed, we will use tags (2/4).'
-    placement: top
-    onnextclick:
-      - '#current-history-panel .list-items > :nth-child(4) .title-bar .title:visible'
-
-  - title: '<b>Adapter clipping</b>'
-    element: '#current-history-panel .list-panel .controls .tags-display:visible'
-    content: '<h4>Click and enter: <b>trimmed.treat.R1</b></h4>'
-    placement: bottom
-    pointer: true
-
-  - title: '<b>Adapter clipping</b>'
-    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
-    content: 'Return to history main view'
-    placement: bottom
-    onnextclick:
-      - '#current-history-panel .list-panel .controls .navigation .back:visible'
-
-  - title: '<b>Adapter clipping</b>'
-    element: '#current-history-panel .list-items > :nth-child(7) .title-bar .title:visible'
-    content: 'To keep track of the data being processed, we will use tags (3/4).'
-    placement: top
-    onnextclick:
-      - '#current-history-panel .list-items > :nth-child(7) .title-bar .title:visible'
-
-  - title: '<b>Adapter clipping</b>'
-    element: '#current-history-panel .list-panel .controls .tags-display:visible'
-    content: '<h4>Click and enter: <b>trimmed.ctr.R2</b></h4>'
-    placement: bottom
-    pointer: true
-
-  - title: '<b>Adapter clipping</b>'
-    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
-    content: 'Return to history main view'
-    placement: bottom
-    onnextclick:
-      - '#current-history-panel .list-panel .controls .navigation .back:visible'
-
-  - title: '<b>Adapter clipping</b>'
-    element: '#current-history-panel .list-items > :nth-child(8) .title-bar .title:visible'
-    content: 'To keep track of the data being processed, we will use tags (4/4).'
-    placement: top
-    onnextclick:
-      - '#current-history-panel .list-items > :nth-child(8) .title-bar .title:visible'
-
-  - title: '<b>Adapter clipping</b>'
-    element: '#current-history-panel .list-panel .controls .tags-display:visible'
-    content: '<h4>Click and enter: <b>trimmed.ctr.R1</b></h4>'
-    placement: bottom
-    pointer: true
-
-  - title: '<b>Adapter clipping</b>'
-    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
-    content: 'Return to history main view'
-    placement: bottom
-    onnextclick:
-      - '#current-history-panel .list-panel .controls .navigation .back:visible'
+  - title: '<b>Rename datasets</b>'
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("below-threshold.trimmed.treat.R2"):visible'
+        count: 1
+    element: '#right'
+    placement: left
+    content: 'The collections have been renamed.'
 
   - title: '<b>Quality trimming</b>'
     element: '#masthead:visible'
     content: 'You successfully completed this Galaxy atom.'
     placement: bottom
-
