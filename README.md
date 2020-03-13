@@ -70,7 +70,7 @@ New tools can be added in the Galaxy workflow generator by installing them...
 1. From the admin panel (may load to unexpected errors upon execution)
 2. Via re-building the docker image
 
-Clone the [Galaxy workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator)
+Clone the [Galaxy workflow generator](https://github.com/destairdenbi/galaxy-workflow-generator):
 ```
 $ git clone https://github.com/destairdenbi/galaxy-workflow-generator.git
 ```
@@ -85,12 +85,12 @@ The minimum set of metadata to be provided for each tool comprise:
 
 If unsure, please refer to the [Galaxy Toolshed](https://toolshed.g2.bx.psu.edu/).  
 
-Once edited, you can build the Docker container locally
+Once edited, you can build the Docker container locally:
 ```
 $ docker build -t destair-local:latest .
 ```
-Now run your local image and access it via a webbrowser from the following
-address ``localhost:8080``.
+
+Now run your local image and access it via a web browser:
 ```
 $ docker run -d -p 8080:80 --name destair -v /absolute/path/to/local/directory/:/export destair-local:latest
 ```
@@ -144,16 +144,16 @@ Run the Galaxy Docker container by creating a bind mount:
 ```
 $ docker run -d -p 8080:80 --name destair -v /absolute/path/to/local/directory/:/export/ quay.io/destair/galaxy-workflow-generator:latest
 ```
-for more parameters and further help, consult
-[these instructions](https://github.com/destairdenbi/galaxy-workflow-generator#run-the-container).
 
+for more parameters and further help, consult
+[these instructions](https://github.com/destairdenbi/galaxy-workflow-generator#run-the-container).  
 
 Once the container is ready, you will be able to copy the new atom into
 ```
 /absolute/path/to/local/directory/export/galaxy-central/config/plugins/tours/
 ```
-Now either restart the running Galaxy instance and access it via a web browser
-from the following address ``localhost:8080``
+Now, either restart the running Galaxy instance and access it via a web browser
+locally ``localhost:8080``:
 ```
 $ docker exec destair supervisorctl restart galaxy:
 ```
