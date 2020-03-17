@@ -130,6 +130,20 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Collection modal -> +Column -> Add column from metadata -> For -> Name
+<p align="left">
+  <img align="left"
+    src="web/add-column-from-metadata-for-name-1.png"
+    width="300px"
+    alt="Add column from metadata for Name"
+    valign="top"/>
+  <span>&nbsp;</span>
+  <img align="center"
+    src="web/add-column-from-metadata-for-name-2.png"
+    width="300px"
+    alt="Add column from metadata for Name"
+    valign="top"/>
+</p>
+
 ```
   - title: <b>$TITLE</b>
     element: '.rule-editor select:visible'
