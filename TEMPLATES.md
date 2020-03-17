@@ -24,6 +24,20 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### History panel -> Select multiple datasets -> All
+<p align="left">
+  <img align="left"
+    src="web/select-multiple-datasets-1.png"
+    height="300px"
+    alt="Select multiple datasets"
+    valign="top"/>
+  <span>&nbsp;</span>
+  <img align="center"
+    src="web/select-multiple-datasets-2.png"
+    height="300px"
+    alt="Select multiple datasets"
+    valign="top"/>
+</p>
+
 ```
   - title: <b>$TITLE</b>
     element: '.actions .icon-btn.show-selectors-btn .fa.fa-check-square-o:visible'
@@ -42,6 +56,14 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### History panel -> For all selected -> Build collection from rules
+<p align="left">
+  <img align="center"
+    src="web/build-collection-from-rules.png"
+    height="300px"
+    alt="Build collection from rules"
+    valign="top"/>
+</p>
+
 ```
   - title: <b>$TITLE</b>
     element: '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle:visible'
