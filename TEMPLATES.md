@@ -82,6 +82,14 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Collection modal -> Apply
+<p align="left">
+  <img align="center"
+    src="web/modal-apply.png"
+    width="300px"
+    alt="Apply"
+    valign="top"/>
+</p>
+
 ```
   - title: <b>$TITLE</b>
     element: '.rule-editor-ok:visible'
