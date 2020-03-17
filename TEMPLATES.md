@@ -98,6 +98,20 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Collection modal -> +Column -> Add column from metadata
+<p align="left">
+  <img align="left"
+    src="web/add-column-from-metadata-1.png"
+    height="500px"
+    alt="Add column from metadata"
+    valign="top"/>
+  <span>&nbsp;</span>
+  <img align="center"
+    src="web/add-column-from-metadata-2.png"
+    height="500px"
+    alt="Add column from metadata"
+    valign="top"/>
+</p>
+
 ```
   - title: <b>$TITLE</b>
     element: '.rule-menu-column-button:visible'
