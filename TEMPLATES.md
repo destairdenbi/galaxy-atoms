@@ -6,6 +6,7 @@
   - [History panel -> Select multiple datasets -> All](#history-panel---select-multiple-datasets---all)
   - [History panel -> For all selected -> Build collection from rules](#history-panel---for-all-selected---build-collection-from-rules)
   - [Collection modal -> Apply](#collection-modal---apply)
+  - [Tool parameterization panel -> Execute](#tool-parameterization-panel---execute)
 - [Dropdown menu](#dropdown-menu)
   - [Collection modal -> +Column -> Add column from metadata](#collection-modal---column---add-column-from-metadata)
   - [Collection modal -> +Column -> Add column from metadata -> For -> Name](#collection-modal---column---add-column-from-metadata---for---name)
@@ -82,6 +83,14 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Collection modal -> Apply
+<p align="left">
+  <img align="center"
+    src="web/modal-apply.png"
+    width="300px"
+    alt="Apply"
+    valign="top"/>
+</p>
+
 ```
   - title: <b>$TITLE</b>
     element: '.rule-editor-ok:visible'
@@ -92,6 +101,24 @@
 ```
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
+### Tool parameterization panel -> Execute
+<p align="left">
+  <img align="center"
+    src="web/tool-panel-execute.png"
+    width="150px"
+    alt="Execute"
+    valign="top"/>
+</p>
+
+```
+  - title: '<b>$TITLE</b>'
+    element: '#execute:visible'
+    content: 'Execute'
+    placement: top
+    onnextclick:
+      - '#execute:visible'
+```
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 
 ## Dropdown menu
