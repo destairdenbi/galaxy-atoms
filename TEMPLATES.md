@@ -42,6 +42,14 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### History panel -> For all selected -> Build collection from rules
+<p align="left">
+  <img align="center"
+    src="web/build-collection-from-rules.png"
+    height="300px"
+    alt="Build collection from rules"
+    valign="top"/>
+</p>
+
 ```
   - title: <b>$TITLE</b>
     element: '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle:visible'
