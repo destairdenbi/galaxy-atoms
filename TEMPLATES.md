@@ -160,6 +160,15 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Collection modal -> +Column -> Keep or trim prefix or suffix -> For column -> $X
+<p align="left">
+  <img align="center"
+    src="web/keep-trim-prefix-suffix-for-column-b.png"
+    width="300px"
+    alt="Keep or trim prefix or suffix for column B"
+    valign="top"/>
+  <span>&nbsp;</span>
+</p>
+
 ```
   - title: <b>$TITLE</b>
     element: '.rule-column-selector:visible'
