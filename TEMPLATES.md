@@ -215,6 +215,14 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Tool parameterization panel -> Select single or paired-end reads -> $SP
+<p align="left">
+  <img align="center"
+    src="web/select-single-paired-end.png"
+    width="600px"
+    alt="Select single or paired-end reads"
+    valign="top"/>
+</p>
+
 ```
   - title: '<b>$TITLE</b>'
     element: '[tour_id="$TOUR_ID"]:visible'
