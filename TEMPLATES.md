@@ -98,6 +98,20 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Collection modal -> +Column -> Add column from metadata
+<p align="left">
+  <img align="left"
+    src="web/add-column-from-metadata-1.png"
+    height="500px"
+    alt="Add column from metadata"
+    valign="top"/>
+  <span>&nbsp;</span>
+  <img align="center"
+    src="web/add-column-from-metadata-2.png"
+    height="500px"
+    alt="Add column from metadata"
+    valign="top"/>
+</p>
+
 ```
   - title: <b>$TITLE</b>
     element: '.rule-menu-column-button:visible'
@@ -116,6 +130,20 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Collection modal -> +Column -> Add column from metadata -> For -> Name
+<p align="left">
+  <img align="left"
+    src="web/add-column-from-metadata-for-name-1.png"
+    width="300px"
+    alt="Add column from metadata for Name"
+    valign="top"/>
+  <span>&nbsp;</span>
+  <img align="center"
+    src="web/add-column-from-metadata-for-name-2.png"
+    width="300px"
+    alt="Add column from metadata for Name"
+    valign="top"/>
+</p>
+
 ```
   - title: <b>$TITLE</b>
     element: '.rule-editor select:visible'
@@ -132,6 +160,15 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Collection modal -> +Column -> Keep or trim prefix or suffix -> For column -> $X
+<p align="left">
+  <img align="center"
+    src="web/keep-trim-prefix-suffix-for-column-b.png"
+    width="300px"
+    alt="Keep or trim prefix or suffix for column B"
+    valign="top"/>
+  <span>&nbsp;</span>
+</p>
+
 ```
   - title: <b>$TITLE</b>
     element: '.rule-column-selector:visible'
@@ -192,6 +229,14 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Tool parameterization panel -> Select single dataset
+<p align="left">
+  <img align="center"
+    src="web/input-single-dataset.png"
+    width="150px"
+    alt="Single dataset"
+    valign="top"/>
+</p>
+
 ```
   - title: '<b>$TITLE</b>'
     element: '[tour_id="$TOUR_ID"] .btn-group.ui-radiobutton > :nth-child(1):visible'
@@ -203,6 +248,14 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Tool parameterization panel -> Select multiple datasets
+<p align="left">
+  <img align="center"
+    src="web/input-multiple-datasets.png"
+    width="150px"
+    alt="Multiple datasets"
+    valign="top"/>
+</p>
+
 ```
   - title: '<b>$TITLE</b>'
     element: '[tour_id="$TOUR_ID"] .btn-group.ui-radiobutton > :nth-child(2):visible'
@@ -214,6 +267,14 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Tool parameterization panel -> Select dataset collection
+<p align="left">
+  <img align="center"
+    src="web/input-dataset-collection.png"
+    width="150px"
+    alt="Dataset collection"
+    valign="top"/>
+</p>
+
 ```
   - title: '<b>$TITLE</b>'
     element: '[tour_id="$TOUR_ID"] .btn-group.ui-radiobutton > :nth-child(3):visible'
