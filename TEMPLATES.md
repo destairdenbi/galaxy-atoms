@@ -192,6 +192,14 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Tool parameterization panel -> Select single dataset
+<p align="left">
+  <img align="center"
+    src="web/input-single-dataset.png"
+    width="150px"
+    alt="Single dataset"
+    valign="top"/>
+</p>
+
 ```
   - title: '<b>$TITLE</b>'
     element: '[tour_id="$TOUR_ID"] .btn-group.ui-radiobutton > :nth-child(1):visible'
@@ -203,6 +211,14 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Tool parameterization panel -> Select multiple datasets
+<p align="left">
+  <img align="center"
+    src="web/input-multiple-datasets.png"
+    width="150px"
+    alt="Multiple datasets"
+    valign="top"/>
+</p>
+
 ```
   - title: '<b>$TITLE</b>'
     element: '[tour_id="$TOUR_ID"] .btn-group.ui-radiobutton > :nth-child(2):visible'
@@ -214,6 +230,14 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Tool parameterization panel -> Select dataset collection
+<p align="left">
+  <img align="center"
+    src="web/input-dataset-collection.png"
+    width="150px"
+    alt="Dataset collection"
+    valign="top"/>
+</p>
+
 ```
   - title: '<b>$TITLE</b>'
     element: '[tour_id="$TOUR_ID"] .btn-group.ui-radiobutton > :nth-child(3):visible'
