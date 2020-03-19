@@ -1,6 +1,6 @@
 id: dgea_pe_tour_1a
 name: 'Differential Gene Expression Analysis'
-description: 'Data uploead'
+description: 'Data upload'
 title_default: 'Differential Gene Expression Analysis'
 steps:
   - title: '<b>Outline</b>'
