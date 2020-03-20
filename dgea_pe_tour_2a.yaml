@@ -167,7 +167,7 @@ reads, which might be due to transient problems during the sequencing
 experiment. Here, each sample shows the ideal percentage of N at each position
 in the sequence set, accounting for a good sequencing run.<br>
 More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/6%20Per%20Base%20N%20Content.html" target="_blank">here</a>.'
-   placement: bottom
+    placement: bottom
     iframeelement: '.summary ul > :nth-child(6) img:visible'
     onloadclick:
       - '.summary ul > :nth-child(6) a:visible'
