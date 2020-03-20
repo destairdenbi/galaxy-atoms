@@ -14,7 +14,7 @@ interpretation of results.<br>
 Here, we will leverage on two tools:<br>
 - <b>FastQC</b>, to assess the quality of the sequences<br>
 - <b>Cutadapt</b>, to remove low quality sequence content.'
-    position: bottom
+    placement: bottom
 
 # quality control dataset collections
 
