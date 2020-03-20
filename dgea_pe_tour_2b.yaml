@@ -1,0 +1,539 @@
+id: dgea_pe_tour_2b
+name: 'Differential Gene Expression Analysis (paired-end data)'
+description: 'Quality control and data preprocessing with FastQC and PRINSEQ'
+title_default: 'Differential Gene Expression Analysis (paired-end data)'
+steps:
+  - title: '<b>Outline</b>'
+    element: '#masthead:visible'
+    content: 'In this tour we will perform the quality control analysis of
+paired-end NGS data.<br>
+Quality control analysis provides an overview of the sequence quality, as well
+as a mean to identify low quality score sequence content. Once done, we will
+remove those low quality score sequences which might ultimately bias the
+interpretation of results.<br>
+Here, we will leverage on two tools:<br>
+- <b>FastQC</b>, to assess the quality of the sequences<br>
+- <b>PRINSEQ</b>, to remove low quality sequence content.'
+    placement: bottom
+
+# quality control dataset collections
+
+  - title: '<b>Quality control</b>'
+    element: '#tool-search-query:visible'
+    content: 'Search for the <b>FastQC</b> tool.<br>
+FastQC plots the overall quality of the input data. This tool provides a
+starting point for interpreting the input NGS data, and understand how to
+further parameterize the tools during the course of the analysis.'
+    placement: right
+    textinsert: fastqc
+    onnextclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+    content: 'Select multiple datasets.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .ui-select-multiple.ui-select:visible'
+    content: 'Select all imported control and treated datasets.'
+    placement: bottom
+    select:
+      - '[tour_id="input_file"] .ui-select-multiple.ui-select .select > :nth-child(n+1):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#execute:visible'
+    content: 'For all remaining parametrisation options, we will use default
+settings. However, for further information, please refer to the manual provided
+below the tool box.'
+    placement: top
+    postclick:
+      - '#execute:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#right:visible'
+    content: 'FastQC processing has begun, and the results are loading in your
+history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC"):visible'
+        count: 1
+
+  - title: '<b>Quality control</b>'
+    element: '#right:visible'
+    onloadwait:
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
+        count: 0
+    content: 'FastQC processing completed.'
+    placement: left
+
+  - title: '<b>Quality control</b>'
+    element: '#current-history-panel .list-items > :nth-child(2) .display-btn:visible'
+    content: 'Open a report.'
+    onnextclick:
+      - '#current-history-panel .list-items > :nth-child(2) .display-btn:visible'
+    placement: left
+
+  - title: '<b>Quality control</b>'
+    element: '#masthead:visible'
+    content: 'FastQC generated diverse plots to assess:<br>
+- Sequence quality<br>
+- Adapter content<br>
+- Contamination.'
+    placement: bottom
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per base sequence quality</b> plot shows the average
+quality scores of all reads.<br>
+The Y axis shows the quality score: the higher, the better the base call.
+The background color of the graph divides the base call operation into:<br>
+- Very good quality (green)<br>
+- Reasonable quality (orange)<br>
+- Poor quality (red).<br>
+The quality of each call usually degrades as the sequencing run progresses.
+Here however, each provided input dataset shows lower average quality scores at
+the beginning of each sequence. Although these scores still account for
+reasonable quality reads, a reason behind this trend might be that the image
+scanner focus had to be recalibrated during the first sequence run cycles.<br>
+More information on this plot can be found
+<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/2%20Per%20Base%20Sequence%20Quality.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(2) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(2) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per sequence quality scores</b> plot shows if a subset of
+reads has low qualities.<br>
+If a significant subset of sequences in a run have overall low quality scores,
+this indicates some kind of systematic problem occured during the sequencing
+experiment. Here, the entire sequence set scores well, showing the desired
+overall behavior for a sequence set:<br>
+- A peak (large sequence subset) showing a good score<br>
+- A short tail (sequence subset) scoring lower, although still well.<br>
+More information on this plot can be found
+<a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/3%20Per%20Sequence%20Quality%20Scores.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(3) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(3) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per base sequence content</b> plot shows the percentage of
+occurrence of each base in each position of each sequence.<br>
+The four bases should not be hugely imbalanced. However, some libraries always
+lead to biased sequence content, caused by a not perfect random priming. Here,
+the input dataset shows the desired trend.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/4%20Per%20Base%20Sequence%20Content.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(4) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(4) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per sequence GC content</b> plot shows the GC content
+distribution of the provided sample.<br>
+Typically, this should follow a normal distribution. However, unusually
+shaped distribution might occur in case of a contaminated library. A shifted
+normal distribution instead indicates some systematic bias, independent of
+base position. Here, each provided sample aligns to the theoretical (blue
+line) CG distribution.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/5%20Per%20Sequence%20GC%20Content.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(5) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(5) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per base N content</b> plot shows the percentage of N
+occurrences in the sequence reads.<br>
+If a sequencer is unable to make a base call with confidence, then it will
+place an N, where N represents an ambiguous nucleotide: a base which could not
+be correctly identified. High number of Ns are a sign of low quality sequence
+reads, which might be due to transient problems during the sequencing
+experiment. Here, each sample shows the ideal percentage of N at each position
+in the sequence set, accounting for a good sequencing run.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/6%20Per%20Base%20N%20Content.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(6) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(6) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Sequence length distribution</b> plot shows the
+distribution of sequence read length.<br>
+For NGS sequencers generating uniform read length, this will result in a spike
+at a fixed value.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/7%20Sequence%20Length%20Distribution.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(7) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(7) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Sequence duplication levels</b> plot shows the relative
+number of sequences with different degrees of duplication.<br>
+ The blue line represents the full sequence set, showing how its duplication
+levels are distributed. The red line represents the de-duplicated sequences,
+i.e. the proportions of de-duplicated sequence sets which come from different
+duplication levels in the original data.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/8%20Duplicate%20Sequences.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(8) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(8) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Overrepresented sequences</b> section shows all sequence
+making up for more than 0.1% of the total number of sequences in the dataset.
+<br>
+If a sequence is overrepresented, this means that it is either highly
+biologically significant, or that it is contaminant for the current library.
+Here, each provided sequence dataset shows no overrepresented sequences.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/9%20Overrepresented%20Sequences.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(9) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(9) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Adapter content</b> plot shows the amount of residual tag
+sequences within the sample.<br>
+Base frequencies across the reads should follow a uniform distribution. On the
+contrary, uneven distributions (high frequencies for certain bases over several
+positions) indicate remaining sequence artifacts within the dataset.<br>
+More information on this plot can be found <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/Help/3%20Analysis%20Modules/10%20Adapter%20Content.html" target="_blank">here</a>.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(10) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(10) a:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#masthead:visible'
+    content: 'Now that the quality of the input datasets have been assessed, we
+improve the overall read quality using a quality trimming tool.'
+    placement: bottom
+
+# trim ctr dataset collections
+
+  - title: '<b>Quality control</b>'
+    element: '#tool-search-query:visible'
+    content: 'Search for the <b>PRINSEQ</b> tool.<br>
+PRINSEQ searches for low quality score reads, and ultimately removes them to
+improve the overall quality of the input datasets.'
+    placement: right
+    textinsert: prinseq
+    onnextclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fprinseq%2Fprinseq%2F0.20.4"]'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="seq_type|seq_type_opt"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="seq_type|seq_type_opt"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Quality control</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired-end</b>.'
+    textinsert: 'Paired-end'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="seq_type|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="seq_type|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="seq_type|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="seq_type|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Quality control</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>rna_ctr.R1</b>.'
+    textinsert: 'rna_ctr.R1'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="seq_type|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="seq_type|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="seq_type|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="seq_type|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Quality control</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>rna_ctr.R2</b>.'
+    textinsert: 'rna_ctr.R2'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="filter_treatments|length_filter_treatments|min_length_filter_treatments|min_length_filter_treatment_value"] .ui-input:visible'
+    content: 'The <b>Minimum length threshold to conserve sequences</b>
+indicates the allowed length (in nucleotides) that a sequence must have after
+quality threshold trimming.<br>
+It is generally recommended to keep only those sequences whose length indicates
+enought sequence information content for downstream analyses.<br>
+Specify <b>20</b>.'
+    textinsert: '20'
+    placement: top
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="filter_treatments|quality_filter_treatments|mean_quality_filter_treatments|min_mean_quality_filter_treatments|min_mean_quality_filter_treatment_value"] .ui-input:visible'
+    content: 'The <b>Minimum mean score threshold to conserve sequences</b>
+indicates the allowed base-quality.<br>
+It is generally recommended to keep only those nucleotides whose quality is
+above 20.<br>
+Specify <b>20</b>.'
+    textinsert: '20'
+    placement: top
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options:visible'
+    content: 'Select the sliding window approach to use the <b>Mean</b>
+calculation.'
+    placement: top
+    onnextclick:
+      - '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options .ui-options-list > :nth-child(2) input'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|window_quality_trimming_treatments"] .ui-input:visible'
+    content: 'Specify <b>4</b> as the sliding window size.'
+    textinsert: '4'
+    placement: top
+
+  - title: '<b>Quality control</b>'
+    element: '#execute:visible'
+    placement: top
+    content: 'With the current parametrisation, PRINSEQ will:<br>
+- Trim low-quality score sequence ends<br>
+- Discard reads whose length became shorter than 20 bp.<br>
+For all remaining parametrisation options, we will use the provided default
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
+    onnextclick:
+      - '#execute:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#right:visible'
+    content: 'PRINSEQ processing has begun, and the results are loading in the
+history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("PRINSEQ")'
+        count: 1
+
+# trim treat dataset collections
+
+  - title: '<b>Quality control</b>'
+    element: '#tool-search-query:visible'
+    content: 'Analogously, we need to perform quality control on the treated
+dataset collections using <b>PRINSEQ</b>.'
+    placement: right
+    textinsert: prinseq
+    onnextclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fprinseq%2Fprinseq%2F0.20.4"]'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="seq_type|seq_type_opt"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="seq_type|seq_type_opt"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Quality control</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired-end</b>.'
+    textinsert: 'Paired-end'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="seq_type|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="seq_type|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="seq_type|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="seq_type|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Quality control</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>rna_treat.R1</b>.'
+    textinsert: 'rna_treat.R1'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="seq_type|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="seq_type|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="seq_type|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="seq_type|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Quality control</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>rna_treat.R2</b>.'
+    textinsert: 'rna_treat.R2'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="filter_treatments|length_filter_treatments|min_length_filter_treatments|min_length_filter_treatment_value"] .ui-input:visible'
+    content: 'The <b>Minimum length threshold to conserve sequences</b>
+indicates the allowed length (in nucleotides) that a sequence must have after
+quality threshold trimming.<br>
+It is generally recommended to keep only those sequences whose length indicates
+enought sequence information content for downstream analyses.<br>
+Specify <b>20</b>.'
+    textinsert: '20'
+    placement: top
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="filter_treatments|quality_filter_treatments|mean_quality_filter_treatments|min_mean_quality_filter_treatments|min_mean_quality_filter_treatment_value"] .ui-input:visible'
+    content: 'The <b>Minimum mean score threshold to conserve sequences</b>
+indicates the allowed base-quality.<br>
+It is generally recommended to keep only those nucleotides whose quality is
+above 20.<br>
+Specify <b>20</b>.'
+    textinsert: '20'
+    placement: top
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options:visible'
+    content: 'Select the sliding window approach to use the <b>Mean</b>
+calculation.'
+    placement: top
+    onnextclick:
+      - '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options .ui-options-list > :nth-child(2) input'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|window_quality_trimming_treatments"] .ui-input:visible'
+    content: 'Specify <b>4</b> as the sliding window size.'
+    textinsert: '4'
+    placement: top
+
+  - title: '<b>Quality control</b>'
+    element: '#execute:visible'
+    placement: top
+    content: 'With the current parametrisation, PRINSEQ will:<br>
+- Trim low-quality score sequence ends<br>
+- Discard reads whose length became shorter than 20 bp.<br>
+For all remaining parametrisation options, we will use the provided default
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
+    onnextclick:
+      - '#execute:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#right:visible'
+    content: 'PRINSEQ processing has begun, and the results are loading in the
+history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items .name:contains("PRINSEQ")'
+        count: 12
+
+# rename collections
+
+  - title: '<b>Quality control</b>'
+    element: '#masthead:visible'
+    content: 'The quality control and data preprocessing analysis has been completed.'
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
+        count: 0
+
+  - title: '<b>Rename datasets</b>'
+    element: '#right'
+    placement: left
+    content: 'To keep track of the data being processed, we now rename these
+collections.'
+    rename:
+      - element: '#current-history-panel .list-items > :nth-child(1):visible'
+        name: 'rejected treat R2'
+      - element: '#current-history-panel .list-items > :nth-child(2):visible'
+        name: 'singletons treat R2'
+      - element: '#current-history-panel .list-items > :nth-child(3):visible'
+        name: 'trimmed treat R2'
+      - element: '#current-history-panel .list-items > :nth-child(4):visible'
+        name: 'rejected treat R1'
+      - element: '#current-history-panel .list-items > :nth-child(5):visible'
+        name: 'singletons treat R1'
+      - element: '#current-history-panel .list-items > :nth-child(6):visible'
+        name: 'trimmed treat R1'
+      - element: '#current-history-panel .list-items > :nth-child(7):visible'
+        name: 'rejected ctr R2'
+      - element: '#current-history-panel .list-items > :nth-child(8):visible'
+        name: 'singletons ctr R2'
+      - element: '#current-history-panel .list-items > :nth-child(9):visible'
+        name: 'trimmed ctr R2'
+      - element: '#current-history-panel .list-items > :nth-child(10):visible'
+        name: 'rejected ctr R1'
+      - element: '#current-history-panel .list-items > :nth-child(11):visible'
+        name: 'singletons ctr R1'
+      - element: '#current-history-panel .list-items > :nth-child(12):visible'
+        name: 'trimmed ctr R1'
+    autoclick:
+      - '#history-refresh-button'
+
+  - title: '<b>Rename datasets</b>'
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("rejected treat R2")'
+        count: 1
+    element: '#right'
+    placement: left
+    content: 'The collections have been renamed.'
+
+  - title: '<b>Quality control</b>'
+    element: '#masthead:visible'
+    content: 'You successfully completed this Galaxy atom.'
+    placement: bottom
