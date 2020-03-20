@@ -34,25 +34,25 @@ Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy fra
     content: 'Enter URLs'
     placement: bottom
     textinsert: |
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N3.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N3.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N4.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N4.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N1.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N2.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N3.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N3.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N4.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N4.fastq.gz
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/hg38.goi.fa
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/hg38.goi.gtf
-      https://github.com/destairdenbi/trainings/raw/master/raw_data/rrbs/hg38.promoter.bed
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N1.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N1.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N2.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N2.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N3.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N3.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N4.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_ctr.R2.N4.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N1.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N1.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N2.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N2.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N3.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N3.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_treat.R1.N4.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_treat.R2.N4.fastq.gz
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/hg38.goi.fa
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/hg38.goi.gtf
+      https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/hg38.promoter.bed
   - title: '<b>Import the sequence datasets</b>'
     element: '#btn-start:visible'
     content: Start the upload.
