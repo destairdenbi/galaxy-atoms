@@ -16,6 +16,7 @@
   - [Tool parameterization panel -> Select single dataset](#tool-parameterization-panel---select-single-dataset)
   - [Tool parameterization panel -> Select multiple datasets](#tool-parameterization-panel---select-multiple-datasets)
   - [Tool parameterization panel -> Select dataset collection](#tool-parameterization-panel---select-dataset-collection)
+  - [Tool parameterization panel -> Select list option -> $X](#tool-parameterization-panel---select-list-option---x)
 - [Text input](#text-input)
   - [Data upload modal -> Paste/fetch data -> $X](#data-upload-modal---pastefetch-data---x)
   - [Collection modal -> +Filter -> Using regular expression -> $X](#collection-modal---filter---using-regular-expression---x)
@@ -329,6 +330,35 @@
 ```
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
+### Tool parameterization panel -> Select list option -> $X
+<p align="left">
+  <img align="center"
+    src="web/input-select-list-option.png"
+    width="300px"
+    alt="Select list option"
+    valign="top"/>
+</p>
+
+```
+  - title: '<b>$TITLE</b>'
+    element: '[tour_id="$TOUR_ID"] .ui-options:visible'
+    content: 'Select option.'
+    placement: top
+    onnextclick:
+      - '[tour_id="$TOUR_ID"] .ui-options .ui-options-list > :nth-child($X) input'
+```
+**Example**:
+```
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options:visible'
+    content: 'Select the sliding window approach to use the <b>Mean</b>
+calculation.'
+    placement: top
+    onnextclick:
+      - '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options .ui-options-list > :nth-child(2) input'
+
+```
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 
 ## Text input
