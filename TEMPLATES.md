@@ -345,7 +345,7 @@
     content: 'Select option.'
     placement: top
     onnextclick:
-      - '[tour_id="$TOUR_ID"] .ui-options .ui-options-list > :nth-child($X) input'
+      - '[tour_id="$TOUR_ID"] .ui-options .ui-options-list > :nth-child($X) input' # must not check for visibility
 ```
 **Example**:
 ```
@@ -355,7 +355,7 @@
 calculation.'
     placement: top
     onnextclick:
-      - '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options .ui-options-list > :nth-child(2) input'
+      - '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options .ui-options-list > :nth-child(2) input' # must not check for visibility
 
 ```
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
