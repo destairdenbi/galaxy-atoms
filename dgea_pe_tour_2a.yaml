@@ -245,7 +245,7 @@ them to improve the overall quality of the input datasets.'
       - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.16.6"]'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="library|type"]:visible'
+    element: '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
     content: 'Open the dropdown menu.'
     placement: top
     onnextclick:
@@ -265,7 +265,7 @@ them to improve the overall quality of the input datasets.'
     onnextclick:
       - '[tour_id="library|input_1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Quality control</b>'
-    element: '[tour_id="library|input_1"]:visible'
+    element: '[tour_id="library|input_1"] .ui-select .select2-container .select2-choice:visible'
     content: 'Open the dropdown menu.'
     placement: top
     onnextclick:
@@ -285,7 +285,7 @@ them to improve the overall quality of the input datasets.'
     onnextclick:
       - '[tour_id="library|input_2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Quality control</b>'
-    element: '[tour_id="library|input_2"]:visible'
+    element: '[tour_id="library|input_2"] .ui-select .select2-container .select2-choice:visible'
     content: 'Open the dropdown menu.'
     placement: top
     onnextclick:
@@ -434,7 +434,7 @@ dataset collections using <b>Cutadapt</b>.'
       - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fcutadapt%2Fcutadapt%2F1.16.6"]'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="library|type"]:visible'
+    element: '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
     content: 'Open the dropdown menu.'
     placement: top
     onnextclick:
@@ -454,7 +454,7 @@ dataset collections using <b>Cutadapt</b>.'
     onnextclick:
       - '[tour_id="library|input_1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Quality control</b>'
-    element: '[tour_id="library|input_1"]:visible'
+    element: '[tour_id="library|input_1"] .ui-select .select2-container .select2-choice:visible'
     content: 'Open the dropdown menu.'
     placement: top
     onnextclick:
@@ -474,7 +474,7 @@ dataset collections using <b>Cutadapt</b>.'
     onnextclick:
       - '[tour_id="library|input_2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Quality control</b>'
-    element: '[tour_id="library|input_2"]:visible'
+    element: '[tour_id="library|input_2"] .ui-select .select2-container .select2-choice:visible'
     content: 'Open the dropdown menu.'
     placement: top
     onnextclick:
