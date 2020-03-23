@@ -236,8 +236,8 @@ improve the overall read quality using a quality trimming tool.'
   - title: '<b>Quality control</b>'
     element: '#tool-search-query:visible'
     content: 'Search for the <b>Trimmomatic</b> tool.<br>
-PRINSEQ searches for low quality score reads, and ultimately removes them to
-improve the overall quality of the input datasets.'
+Trimmomatic searches for low quality score reads, and ultimately removes them
+to improve the overall quality of the input datasets.'
     placement: right
     textinsert: trimmomatic
     onnextclick:
