@@ -16,6 +16,7 @@
   - [Tool parameterization panel -> Select single dataset](#tool-parameterization-panel---select-single-dataset)
   - [Tool parameterization panel -> Select multiple datasets](#tool-parameterization-panel---select-multiple-datasets)
   - [Tool parameterization panel -> Select dataset collection](#tool-parameterization-panel---select-dataset-collection)
+  - [Tool parameterization panel -> Select Yes/No option -> Yes](#tool-parameterization-panel---select-yesno-option---yes)
   - [Tool parameterization panel -> Select list option -> $X](#tool-parameterization-panel---select-list-option---x)
 - [Text input](#text-input)
   - [Data upload modal -> Paste/fetch data -> $X](#data-upload-modal---pastefetch-data---x)
@@ -330,6 +331,36 @@
 ```
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
+### Tool parameterization panel -> Select Yes/No option -> Yes
+<p align="left">
+  <img align="center"
+    src="web/input-select-yes-no.png"
+    width="300px"
+    alt="Select yes or no"
+    valign="top"/>
+</p>
+
+```
+  - title: '<b>$TITLE</b>'
+    element: '[tour_id="$TOUR_ID"] .btn-group.ui-radiobutton > :nth-child($ONE_OR_TWO):visible'
+    placement: top
+    content: 'Select <b>$ONE_OR_TWO</b>.'
+    onnextclick:
+      - '[tour_id="$TOUR_ID"] .btn-group.ui-radiobutton > :nth-child($ONE_OR_TWO):visible'
+
+```
+**Example**:
+```
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="params|report"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+    placement: top
+    content: 'Select <b>Yes</b> to generate a report.'
+    onnextclick:
+      - '[tour_id="params|report"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+
+```
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
 ### Tool parameterization panel -> Select list option -> $X
 <p align="left">
   <img align="center"
@@ -359,7 +390,6 @@ calculation.'
 
 ```
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
-
 
 ## Text input
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
