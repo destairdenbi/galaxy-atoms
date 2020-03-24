@@ -1,0 +1,282 @@
+id: dgea_pe_tour_3a
+name: 'Differential Gene Expression Analysis (paired-end data)'
+description: 'Alignment of sequence reads against a reference genome using BWA'
+title_default: 'Differential Gene Expression Analysis (paired-end data)'
+steps:
+  - title: '<b>Outline</b>'
+    element: '#masthead:visible'
+    content: 'In this tour we will align sequence reads against a reference
+genome.<br>
+Here, we will leverage on <b>BWA</b>.'
+    placement: bottom
+
+# align ctr dataset collections
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#tool-search-query:visible'
+    content: 'Search for the <b>BWA</b> tool.<br>
+BWA is an efficient RNA-Seq aligner, which maps input reads against the
+provided reference genome.'
+    placement: right
+    textinsert: bwa
+    onnextclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fbwa%2Fbwa%2F0.7.17.4"]
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="reference_source|reference_source_selector"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="reference_source|reference_source_selector"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Use a genome from history and build
+index</b>.'
+    textinsert: 'Use a genome from history and build index'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="reference_source|ref_file"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="reference_source|ref_file"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>hg38.goi.fa</b>.'
+    textinsert: 'hg38.goi.fa'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="input_type|input_type_selector"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="input_type|input_type_selector"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired fastq</b>.'
+    textinsert: 'Paired fastq'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="input_type|fastq_input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_type|fastq_input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="input_type|fastq_input1"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="input_type|fastq_input1"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>trimmed ctr R1</b>.'
+    textinsert: 'trimmed ctr R1'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="input_type|fastq_input2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_type|fastq_input2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="input_type|fastq_input2"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="input_type|fastq_input2"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>trimmed ctr R2</b>.'
+    textinsert: 'trimmed ctr R2'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#execute:visible'
+    content: 'For all remaining parameterisation options, we will use the
+provided default settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
+    placement: top
+    onnextclick:
+      - '#execute:visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right:visible'
+    content: 'BWA processing has begun, and the results are loading in the
+history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items .name:contains("Map with BWA")'
+
+# align treat dataset collections
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#tool-search-query:visible'
+    content: 'Analogously, we need to align the treated dataset collections
+using <b>BWA</b>.'
+    placement: right
+    textinsert: bwa
+    onnextclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Fbwa%2Fbwa%2F0.7.17.4"]
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="reference_source|reference_source_selector"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="reference_source|reference_source_selector"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Use a genome from history and build
+index</b>.'
+    textinsert: 'Use a genome from history and build index'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="reference_source|ref_file"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="reference_source|ref_file"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>hg38.goi.fa</b>.'
+    textinsert: 'hg38.goi.fa'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="input_type|input_type_selector"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="input_type|input_type_selector"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired fastq</b>.'
+    textinsert: 'Paired fastq'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="input_type|fastq_input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_type|fastq_input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="input_type|fastq_input1"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="input_type|fastq_input1"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>trimmed treat R1</b>.'
+    textinsert: 'trimmed treat R1'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="input_type|fastq_input2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_type|fastq_input2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="input_type|fastq_input2"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="input_type|fastq_input2"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>trimmed treat R2</b>.'
+    textinsert: 'trimmed treat R2'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#execute:visible'
+    content: 'For all remaining parameterisation options, we will use the
+provided default settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
+    placement: top
+    onnextclick:
+      - '#execute:visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right:visible'
+    content: 'BWA processing has begun, and the results are loading in the
+history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items .name:contains("Map with BWA")'
+        count: 2
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#masthead:visible'
+    content: 'The alignment of paired-end sequences against a reference genome
+has been completed.'
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
+        count: 0
+
+# rename collections
+
+  - title: '<b>Rename datasets</b>'
+    element: '#right'
+    placement: left
+    content: 'To keep track of the data being processed, we now rename these
+collections.'
+    rename:
+      - element: '#current-history-panel .list-items > :nth-child(1):visible'
+        name: 'aligned treat'
+      - element: '#current-history-panel .list-items > :nth-child(2):visible'
+        name: 'aligned ctr'
+    autoclick:
+      - '#history-refresh-button'
+
+  - title: '<b>Rename datasets</b>'
+    element: '#right'
+    placement: left
+    content: 'The collections have been renamed.'
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("aligned treat")'
+        count: 1
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#masthead:visible'
+    content: 'You successfully completed this Galaxy atom.'
+    placement: bottom
