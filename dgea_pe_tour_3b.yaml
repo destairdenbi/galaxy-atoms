@@ -31,7 +31,7 @@ provided reference genome.'
       - '[tour_id="reference_genome|source"] .ui-select .select2-container .select2-choice:visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '.select2-drop .select2-input:visible'
-    content: 'Search and select <b>Use a genome from history0</b>.'
+    content: 'Search and select <b>Use a genome from history</b>.'
     textinsert: 'Use a genome from history'
     placement: left
     onloadclick:
@@ -143,7 +143,7 @@ using <b>HISAT2</b>.'
       - '[tour_id="reference_genome|source"] .ui-select .select2-container .select2-choice:visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '.select2-drop .select2-input:visible'
-    content: 'Search and select <b>Use a genome from history0</b>.'
+    content: 'Search and select <b>Use a genome from history</b>.'
     textinsert: 'Use a genome from history'
     placement: left
     onloadclick:
