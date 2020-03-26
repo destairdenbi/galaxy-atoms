@@ -17,7 +17,7 @@ STAR aligns the sequence reads from the control and treated samples, against the
     textinsert: rna star
     postclick:
       - >-
-        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Frgrnastar%2Frna_star%2F2.6.0b-2"]
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Frgrnastar%2Frna_star%2F2.7.2b"]
 
 
   - title: '<b>Map sequences against a reference genome</b>'
