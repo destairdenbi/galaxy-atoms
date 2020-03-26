@@ -1,0 +1,290 @@
+id: dgea_pe_tour_3d
+name: 'Differential Gene Expression Analysis (paired-end data)'
+description: 'Alignment of sequence reads against a reference genome using STAR'
+title_default: 'Differential Gene Expression Analysis (paired-end data)'
+steps:
+  - title: '<b>Outline</b>'
+    element: '#masthead:visible'
+    content: 'In this tour we will align sequence reads against a reference
+genome.<br>
+Here, we will leverage on <b>STAR</b>.'
+    placement: bottom
+
+# align ctr dataset collections
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#tool-search-query:visible'
+    content: 'Search for the <b>STAR</b> tool.<br>
+STAR is an ultrafast and low error rate RNA-Seq aligner.'
+    placement: right
+    textinsert: rna star
+    onnextclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Frgrnastar%2Frna_star%2F2.7.2b"]
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired-end (as individual datasets)</b>.'
+    textinsert: 'Paired-end (as individual datasets)'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="singlePaired|input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|input1"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|input1"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>trimmed ctr R1</b>.'
+    textinsert: 'trimmed ctr R1'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|input2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="singlePaired|input2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|input2"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|input2"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>trimmed ctr R2</b>.'
+    textinsert: 'trimmed ctr R2'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="refGenomeSource|geneSource"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="refGenomeSource|geneSource"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Use reference genome from history and create
+temporary index</b>.'
+    textinsert: 'Use reference genome from history and create temporary index'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="refGenomeSource|genomeFastaFiles"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="refGenomeSource|genomeFastaFiles"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>hg38.goi.fa</b>.'
+    textinsert: 'hg38.goi.fa'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#execute:visible'
+    content: 'For all remaining parameterisation options, we will use the
+provided default settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
+    placement: top
+    onnextclick:
+      - '#execute:visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right:visible'
+    content: 'STAR processing has begun, and the results are loading in the
+history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items .name:contains("RNA STAR")'
+        count: 3
+
+# align treat dataset collections
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#tool-search-query:visible'
+    content: 'Analogously, we need to align the treated dataset collections
+using <b>STAR</b>.'
+    placement: right
+    textinsert: rna star
+    onnextclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Frgrnastar%2Frna_star%2F2.7.2b"]
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired-end (as individual datasets)</b>.'
+    textinsert: 'Paired-end (as individual datasets)'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="singlePaired|input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|input1"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|input1"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>trimmed treat R1</b>.'
+    textinsert: 'trimmed treat R1'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|input2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="singlePaired|input2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|input2"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|input2"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>trimmed treat R2</b>.'
+    textinsert: 'trimmed treat R2'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="refGenomeSource|geneSource"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="refGenomeSource|geneSource"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Use reference genome from history and create
+temporary index</b>.'
+    textinsert: 'Use reference genome from history and create temporary index'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="refGenomeSource|genomeFastaFiles"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="refGenomeSource|genomeFastaFiles"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>hg38.goi.fa</b>.'
+    textinsert: 'hg38.goi.fa'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#execute:visible'
+    content: 'For all remaining parameterisation options, we will use the
+provided default settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
+    placement: top
+    onnextclick:
+      - '#execute:visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#right:visible'
+    content: 'STAR processing has begun, and the results are loading in the
+history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items .name:contains("RNA STAR")'
+        count: 6
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#masthead:visible'
+    content: 'The alignment of paired-end sequences against a reference genome
+has been completed.'
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
+        count: 0
+
+# rename collections
+
+  - title: '<b>Rename datasets</b>'
+    element: '#right'
+    placement: left
+    content: 'To keep track of the data being processed, we now rename these
+collections.'
+    rename:
+      - element: '#current-history-panel .list-items > :nth-child(1):visible'
+        name: 'aligned treat'
+      - element: '#current-history-panel .list-items > :nth-child(2):visible'
+        name: 'aligned treat splice junctions'
+      - element: '#current-history-panel .list-items > :nth-child(3):visible'
+        name: 'aligned treat log'
+      - element: '#current-history-panel .list-items > :nth-child(4):visible'
+        name: 'aligned ctr'
+      - element: '#current-history-panel .list-items > :nth-child(5):visible'
+        name: 'aligned ctr splice junctions'
+      - element: '#current-history-panel .list-items > :nth-child(6):visible'
+        name: 'aligned ctr log'
+    autoclick:
+      - '#history-refresh-button'
+
+  - title: '<b>Rename datasets</b>'
+    element: '#right'
+    placement: left
+    content: 'The collections have been renamed.'
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("aligned treat")'
+        count: 1
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '#masthead:visible'
+    content: 'You successfully completed this Galaxy atom.'
+    placement: bottom
