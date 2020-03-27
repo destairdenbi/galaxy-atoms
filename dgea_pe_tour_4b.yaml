@@ -115,7 +115,6 @@ history.'
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Text reformatting")'
 
-
   - title: '<b>Infer strandness</b>'
     element: '#tool-search-query:visible'
     content: 'Search for the <b>Infer Experiment</b> tool.<br>
