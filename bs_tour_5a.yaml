@@ -69,7 +69,7 @@ Here, we will leverage on two tools:<br>
 
   - title: '<b>Extract properly paired sequences</b>'
     element: '#execute:visible'
-    content: 'For all remaining parametrization options, we will use the provided default settings.<br>
+    content: 'For all remaining parameterization options, we will use the provided default settings.<br>
 However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
@@ -139,7 +139,7 @@ However, for further information, please refer to the manual provided below the 
 
   - title: '<b>Extract properly paired sequences</b>'
     element: '#execute:visible'
-    content: 'For all remaining parametrization options, we will use the provided default settings.<br>
+    content: 'For all remaining parameterization options, we will use the provided default settings.<br>
 However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
@@ -922,7 +922,7 @@ Default: No'
 
   - title: '<b>Infer methylation of CpGs</b>'
     element: '#execute:visible'
-    content: 'For all remaining parametrization options, we will use the provided default settings.<br>
+    content: 'For all remaining parameterization options, we will use the provided default settings.<br>
 However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
@@ -1017,7 +1017,7 @@ Default: No'
 
   - title: '<b>Infer methylation of CpGs</b>'
     element: '#execute:visible'
-    content: 'For all remaining parametrization options, we will use the provided default settings.<br>
+    content: 'For all remaining parameterization options, we will use the provided default settings.<br>
 However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     postclick:
