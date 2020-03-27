@@ -115,7 +115,6 @@ history.'
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Text reformatting")'
 
-
   - title: '<b>Infer strandness</b>'
     element: '#tool-search-query:visible'
     content: 'Search for the <b>Infer Experiment</b> tool.<br>
@@ -521,17 +520,16 @@ two states.'
     content: 'Specify the healthy state <b>control</b>.'
     textinsert: 'control'
     placement: top
-
   - title: '<b>Differential gene expression analysis</b>'
     element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] .btn-group.ui-radiobutton > :nth-child(2):visible'
     content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
       - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] .btn-group.ui-radiobutton > :nth-child(2):visible'
-
   - title: '<b>Differential gene expression analysis</b>'
     element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"]:visible'
-    content: 'Select the dataset that corresponds to control samples.'
+    content: 'Select the dataset collection that corresponds to control
+samples.'
     placement: top
     select:
       - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] .ui-select-multiple.ui-select .select > :nth-child(4):visible'
@@ -541,17 +539,16 @@ two states.'
     content: 'Specify the treatment factor as <b>treated</b>.'
     textinsert: 'treated'
     placement: top
-
   - title: '<b>Differential gene expression analysis</b>'
     element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] .btn-group.ui-radiobutton > :nth-child(2):visible'
     content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
       - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] .btn-group.ui-radiobutton > :nth-child(2):visible'
-
   - title: '<b>Differential gene expression analysis</b>'
     element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"]:visible'
-    content: 'Backtrack files and select all datasets corresponding to control samples'
+    content: 'Select the dataset collection that corresponds to treated
+samples.'
     placement: top
     select:
       - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] .ui-select-multiple.ui-select .select > :nth-child(2):visible'
