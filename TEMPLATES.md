@@ -12,6 +12,9 @@
   - [Collection modal -> +Column -> Add column from metadata -> For -> Name](#collection-modal---column---add-column-from-metadata---for---name)
   - [Collection modal -> +Column -> Keep or trim prefix or suffix -> For column -> $X](#collection-modal---column---keep-or-trim-prefix-or-suffix---for-column---x)
   - [Tool parameterization panel -> Select single or paired-end reads -> $SP](#tool-parameterization-panel---select-single-or-paired-end-reads---sp)
+- [Iframe](#iframe)
+  - [Main panel iframe -> highlight element](#main-panel-iframe---highlight-element)
+  - [Main panel iframe -> follow links](#main-panel-iframe---follow-links)
 - [Radio button](#radio-button)
   - [Tool parameterization panel -> Select single dataset](#tool-parameterization-panel---select-single-dataset)
   - [Tool parameterization panel -> Select multiple datasets](#tool-parameterization-panel---select-multiple-datasets)
@@ -257,6 +260,94 @@
     placement: left
     onloadclick:
        - '.select2-drop .select2-results > :nth-child(1):visible'
+```
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
+
+
+## Iframe
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
+### Main panel iframe -> highlight element
+<p align="left">
+  <img align="center"
+    src="web/center-iframe-report-strandness.png"
+    width="600px"
+    alt="Report library strandness"
+    valign="top"/>
+</p>
+
+```
+  - title: '<b>$ELEMENT</b>'
+    element: '#masthead:visible'
+    content: '$CONTENT
+    placement: bottom
+
+  - title: '<b>$ELEMENT</b>'
+    element: '#iframe-helper:visible'
+    content: '$CONTENT'
+    placement: bottom
+    iframeelement: '$ELEMENT:visible'
+```
+**Example**:
+```
+  - title: '<b>Infer strandness</b>'
+    element: '#masthead:visible'
+    content: 'Infer Experiment shows fractions of forward and inversely mapped
+reads on features of known orientation.'
+    placement: bottom
+
+  - title: '<b>Infer strandness</b>'
+    element: '#iframe-helper:visible'
+    content: 'The strandness of a library can be inferred as follows:<br>
+- If both values are ~0.5, then the library is unstranded<br>
+- If the first value is siginificantly increased, then the library is forward
+stranded<br>
+- If the second value is increased, then the library is reversely stranded.'
+    placement: bottom
+    iframeelement: 'pre:visible'
+```
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
+### Main panel iframe -> follow links
+<p align="left">
+  <img align="center"
+    src="web/center-iframe-report-fastqc.png"
+    width="600px"
+    alt="Report FastQC"
+    valign="top"/>
+</p>
+
+```
+  - title: '<b>$TITLE</b>'
+    element: '#masthead:visible'
+    content: '$CONTENT'
+    placement: bottom
+
+  - title: '<b>$TITLE</b>'
+    element: '#iframe-helper:visible'
+    content: '$CONTENT'
+    placement: bottom
+    iframeelement: '$ELEMENT:visible'
+    onloadclick:
+      - '$ELEMENT:visible'
+```
+**Example**:
+```
+  - title: '<b>Quality control</b>'
+    element: '#masthead:visible'
+    content: 'FastQC generated plots to provide an overview of the quality of
+data.'
+    placement: bottom
+
+  - title: '<b>Quality control</b>'
+    element: '#iframe-helper:visible'
+    content: 'The <b>Per base sequence quality</b> plot shows the average
+quality scores of all reads.'
+    placement: bottom
+    iframeelement: '.summary ul > :nth-child(2) img:visible'
+    onloadclick:
+      - '.summary ul > :nth-child(2) a:visible'
 ```
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
