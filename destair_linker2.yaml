@@ -1,6 +1,6 @@
 id: destair_linker_2
 name: 'de.STAIR RRBS/BS linker'
-description: 'RRBS/BS-Seq analysis'
+description: 'RRBS/BS-Seq analysis (paired-end reads)'
 title_default: 'de.STAIR BS linker'
 tags:
   - 'bs_tour'
