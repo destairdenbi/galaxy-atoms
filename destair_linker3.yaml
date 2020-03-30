@@ -3,6 +3,6 @@ name: 'de.STAIR DGEA linker'
 description: 'Differential gene expression analysis (paired-end data)'
 title_default: 'de.STAIR DGEA linker'
 tags:
-  - 'dgea_pe_tour'
+  - 'dgea_pe'
 steps:
   - content: 'just a linker'
