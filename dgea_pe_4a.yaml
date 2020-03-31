@@ -1,4 +1,4 @@
-id: dgea_pe_tour_4a
+id: dgea_pe_4a
 name: 'Differential Gene Expression Analysis (paired-end data)'
 description: 'Differential gene expression analysis using AWK, Infer
 Experiment, featureCounts and DESeq2'

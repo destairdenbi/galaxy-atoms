@@ -1,4 +1,4 @@
-id: dgea_pe_tour_2c
+id: dgea_pe_2c
 name: 'Differential Gene Expression Analysis (paired-end data)'
 description: 'Quality control and data preprocessing with FastQC and Trimmomatic'
 title_default: 'Differential Gene Expression Analysis (paired-end data)'
