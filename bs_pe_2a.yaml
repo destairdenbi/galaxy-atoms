@@ -1,4 +1,4 @@
-id: bs_tour_2a
+id: bs_pe_2a
 name: 'BS-Seq analysis'
 description: 'Quality control and adapter clipping with FastQC and Cutadapt'
 title_default: 'BS-Seq analysis'

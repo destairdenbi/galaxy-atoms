@@ -1,4 +1,4 @@
-id: bs_tour_4a
+id: bs_pe_4a
 name: 'BS-Seq analysis'
 description: 'Alignment of sequence reads against a reference genome using Bismark'
 title_default: 'BS-Seq analysis'
