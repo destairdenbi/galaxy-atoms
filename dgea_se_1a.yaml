@@ -1,12 +1,14 @@
 id: dgea_se_1a
-name: 'Differential Gene Expression Analysis'
+name: 'Differential Gene Expression Analysis (single-end reads)'
 description: 'Data upload'
-title_default: 'Differential Gene Expression Analysis'
+title_default: 'Differential Gene Expression Analysis (single-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'
-    content: 'In this tour, we will upload NGS data to be analysed for differential gene expression.<br>
-Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy framework.'
+    content: 'In this tour we will upload <b>single-end</b> NGS reads to be
+analysed for differential gene expression levels.<br>
+Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy
+framework.'
     placement: bottom
 
   - title: '<b>Import the sequence datasets</b>'
@@ -16,19 +18,21 @@ Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy fra
     onnextclick:
       - '.fa.fa-upload:visible'
     onloadwait:
-      - element: '.history-size:contains("empty")'
+      - element: '.history-size:contains("empty")' # must not check for visibilit
+        count: 1
 
   - title: '<b>Import the sequence datasets</b>'
-    element: '#btn-new:visible'
+    element: >-
+      .tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(5) > .title
     content: 'Fetch from a remote source.'
     placement: bottom
     onloadclick:
-      - '#btn-reset:visible'
+      - '.tab-pane.active .upload-view-default .upload-buttons > :nth-child(3) .title:visible'
     onnextclick:
-      - '#btn-new:visible'
+      - '.tab-pane.active .upload-view-default .upload-buttons > :nth-child(5) .title:visible'
 
   - title: '<b>Import the sequence datasets</b>'
-    element: '.upload-text-content:visible'
+    element: '.upload-text-content'
     content: 'Enter URLs.'
     placement: bottom
     textinsert: |
@@ -43,14 +47,14 @@ Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy fra
       https://github.com/destairdenbi/trainings/raw/master/raw_data/rna/hg38.goi.fa
       https://github.com/destairdenbi/trainings/raw/master/raw_data/rna/hg38.goi.gtf
 
-  - title: '<b>Start</b>'
+  - title: '<b>Import the sequence datasets</b>'
     element: '#btn-start:visible'
-    content: Start the upload.
+    content: 'Start the upload.'
     placement: bottom
     onnextclick:
       - '#btn-start:visible'
 
-  - title: '<b>Close</b>'
+  - title: '<b>Import the sequence datasets</b>'
     element: '#btn-close:visible'
     content: 'Close the dialog.'
     placement: bottom
@@ -62,11 +66,11 @@ Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy fra
 
   - title: '<b>Import the sequence datasets</b>'
     element: '#right:visible'
-    content: 'The datasets are uploading in your history.<br>
+    content: 'The datasets are uploading in the history.<br>
 These comprise:<br>
 - Four control datasets<br>
 - Four treatment datasets<br>
-- The reference genome and annotation'
+- The reference genome and annotation.'
     placement: left
 
   - title: '<b>Import the sequence datasets</b>'
