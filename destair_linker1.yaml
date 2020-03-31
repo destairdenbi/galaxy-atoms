@@ -1,7 +1,7 @@
 id: destair_linker_1
-name: 'de.STAIR DGEA linker'
+name: 'de.STAIR DGEA SE linker'
 description: 'Differential gene expression analysis (single-end reads)'
-title_default: 'de.STAIR DGEA linker'
+title_default: 'de.STAIR DGEA SE linker'
 tags:
   - 'dgea_se'
 steps:

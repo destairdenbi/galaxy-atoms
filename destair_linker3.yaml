@@ -1,8 +1,8 @@
 id: destair_linker_3
-name: 'de.STAIR DGEA linker'
-description: 'Differential gene expression analysis (paired-end reads)'
-title_default: 'de.STAIR DGEA linker'
+name: 'de.STAIR RRBS/BS PE linker'
+description: 'RRBS/BS-Seq analysis (paired-end reads)'
+title_default: 'de.STAIR RRBS/BS PE linker'
 tags:
-  - 'dgea_pe'
+  - 'bs_pe'
 steps:
   - content: 'just a linker'
