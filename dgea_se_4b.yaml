@@ -1,4 +1,4 @@
-id: dgea_tour_4b
+id: dgea_se_4b
 name: 'Differential Gene Expression Analysis'
 description: 'Differential gene expression analysis using HTSeq-count and DESeq2'
 title_default: 'Differential Gene Expression Analysis'
