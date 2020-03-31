@@ -1,4 +1,4 @@
-id: dgea_pe_tour_3b
+id: dgea_pe_3b
 name: 'Differential Gene Expression Analysis (paired-end data)'
 description: 'Alignment of sequence reads against a reference genome using HISAT2'
 title_default: 'Differential Gene Expression Analysis (paired-end data)'

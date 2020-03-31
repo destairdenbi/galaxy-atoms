@@ -1,4 +1,4 @@
-id: dgea_pe_tour_3a
+id: dgea_pe_3a
 name: 'Differential Gene Expression Analysis (paired-end data)'
 description: 'Alignment of sequence reads against a reference genome using BWA'
 title_default: 'Differential Gene Expression Analysis (paired-end data)'
