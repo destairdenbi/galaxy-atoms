@@ -12,7 +12,7 @@ steps:
 Here, we will leverage on two tools:<br>
 - <b>FastQC</b>, to assess the quality of the sequences<br>
 - <b>PRINSEQ</b>, to remove low quality sequence content.'
-    position: bottom
+    placement: bottom
 
   - title: '<b>Quality control</b>'
     element: '#tool-search-query:visible'

@@ -13,7 +13,7 @@ might ultimately bias results interpretation.<br>
 Here, we will leverage on two tools:<br>
 - <b>FastQC</b>, to assess the quality of the sequences<br>
 - <b>Cutadapt</b>, to remove low quality sequence content.'
-    position: bottom
+    placement: bottom
 
 # Quality control
 
