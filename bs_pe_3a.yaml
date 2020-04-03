@@ -7,7 +7,7 @@ steps:
     element: '#masthead:visible'
     content: 'In this tour, we will perform quality trimming on BS-Seq data to remove low quality sequence content from sequencing reads that might ultimately bias the interpretation of results.<br>
 Here, we will leverage on <b>Trimmomatic</b>.'
-    position: bottom
+    placement: bottom
 
   - title: '<b>Quality trimming</b>'
     element: '#tool-search-query:visible'
