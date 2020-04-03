@@ -23,7 +23,7 @@ Here, we will leverage on two tools:<br>
     content: 'Search for the <b>FastQC</b> tool.<br>
 FastQC plots the overall quality of the input data. This tool provides a
 starting point for interpreting the input NGS data, and understand how to
-further parametrize the tools during the course of the analysis.'
+further parameterize the tools during the course of the analysis.'
     placement: right
     textinsert: fastqc
     onnextclick:
@@ -45,7 +45,7 @@ further parametrize the tools during the course of the analysis.'
 
   - title: '<b>Quality control</b>'
     element: '#execute:visible'
-    content: 'For all remaining parametrisation options, we will use default
+    content: 'For all remaining parameterization options, we will use default
 settings.<br>
 However, for further information, please refer to the manual provided below the
 tool box.'
@@ -322,7 +322,7 @@ discarded.'
     content: 'With the current parameterisation, Trim Galore! will:<br>
 - Trim reads with low average quality<br>
 - Discard reads whose length became shorter than the indicated threshold.<br>
-For all remaining parametrisation options, we will use the provided default
+For all remaining parameterization options, we will use the provided default
 settings.<br>
 However, for further information, please refer to the manual provided below the
 tool box.'

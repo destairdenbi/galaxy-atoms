@@ -45,7 +45,7 @@ further parameterize the tools during the course of the analysis.'
 
   - title: '<b>Quality control</b>'
     element: '#execute:visible'
-    content: 'For all remaining parametrisation options, we will use default
+    content: 'For all remaining parameterization options, we will use default
 settings. However, for further information, please refer to the manual provided
 below the tool box.'
     placement: top
@@ -305,10 +305,10 @@ calculation.'
   - title: '<b>Quality control</b>'
     element: '#execute:visible'
     placement: top
-    content: 'With the current parametrisation, PRINSEQ will:<br>
+    content: 'With the current parameterization, PRINSEQ will:<br>
 - Trim low-quality score sequence ends<br>
 - Discard reads whose length became shorter than 20 bp.<br>
-For all remaining parametrisation options, we will use the provided default
+For all remaining parameterization options, we will use the provided default
 settings.<br>
 However, for further information, please refer to the manual provided below the
 tool box.'
