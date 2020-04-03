@@ -86,7 +86,7 @@ history.'
     content: 'FastQC generated diverse plots to assess:<br>
 - Sequence quality<br>
 - Adapter content<br>
-- Contamination<br>'
+- Contamination.'
     placement: bottom
 
   - title: '<b>Quality control</b>'
