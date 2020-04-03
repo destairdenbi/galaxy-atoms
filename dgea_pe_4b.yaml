@@ -1,8 +1,8 @@
 id: dgea_pe_4b
-name: 'Differential Gene Expression Analysis (paired-end data)'
+name: 'Differential Gene Expression Analysis (paired-end reads)'
 description: 'Differential gene expression analysis using AWK, Infer
 Experiment, HTSeq-count and DESeq2'
-title_default: 'Differential Gene Expression Analysis (paired-end data)'
+title_default: 'Differential Gene Expression Analysis (paired-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'

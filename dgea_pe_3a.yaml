@@ -1,7 +1,7 @@
 id: dgea_pe_3a
-name: 'Differential Gene Expression Analysis (paired-end data)'
+name: 'Differential Gene Expression Analysis (paired-end reads)'
 description: 'Alignment of sequence reads against a reference genome using BWA'
-title_default: 'Differential Gene Expression Analysis (paired-end data)'
+title_default: 'Differential Gene Expression Analysis (paired-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'
