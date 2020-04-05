@@ -5,14 +5,16 @@ title_default: 'Differential Gene Expression Analysis (single-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'
-    content: 'In this tour we will align sequence reads against a reference genome.<br>
-Here, we will leverage on <b>Segemehl</b>, an efficient RNA-Seq aligner.'
+    content: 'In this tour we will align sequence reads against a reference
+genome.<br>
+Here, we will leverage on <b>Segemehl</b>.'
     placement: bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query:visible'
     content: 'Search for the <b>Segemehl</b> tool.<br>
-Segemehl aligns the sequence reads from the control and treated samples against the provided reference genome.'
+Segemehl is an efficient RNA-Seq aligner, which maps input reads against the
+provided reference genome.'
     placement: right
     textinsert: segemehl
     postclick:
@@ -20,10 +22,46 @@ Segemehl aligns the sequence reads from the control and treated samples against 
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Frnateam%2Fsegemehl%2Fsegemehl%2F0.2.0.4"]
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '[tour_id="refGenomeSource|genomeSource"] .ui-form-field .ui-select:visible'
-    content: '<h4>Select: <b>Use one from the history</b></h4>'
+    element: '[tour_id="refGenomeSource|genomeSource"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
     placement: top
-    pointer: true
+    onnextclick:
+      - '[tour_id="refGenomeSource|genomeSource"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Use one from the history</b>.'
+    textinsert: 'Use one from the history'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="refGenomeSource|own_reference_genome"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="refGenomeSource|own_reference_genome"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>hg38.goi.fa</b>.'
+    textinsert: 'hg38.goi.fa'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Single-end</b>.'
+    textinsert: 'Single-end'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="library|input_query"] .btn-group.ui-radiobutton > :nth-child(2):visible'
@@ -31,53 +69,63 @@ Segemehl aligns the sequence reads from the control and treated samples against 
     placement: top
     onnextclick:
       - '[tour_id="library|input_query"] .btn-group.ui-radiobutton > :nth-child(2):visible'
-
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="library|input_query"] .ui-select-multiple.ui-select:visible'
     content: 'Select all trimmed control and treated datasets.'
     placement: top
     select:
-#      - '[tour_id="library|input_query"] .ui-select-multiple.ui-select .select > :nth-child(-n+8):visible'
       - '[tour_id="library|input_query"] .ui-select-multiple.ui-select .select option:contains(" on ")'
     unselect:
       - '[tour_id="library|input_query"] .ui-select-multiple.ui-select .select option:contains("Rejected")'
 
-
-
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="splitreads|splits"] .ui-select .select2-container .select2-choice:visible'
+    content: 'This option allows to map reads spanning one or multiple
+exon-junctions and can be used downstream to detect alternative splicing
+events.<br>
+Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="splitreads|splits"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Split reads</b>.'
+    textinsert: 'Split reads'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '[tour_id="splitreads|splits"]:visible'
-    content: 'This option allows to map reads spanning one or multiple exon-junctions and can be used downstream to detect alternative splicing events.<br>
-<h4>Select: <b>Split reads</b></h4>'
+    element: '[tour_id="accuracy"] .ui-input:visible'
+    content: 'The <b>Min percentage of matches per read in semi-global
+alignment (accuracy)</b> can be raised to lower the number of allowed
+mismatches/indels.<br>
+Specify <b>90</b>.'
+    textinsert: '90'
     placement: top
-    pointer: true
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: '[tour_id="accuracy"]:visible'
-    content: 'Raise the required mapping accuracy to be more strict in number of allowed mismatches/indels.<br>
-<h4>Enter: <b>90</b></h4>'
-    placement: top
-    pointer: true
-
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#execute:visible'
-    content: 'For all remaining parameterization options, we will use the provided default settings.<br>
-However, for further information, please refer to the manual provided below the tool box.'
+    content: 'For all remaining parameterisation options, we will use the
+provided default settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
     placement: top
-    postclick:
+    onnextclick:
       - '#execute:visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right:visible'
-    content: 'Segemehl processing has begun, and the results are loading in your history.'
+    content: 'Segemehl processing has begun, and the results are loading in the
+history.'
     placement: left
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("segemehl")'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#masthead:visible'
-    content: 'The alignment of sequence reads against a reference genome has been completed.'
+    content: 'The alignment of sequence reads against a reference genome has
+been completed.'
     placement: bottom
     onloadwait:
       - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
@@ -93,4 +141,3 @@ However, for further information, please refer to the manual provided below the 
     element: '#masthead:visible'
     content: 'You successfully completed this Galaxy atom.'
     placement: bottom
-
