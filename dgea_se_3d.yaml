@@ -5,20 +5,34 @@ title_default: 'Differential Gene Expression Analysis (single-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'
-    content: 'In this tour we will align sequence reads against a reference genome.<br>
-Here, we will leverage on <b>STAR</b>, an ultrafast and low error rate RNA-Seq aligner.'
+    content: 'In this tour we will align sequence reads against a reference
+genome.<br>
+Here, we will leverage on <b>STAR</b>.'
     placement: bottom
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query:visible'
     content: 'Search for the <b>STAR</b> tool.<br>
-STAR aligns the sequence reads from the control and treated samples, against the provided reference genome.'
+STAR is an ultrafast and low error rate RNA-Seq aligner.'
     placement: right
     textinsert: rna star
-    postclick:
+    onnextclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Frgrnastar%2Frna_star%2F2.7.2b"]
 
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Single-end</b>.'
+    textinsert: 'Single-end'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="singlePaired|input1"] .btn-group.ui-radiobutton > :nth-child(2):visible'
@@ -26,42 +40,66 @@ STAR aligns the sequence reads from the control and treated samples, against the
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|input1"] .btn-group.ui-radiobutton > :nth-child(2):visible'
-
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="singlePaired|input1"] .ui-select-multiple.ui-select:visible'
     content: 'Select all trimmed control and treated datasets.'
     placement: top
     select:
-#      - '[tour_id="singlePaired|input1"] .ui-select-multiple.ui-select .select > :nth-child(-n+8):visible'
       - '[tour_id="singlePaired|input1"] .ui-select-multiple.ui-select .select option:contains(" on ")'
     unselect:
       - '[tour_id="singlePaired|input1"] .ui-select-multiple.ui-select .select option:contains("Rejected")'
 
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="refGenomeSource|geneSource"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
+    placement: top
+    onnextclick:
+      - '[tour_id="refGenomeSource|geneSource"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Use reference genome from history and create
+temporary index</b>.'
+    textinsert: 'Use reference genome from history and create temporary index'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '[tour_id="refGenomeSource|geneSource"]:visible'
-    content: '<h4>Select: <b>Use reference genome from history and create temporary index</b></h4>'
+    element: '[tour_id="refGenomeSource|genomeFastaFiles"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
     placement: top
-    pointer: true
+    onnextclick:
+      - '[tour_id="refGenomeSource|genomeFastaFiles"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>hg38.goi.fa</b>.'
+    textinsert: 'hg38.goi.fa'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#execute:visible'
-    content: 'For all remaining parameterization options, we will use the provided default settings.<br>
-However, for further information, please refer to the manual provided elow the tool box.'
+    content: 'For all remaining parameterisation options, we will use the
+provided default settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
     placement: top
-    postclick:
+    onnextclick:
       - '#execute:visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right:visible'
-    content: 'STAR processing has begun, and the results are loading in your history.'
+    content: 'STAR processing has begun, and the results are loading in the
+history.'
     placement: left
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("RNA STAR")'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#masthead:visible'
-    content: 'The alignment of sequence reads against a reference genome has been completed.'
+    content: 'The alignment of sequence reads against a reference genome has
+been completed.'
     placement: bottom
     onloadwait:
       - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
