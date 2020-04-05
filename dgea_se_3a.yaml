@@ -52,7 +52,7 @@ BWA aligns the sequenced reads from the control and treated samples, against the
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#execute:visible'
-    content: 'For all remaining parametrisation options, we will use the default settings.<br>
+    content: 'For all remaining parameterization options, we will use the default settings.<br>
 However, for further information, please refer to the manual provided below the tool box.'
     placement: top
     onnextclick:
