@@ -1,74 +1,77 @@
 id: dgea_se_4b
 name: 'Differential Gene Expression Analysis (single-end reads)'
-description: 'Differential gene expression analysis using HTSeq-count and DESeq2'
+description: 'Differential gene expression analysis using AWK, Infer
+Experiment, HTSeq-count and DESeq2'
 title_default: 'Differential Gene Expression Analysis (single-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'
-    content: 'In this tour, we will carry out transcript quantification, and differential gene expression analysis from mapped RNA-Seq data.<br>
-Here, we will leverage on two tools:<br>
-- <b>HTSeq-count</b>, to count the number of reads overlapping with predetermined genomic features<br>
-- <b>DESeq2</b>, to assess the level of gene expression.<br>
-Prior, the inference of the experiment strandness will help you to parameterize the mentioned tools.<br>
-Here, we will leverage on <b>RSeQC</b>'
+    content: 'In this tour we will carry out transcript quantification and
+differential gene expression analysis from mapped RNA-Seq data.<br>
+Here, we will leverage on:<br>
+- <b>AWK</b>, to parse and extract table columns depending on their values<br>
+- <b>Infer Experiment</b>, to infer the strandness of reads mapped onto genomic
+features with known orientation<br>
+- <b>HTSeq-count</b>, to count the number of reads overlapping with
+predetermined genomic features<br>
+- <b>DESeq2</b>, to assess the level of gene expression.'
     placement: bottom
 
-  - title: '<b>Infer experiment strandness</b>'
+# infer strandness
+
+  - title: '<b>Infer strandness</b>'
     element: '#tool-search-query:visible'
     content: 'Search for the <b>Text reformatting with awk</b> tool.<br>
-Awk is a programming langugae which can be easily applied on data files to e.g. parse, alter and reformat column wise values.<br>
-In the following steps, the first 1000 positive and first 1000 negative strand encoded exons will be extracted from the annotation and stored in BED format - necessary for experiment inference.'
+AWK is a programming language, which can be used to parse, alter, reformat and
+extract column values.<br>
+In the following steps, the first 1000 positive and first 1000 negative strand
+encoded exons will be extracted from the annotation and stored in BED format.'
     placement: right
     textinsert: text reformatting awk
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftext_processing%2Ftp_awk_tool%2F1.1.1"]
 
-  - title: '<b>Infer experiment strandness</b>'
-    element: '[tour_id="infile"] .btn-group.ui-radiobutton > :nth-child(2):visible'
-    content: 'Switch to multiple dataset view.'
-    placement: bottom
-    onnextclick:
-      - '[tour_id="infile"] .btn-group.ui-radiobutton > :nth-child(2):visible'
-
-
-
-  - title: '<b>Infer experiment strandness</b>'
-    element: '[tour_id="infile"] .ui-select-multiple.ui-select:visible'
-    content: 'Select the genome annotation file.'
-    placement: bottom
-    select:
-      - '[tour_id="infile"] .ui-select-multiple.ui-select .select > :nth-last-child(10):visible'
-
-
-
-  - title: '<b>Infer experiment strandness</b>'
-    element: '[tour_id="code"] .ui-form-field .ui-textarea:visible'
-    content: '<h4>Enter: <br><b>!/^#/ && $3=="exon"{if($7=="+"){ p[px++] = $1"\t"$4"\t"$5"\t.\t.\t"$7 }else{ n[nx++] = $1"\t"$4"\t"$5"\t.\t.\t"$7 } if(nx>1000 && px>1000){ exit } } END{ for(i in p){ print p[i] } for(i in n){ print n[i] } }</b></h4>'
+  - title: '<b>Infer strandness</b>'
+    element: '[tour_id="infile"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
     placement: top
-    pointer: true
-#    textinsert: |
-#      !/^#/ && $3=="exon"{if($7=="+"){ p[px++] = $1"\t"$4"\t"$5"\t.\t.\t"$7 }else{ n[nx++] = $1"\t"$4"\t"$5"\t.\t.\t"$7 } if(nx>1000 && px>1000){ exit } } END{ for(i in p){ print p[i] } for(i in n){ print n[i] } }
+    onnextclick:
+      - '[tour_id="infile"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Infer strandness</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>hg38.goi.gtf</b>.'
+    textinsert: 'hg38.goi.gtf'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
+  - title: '<b>Infer strandness</b>'
+    element: '[tour_id="code"] .ui-textarea:visible'
+    content: 'Enter the AWK script to extract the first 1000 positive and the
+first 1000 negative strand encoded exons, and write them to a text file.'
+    textinsert: '!/^#/ && $3=="exon"{if($7=="+"){ p[px++] = $1"\t"$4"\t"$5"\t.\t.\t"$7 }else{ n[nx++] = $1"\t"$4"\t"$5"\t.\t.\t"$7 } if(nx>1000 && px>1000){ exit } } END{ for(i in p){ print p[i] } for(i in n){ print n[i] } }'
+    placement: top
 
-  - title: '<b>Infer experiment strandness</b>'
+  - title: '<b>Infer strandness</b>'
     element: '#execute:visible'
-    content: 'Execute exon extraction and file conversion.'
+    content: 'Execute AWK.'
     placement: top
     onnextclick:
       - '#execute:visible'
 
-  - title: '<b>Infer experiment strandness</b>'
+  - title: '<b>Infer strandness</b>'
     element: '#right:visible'
-    content: 'Awk processing has begun.'
+    content: 'AWK processing has begun, and the result is loading in the
+history.'
     placement: left
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Text reformatting")'
 
-  - title: '<b>Infer experiment strandness</b>'
-    element: '#masthead:visible'
-    content: 'Exon extraction has been completed.'
-    placement: bottom
+  - title: '<b>Infer strandness</b>'
+    element: '#current-history-panel .list-items > :nth-child(1) .primary-actions .edit-btn:visible'
+    content: 'Change the resulting text file datatype to <b>BED</b>.'
+    placement: top
     onloadwait:
       - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
         count: 0
@@ -78,72 +81,91 @@ In the following steps, the first 1000 positive and first 1000 negative strand e
         count: 0
       - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
         count: 0
-
-  - title: '<b>Infer experiment strandness</b>'
-    element: '#current-history-panel .list-items > :nth-child(1) .primary-actions .edit-btn:visible'
-    content: 'Change datatype to BED'
-    placement: left
     onnextclick:
       - '#current-history-panel .list-items > :nth-child(1) .primary-actions .edit-btn:visible'
-  - title: '<b>Infer experiment strandness</b>'
+  - title: '<b>Infer strandness</b>'
     element: '#tab-title-text-datatype:visible'
-    content: 'Switch to datatypes pane'
+    content: 'Switch to the <b>Datatypes</b> tab.'
     placement: top
     onnextclick:
       - '#tab-title-text-datatype:visible'
-  - title: '<b>Infer experiment strandness</b>'
-    element: >-
-      [tour_id="datatype"] .ui-form-field .ui-select
-    content: '<h4>Select: <b>bed</b></h4>'
+  - title: '<b>Infer strandness</b>'
+    element: '[tour_id="datatype"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
     placement: top
-    pointer: true
-  - title: '<b>Infer experiment strandness</b>'
+    onnextclick:
+      - '[tour_id="datatype"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Infer strandness</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>bed</b>.'
+    textinsert: 'bed'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+  - title: '<b>Infer strandness</b>'
     element: '#submit_datatype:visible'
-    content: 'Apply'
+    content: 'Change datatype.'
     placement: top
     onnextclick:
       - '#submit_datatype:visible'
 
+  - title: '<b>Infer strandness</b>'
+    element: '#right:visible'
+    content: 'The datatype is changing and the updated entry is loading in the
+history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Text reformatting")'
 
-
-
-
-
-  - title: '<b>Infer experiment strandness</b>'
+  - title: '<b>Infer strandness</b>'
     element: '#tool-search-query:visible'
-    content: 'Search for the <b>infer experiment</b> tool.<br>
-Infer experiment calculates the fractions of forward and inversely mapped reads onto genomic features with known orientation.'
+    content: 'Search for the <b>Infer Experiment</b> tool.<br>
+Infer Experiment calculates the fractions of forward and inversely mapped reads
+onto genomic features with known orientation.'
     placement: right
     textinsert: infer experiment
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fnilesh%2Frseqc%2Frseqc_infer_experiment%2F2.6.4.1"]
 
-
-  - title: '<b>Infer experiment strandness</b>'
-    element: '[tour_id="mapq"]:visible'
+  - title: '<b>Infer strandness</b>'
+    element: '[tour_id="refgene"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
     placement: top
-    content: '<h4>Enter: <b>0</b></h4>'
-    pointer: true
+    onnextclick:
+      - '[tour_id="refgene"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Infer strandness</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Text reformatting</b>.'
+    textinsert: 'Text reformatting'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
+  - title: '<b>Infer strandness</b>'
+    element: '[tour_id="mapq"] .ui-input:visible'
+    placement: top
+    content: 'Specify <b>0</b> to ignore the mapping quality.'
+    textinsert: '0'
 
-  - title: '<b>Infer experiment strandness</b>'
+  - title: '<b>Infer strandness</b>'
     element: '#execute:visible'
-    content: 'Execute experiment strandness inference based on one alignment file (mapping).'
+    content: 'Execute to infer the strandness based on one alignment dataset.'
     placement: top
     onnextclick:
       - '#execute:visible'
 
-  - title: '<b>Infer experiment strandness</b>'
+  - title: '<b>Infer strandness</b>'
     element: '#right:visible'
-    content: 'Experiment strandness inference has begun.'
+    content: 'Infer Experiment processing has begun, and the result is loading
+in the history.'
     placement: left
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Infer Experiment")'
 
-  - title: '<b>Infer experiment strandness</b>'
+  - title: '<b>Infer strandness</b>'
     element: '#masthead:visible'
-    content: 'Experiment strandness inference has been completed.'
+    content: 'Infer Experiment has completed.'
     placement: bottom
     onloadwait:
       - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
@@ -155,35 +177,43 @@ Infer experiment calculates the fractions of forward and inversely mapped reads 
       - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
         count: 0
 
-  - title: '<b>Infer experiment strandness</b>'
+  - title: '<b>Infer strandness</b>'
     element: '#current-history-panel .list-items > :nth-child(1) .primary-actions .display-btn:visible'
-    content: 'Open Report'
-    placement: left
+    content: 'Open the report to obtain the strandness.'
+    placement: top
     onnextclick:
       - '#current-history-panel .list-items > :nth-child(1) .primary-actions .display-btn:visible'
 
-  - title: '<b>Infer experiment strandness</b>'
+  - title: '<b>Infer strandness</b>'
     element: '#masthead:visible'
-    content: 'Infer experiment shows fractions of forward and inversely mapped reads on features of known orientation.'
+    content: 'Infer Experiment shows fractions of forward and inversely mapped
+reads on features of known orientation.'
     placement: bottom
 
-  - title: '<b>Infer experiment strandness</b>'
+  - title: '<b>Infer strandness</b>'
     element: '#iframe-helper:visible'
+    content: 'The strandness of a library can be inferred as follows:<br>
+- If both values are ~0.5, then the library is unstranded<br>
+- If the first value is siginificantly increased, then the library is forward
+stranded<br>
+- If the second value is increased, then the library is reversely stranded.<br>
+<br>
+This library is <b>unstranded</b>.'
     placement: bottom
     iframeelement: 'pre:visible'
-    content: '<h4><b>Necessary information for upcoming tool parameterization!</b></h4><br>
-If both values are ~0.5, then the library was not strand-specific prepared.<br>
-If the first value is siginificantly increased, then the library was prepared FR - forward.<br>
-If the second value is increased, then the experiment was designed FR - reversely stranded'
 
+# count mapped reads
 
   - title: '<b>Counting mapped reads</b>'
     element: '#tool-search-query:visible'
-    content: 'Search for the <b>HTSeq-Count</b> tool.<br>
-HTSeq-Count calculates the number of reads that have been mapped against the genomic feature of a reference genome. Here, a feature is a positional range on a chromosome, or a union of such ranges, representing exons, genes, promoter regions, etc.'
+    content: 'Search for the <b>HTSeq-count</b> tool.<br>
+HTSeq-count calculates the number of reads that have been mapped against the
+genomic feature of a reference genome. Here, a feature is a positional range on
+a chromosome, or a union of such ranges, representing exons, genes, promoter
+regions, etc.'
     placement: right
     textinsert: htseq-count
-    postclick:
+    onnextclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Flparsons%2Fhtseq_count%2Fhtseq_count%2F0.9.1"]
 
@@ -193,8 +223,6 @@ HTSeq-Count calculates the number of reads that have been mapped against the gen
     placement: top
     onnextclick:
       - '[tour_id="samfile"] .btn-group.ui-radiobutton > :nth-child(2):visible'
-
-
   - title: '<b>Counting mapped reads</b>'
     element: '[tour_id="samfile"] .ui-select-multiple.ui-select:visible'
     content: 'Select all mapped control and treated datasets.'
@@ -203,34 +231,55 @@ HTSeq-Count calculates the number of reads that have been mapped against the gen
       - '[tour_id="samfile"] .ui-select-multiple.ui-select .select > :nth-child(n+1):visible'
 
   - title: '<b>Counting mapped reads</b>'
-    element: '[tour_id="gfffile"]:visible'
-    content: '<h4><b>Select initially uploaded genome annotation file</b></h4>'
+    element: '[tour_id="gfffile"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
     placement: top
-    pointer: true
+    onnextclick:
+      - '[tour_id="gfffile"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Counting mapped reads</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>hg38.goi.gtf</b>.'
+    textinsert: 'hg38.goi.gtf'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Counting mapped reads</b>'
-    element: '[tour_id="stranded"]:visible'
-    content: '<h4><b>Select experiment strandness according to previous inference</b></h4>'
+    element: '[tour_id="stranded"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown menu.'
     placement: top
-    pointer: true
+    onnextclick:
+      - '[tour_id="stranded"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Counting mapped reads</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>No</b>, to provide the strandness
+found using the Infer Experiment tool.'
+    textinsert: 'No'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Counting mapped reads</b>'
-    element: '[tour_id="minaqual"]:visible'
-    content: '<h4>Enter: <b>0</b></h4>'
+    element: '[tour_id="minaqual"] .ui-input:visible'
     placement: top
-    pointer: true
+    content: 'Provide the minimum quality to skip aligned reads.<br>
+Specify <b>0</b> to ignore this option.'
+    textinsert: '0'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#execute:visible'
-    content: 'For all remaining parameterization options, we will use the provided default settings.<br>
-However, for further information, please refer to the manual provided below the tool box.'
+    content: 'For all remaining parameterisation options, we will use the
+provided default settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
     placement: top
     postclick:
       - '#execute:visible'
 
   - title: '<b>Counting mapped reads</b>'
     element: '#right:visible'
-    content: 'HTSeq-Count processing has begun, and the results are loading in your history.'
+    content: 'HTSeq-count processing has begun, and the results are loading in
+the history.'
     placement: left
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("htseq-count")'
@@ -249,12 +298,19 @@ However, for further information, please refer to the manual provided below the 
       - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
         count: 0
 
-
+# identify differentially expressed genes
 
   - title: '<b>Differential gene expression analysis</b>'
     element: '#tool-search-query:visible'
-    content: 'Search for the <b>DESeq2</b> tool.<br>
-DESeq2 applies statistical methods to the genomic features-aligned read counts, to carry out gene expression analysis.'
+    content: 'DESeq2 performs differential gene expression analysis by handling
+multiple factors affecting an experiment in parallel.<br>
+Factor have at least two disjunct states/levels. For instance, we can describe
+our experiment in terms of a single treatment factor, which is conditioned by
+two different healthy states: control, and treated. Thus, we are able to
+describe our experiment accordingly.<br>
+For normalization, DESeq2 takes all factors into account.<br>
+Result tables will hold fold-changes of the first defined factor and its first
+two states.'
     placement: right
     textinsert: deseq2
     postclick:
@@ -262,62 +318,65 @@ DESeq2 applies statistical methods to the genomic features-aligned read counts, 
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fdeseq2%2Fdeseq2%2F2.11.40.6"]
 
   - title: '<b>Differential gene expression analysis</b>'
-    element: '#masthead:visible'
-    content: 'DESeq2 can handle multiple factors affecting an experiment in parallel. Each factor has at least two disjunct states/levels. For instance, we can describe our experiment in terms of a single treatment factor, which is conditioned by two different healthy states: control, and treated. Thus, we will describe our experiment accordingly. For normalization, DESeq2 takes all factors into account. Result tables will hold fold-changes of the first defined factor and its first two states.'
+    element: '[tour_id="select_data|rep_factorName_0|factorName"] .ui-input:visible'
+    content: 'Specify the treatment factor as <b>treatment</b>.'
+    textinsert: 'treatment'
+    placement: top
+
+  - title: '<b>Differential gene expression analysis</b>'
+    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|factorLevel"] .ui-input:visible'
+    content: 'Specify the healthy state <b>control</b>.'
+    textinsert: 'control'
+    placement: top
+  - title: '<b>Differential gene expression analysis</b>'
+    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+    content: 'Select multiple datasets.'
     placement: bottom
-
+    onnextclick:
+      - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] .btn-group.ui-radiobutton > :nth-child(1):visible'
   - title: '<b>Differential gene expression analysis</b>'
-    element: '[tour_id="select_data|rep_factorName_0|factorName"]:visible'
-    content: '<h4>Enter: <b>treatment</b></h4>'
-    pointer: true
-    placement: top
-
-  - title: '<b>Differential gene expression analysis</b>'
-    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|factorLevel"]:visible'
-    content: '<h4>Enter: <b>treated</b></h4>'
-    pointer: true
-    placement: top
-
-  - title: '<b>Differential gene expression analysis</b>'
-    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"]:visible'
-    content: 'Backtrack files and select all datasets corresponding to treated samples'
+    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] .ui-select:visible'
+    content: 'Select the datasets that corresponds to control samples.'
     placement: top
     select:
-      - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] .ui-select-multiple.ui-select .select > :nth-child(-n+8):nth-child(even):visible'
+      - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] .ui-select-multiple.ui-select .select > :nth-child(n+9):nth-child(-n+16):nth-child(even):visible'
     unselect:
       - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] .ui-select-multiple.ui-select .select > :nth-child(1):visible'
 
   - title: '<b>Differential gene expression analysis</b>'
-    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|factorLevel"]:visible'
-    content: '<h4>Enter: <b>control</b></h4>'
-    pointer: true
+    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|factorLevel"] .ui-input:visible'
+    content: 'Specify the treatment factor as <b>treated</b>.'
+    textinsert: 'treated'
     placement: top
-
-
   - title: '<b>Differential gene expression analysis</b>'
-    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"]:visible'
-    content: 'Backtrack files and select all datasets corresponding to control samples'
+    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+    content: 'Select multiple datasets.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+  - title: '<b>Differential gene expression analysis</b>'
+    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] .ui-select:visible'
+    content: 'Select the datasets that corresponds to treated samples.'
     placement: top
     select:
-      - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] .ui-select-multiple.ui-select .select > :nth-child(n+9):nth-child(-n+16):nth-child(even):visible'
+      - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] .ui-select-multiple.ui-select .select > :nth-child(-n+8):nth-child(even):visible'
     unselect:
       - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] .ui-select-multiple.ui-select .select > :nth-child(1):visible'
 
-
-
-
-
   - title: '<b>Differential gene expression analysis</b>'
     element: '#execute:visible'
-    content: 'For all remaining parameterization options, we will use the provided default settings.<br>
-However, for further information, please refer to the manual provided below the tool box.'
+    content: 'For all remaining parametrisation options, we will use the
+provided default settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
     placement: top
     postclick:
       - '#execute:visible'
 
   - title: '<b>Differential gene expression analysis</b>'
     element: '#right:visible'
-    content: 'DESeq2 processing has begun, and the results are loading in your history.'
+    content: 'DESeq2 processing has begun, and the results are loading in the
+history.'
     placement: left
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("DESeq2")'
@@ -340,4 +399,3 @@ However, for further information, please refer to the manual provided below the 
     element: '#masthead:visible'
     content: 'You successfully completed this Galaxy atom.'
     placement: bottom
-
