@@ -485,7 +485,7 @@ two states.'
     onnextclick:
       - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] .btn-group.ui-radiobutton > :nth-child(2):visible'
   - title: '<b>Differential gene expression analysis</b>'
-    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"]:visible'
+    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_0|countsFile"] .ui-select:visible'
     content: 'Select the dataset collection that corresponds to control
 samples.'
     placement: top
@@ -504,7 +504,7 @@ samples.'
     onnextclick:
       - '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] .btn-group.ui-radiobutton > :nth-child(2):visible'
   - title: '<b>Differential gene expression analysis</b>'
-    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"]:visible'
+    element: '[tour_id="select_data|rep_factorName_0|rep_factorLevel_1|countsFile"] .ui-select:visible'
     content: 'Select the dataset collection that corresponds to treated
 samples.'
     placement: top
