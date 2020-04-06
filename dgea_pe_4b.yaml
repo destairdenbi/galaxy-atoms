@@ -17,6 +17,8 @@ predetermined genomic features<br>
 - <b>DESeq2</b>, to assess the level of gene expression.'
     placement: bottom
 
+# infer strandness
+
   - title: '<b>Infer strandness</b>'
     element: '#tool-search-query:visible'
     content: 'Search for the <b>Text reformatting with awk</b> tool.<br>
@@ -118,7 +120,7 @@ history.'
   - title: '<b>Infer strandness</b>'
     element: '#tool-search-query:visible'
     content: 'Search for the <b>Infer Experiment</b> tool.<br>
-Infer experiment calculates the fractions of forward and inversely mapped reads
+Infer Experiment calculates the fractions of forward and inversely mapped reads
 onto genomic features with known orientation.'
     placement: right
     textinsert: infer experiment
@@ -445,6 +447,8 @@ collections.'
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("read quantification")'
         count: 1
+
+# identify differentially expressed genes
 
   - title: '<b>Differential gene expression analysis</b>'
     element: '#tool-search-query:visible'
