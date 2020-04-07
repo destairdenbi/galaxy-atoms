@@ -245,7 +245,7 @@ to improve the overall quality of the input datasets.'
 
   - title: '<b>Quality control</b>'
     element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
@@ -265,7 +265,7 @@ to improve the overall quality of the input datasets.'
       - '[tour_id="singlePaired|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Quality control</b>'
     element: '[tour_id="singlePaired|input_mate1"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|input_mate1"] .ui-select .select2-container .select2-choice:visible'
@@ -285,7 +285,7 @@ to improve the overall quality of the input datasets.'
       - '[tour_id="singlePaired|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Quality control</b>'
     element: '[tour_id="singlePaired|input_mate2"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|input_mate2"] .ui-select .select2-container .select2-choice:visible'
@@ -299,7 +299,7 @@ to improve the overall quality of the input datasets.'
 
   - title: '<b>Quality control</b>'
     element: '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'
@@ -383,7 +383,7 @@ dataset collections using <b>Trim Galore!</b>.'
 
   - title: '<b>Quality control</b>'
     element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
@@ -403,7 +403,7 @@ dataset collections using <b>Trim Galore!</b>.'
       - '[tour_id="singlePaired|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Quality control</b>'
     element: '[tour_id="singlePaired|input_mate1"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|input_mate1"] .ui-select .select2-container .select2-choice:visible'
@@ -423,7 +423,7 @@ dataset collections using <b>Trim Galore!</b>.'
       - '[tour_id="singlePaired|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Quality control</b>'
     element: '[tour_id="singlePaired|input_mate2"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|input_mate2"] .ui-select .select2-container .select2-choice:visible'
@@ -437,7 +437,7 @@ dataset collections using <b>Trim Galore!</b>.'
 
   - title: '<b>Quality control</b>'
     element: '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'

@@ -263,7 +263,7 @@ them to improve the overall quality of the input datasets.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|type"]:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
@@ -285,7 +285,7 @@ them to improve the overall quality of the input datasets.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|input_1"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|input_1"] .ui-select .select2-container .select2-choice:visible'
@@ -307,7 +307,7 @@ them to improve the overall quality of the input datasets.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|input_2"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|input_2"] .ui-select .select2-container .select2-choice:visible'
@@ -329,7 +329,7 @@ them to improve the overall quality of the input datasets.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|r1|adapters_0|adapter_source|adapter_source_list"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|r1|adapters_0|adapter_source|adapter_source_list"] .ui-select .select2-container .select2-choice:visible'
@@ -363,7 +363,7 @@ sequence YG in IUPAC code.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|r1|adapters_1|adapter_source|adapter_source_list"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|r1|adapters_1|adapter_source|adapter_source_list"] .ui-select .select2-container .select2-choice:visible'
@@ -398,7 +398,7 @@ sequence YG in IUPAC code.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|r2|adapters2_0|adapter_source2|adapter_source_list2"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|r2|adapters2_0|adapter_source2|adapter_source_list2"] .ui-select .select2-container .select2-choice:visible'
@@ -431,7 +431,7 @@ sequence prefixed by the IUPAC code YG.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|r2|adapters2_1|adapter_source2|adapter_source_list2"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|r2|adapters2_1|adapter_source2|adapter_source_list2"] .ui-select .select2-container .select2-choice:visible'
@@ -518,7 +518,7 @@ dataset collections using <b>Cutadapt</b>.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|type"]:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
@@ -540,7 +540,7 @@ dataset collections using <b>Cutadapt</b>.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|input_1"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|input_1"] .ui-select .select2-container .select2-choice:visible'
@@ -562,7 +562,7 @@ dataset collections using <b>Cutadapt</b>.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|input_2"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|input_2"] .ui-select .select2-container .select2-choice:visible'
@@ -584,7 +584,7 @@ dataset collections using <b>Cutadapt</b>.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|r1|adapters_0|adapter_source|adapter_source_list"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|r1|adapters_0|adapter_source|adapter_source_list"] .ui-select .select2-container .select2-choice:visible'
@@ -618,7 +618,7 @@ sequence YG in IUPAC code.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|r1|adapters_1|adapter_source|adapter_source_list"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|r1|adapters_1|adapter_source|adapter_source_list"] .ui-select .select2-container .select2-choice:visible'
@@ -653,7 +653,7 @@ sequence YG in IUPAC code.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|r2|adapters2_0|adapter_source2|adapter_source_list2"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|r2|adapters2_0|adapter_source2|adapter_source_list2"] .ui-select .select2-container .select2-choice:visible'
@@ -686,7 +686,7 @@ sequence prefixed by the IUPAC code YG.'
 
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|r2|adapters2_1|adapter_source2|adapter_source_list2"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|r2|adapters2_1|adapter_source2|adapter_source_list2"] .ui-select .select2-container .select2-choice:visible'

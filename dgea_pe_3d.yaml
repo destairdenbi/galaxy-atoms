@@ -24,7 +24,7 @@ STAR is an ultrafast and low error rate RNA-Seq aligner.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
@@ -44,7 +44,7 @@ STAR is an ultrafast and low error rate RNA-Seq aligner.'
       - '[tour_id="singlePaired|input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="singlePaired|input1"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|input1"] .ui-select .select2-container .select2-choice:visible'
@@ -64,7 +64,7 @@ STAR is an ultrafast and low error rate RNA-Seq aligner.'
       - '[tour_id="singlePaired|input2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="singlePaired|input2"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|input2"] .ui-select .select2-container .select2-choice:visible'
@@ -78,7 +78,7 @@ STAR is an ultrafast and low error rate RNA-Seq aligner.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="refGenomeSource|geneSource"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="refGenomeSource|geneSource"] .ui-select .select2-container .select2-choice:visible'
@@ -93,7 +93,7 @@ temporary index</b>.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="refGenomeSource|genomeFastaFiles"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="refGenomeSource|genomeFastaFiles"] .ui-select .select2-container .select2-choice:visible'
@@ -138,7 +138,7 @@ using <b>STAR</b>.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
@@ -158,7 +158,7 @@ using <b>STAR</b>.'
       - '[tour_id="singlePaired|input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="singlePaired|input1"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|input1"] .ui-select .select2-container .select2-choice:visible'
@@ -178,7 +178,7 @@ using <b>STAR</b>.'
       - '[tour_id="singlePaired|input2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="singlePaired|input2"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="singlePaired|input2"] .ui-select .select2-container .select2-choice:visible'
@@ -192,7 +192,7 @@ using <b>STAR</b>.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="refGenomeSource|geneSource"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="refGenomeSource|geneSource"] .ui-select .select2-container .select2-choice:visible'
@@ -207,7 +207,7 @@ temporary index</b>.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="refGenomeSource|genomeFastaFiles"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="refGenomeSource|genomeFastaFiles"] .ui-select .select2-container .select2-choice:visible'

@@ -268,7 +268,7 @@ to improve the overall quality of the input datasets.'
 
   - title: '<b>Quality control</b>'
     element: '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'

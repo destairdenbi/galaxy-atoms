@@ -114,7 +114,7 @@ However, be aware that the Tour Builder cannot identify elements with a missing
 ``tour_id`` attribute, which means that the resulting tour's bubbles will not
 always be placed on the HTML elements of interest. This limitation is
 particularly visible on those elements that require an explicit user input,
-such as dropdown menu selectors, checkboxes, etc.  
+such as dropdowns, checkboxes, etc.  
 To overcome this problem, we defined some templates that can be used to place
 the interactive tour's bubble on the actual HTML elements of interest.  
 Check our [TEMPLATES.md](https://github.com/destairdenbi/galaxy-atoms/blob/master/TEMPLATES.md)

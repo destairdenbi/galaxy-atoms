@@ -7,7 +7,7 @@
   - [History panel -> For all selected -> Build collection from rules](#history-panel---for-all-selected---build-collection-from-rules)
   - [Collection modal -> Apply](#collection-modal---apply)
   - [Tool parameterization panel -> Execute](#tool-parameterization-panel---execute)
-- [Dropdown menu](#dropdown-menu)
+- [Dropdowns](#dropdowns)
   - [Collection modal -> +Column -> Add column from metadata](#collection-modal---column---add-column-from-metadata)
   - [Collection modal -> +Column -> Add column from metadata -> For -> Name](#collection-modal---column---add-column-from-metadata---for---name)
   - [Collection modal -> +Column -> Keep or trim prefix or suffix -> For column -> $X](#collection-modal---column---keep-or-trim-prefix-or-suffix---for-column---x)
@@ -126,7 +126,7 @@
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 
-## Dropdown menu
+## Dropdowns
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### Collection modal -> +Column -> Add column from metadata
@@ -204,7 +204,7 @@
 ```
   - title: <b>$TITLE</b>
     element: '.rule-column-selector:visible'
-    content: 'Open the dropdown'
+    content: 'Open the dropdown.'
     placement: right
     onnextclick:
       - '.rule-column-selector .select2-arrow:visible'
@@ -248,7 +248,7 @@
 ```
   - title: '<b>Adapter clipping</b>'
     element: '[tour_id="library|type"]:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'

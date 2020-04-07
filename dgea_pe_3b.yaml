@@ -25,7 +25,7 @@ provided reference genome.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="reference_genome|source"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="reference_genome|source"] .ui-select .select2-container .select2-choice:visible'
@@ -39,7 +39,7 @@ provided reference genome.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="reference_genome|history_item"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="reference_genome|history_item"] .ui-select .select2-container .select2-choice:visible'
@@ -53,7 +53,7 @@ provided reference genome.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
@@ -73,7 +73,7 @@ provided reference genome.'
       - '[tour_id="library|input_1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="library|input_1"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|input_1"] .ui-select .select2-container .select2-choice:visible'
@@ -93,7 +93,7 @@ provided reference genome.'
       - '[tour_id="library|input_2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="library|input_2"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|input_2"] .ui-select .select2-container .select2-choice:visible'
@@ -137,7 +137,7 @@ using <b>HISAT2</b>.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="reference_genome|source"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="reference_genome|source"] .ui-select .select2-container .select2-choice:visible'
@@ -151,7 +151,7 @@ using <b>HISAT2</b>.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="reference_genome|history_item"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="reference_genome|history_item"] .ui-select .select2-container .select2-choice:visible'
@@ -165,7 +165,7 @@ using <b>HISAT2</b>.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
@@ -185,7 +185,7 @@ using <b>HISAT2</b>.'
       - '[tour_id="library|input_1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="library|input_1"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|input_1"] .ui-select .select2-container .select2-choice:visible'
@@ -205,7 +205,7 @@ using <b>HISAT2</b>.'
       - '[tour_id="library|input_2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="library|input_2"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|input_2"] .ui-select .select2-container .select2-choice:visible'

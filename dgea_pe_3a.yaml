@@ -25,7 +25,7 @@ provided reference genome.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="reference_source|reference_source_selector"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="reference_source|reference_source_selector"] .ui-select .select2-container .select2-choice:visible'
@@ -40,7 +40,7 @@ index</b>.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="reference_source|ref_file"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="reference_source|ref_file"] .ui-select .select2-container .select2-choice:visible'
@@ -54,7 +54,7 @@ index</b>.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="input_type|input_type_selector"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="input_type|input_type_selector"] .ui-select .select2-container .select2-choice:visible'
@@ -74,7 +74,7 @@ index</b>.'
       - '[tour_id="input_type|fastq_input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="input_type|fastq_input1"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="input_type|fastq_input1"] .ui-select .select2-container .select2-choice:visible'
@@ -94,7 +94,7 @@ index</b>.'
       - '[tour_id="input_type|fastq_input2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="input_type|fastq_input2"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="input_type|fastq_input2"] .ui-select .select2-container .select2-choice:visible'
@@ -138,7 +138,7 @@ using <b>BWA</b>.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="reference_source|reference_source_selector"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="reference_source|reference_source_selector"] .ui-select .select2-container .select2-choice:visible'
@@ -153,7 +153,7 @@ index</b>.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="reference_source|ref_file"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="reference_source|ref_file"] .ui-select .select2-container .select2-choice:visible'
@@ -167,7 +167,7 @@ index</b>.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="input_type|input_type_selector"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="input_type|input_type_selector"] .ui-select .select2-container .select2-choice:visible'
@@ -187,7 +187,7 @@ index</b>.'
       - '[tour_id="input_type|fastq_input1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="input_type|fastq_input1"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="input_type|fastq_input1"] .ui-select .select2-container .select2-choice:visible'
@@ -207,7 +207,7 @@ index</b>.'
       - '[tour_id="input_type|fastq_input2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="input_type|fastq_input2"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="input_type|fastq_input2"] .ui-select .select2-container .select2-choice:visible'

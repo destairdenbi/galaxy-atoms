@@ -34,7 +34,7 @@ encoded exons will be extracted from the annotation and stored in BED format.'
 
   - title: '<b>Infer strandness</b>'
     element: '[tour_id="infile"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="infile"] .ui-select .select2-container .select2-choice:visible'
@@ -91,7 +91,7 @@ history.'
       - '#tab-title-text-datatype:visible'
   - title: '<b>Infer strandness</b>'
     element: '[tour_id="datatype"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="datatype"] .ui-select .select2-container .select2-choice:visible'
@@ -136,7 +136,7 @@ onto genomic features with known orientation.'
       - '[tour_id="input"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Infer strandness</b>'
     element: '[tour_id="input"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="input"] .ui-select .select2-container .select2-choice:visible'
@@ -150,7 +150,7 @@ onto genomic features with known orientation.'
 
   - title: '<b>Infer strandness</b>'
     element: '[tour_id="refgene"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="refgene"] .ui-select .select2-container .select2-choice:visible'
@@ -254,7 +254,7 @@ regions, etc.'
       - '[tour_id="samfile"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Counting mapped reads</b>'
     element: '[tour_id="samfile"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="samfile"] .ui-select .select2-container .select2-choice:visible'
@@ -268,7 +268,7 @@ regions, etc.'
 
   - title: '<b>Counting mapped reads</b>'
     element: '[tour_id="gfffile"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="gfffile"] .ui-select .select2-container .select2-choice:visible'
@@ -282,7 +282,7 @@ regions, etc.'
 
   - title: '<b>Counting mapped reads</b>'
     element: '[tour_id="stranded"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="stranded"] .ui-select .select2-container .select2-choice:visible'
@@ -340,7 +340,7 @@ dataset collections using <b>HTSeq-count</b>.'
       - '[tour_id="samfile"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Counting mapped reads</b>'
     element: '[tour_id="samfile"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="samfile"] .ui-select .select2-container .select2-choice:visible'
@@ -354,7 +354,7 @@ dataset collections using <b>HTSeq-count</b>.'
 
   - title: '<b>Counting mapped reads</b>'
     element: '[tour_id="gfffile"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="gfffile"] .ui-select .select2-container .select2-choice:visible'
@@ -368,7 +368,7 @@ dataset collections using <b>HTSeq-count</b>.'
 
   - title: '<b>Counting mapped reads</b>'
     element: '[tour_id="stranded"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="stranded"] .ui-select .select2-container .select2-choice:visible'

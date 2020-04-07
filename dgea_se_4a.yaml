@@ -34,7 +34,7 @@ encoded exons will be extracted from the annotation and stored in BED format.'
 
   - title: '<b>Infer strandness</b>'
     element: '[tour_id="infile"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="infile"] .ui-select .select2-container .select2-choice:visible'
@@ -91,7 +91,7 @@ history.'
       - '#tab-title-text-datatype:visible'
   - title: '<b>Infer strandness</b>'
     element: '[tour_id="datatype"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="datatype"] .ui-select .select2-container .select2-choice:visible'
@@ -130,7 +130,7 @@ onto genomic features with known orientation.'
 
   - title: '<b>Infer strandness</b>'
     element: '[tour_id="refgene"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="refgene"] .ui-select .select2-container .select2-choice:visible'
@@ -232,7 +232,7 @@ regions, etc.'
 
   - title: '<b>Counting mapped reads</b>'
     element: '[tour_id="strand_specificity"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="strand_specificity"] .ui-select .select2-container .select2-choice:visible'
@@ -247,7 +247,7 @@ found using the Infer Experiment tool.'
 
   - title: '<b>Counting mapped reads</b>'
     element: '[tour_id="anno|anno_select"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="anno|anno_select"] .ui-select .select2-container .select2-choice:visible'
@@ -262,7 +262,7 @@ feature file from the history.'
 
   - title: '<b>Counting mapped reads</b>'
     element: '[tour_id="anno|reference_gene_sets"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="anno|reference_gene_sets"] .ui-select .select2-container .select2-choice:visible'

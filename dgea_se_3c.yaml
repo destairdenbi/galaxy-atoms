@@ -23,7 +23,7 @@ provided reference genome.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="refGenomeSource|genomeSource"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="refGenomeSource|genomeSource"] .ui-select .select2-container .select2-choice:visible'
@@ -37,7 +37,7 @@ provided reference genome.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="refGenomeSource|own_reference_genome"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="refGenomeSource|own_reference_genome"] .ui-select .select2-container .select2-choice:visible'
@@ -51,7 +51,7 @@ provided reference genome.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
@@ -83,7 +83,7 @@ provided reference genome.'
     content: 'This option allows to map reads spanning one or multiple
 exon-junctions and can be used downstream to detect alternative splicing
 events.<br>
-Open the dropdown menu.'
+Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="splitreads|splits"] .ui-select .select2-container .select2-choice:visible'
