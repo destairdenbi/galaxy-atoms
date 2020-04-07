@@ -23,7 +23,7 @@ provided reference genome.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="reference_genome|source"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="reference_genome|source"] .ui-select .select2-container .select2-choice:visible'
@@ -37,7 +37,7 @@ provided reference genome.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="reference_genome|history_item"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="reference_genome|history_item"] .ui-select .select2-container .select2-choice:visible'
@@ -51,7 +51,7 @@ provided reference genome.'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="library|type"] .ui-select .select2-container .select2-choice:visible'

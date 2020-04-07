@@ -21,7 +21,7 @@ Trimmomatic is an adapter/sequence trim/removal tool, which searches for contami
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="readtype|single_or_paired"]:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="readtype|single_or_paired"] .ui-select .select2-container .select2-choice:visible'
@@ -43,7 +43,7 @@ Trimmomatic is an adapter/sequence trim/removal tool, which searches for contami
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="readtype|fastq_r1_in"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="readtype|fastq_r1_in"] .ui-select .select2-container .select2-choice:visible'
@@ -65,7 +65,7 @@ Trimmomatic is an adapter/sequence trim/removal tool, which searches for contami
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="readtype|fastq_r2_in"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="readtype|fastq_r2_in"] .ui-select .select2-container .select2-choice:visible'
@@ -95,7 +95,7 @@ whose lenght falls below the provided threshold.'
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="operations_1|operation|name"]:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="operations_1|operation|name"] .ui-select .select2-container .select2-choice:visible'
@@ -147,7 +147,7 @@ dataset collections using <Trimmomatic</>.'
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="readtype|single_or_paired"]:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="readtype|single_or_paired"] .ui-select .select2-container .select2-choice:visible'
@@ -169,7 +169,7 @@ dataset collections using <Trimmomatic</>.'
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="readtype|fastq_r1_in"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="readtype|fastq_r1_in"] .ui-select .select2-container .select2-choice:visible'
@@ -191,7 +191,7 @@ dataset collections using <Trimmomatic</>.'
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="readtype|fastq_r2_in"] .ui-select .select2-container:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="readtype|fastq_r2_in"] .ui-select .select2-container .select2-choice:visible'
@@ -221,7 +221,7 @@ whose lenght falls below the provided threshold.'
 
   - title: '<b>Quality trimming</b>'
     element: '[tour_id="operations_1|operation|name"]:visible'
-    content: 'Open the dropdown menu.'
+    content: 'Open the dropdown.'
     placement: top
     onnextclick:
       - '[tour_id="operations_1|operation|name"] .ui-select .select2-container .select2-choice:visible'
