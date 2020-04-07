@@ -5,10 +5,17 @@ title_default: 'BS-Seq analysis (paired-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'
-    content: 'In this tour we will infer genome-wide methylation rates in a CpG context.<br>
-Here, we will leverage on two tools:<br>
-- <b>Samtools</b>, to extract uniquely mapped and properly paired sequences from aligned input data and mark duplicons<br>
-- <b>MethylDackel</b> to quantify the methylated reads of the provided CpG context file.'
+    content: 'In this tour we will infer genome-wide methylation rates in a CpG
+context.<br>
+Here, we will leverage on:<br>
+- <b>Samtools</b>, to extract uniquely mapped and properly paired sequences
+from aligned input data and mark duplicons<br>
+- <b>MethylDackel</b>, to quantify the methylated reads of the provided CpG
+context file.<br>
+- <b>Bedtools</b>, to extract the CpG methylation of potential promoters and
+calculate mean methylation levels<br>
+- <b>Join</b>, to join files on a shared column of values<br>
+- <b>AWK</b>, to parse and extract table columns depending on their values.'
     placement: bottom
 
 
