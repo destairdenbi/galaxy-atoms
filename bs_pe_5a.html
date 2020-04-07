@@ -21,10 +21,10 @@
   </style>
   <head>
     <meta charset="UTF-8">
-    <title>Samtools and MethylDackel</title>
+    <title>Samtools, MethylDackel, Bedtools, Join and AWK</title>
   </head>
   <body>
-    <h4>Samtools and MethylDackel</h4>
+    <h4>Samtools, MethylDackel, Bedtools, Join and AWK</h4>
     <FONT SIZE="2">
 <!--
       <h4><img src="./logo_destair.png" height="15" /> Tool Rating:</h4>
@@ -56,15 +56,29 @@
       <h4>Description:</h4>
       <p>
 <b>Samtools</b> is a library of utilities for post-processing alignments in the
-SAM format, <i>e.g</i> indexing, variant calling and alignment viewing.<br>
+SAM format, <i>e.g.</i> indexing, variant calling and alignment viewing.<br>
 <br>
 <b>MethylDackel</b> processes coordinate-sorted and indexed BAM/CRAM files that
 contain BS-Seq alignments, and extracts per-base methylation metrics.
-MethylDackel also requires an indexed reference genome in the FASTA format.
+MethylDackel also requires an indexed reference genome in the FASTA format.<br>
+<br>
+<b>Bedtools</b> is a library of utilities for genomic analysis, <i>e.g.</i>
+merge, count, complement and shuffle genomic intervals from multiple files in
+different file formats, such as BAM, BED, GFF/GTF, VCF.<br>
+<br>
+<b>Join</b> is a Galaxy utility which is used to join two files that share a
+column of values. While this operation can be performed using other tools, <i>
+e.g.</i> AWK, this tool provides a convenient graphical user interface, which
+makes it easy to use and parameterize.<br>
+<br>
+<b>AWK</b> is a programming language that can be used script operations such as
+parsing, editing, and extract table column values.
       </p>
       <h4>Reference:</h4>
       <a target="_blank" href="https://doi.org/10.1093/bioinformatics/btp352">Samtools</a>
       <a target="_blank" href="https://github.com/dpryan79/MethylDackel">MethylDackel</a>
+      <a target="_blank" href="https://doi.org/10.1093/bioinformatics/btq033">Bedtools</a>
+      <a target="_blank" href="https://www.gnu.org/software/gawk/manual/gawk.html">AWK</a>
     </FONT>
   </body>
 </html>
