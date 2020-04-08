@@ -7,6 +7,10 @@ This repository contains the de.STAIR atoms that are incorporated in the
 to assist users in the analysis of RNA-Seq and BS/RRBS-Seq data.
 
 - [How it works](#how-it-works)
+- [Contributed atoms](#contributed-atoms)
+  - [DGE analysis (single-end reads)](#dge-analysis-single-end-reads)
+  - [DGE analysis (paired-end reads)](#dge-analysis-paired-end-reads)
+  - [RRBS/BS-Seq analysis (paired-end reads)](#rrbsbs-seq-analysis-paired-end-reads)
 - [How to contribute](#how-to-contribute)
   - [Set up Docker](#set-up-docker)
   - [When some tools are missing](#when-some-tools-are-missing)
@@ -47,6 +51,164 @@ Where <sup>X,Y,Z,W</sup> are alternative parameterizations.
 Doing so, users can be informed about the availability of alternative
 strategies to carry out the desired analysis, and select the most appropriate
 atom within the context of their experimental setup.
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
+
+## Contributed atoms
+
+### DGE analysis (single-end reads)
+<table>
+  <tr align="center">
+    <td><b>Task</b></td>
+    <td colspan="2">0</td>
+    <td colspan="3">1</td>
+    <td colspan="2">2</td>
+    <td colspan="2">3</td>
+  </tr>
+  <tr align="center">
+    <td><b>Operation</b></td>
+    <td>Data<br>upload</td>
+    <td>Data<br>organization<br>(optional)</td>
+    <td>Quality<br>control</td>
+    <td>Data<br>preprocessing</td>
+    <td>Quality<br>re-check<br>(optional)</td>
+    <td>Genome<br>alignment</td>
+    <td>Output<br>sorting<br>(optional)</td>
+    <td>Transcript<br>quantification</td>
+    <td>Differential<br>gene expression</td>
+  </tr>
+  <tr align="center">
+    <td rowspan="4"><b>Atoms</b></td>
+    <td rowspan="4">Galaxy<br>data upload</td>
+    <td rowspan="4"></td>
+    <td rowspan="4">FastQC</td>
+    <td>Cutadapt</td>
+    <td></td>
+    <td>BWA</td>
+    <td></td>
+    <td rowspan="2">AWK, Infer Experiment, featureCounts</td>
+    <td rowspan="4">DESeq2</td>
+  </tr>
+  <tr align="center">
+    <td>PRINSEQ</td>
+    <td></td>
+    <td>HISAT2</td>
+    <td></td>
+  </tr>
+  <tr align="center">
+    <td>Trimmomatic</td>
+    <td></td>
+    <td>Segemehl</td>
+    <td></td>
+    <td rowspan="2">AWK, Infer Experiment, HTSeq-ount</td>
+  </tr>
+  <tr align="center">
+    <td>Trim Galore!</td>
+    <td></td>
+    <td>STAR</td>
+    <td></td>
+  </tr>
+</table>
+
+**Example**:
+Galaxy data upload --> FastQC --> Cutadapt --> Segemehl --> AWK, Infer Experiment, featureCounts --> DESeq2
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
+### DGE analysis (paired-end reads)
+<table>
+  <tr align="center">
+    <td><b>Task</b></td>
+    <td colspan="2">0</td>
+    <td colspan="3">1</td>
+    <td colspan="2">2</td>
+    <td colspan="2">3</td>
+  </tr>
+  <tr align="center">
+    <td><b>Operation</b></td>
+    <td>Data<br>upload</td>
+    <td>Data<br>organization<br>(optional)</td>
+    <td>Quality<br>control</td>
+    <td>Data<br>preprocessing</td>
+    <td>Quality<br>re-check<br>(optional)</td>
+    <td>Genome<br>alignment</td>
+    <td>Output<br>sorting<br>(optional)</td>
+    <td>Transcript<br>quantification</td>
+    <td>Differential<br>gene expression</td>
+  </tr>
+  <tr align="center">
+    <td rowspan="4"><b>Atoms</b></td>
+    <td rowspan="4">Galaxy<br>data upload</td>
+    <td rowspan="4">Galaxy<br>create collections</td>
+    <td rowspan="4">FastQC</td>
+    <td>Cutadapt</td>
+    <td></td>
+    <td>BWA</td>
+    <td></td>
+    <td rowspan="2">AWK, Infer Experiment, featureCounts</td>
+    <td rowspan="4">DESeq2</td>
+  </tr>
+  <tr align="center">
+    <td>PRINSEQ</td>
+    <td></td>
+    <td>HISAT2</td>
+    <td></td>
+  </tr>
+  <tr align="center">
+    <td>Trimmomatic</td>
+    <td></td>
+    <td>STAR</td>
+    <td></td>
+    <td rowspan="2">AWK, Infer Experiment, HTSeq-ount</td>
+  </tr>
+  <tr align="center">
+    <td>Trim Galore!</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+**Example**:
+Galaxy data upload --> Galaxy create collections --> FastQC --> PRINSEQ --> STAR --> AWK, Infer Experiment, featureCounts --> DESeq2
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
+### RRBS/BS-Seq analysis (paired-end reads)
+<table>
+  <tr align="center">
+    <td><b>Task</b></td>
+    <td colspan="2">0</td>
+    <td colspan="3">1</td>
+    <td colspan="2">2</td>
+    <td colspan="2">3</td>
+    <td>4</td>
+  </tr>
+  <tr align="center">
+    <td><b>Operation</b></td>
+    <td>Data<br>upload</td>
+    <td>Data<br>organization<br>(optional)</td>
+    <td>Quality<br>control</td>
+    <td>Adapter<br>clipping</td>
+    <td>Quality<br>re-check<br>(optional)</td>
+    <td>Quality<br>trimming</td>
+    <td>Quality<br>re-check<br>(optional)</td>
+    <td>Genome<br>alignment</td>
+    <td>Output<br>sorting<br>(optional)</td>
+    <td>Quantification of<br>methylated reads</td>
+  </tr>
+  <tr align="center">
+    <td><b>Atoms</b></td>
+    <td>Galaxy<br>data upload</td>
+    <td>Galaxy<br>create collections</td>
+    <td>FastQC</td>
+    <td>Cutadapt</td>
+    <td></td>
+    <td>Trimmomatic</td>
+    <td></td>
+    <td>Bismark</td>
+    <td></td>
+    <td rowspan="2">Samtools, MethylDackel, Bedtools</td>
+  </tr>
+</table>
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 
