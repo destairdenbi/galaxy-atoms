@@ -8,6 +8,9 @@ to assist users in the analysis of RNA-Seq and BS/RRBS-Seq data.
 
 - [How it works](#how-it-works)
 - [Contributed atoms](#contributed-atoms)
+  - [DGE analysis (single-end reads)](#dge-analysis-single-end-reads)
+  - [DGE analysis (paired-end reads)](#dge-analysis-paired-end-reads)
+  - [RRBS/BS-Seq analysis (paired-end reads)](#rrbsbs-seq-analysis-paired-end-reads)
 - [How to contribute](#how-to-contribute)
   - [Set up Docker](#set-up-docker)
   - [When some tools are missing](#when-some-tools-are-missing)
@@ -51,9 +54,9 @@ atom within the context of their experimental setup.
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 
-# Contributed atoms
+## Contributed atoms
 
-DGE analysis (single-end reads)
+### DGE analysis (single-end reads)
 <table>
   <tr align="center">
     <td><b>Task</b></td>
@@ -106,8 +109,9 @@ DGE analysis (single-end reads)
     <td></td>
   </tr>
 </table>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
-DGE analysis (paired-end reads)
+### DGE analysis (paired-end reads)
 <table>
   <tr align="center">
     <td><b>Task</b></td>
@@ -160,8 +164,9 @@ DGE analysis (paired-end reads)
     <td></td>
   </tr>
 </table>
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
-RRBS/BS-Seq analysis (paired-end reads)
+### RRBS/BS-Seq analysis (paired-end reads)
 <table>
   <tr align="center">
     <td><b>Task</b></td>
