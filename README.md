@@ -54,27 +54,31 @@ atom within the context of their experimental setup.
 # Contributed atoms
 
 DGE analysis (single-end reads)
-
 <table>
   <tr align="center">
     <td><b>Task</b></td>
+    <td colspan="2">0</td>
     <td colspan="3">1</td>
     <td colspan="2">2</td>
     <td colspan="2">3</td>
   </tr>
   <tr align="center">
     <td><b>Operation</b></td>
-    <td>Quality control</td>
-    <td>Data preprocessing</td>
-    <td>Quality re-check (optional)</td>
-    <td>Genome alignment</td>
-    <td>Output sorting (optional)</td>
-    <td>Transcript quantification</td>
-    <td>Differential gene expression</td>
+    <td>Data<br>upload</td>
+    <td>Data<br>organization<br>(optional)</td>
+    <td>Quality<br>control</td>
+    <td>Data<br>preprocessing</td>
+    <td>Quality<br>re-check<br>(optional)</td>
+    <td>Genome<br>alignment</td>
+    <td>Output<br>sorting<br>(optional)</td>
+    <td>Transcript<br>quantification</td>
+    <td>Differential<br>gene expression</td>
   </tr>
   <tr align="center">
     <td rowspan="4"><b>Atoms</b></td>
-    <td>FastQC</td>
+    <td rowspan="4">Galaxy<br>data upload</td>
+    <td rowspan="4"></td>
+    <td rowspan="4">FastQC</td>
     <td>Cutadapt</td>
     <td></td>
     <td>BWA</td>
@@ -83,14 +87,12 @@ DGE analysis (single-end reads)
     <td rowspan="4">DESeq2</td>
   </tr>
   <tr align="center">
-    <td>FastQC</td>
     <td>PRINSEQ</td>
     <td></td>
     <td>HISAT2</td>
     <td></td>
   </tr>
   <tr align="center">
-    <td>FastQC</td>
     <td>Trimmomatic</td>
     <td></td>
     <td>Segemehl</td>
@@ -98,7 +100,6 @@ DGE analysis (single-end reads)
     <td rowspan="2">HTSeq-ount</td>
   </tr>
   <tr align="center">
-    <td>FastQC</td>
     <td>Trim Galore!</td>
     <td></td>
     <td>STAR</td>
