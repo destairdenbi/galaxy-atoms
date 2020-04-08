@@ -160,6 +160,44 @@ DGE analysis (paired-end reads)
     <td></td>
   </tr>
 </table>
+
+RRBS/BS-Seq analysis (paired-end reads)
+<table>
+  <tr align="center">
+    <td><b>Task</b></td>
+    <td colspan="2">0</td>
+    <td colspan="3">1</td>
+    <td colspan="2">2</td>
+    <td colspan="2">3</td>
+    <td>4</td>
+  </tr>
+  <tr align="center">
+    <td><b>Operation</b></td>
+    <td>Data<br>upload</td>
+    <td>Data<br>organization<br>(optional)</td>
+    <td>Quality<br>control</td>
+    <td>Adapter<br>clipping</td>
+    <td>Quality<br>re-check<br>(optional)</td>
+    <td>Quality<br>trimming</td>
+    <td>Quality<br>re-check<br>(optional)</td>
+    <td>Genome<br>alignment</td>
+    <td>Output<br>sorting<br>(optional)</td>
+    <td>Quantification of<br>methylated reads</td>
+  </tr>
+  <tr align="center">
+    <td><b>Atoms</b></td>
+    <td>Galaxy<br>data upload</td>
+    <td>Galaxy<br>create collections</td>
+    <td>FastQC</td>
+    <td>Cutadapt</td>
+    <td></td>
+    <td>Trimmomatic</td>
+    <td></td>
+    <td>Bismark</td>
+    <td></td>
+    <td rowspan="2">Samtools, MethylDackel, Bedtools</td>
+  </tr>
+</table>
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 
