@@ -111,7 +111,7 @@ atom within the context of their experimental setup.
 </table>
 
 **Example**:
-- Galaxy data upload --> FastQC --> Cutadapt --> Segemehl --> AWK, Infer Experiment, featureCounts --> DESeq2
+Galaxy data upload --> FastQC --> Cutadapt --> Segemehl --> AWK, Infer Experiment, featureCounts --> DESeq2
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### DGE analysis (paired-end reads)
@@ -169,7 +169,7 @@ atom within the context of their experimental setup.
 </table>
 
 **Example**:
-- Galaxy data upload --> Galaxy create collections --> FastQC --> PRINSEQ --> STAR --> AWK, Infer Experiment, featureCounts --> DESeq2
+Galaxy data upload --> Galaxy create collections --> FastQC --> PRINSEQ --> STAR --> AWK, Infer Experiment, featureCounts --> DESeq2
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### RRBS/BS-Seq analysis (paired-end reads)
