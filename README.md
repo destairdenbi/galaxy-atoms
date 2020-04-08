@@ -86,7 +86,7 @@ atom within the context of their experimental setup.
     <td></td>
     <td>BWA</td>
     <td></td>
-    <td rowspan="2">featureCounts</td>
+    <td rowspan="2">AWK, Infer Experiment, featureCounts</td>
     <td rowspan="4">DESeq2</td>
   </tr>
   <tr align="center">
@@ -100,7 +100,7 @@ atom within the context of their experimental setup.
     <td></td>
     <td>Segemehl</td>
     <td></td>
-    <td rowspan="2">HTSeq-ount</td>
+    <td rowspan="2">AWK, Infer Experiment, HTSeq-ount</td>
   </tr>
   <tr align="center">
     <td>Trim Galore!</td>
@@ -109,6 +109,9 @@ atom within the context of their experimental setup.
     <td></td>
   </tr>
 </table>
+
+**Example**:
+- Galaxy data upload --> FastQC --> Cutadapt --> Segemehl --> AWK, Infer Experiment, featureCounts --> DESeq2
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### DGE analysis (paired-end reads)
@@ -135,13 +138,13 @@ atom within the context of their experimental setup.
   <tr align="center">
     <td rowspan="4"><b>Atoms</b></td>
     <td rowspan="4">Galaxy<br>data upload</td>
-    <td rowspan="4"></td>
+    <td rowspan="4">Galaxy<br>create collections</td>
     <td rowspan="4">FastQC</td>
     <td>Cutadapt</td>
     <td></td>
     <td>BWA</td>
     <td></td>
-    <td rowspan="2">featureCounts</td>
+    <td rowspan="2">AWK, Infer Experiment, featureCounts</td>
     <td rowspan="4">DESeq2</td>
   </tr>
   <tr align="center">
@@ -155,7 +158,7 @@ atom within the context of their experimental setup.
     <td></td>
     <td>STAR</td>
     <td></td>
-    <td rowspan="2">HTSeq-ount</td>
+    <td rowspan="2">AWK, Infer Experiment, HTSeq-ount</td>
   </tr>
   <tr align="center">
     <td>Trim Galore!</td>
@@ -164,6 +167,9 @@ atom within the context of their experimental setup.
     <td></td>
   </tr>
 </table>
+
+**Example**:
+- Galaxy data upload --> Galaxy create collections --> FastQC --> PRINSEQ --> STAR --> AWK, Infer Experiment, featureCounts --> DESeq2
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 ### RRBS/BS-Seq analysis (paired-end reads)
