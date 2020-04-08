@@ -7,6 +7,7 @@ This repository contains the de.STAIR atoms that are incorporated in the
 to assist users in the analysis of RNA-Seq and BS/RRBS-Seq data.
 
 - [How it works](#how-it-works)
+- [Contributed atoms](#contributed-atoms)
 - [How to contribute](#how-to-contribute)
   - [Set up Docker](#set-up-docker)
   - [When some tools are missing](#when-some-tools-are-missing)
@@ -47,6 +48,63 @@ Where <sup>X,Y,Z,W</sup> are alternative parameterizations.
 Doing so, users can be informed about the availability of alternative
 strategies to carry out the desired analysis, and select the most appropriate
 atom within the context of their experimental setup.
+<p align="right"><a href="#top">&#x25B2; back to top</a></p>
+
+
+# Contributed atoms
+
+DGE analysis (single-end reads)
+
+<table>
+  <tr align="center">
+    <td><b>Task</b></td>
+    <td colspan="3">1</td>
+    <td colspan="2">2</td>
+    <td colspan="2">3</td>
+  </tr>
+  <tr align="center">
+    <td><b>Operation</b></td>
+    <td>Quality control</td>
+    <td>Data preprocessing</td>
+    <td>Quality re-check (optional)</td>
+    <td>Genome alignment</td>
+    <td>Output sorting (optional)</td>
+    <td>Transcript quantification</td>
+    <td>Differential gene expression</td>
+  </tr>
+  <tr align="center">
+    <td rowspan="4"><b>Atoms</b></td>
+    <td>FastQC</td>
+    <td>Cutadapt</td>
+    <td></td>
+    <td>BWA</td>
+    <td></td>
+    <td rowspan="2">featureCounts</td>
+    <td rowspan="4">DESeq2</td>
+  </tr>
+  <tr align="center">
+    <td>FastQC</td>
+    <td>PRINSEQ</td>
+    <td></td>
+    <td>HISAT2</td>
+    <td></td>
+  </tr>
+  <tr align="center">
+    <td>FastQC</td>
+    <td>Trimmomatic</td>
+    <td></td>
+    <td>Segemehl</td>
+    <td></td>
+    <td rowspan="2">HTSeq-ount</td>
+  </tr>
+  <tr align="center">
+    <td>FastQC</td>
+    <td>Trim Galore!</td>
+    <td></td>
+    <td>STAR</td>
+    <td></td>
+  </tr>
+</table>
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 
