@@ -196,19 +196,28 @@ Galaxy data upload --> Galaxy create collections --> FastQC --> PRINSEQ --> STAR
     <td>Quantification of<br>methylated reads</td>
   </tr>
   <tr align="center">
-    <td><b>Atoms</b></td>
-    <td>Galaxy<br>data upload</td>
-    <td>Galaxy<br>create collections</td>
-    <td>FastQC</td>
-    <td>Cutadapt</td>
+    <td rowspan="2"><b>Atoms</b></td>
+    <td rowspan="2">Galaxy<br>data upload</td>
+    <td rowspan="2">Galaxy<br>create collections</td>
+    <td rowspan="2">FastQC</td>
+    <td rowspan="2">Cutadapt</td>
     <td></td>
-    <td>Trimmomatic</td>
+    <td>PRINSEQ</td>
     <td></td>
-    <td>Bismark</td>
+    <td rowspan="2">Bismark</td>
     <td></td>
     <td rowspan="2">Samtools, MethylDackel, Bedtools</td>
   </tr>
+  <tr align="center">
+    <td></td>
+    <td>Trimmomatic</td>
+    <td></td>
+    <td></td>
+  </tr>
 </table>
+
+**Example**:
+Galaxy data upload --> Galaxy create collections --> FastQC --> Cutadapt --> Trimmomatic --> Bismark --> Samtools, MethylDackel, Bedtools
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 
