@@ -1,0 +1,321 @@
+id: bs_pe_3b
+name: 'BS-Seq analysis'
+description: 'Quality trimming with PRINSEQ'
+title_default: 'BS-Seq analysis'
+steps:
+  - title: '<b>Outline</b>'
+    element: '#masthead:visible'
+    content: 'In this tour we will perform the quality trimming of paired-end
+BS-Seq data.<br>
+Quality trimming analysis is necessary to remove low quality sequence that might
+bias the interpretation of results.<br>
+Here, we will leverage on <b>PRINSEQ</b>.'
+    placement: bottom
+
+  - title: '<b>Quality trimming</b>'
+    element: '#tool-search-query:visible'
+    content: 'Search for the <b>PRINSEQ</b> tool.<br>
+PRINSEQ searches for low quality score reads, and ultimately removes them to
+improve the overall quality of the input datasets.'
+    placement: right
+    textinsert: prinseq
+    onnextclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fprinseq%2Fprinseq%2F0.20.4"]
+
+# trim ctr dataset collections
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="seq_type|seq_type_opt"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="seq_type|seq_type_opt"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired-end</b>.'
+    textinsert: 'Paired-end'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="seq_type|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="seq_type|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="seq_type|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="seq_type|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>noadapter ctr R1</b>.'
+    textinsert: 'noadapter ctr R1'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="seq_type|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="seq_type|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="seq_type|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="seq_type|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>noadapter ctr R2</b>.'
+    textinsert: 'noadapter ctr R2'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="filter_treatments|length_filter_treatments|min_length_filter_treatments|min_length_filter_treatment_value"] .ui-input:visible'
+    content: 'The <b>Minimum length threshold to conserve sequences</b>
+indicates the allowed length (in nucleotides) that a sequence must have after
+quality threshold trimming.<br>
+It is generally recommended to keep only those sequences whose length indicates
+enought sequence information content for downstream analyses.<br>
+Specify <b>20</b>.'
+    textinsert: '20'
+    placement: top
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="filter_treatments|quality_filter_treatments|mean_quality_filter_treatments|min_mean_quality_filter_treatments|min_mean_quality_filter_treatment_value"] .ui-input:visible'
+    content: 'The <b>Minimum mean score threshold to conserve sequences</b>
+indicates the allowed base-quality.<br>
+It is generally recommended to keep only those nucleotides whose quality is
+above 20.<br>
+Specify <b>20</b>.'
+    textinsert: '20'
+    placement: top
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options:visible'
+    content: 'Select the sliding window approach to use the <b>Mean</b>
+calculation.'
+    placement: top
+    onnextclick:
+      - '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options .ui-options-list > :nth-child(2) input'
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|window_quality_trimming_treatments"] .ui-input:visible'
+    content: 'Specify <b>4</b> as the sliding window size.'
+    textinsert: '4'
+    placement: top
+
+  - title: '<b>Quality trimming</b>'
+    element: '#execute:visible'
+    placement: top
+    content: 'With the current parametrisation, PRINSEQ will:<br>
+- Trim low-quality score sequence ends<br>
+- Discard reads whose length became shorter than 20 bp.<br>
+For all remaining parametrisation options, we will use the provided default
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
+    onnextclick:
+      - '#execute:visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '#right:visible'
+    content: 'PRINSEQ processing has begun, and the results are loading in the
+history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("PRINSEQ")'
+        count: 1
+
+# trim treat dataset collections
+
+  - title: '<b>Quality trimming</b>'
+    element: '#tool-search-query:visible'
+    content: 'Analogously, we need to perform quality control on the treated
+dataset collections using <b>PRINSEQ</b>.'
+    placement: right
+    textinsert: prinseq
+    onnextclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fprinseq%2Fprinseq%2F0.20.4"]'
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="seq_type|seq_type_opt"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="seq_type|seq_type_opt"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired-end</b>.'
+    textinsert: 'Paired-end'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="seq_type|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="seq_type|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="seq_type|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="seq_type|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>noadapter treat R1</b>.'
+    textinsert: 'noadapter treat R1'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="seq_type|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="seq_type|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="seq_type|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="seq_type|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Quality trimming</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>noadapter treat R2</b>.'
+    textinsert: 'noadapter treat R2'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="filter_treatments|length_filter_treatments|min_length_filter_treatments|min_length_filter_treatment_value"] .ui-input:visible'
+    content: 'The <b>Minimum length threshold to conserve sequences</b>
+indicates the allowed length (in nucleotides) that a sequence must have after
+quality threshold trimming.<br>
+It is generally recommended to keep only those sequences whose length indicates
+enought sequence information content for downstream analyses.<br>
+Specify <b>20</b>.'
+    textinsert: '20'
+    placement: top
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="filter_treatments|quality_filter_treatments|mean_quality_filter_treatments|min_mean_quality_filter_treatments|min_mean_quality_filter_treatment_value"] .ui-input:visible'
+    content: 'The <b>Minimum mean score threshold to conserve sequences</b>
+indicates the allowed base-quality.<br>
+It is generally recommended to keep only those nucleotides whose quality is
+above 20.<br>
+Specify <b>20</b>.'
+    textinsert: '20'
+    placement: top
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options:visible'
+    content: 'Select the sliding window approach to use the <b>Mean</b>
+calculation.'
+    placement: top
+    onnextclick:
+      - '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options .ui-options-list > :nth-child(2) input'
+
+  - title: '<b>Quality trimming</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|window_quality_trimming_treatments"] .ui-input:visible'
+    content: 'Specify <b>4</b> as the sliding window size.'
+    textinsert: '4'
+    placement: top
+
+  - title: '<b>Quality trimming</b>'
+    element: '#execute:visible'
+    placement: top
+    content: 'With the current parametrisation, PRINSEQ will:<br>
+- Trim low-quality score sequence ends<br>
+- Discard reads whose length became shorter than 20 bp.<br>
+For all remaining parametrisation options, we will use the provided default
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
+    onnextclick:
+      - '#execute:visible'
+
+  - title: '<b>Quality trimming</b>'
+    element: '#right:visible'
+    content: 'PRINSEQ processing has begun, and the results are loading in the
+history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items .name:contains("PRINSEQ")'
+        count: 12
+
+  - title: '<b>Quality trimming</b>'
+    element: '#masthead:visible'
+    content: 'The quality control and data preprocessing analysis has been completed.'
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
+        count: 0
+
+# rename collections
+
+  - title: '<b>Rename datasets</b>'
+    element: '#right'
+    placement: left
+    content: 'To keep track of the data being processed, we now rename these
+collections.'
+    rename:
+      - element: '#current-history-panel .list-items > :nth-child(1):visible'
+        name: 'rejected treat R2'
+      - element: '#current-history-panel .list-items > :nth-child(2):visible'
+        name: 'singletons treat R2'
+      - element: '#current-history-panel .list-items > :nth-child(3):visible'
+        name: 'trimmed treat R2'
+      - element: '#current-history-panel .list-items > :nth-child(4):visible'
+        name: 'rejected treat R1'
+      - element: '#current-history-panel .list-items > :nth-child(5):visible'
+        name: 'singletons treat R1'
+      - element: '#current-history-panel .list-items > :nth-child(6):visible'
+        name: 'trimmed treat R1'
+      - element: '#current-history-panel .list-items > :nth-child(7):visible'
+        name: 'rejected ctr R2'
+      - element: '#current-history-panel .list-items > :nth-child(8):visible'
+        name: 'singletons ctr R2'
+      - element: '#current-history-panel .list-items > :nth-child(9):visible'
+        name: 'trimmed ctr R2'
+      - element: '#current-history-panel .list-items > :nth-child(10):visible'
+        name: 'rejected ctr R1'
+      - element: '#current-history-panel .list-items > :nth-child(11):visible'
+        name: 'singletons ctr R1'
+      - element: '#current-history-panel .list-items > :nth-child(12):visible'
+        name: 'trimmed ctr R1'
+    autoclick:
+      - '#history-refresh-button'
+
+  - title: '<b>Rename datasets</b>'
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("rejected treat R2")'
+        count: 1
+    element: '#right'
+    placement: left
+    content: 'The collections have been renamed.'
+
+  - title: '<b>Quality trimming</b>'
+    element: '#masthead:visible'
+    content: 'You successfully completed this Galaxy atom.'
+    placement: bottom
