@@ -5,37 +5,54 @@ title_default: 'BS-Seq analysis'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'
-    content: 'In this tour we will align MethylC sequenced reads against a reference genome. This represents a necessary task for the quantification of methilated Cytosines in genomic CpG, CHG and CHH contexts which can be later used to infer and evaluate e.g. enhancer promoter or gene body methylation rates.<br>
+    content: 'In this tour we will align MethylC sequenced reads against a
+reference genome. This represents a necessary task for the quantification of
+methilated Cytosines in genomic CpG, CHG and CHH contexts which can be later
+used to infer and evaluate <i>e.g.</i> enhancer promoter or gene body
+methylation rates.<br>
 Here, we will leverage on <b>Bismark</b>.'
     placement: bottom
+
+# align ctr dataset collections
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query:visible'
     content: 'Search for the <b>Bismark Mapper</b> tool.<br>
-Bismark aligns the preprocessed sequences of control samples against the provided reference genome.'
+Bismark aligns the preprocessed sequences of control samples against the
+provided reference genome.'
     placement: right
     textinsert: bismark mapper
     postclick:
       - >-
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fbismark%2Fbismark_bowtie2%2F0.22.1%2Bgalaxy1"]
 
-
-
-# bismark params
-
-
-
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '[tour_id="refGenomeSource|genomeSource"]:visible'
-    placement: bottom
-    content: '<h4>Select: <b>Generate Bismark indexes from Genome (fasta) in your Galaxy history</b></h4>'
-    pointer: true
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: '[tour_id="singlePaired|sPaired"]:visible'
+    element: '[tour_id="refGenomeSource|genomeSource"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
     placement: top
-    content: '<h4>Select: <b>Paired-end</b></h4>'
-    pointer: true
+    onnextclick:
+      - '[tour_id="refGenomeSource|genomeSource"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select: <b>Generate Bismark indexes from Genome (fasta) in your Galaxy history</b>.'
+    textinsert: 'Generate Bismark indexes from Genome (fasta) in your Galaxy history'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select: <b>Paired-end</b>.'
+    textinsert: 'Paired-end'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="singlePaired|mate_list_0|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
@@ -43,12 +60,19 @@ Bismark aligns the preprocessed sequences of control samples against the provide
     placement: bottom
     onnextclick:
       - '[tour_id="singlePaired|mate_list_0|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
-
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '[tour_id="singlePaired|mate_list_0|input_mate1"]:visible'
+    element: '[tour_id="singlePaired|mate_list_0|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
     placement: top
-    content: '<h4>Select: <b>trimmed.ctr.R1</b></h4>'
-    pointer: true
+    onnextclick:
+    - '[tour_id="singlePaired|mate_list_0|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select: <b>trimmed ctr R1</b>.'
+    textinsert: 'trimmed ctr R1'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="singlePaired|mate_list_0|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
@@ -56,37 +80,44 @@ Bismark aligns the preprocessed sequences of control samples against the provide
     placement: bottom
     onnextclick:
       - '[tour_id="singlePaired|mate_list_0|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
-
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '[tour_id="singlePaired|mate_list_0|input_mate2"]:visible'
+    element: '[tour_id="singlePaired|mate_list_0|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
     placement: top
-    content: '<h4>Select: <b>trimmed.ctr.R2</b></h4>'
-    pointer: true
+    onnextclick:
+    - '[tour_id="singlePaired|mate_list_0|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select: <b>trimmed ctr R2</b>.'
+    textinsert: 'trimmed ctr R2'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#execute:visible'
-    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
-However, for further information, please refer to the manual provided below the tool box.'
+    content: 'For all remaining parametrisation options, we will use the
+provided default settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
     placement: top
     postclick:
       - '#execute:visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right:visible'
-    content: 'Bismark processing has begun, and the results are loading in your history.'
+    content: 'Bismark processing has begun, and the results are loading in the
+history.'
     placement: left
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Bismark Mapper")'
 
-
-
-# now for treatment
-
-
+# align treat dataset collections
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#tool-search-query:visible'
-    content: 'Meanwhile align the preprocessed treatment samples against the provided reference genome.'
+    content: 'Analogously, we need to align the treated dataset collections
+using <b>Bismark</b>.'
     placement: right
     textinsert: bismark mapper
     postclick:
@@ -94,16 +125,32 @@ However, for further information, please refer to the manual provided below the 
         a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Fbismark%2Fbismark_bowtie2%2F0.22.1%2Bgalaxy1"]
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '[tour_id="refGenomeSource|genomeSource"]:visible'
-    placement: bottom
-    content: '<h4>Select: <b>Generate Bismark indexes from Genome (fasta) in your Galaxy history</b></h4>'
-    pointer: true
+    element: '[tour_id="refGenomeSource|genomeSource"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="refGenomeSource|genomeSource"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select: <b>Generate Bismark indexes from Genome (fasta) in your Galaxy history</b>.'
+    textinsert: 'Generate Bismark indexes from Genome (fasta) in your Galaxy history'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '[tour_id="singlePaired|sPaired"]:visible'
+    element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
     placement: top
-    content: '<h4>Select: <b>Paired-end</b></h4>'
-    pointer: true
+    onnextclick:
+      - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select: <b>Paired-end</b>.'
+    textinsert: 'Paired-end'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="singlePaired|mate_list_0|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
@@ -111,12 +158,19 @@ However, for further information, please refer to the manual provided below the 
     placement: bottom
     onnextclick:
       - '[tour_id="singlePaired|mate_list_0|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
-
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '[tour_id="singlePaired|mate_list_0|input_mate1"]:visible'
+    element: '[tour_id="singlePaired|mate_list_0|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
     placement: top
-    content: '<h4>Select: <b>trimmed.treat.R1</b></h4>'
-    pointer: true
+    onnextclick:
+    - '[tour_id="singlePaired|mate_list_0|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select: <b>trimmed treat R1</b>.'
+    textinsert: 'trimmed treat R1'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '[tour_id="singlePaired|mate_list_0|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
@@ -124,37 +178,42 @@ However, for further information, please refer to the manual provided below the 
     placement: bottom
     onnextclick:
       - '[tour_id="singlePaired|mate_list_0|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
-
   - title: '<b>Map sequences against a reference genome</b>'
-    element: '[tour_id="singlePaired|mate_list_0|input_mate2"]:visible'
+    element: '[tour_id="singlePaired|mate_list_0|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
     placement: top
-    content: '<h4>Select: <b>trimmed.treat.R2</b></h4>'
-    pointer: true
+    onnextclick:
+    - '[tour_id="singlePaired|mate_list_0|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<b>Map sequences against a reference genome</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select: <b>trimmed treat R2</b>.'
+    textinsert: 'trimmed treat R2'
+    placement: left
+    onloadclick:
+      - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#execute:visible'
-    content: 'For all remaining parametrisation options, we will use the provided default settings.<br>
-However, for further information, please refer to the manual provided below the tool box.'
+    content: 'For all remaining parametrisation options, we will use the
+provided default settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
     placement: top
     postclick:
       - '#execute:visible'
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#right:visible'
-    content: 'Bismark processing has begun, and the results are loading in your history.'
+    content: 'Bismark processing has begun, and the results are loading in the
+history.'
     placement: left
     onloadwait:
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Bismark Mapper")'
 
-
-
-# wait and tag
-
-
-
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#masthead:visible'
-    content: 'The Mapping tasks have been completed.'
+    content: 'The alignment of paired-end sequences against a reference genome
+has been completed.'
     placement: bottom
     onloadwait:
       - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
@@ -166,45 +225,32 @@ However, for further information, please refer to the manual provided below the 
       - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
 
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: '#current-history-panel .list-items .name:contains("mapped reads"):first'
-    content: 'To keep track of the data being processed, we will use tags (1/2).'
-    placement: top
-    onnextclick:
-      - '#current-history-panel .list-items .name:contains("mapped reads"):first'
+# rename collections
 
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: '#current-history-panel .list-panel .controls .tags-display:visible'
-    content: '<h4>Click and enter: <b>mapped.treat</b></h4>'
-    placement: bottom
-    pointer: true
+  - title: '<b>Rename datasets</b>'
+    element: '#right'
+    placement: left
+    content: 'To keep track of the data being processed, we now rename these
+collections.'
+    rename:
+      - element: '#current-history-panel .list-items > :nth-child(1):visible'
+        name: 'mapped treat'
+      - element: '#current-history-panel .list-items > :nth-child(2):visible'
+        name: 'mapped treat report'
+      - element: '#current-history-panel .list-items > :nth-child(3):visible'
+        name: 'mapped ctr'
+      - element: '#current-history-panel .list-items > :nth-child(4):visible'
+        name: 'mapped ctr report'
+    autoclick:
+      - '#history-refresh-button'
 
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
-    content: 'Return to history main view'
-    placement: bottom
-    onnextclick:
-      - '#current-history-panel .list-panel .controls .navigation .back:visible'
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: '#current-history-panel .list-items .name:contains("mapped reads"):last'
-    content: 'To keep track of the data being processed, we will use tags (2/2).'
-    placement: top
-    onnextclick:
-      - '#current-history-panel .list-items .name:contains("mapped reads"):last'
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: '#current-history-panel .list-panel .controls .tags-display:visible'
-    content: '<h4>Click and enter: <b>mapped.ctr</b></h4>'
-    placement: bottom
-    pointer: true
-
-  - title: '<b>Map sequences against a reference genome</b>'
-    element: '#current-history-panel .list-panel .controls .navigation .back:visible'
-    content: 'Return to history main view'
-    placement: bottom
-    onnextclick:
-      - '#current-history-panel .list-panel .controls .navigation .back:visible'
+  - title: '<b>Rename datasets</b>'
+    element: '#right'
+    placement: left
+    content: 'The collections have been renamed.'
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("mapped treat")'
+        count: 1
 
   - title: '<b>Map sequences against a reference genome</b>'
     element: '#masthead:visible'
