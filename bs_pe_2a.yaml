@@ -1,7 +1,7 @@
 id: bs_pe_2a
-name: 'BS-Seq analysis'
+name: 'BS-Seq analysis (paired-end reads)'
 description: 'Quality control and adapter clipping with FastQC and Cutadapt'
-title_default: 'BS-Seq analysis'
+title_default: 'BS-Seq analysis (paired-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'
