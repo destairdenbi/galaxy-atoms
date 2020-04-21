@@ -7,10 +7,12 @@ steps:
     element: '#masthead:visible'
     content: 'In this tour we will perform quality trimming of paired-end
 BS-Seq data.<br>
-QUality trimming analysis is necessary to remove low quality sequence that
+Quality trimming analysis is necessary to remove low quality sequence that
 ultimately bias the interpretation of results.<br>
 Here, we will leverage on <b>Trimmomatic</b>.'
     placement: bottom
+
+# quality trimming for the ctr dataset collections
 
   - title: '<b>Quality trimming</b>'
     element: '#tool-search-query:visible'
@@ -138,7 +140,7 @@ your history.'
       - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Trimmomatic")'
         count: 1
 
-# redo for treat
+# quality trimming for the treat dataset collections
 
   - title: '<b>Quality trimming</b>'
     element: '#tool-search-query:visible'
@@ -264,9 +266,7 @@ the history.'
       - element: '#current-history-panel .list-items .name:contains("Trimmomatic")'
         count: 8
 
-# rename collections
-
-  - title: '<b>Rename datasets</b>'
+  - title: '<b>Quality trimming</b>'
     element: '#masthead:visible'
     content: 'The quality trimming has been completed.'
     placement: bottom
@@ -279,6 +279,8 @@ the history.'
         count: 0
       - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
+
+# rename dataset collections
 
   - title: '<b>Rename datasets</b>'
     element: '#right'
