@@ -99,8 +99,8 @@ These comprise:<br>
 
   - title: '<b>Create a collection</b>'
     element: '#right:visible'
-    content: 'Multiple datasets can be grouped in a collection. This is useful
-for a better readability and to avoid errors during the analysis:<br>
+    content: 'Multiple datasets can be grouped in collections. This is useful
+for better readability and to avoid errors during the analysis:<br>
 - Save time running the same operation on multiple datasets<br>
 - Rename the collection instead of renaming every single file<br>
 - Keep the history as clean as possible.<br>
