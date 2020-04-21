@@ -1,17 +1,19 @@
 id: bs_pe_1a
-name: 'BS-Seq analysis'
+name: 'BS-Seq analysis (paired-end reads)'
 description: 'Data upload'
-title_default: 'BS-Seq analysis'
+title_default: 'BS-Seq analysis (paired-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'
-    content: 'In this tour we will upload NGS data to be analysed for methylation levels.<br>
-Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy framework.'
+    content: 'In this tour we will upload NGS data to be analysed for
+methylation levels.<br>
+Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy
+framework.'
     placement: bottom
 
   - title: '<b>Import the sequence datasets</b>'
     element: '.fa.fa-upload:visible'
-    content: Imports data into Galaxy.
+    content: 'Import data into Galaxy.'
     placement: right
     onnextclick:
       - '.fa.fa-upload:visible'
@@ -21,17 +23,17 @@ Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy fra
 
   - title: '<b>Import the sequence datasets</b>'
     element: >-
-      .tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(5)
-      > .title
-    content: 'From remote source'
+      .tab-pane.active > .upload-view-default > .upload-buttons > :nth-child(5) > .title
+    content: 'Fetch from a remote source'
     placement: bottom
     onloadclick:
       - '.tab-pane.active .upload-view-default .upload-buttons > :nth-child(3) .title:visible'
     onnextclick:
       - '.tab-pane.active .upload-view-default .upload-buttons > :nth-child(5) .title:visible'
+
   - title: '<b>Import the sequence datasets</b>'
-    element: .upload-text-content
-    content: 'Enter URLs'
+    element: '.upload-text-content'
+    content: 'Enter URLs.'
     placement: bottom
     textinsert: |
       https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/PE/rrbs_ctr.R1.N1.fastq.gz
@@ -55,13 +57,14 @@ Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy fra
       https://github.com/destairdenbi/training-material/raw/master/raw_data/rrbs/hg38.promoter.bed
   - title: '<b>Import the sequence datasets</b>'
     element: '#btn-start:visible'
-    content: Start the upload.
+    content: 'Start the upload.'
     placement: bottom
     onnextclick:
       - '#btn-start:visible'
+
   - title: '<b>Import the sequence datasets</b>'
     element: '#btn-close:visible'
-    content: Close the dialog.
+    content: 'Close the dialog.'
     placement: bottom
     onnextclick:
       - '#btn-close:visible'
@@ -71,14 +74,13 @@ Here, we will leverage on the <b>Data upload</b> tool provided by the Galaxy fra
 
   - title: '<b>Import the sequence datasets</b>'
     element: '#right:visible'
-    content: 'The datasets are uploading in your history.<br>
+    content: 'The datasets are uploading in the history.<br>
 These comprise:<br>
 - Eight datasets collecting read mate-pairs at the 1st Trimester (control)<br>
 - Eight datasets collecting read mate-pairs at the 3rd Trimester (treatment)<br>
 - The reference genome and annotation<br>
 - The CpG context file (10kb upstream region per gene of interest).'
     placement: left
-
 
   - title: '<b>Import the sequence datasets</b>'
     element: '#right:visible'
@@ -94,262 +96,262 @@ These comprise:<br>
     content: 'Your data was successfully uploaded'
     placement: left
 
+# Create a collection
+
   - title: '<b>Create a collection</b>'
     element: '#right:visible'
-    content: ' Multiple datasets can be organized as a collection to group them under a single name.
- This is especially useful to avoid errors during the analysis. In particular, collections help to:<br>
+    content: ' Multiple datasets can be grouped in collections. This is useful
+for better readability and to avoid errors during the analysis:<br>
 - Save time running the same operation on multiple datasets<br>
 - Rename the collection instead of renaming every single file<br>
 - Keep the history as clean as possible.<br>
-Thus, we want to create as many collections as sample conditions (control/treatment) and sample mate pairs (forward/reverse).'
+Thus, we want to create as many collections as sample conditions
+(control/treatment) and sample mate pairs (forward/reverse).'
     placement: left
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.actions .icon-btn.show-selectors-btn .fa.fa-check-square-o:visible'
-    content: 'Select multiple datasets'
+    content: 'Select multiple datasets.'
     placement: left
     onnextclick:
       - '.actions .icon-btn.show-selectors-btn .fa.fa-check-square-o:visible'
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.select-all' # must not check for visibility
-    content: 'Select all'
+    content: 'Select all.'
     placement: left
     onnextclick:
       - '.select-all' # must not check for visibility
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle:visible'
-    content: 'Choose an option'
+    content: 'Choose an option.'
     placement: top
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle:visible'
-    content: 'Create collections from rules'
+    content: 'Create collections from rules.'
     placement: top
     onloadclick:
       - '.list-action-menu-btn.btn.btn-secondary.dropdown-toggle:visible'
     onnextclick:
       - '.float-right > :nth-child(9) a' # must not check for visibility
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.creator-reset-btn:visible'
-    content: 'Reset default definitions'
+    content: 'Reset default definitions.'
     placement: bottom
     onnextclick:
       - '.creator-reset-btn:visible'
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-menu-column-button:visible'
-    content: 'Create a new table column (1/3)'
+    content: 'Create a new table column (1/3).'
     placement: bottom
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-menu-column-button:visible'
-    content: 'Add column from metadata'
+    content: 'Add column from metadata.'
     placement: bottom
     onloadclick:
       - '.rule-menu-column-button:visible'
     onnextclick:
       - '.rule-link-add-column-metadata' # must not check for visibility
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-editor select:visible'
     content: 'Open the dropdown.'
     placement: right
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-editor select:visible'
-    content: 'Select "Name"'
+    content: 'Select "Name".'
     placement: right
     select:
       - '.rule-editor select option:contains("Name")' # must not check for visibility
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-editor-ok:visible'
-    content: 'Apply'
+    content: 'Apply.'
     placement: right
     onnextclick:
       - '.rule-editor-ok:visible'
 
-
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-menu-filter-button:visible'
-    content: 'Filter for fastq data rows'
+    content: 'Filter for fastq data rows.'
     placement: bottom
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-menu-filter-button:visible'
-    content: 'Using a regular expression'
+    content: 'Using a regular expression.'
     placement: bottom
     onloadclick:
       - '.rule-menu-filter-button:visible'
     onnextclick:
       - '.rule-link-add-filter-regex' # must not check for visibility
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-regular-expression:visible'
-    content: 'Enter: "fastq"'
+    content: 'Enter: "fastq".'
     placement: right
     textinsert: 'fastq'
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-editor-ok:visible'
-    content: 'Apply on column A'
+    content: 'Apply on column A.'
     placement: right
     onnextclick:
       - '.rule-editor-ok:visible'
 
-
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-menu-column-button:visible'
-    content: 'Create a new table column (2/3)'
+    content: 'Create a new table column (2/3).'
     placement: bottom
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-menu-column-button:visible'
-    content: 'Add column from basename of URL'
+    content: 'Add column from basename of URL.'
     placement: bottom
     onloadclick:
       - '.rule-menu-column-button:visible'
     onnextclick:
       - '.rule-link-add-column-basename' # must not check for visibility
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-editor-ok:visible'
-    content: 'Apply on column A'
+    content: 'Apply on column A.'
     placement: right
     onnextclick:
       - '.rule-editor-ok:visible'
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-menu-column-button:visible'
-    content: 'Create a new table column (3/3)'
+    content: 'Create a new table column (3/3).'
     placement: bottom
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-menu-column-button:visible'
-    content: 'Trim suffix'
+    content: 'Trim suffix.'
     placement: bottom
     onloadclick:
       - '.rule-menu-column-button:visible'
     onnextclick:
       - '.rule-link-add-column-substr' # must not check for visibility
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-column-selector:visible'
-    content: 'Open the dropdown'
+    content: 'Open the dropdown.'
     placement: right
     onnextclick:
       - '.rule-column-selector .select2-arrow:visible'
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.select2-drop .select2-input:visible'
-    content: 'Search and select "B"'
+    content: 'Search and select "B".'
     textinsert: 'B'
     placement: right
     onloadclick:
       - '.select2-drop .select2-results > :nth-child(1):visible'
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-editor > :nth-child(2) select:visible'
     content: 'Open the dropdown.'
     placement: right
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-editor > :nth-child(2) select:visible'
-    content: 'Select "Strip off suffix specified"'
+    content: 'Select "Strip off suffix specified".'
     placement: right
     select:
       - '.rule-editor select option:contains("Strip off suffix specified")' # must not check for visibility
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-editor :nth-child(3) input:visible'
-    content: 'Enter: "12"'
+    content: 'Enter: "12".'
     placement: right
     textinsert: '12'
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-editor-ok:visible'
-    content: 'Apply on column B'
+    content: 'Apply on column B.'
     placement: right
     onnextclick:
       - '.rule-editor-ok:visible'
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-menu-rules-button'
-    content: 'Create a new rule'
+    content: 'Create a new rule.'
     placement: bottom
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: .rule-menu-rules-button
-    content: 'Add column definitions'
+    content: 'Add column definitions.'
     placement: bottom
     onloadclick:
       - '.rule-menu-rules-button:visible'
     onnextclick:
       - '.rule-link-mapping'
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.dropdown-toggle.btn.btn-primary.mr-1:visible'
-    content: 'Add a definition (1/2)'
+    content: 'Add a definition (1/2).'
     placement: top
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.dropdown-toggle.btn.btn-primary.mr-1:visible'
-    content: 'Select list identifier'
+    content: 'Select list identifier.'
     placement: top
     onloadclick:
       - '.dropdown-toggle.btn.btn-primary.mr-1:visible'
     onnextclick:
       - '.rule-add-mapping-list-identifiers' # must not check for visibility
 
-
-
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-column-selector:visible'
-    content: 'Open the dropdown'
+    content: 'Open the dropdown.'
     placement: right
     onnextclick:
       - '.rule-column-selector .select2-arrow:visible'
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.select2-drop .select2-input:visible'
-    content: 'Search and select "B"'
+    content: 'Search and select "B".'
     textinsert: 'B'
     placement: right
     onloadclick:
       - '.select2-drop .select2-results > :nth-child(1):visible'
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.dropdown-toggle.btn.btn-primary.mr-1:visible'
-    content: 'Add a definition (2/2)'
+    content: 'Add a definition (2/2).'
     placement: top
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.dropdown-toggle.btn.btn-primary.mr-1:visible'
-    content: 'Select collection name'
+    content: 'Select collection name.'
     placement: top
     onloadclick:
       - '.dropdown-toggle.btn.btn-primary.mr-1:visible'
     onnextclick:
       - '.rule-add-mapping-collection-name' # must not check for visibility
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rules-container :nth-child(2) .rule-column-selector:visible'
-    content: 'Open the dropdown'
+    content: 'Open the dropdown.'
     placement: right
     onnextclick:
       - '.rule-column-selector .select2-arrow:visible'
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.select2-drop .select2-input:visible'
-    content: 'Search and select "C"'
+    content: 'Search and select "C".'
     textinsert: 'C'
     placement: right
     onloadclick:
       - '.select2-drop .select2-results > :nth-child(1):visible'
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.rule-mapping-ok:visible'
-    content: 'Apply'
+    content: 'Apply.'
     placement: right
     onnextclick:
       - '.rule-mapping-ok:visible'
-  - title: <b>Create collections</b>
+
+  - title: '<b>Create collections</b>'
     element: '.create-collection:visible'
-    content: 'Finally, create'
+    content: 'Finally, create.'
     placement: bottom
     onnextclick:
       - '.create-collection:visible'
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '#right:visible'
     content: 'There are four collections in your history panel.'
     placement: left
@@ -357,14 +359,14 @@ Thus, we want to create as many collections as sample conditions (control/treatm
       - element: '#current-history-panel .list-item.dataset-collection.history-content:visible'
         mincount: 1
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '.actions .icon-btn.show-selectors-btn .fa.fa-check-square-o:visible'
-    content: 'Close the selection view'
+    content: 'Close the selection view.'
     placement: left
     onnextclick:
       - '.actions .icon-btn.show-selectors-btn .fa.fa-check-square-o:visible'
 
-  - title: <b>Create collections</b>
+  - title: '<b>Create collections</b>'
     element: '#masthead:visible'
     content: 'The data upload and reorganization has been completed.'
     placement: bottom
