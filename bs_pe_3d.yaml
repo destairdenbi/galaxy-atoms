@@ -1,0 +1,342 @@
+id: bs_pe_3d
+name: 'BS-Seq analysis (paired-end reads)'
+description: 'Quality trimming with Trim Galore!'
+title_default: 'BS-Seq analysis (paired-end reads)'
+steps:
+  - title: '<b>Outline</b>'
+    element: '#masthead:visible'
+    content: 'In this tour we will perform quality trimming of paired-end
+BS-Seq data.<br>
+Quality trimming analysis is necessary to remove low quality sequence that
+ultimately bias the interpretation of results.<br>
+Here, we will leverage on <b>Trim Galore!</b>.'
+    placement: bottom
+
+# quality trimming for the ctr dataset collections
+
+  - title: '<bQuality trimming<</b>'
+    element: '#tool-search-query:visible'
+    content: 'Search for the <b>Trim Galore!</b> tool.<br>
+Trim Galore! searches for low quality score reads, and ultimately removes them
+to improve the overall quality of the input datasets.'
+    placement: right
+    textinsert: trim galore
+    onnextclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftrim_galore%2Ftrim_galore%2F0.6.3"]
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<bQuality trimming<</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired-end</b>.'
+    textinsert: 'Paired-end'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="singlePaired|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="singlePaired|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="singlePaired|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<bQuality trimming<</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>noadapter ctr R1</b>.'
+    textinsert: 'noadapter ctr R1'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="singlePaired|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="singlePaired|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="singlePaired|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<bQuality trimming<</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>noadapter ctr R2</b>.'
+    textinsert: 'noadapter ctr R2'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<bQuality trimming<</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Full parameter list</b>.'
+    textinsert: 'Full parameter list'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="params|quality"] .ui-input:visible'
+    placement: top
+    content: 'The <b>Phred quality score threshold</b> is the minimum allowed
+quality on the 3prime end of the read.<br>
+Trim Galore! subtracts the defined threshold from each quality value, and
+computes partial sums beginning from the end. Any base with a quality score
+blow 0 will be removed.<br>
+Specify <b>20</b> as the minimum quality score, below which the read gets
+discarded.'
+    textinsert: '20'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="params|stringency"] .ui-input:visible'
+    placement: top
+    content: 'Specify <b>3</b> as the minimum overlap length between the
+adapter and the sequence.'
+    textinsert: '3'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="params|min_length"] .ui-input:visible'
+    placement: top
+    content: 'The <b>Minimum length N</b> of a sequence defines how many bp are
+required to keep the sequence in the dataset after trimming.<br>
+It is generally recommended to keep only those sequences whose length indicates
+enought sequence information content for downstream analyses.<br>
+Specify <b>20</b> as the minimum lenght limit, below which the read gets
+discarded.'
+    textinsert: '20'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="params|report"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+    placement: top
+    content: 'Select <b>Yes</b> to generate a report.'
+    onnextclick:
+      - '[tour_id="params|report"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+
+  - title: '<bQuality trimming<</b>'
+    element: '#execute:visible'
+    content: 'With the current parameterisation, Trim Galore! will:<br>
+- Trim reads with low average quality<br>
+- Discard reads whose length became shorter than the indicated threshold.<br>
+For all remaining parametrisation options, we will use the provided default
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
+    placement: top
+    postclick:
+      - '#execute:visible'
+
+  - title: '<bQuality trimming<</b>'
+    element: '#right:visible'
+    content: 'Trim Galore! processing has begun, and the results are loading in
+the history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Trim Galore!")'
+        count: 1
+
+# trim treat dataset collections
+
+  - title: '<bQuality trimming<</b>'
+    element: '#tool-search-query:visible'
+    content: 'Analogously, we need to perform quality control on the treated
+dataset collections using <b>Trim Galore!</b>.'
+    placement: right
+    textinsert: trim galore
+    onnextclick:
+      - >-
+        a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftrim_galore%2Ftrim_galore%2F0.6.3"]
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<bQuality trimming<</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Paired-end</b>.'
+    textinsert: 'Paired-end'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="singlePaired|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="singlePaired|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="singlePaired|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<bQuality trimming<</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>noadapter treat R1</b>.'
+    textinsert: 'noadapter treat R1'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="singlePaired|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="singlePaired|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="singlePaired|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="singlePaired|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<bQuality trimming<</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>noadapter treat R2</b>.'
+    textinsert: 'noadapter treat R2'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'
+    content: 'Open the dropdown.'
+    placement: top
+    onnextclick:
+      - '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'
+  - title: '<bQuality trimming<</b>'
+    element: '.select2-drop .select2-input:visible'
+    content: 'Search and select <b>Full parameter list</b>.'
+    textinsert: 'Full parameter list'
+    placement: left
+    onloadclick:
+       - '.select2-drop .select2-results > :nth-child(1):visible'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="params|quality"] .ui-input:visible'
+    placement: top
+    content: 'The <b>Phred quality score threshold</b> is the minimum allowed
+quality on the 3prime end of the read.<br>
+Trim Galore! subtracts the defined threshold from each quality value, and
+computes partial sums beginning from the end. Any base with a quality score
+blow 0 will be removed.<br>
+Specify <b>20</b> as the minimum quality score, below which the read gets
+discarded.'
+    textinsert: '20'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="params|stringency"] .ui-input:visible'
+    placement: top
+    content: 'Specify <b>3</b> as the minimum overlap length between the
+adapter and the sequence.'
+    textinsert: '3'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="params|min_length"] .ui-input:visible'
+    placement: top
+    content: 'The <b>Minimum length N</b> of a sequence defines how many bp are
+required to keep the sequence in the dataset after trimming.<br>
+It is generally recommended to keep only those sequences whose length indicates
+enought sequence information content for downstream analyses.<br>
+Specify <b>20</b> as the minimum lenght limit, below which the read gets
+discarded.'
+    textinsert: '20'
+
+  - title: '<bQuality trimming<</b>'
+    element: '[tour_id="params|report"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+    placement: top
+    content: 'Select <b>Yes</b> to generate a report.'
+    onnextclick:
+      - '[tour_id="params|report"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+
+  - title: '<bQuality trimming<</b>'
+    element: '#execute:visible'
+    content: 'With the current parameterisation, Trim Galore! will:<br>
+- Trim reads with low average quality<br>
+- Discard reads whose length became shorter than the indicated threshold.<br>
+For all remaining parametrisation options, we will use the provided default
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
+    placement: top
+    postclick:
+      - '#execute:visible'
+
+  - title: '<bQuality trimming<</b>'
+    element: '#right:visible'
+    content: 'Trim Galore! processing has begun, and the results are loading in
+the history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items .name:contains("Trim Galore!")'
+        count: 6
+
+  - title: '<bQuality trimming<</b>'
+    element: '#masthead:visible'
+    content: 'The quality control and data preprocessing analysis has been completed.'
+    placement: bottom
+    onloadwait:
+      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
+        count: 0
+      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
+        count: 0
+
+# rename dataset collections
+
+  - title: '<b>Rename datasets</b>'
+    element: '#right'
+    placement: left
+    content: 'To keep track of the data being processed, we now rename these
+collections.'
+    rename:
+      - element: '#current-history-panel .list-items > :nth-child(1):visible'
+        name: 'report treat'
+      - element: '#current-history-panel .list-items > :nth-child(2):visible'
+        name: 'trimmed treat R2'
+      - element: '#current-history-panel .list-items > :nth-child(3):visible'
+        name: 'trimmed treat R1'
+      - element: '#current-history-panel .list-items > :nth-child(4):visible'
+        name: 'report ctr'
+      - element: '#current-history-panel .list-items > :nth-child(5):visible'
+        name: 'trimmed ctr R2'
+      - element: '#current-history-panel .list-items > :nth-child(6):visible'
+        name: 'trimmed ctr R1'
+    autoclick:
+      - '#history-refresh-button'
+
+  - title: '<b>Rename datasets</b>'
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("report treat")'
+        count: 1
+    element: '#right'
+    placement: left
+    content: 'The collections have been renamed.'
+
+  - title: '<bQuality trimming<</b>'
+    element: '#masthead:visible'
+    content: 'You successfully completed this Galaxy atom.'
+    placement: bottom
