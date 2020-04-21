@@ -1,18 +1,23 @@
-id: bs_pe_3a
+id: bs_pe_3c
 name: 'BS-Seq analysis (paired-end reads)'
 description: 'Quality trimming with Trimmomatic'
 title_default: 'BS-Seq analysis (paired-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'
-    content: 'In this tour, we will perform quality trimming on BS-Seq data to remove low quality sequence content from sequencing reads that might ultimately bias the interpretation of results.<br>
+    content: 'In this tour we will perform quality trimming of paired-end
+BS-Seq data.<br>
+QUality trimming analysis is necessary to remove low quality sequence that
+ultimately bias the interpretation of results.<br>
 Here, we will leverage on <b>Trimmomatic</b>.'
     placement: bottom
 
   - title: '<b>Quality trimming</b>'
     element: '#tool-search-query:visible'
     content: 'Search for the <b>Trimmomatic</b> tool.<br>
-Trimmomatic is an adapter/sequence trim/removal tool, which searches for contaminants, adapters, and low quality score reads, and ultimately removes them to improve the overall quality of the input datasets.'
+Trimmomatic is an adapter/sequence trim/removal tool, which searches for
+contaminants, adapters, and low quality score reads, and ultimately removes
+them to improve the overall quality of the input datasets.'
     placement: right
     textinsert: trimmomatic
     postclick:
@@ -253,7 +258,7 @@ tool box.'
   - title: '<b>Quality trimming</b>'
     element: '#right:visible'
     content: 'Trimmomatic processing has begun, and the results are loading in
-your history.'
+the history.'
     placement: left
     onloadwait:
       - element: '#current-history-panel .list-items .name:contains("Trimmomatic")'
