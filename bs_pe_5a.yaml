@@ -1,7 +1,7 @@
 id: bs_pe_5a
-name: 'BS-Seq analysis'
+name: 'BS-Seq analysis (paired-end reads)'
 description: 'Quantification of methylated reads within a CpG context using Samtools, MethylDackel, and Bedtools'
-title_default: 'BS-Seq analysis'
+title_default: 'BS-Seq analysis (paired-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'

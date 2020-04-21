@@ -1,7 +1,7 @@
 id: bs_pe_4a
-name: 'BS-Seq analysis'
+name: 'BS-Seq analysis (paired-end reads)'
 description: 'Alignment of sequence reads against a reference genome using Bismark'
-title_default: 'BS-Seq analysis'
+title_default: 'BS-Seq analysis (paired-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'

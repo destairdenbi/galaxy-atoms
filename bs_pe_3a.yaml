@@ -1,7 +1,7 @@
 id: bs_pe_3a
-name: 'BS-Seq analysis'
+name: 'BS-Seq analysis (paired-end reads)'
 description: 'Quality trimming with Trimmomatic'
-title_default: 'BS-Seq analysis'
+title_default: 'BS-Seq analysis (paired-end reads)'
 steps:
   - title: '<b>Outline</b>'
     element: '#masthead:visible'
