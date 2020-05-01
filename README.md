@@ -223,7 +223,7 @@ Galaxy data upload --> Galaxy create collections --> FastQC --> PRINSEQ --> STAR
 </table>
 
 **Example**:
-Galaxy data upload --> Galaxy create collections --> FastQC --> Cutadapt --> Trimmomatic --> Bismark --> Samtools, MethylDackel, Bedtools
+Galaxy data upload --> Galaxy create collections --> FastQC --> Cutadapt --> Trimmomatic --> Bismark --> Samtools-filter, -sort, -fixmate, -markdup, -sort, MethylDackel, BEDtools-intersect intervals, -mergeBED, join, AWK
 <p align="right"><a href="#top">&#x25B2; back to top</a></p>
 
 
