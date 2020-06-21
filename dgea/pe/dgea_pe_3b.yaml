@@ -263,7 +263,7 @@ collections.'
         name: 'aligned treat'
       - element: '#current-history-panel .list-items > :nth-child(2):visible'
         name: 'aligned ctr'
-    autoclick:
+    onnextclick:
       - '#history-refresh-button'
 
   - title: '<b>Rename datasets</b>'

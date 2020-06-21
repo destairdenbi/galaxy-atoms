@@ -788,7 +788,7 @@ collections.'
         name: 'noadapter ctr R2'
       - element: '#current-history-panel .list-items > :nth-child(4):visible'
         name: 'noadapter ctr R1'
-    autoclick:
+    onnextclick:
       - '#history-refresh-button'
 
   - title: '<b>Adapter clipping</b>'

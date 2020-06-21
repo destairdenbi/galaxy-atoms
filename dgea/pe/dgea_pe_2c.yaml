@@ -508,7 +508,7 @@ collections.'
         name: 'trimmed ctr R2'
       - element: '#current-history-panel .list-items > :nth-child(8):visible'
         name: 'trimmed ctr R1'
-    autoclick:
+    onnextclick:
       - '#history-refresh-button'
 
   - title: '<b>Rename datasets</b>'
