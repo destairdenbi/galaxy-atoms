@@ -437,7 +437,7 @@ collections.'
         name: 'read quantification no-feature ctr'
       - element: '#current-history-panel .list-items > :nth-child(4):visible'
         name: 'read quantification ctr'
-    autoclick:
+    onnextclick:
       - '#history-refresh-button'
 
   - title: '<b>Rename datasets</b>'

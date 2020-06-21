@@ -522,7 +522,7 @@ collections.'
         name: 'singletons ctr R1'
       - element: '#current-history-panel .list-items > :nth-child(12):visible'
         name: 'trimmed ctr R1'
-    autoclick:
+    onnextclick:
       - '#history-refresh-button'
 
   - title: '<b>Rename datasets</b>'

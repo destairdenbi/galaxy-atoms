@@ -241,7 +241,7 @@ collections.'
         name: 'mapped ctr'
       - element: '#current-history-panel .list-items > :nth-child(4):visible'
         name: 'mapped ctr report'
-    autoclick:
+    onnextclick:
       - '#history-refresh-button'
 
   - title: '<b>Rename datasets</b>'
