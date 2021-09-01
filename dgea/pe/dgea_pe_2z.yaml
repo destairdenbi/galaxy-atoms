@@ -1,0 +1,9 @@
+id: dgea_pe_2z
+name: 'Differential Gene Expression Analysis (paired-end reads)'
+description: 'Skip this atom'
+title_default: 'Differential Gene Expression Analysis (paired-end reads)'
+steps:
+  - title: '<b>Skip: QC and Preprocessing</b>'
+    element: '#masthead:visible'
+    content: 'Take me to the next atom!'
+    placement: bottom

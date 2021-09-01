@@ -1,6 +1,6 @@
 id: dgea_pe_2d
 name: 'Differential Gene Expression Analysis (paired-end reads)'
-description: 'Quality control and data preprocessing with FastQC and Trim Galore!'
+description: 'Quality control and data preprocessing with FastQC and Trim Galore! (new)'
 title_default: 'Differential Gene Expression Analysis (paired-end reads)'
 steps:
   - title: '<b>Outline</b>'
@@ -30,56 +30,172 @@ further parameterize the tools during the course of the analysis.'
       - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(2):visible'
-    content: 'Select multiple datasets.'
+    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .ui-select:visible'
+    content: 'Currently, this step has to be performed for each collection individually.'
+    placement: bottom
+    # select:
+    #   - '[tour_id="input_file"] .ui-select-multiple.ui-select .select > :nth-child(n+1):visible'
+    onnextclick:
+      - '[tour_id="input_file"] .ui-select .fa-caret-down:visible'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="input_file"] .ui-select-multiple.ui-select:visible'
-    content: 'Select all imported control and treated datasets.'
-    placement: bottom
-    select:
-      - '[tour_id="input_file"] .ui-select-multiple.ui-select .select > :nth-child(n+1):visible'
+    element: '[tour_id="input_file"] .ui-select:visible'
+    content: 'Select the first collection.'
+    placement: top
+    onloadclick:
+      - 'ul.select2-results > :nth-child(4)'
+    # postclick:
+    #   - '#execute:visible'
 
   - title: '<b>Quality control</b>'
     element: '#execute:visible'
     content: 'For all remaining parametrisation options, we will use default
-settings. However, for further information, please refer to the manual provided
-below the tool box.'
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
     placement: top
     postclick:
       - '#execute:visible'
 
   - title: '<b>Quality control</b>'
     element: '#right:visible'
-    content: 'FastQC processing has begun, and the results are loading in your
-history.'
+    content: 'FastQC processing has begun, and the results (1/4) are loading in your history. The processing for the remaining collections is the same. First, we will select the tool anew.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC")' 
+        count: 1
+    onnextclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection again.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .ui-select:visible'
+    content: 'Select the second collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .ui-select .fa-caret-down:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#execute:visible'
+    content: 'Execute (2/4).'
+    placement: top
+    onloadclick:
+      - 'ul.select2-results > :nth-child(3)'
+    postclick:
+      - '#execute:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#right:visible'
+    content: 'FastQC processing has begun, and the results (2/4) are loading in your history. Two collections remain.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC")' 
+        count: 1
+    onnextclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection again.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .ui-select:visible'
+    content: 'Select the third collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .ui-select .fa-caret-down:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#execute:visible'
+    content: 'Execute (3/4).'
+    placement: top
+    onloadclick:
+      - 'ul.select2-results > :nth-child(2)'
+    postclick:
+      - '#execute:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#right:visible'
+    content: 'FastQC processing has begun, and the results (3/4) are loading in your history. One collection remains.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC")' 
+        count: 1
+    onnextclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection again.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .ui-select:visible'
+    content: 'Select the last collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .ui-select .fa-caret-down:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#execute:visible'
+    content: 'Execute (4/4).'
+    placement: top
+    onloadclick:
+      - 'ul.select2-results > :nth-child(1)'
+    postclick:
+      - '#execute:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#right:visible'
+    content: 'FastQC processing has begun, and the results (4/4) are loading in your history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC")' 
         count: 1
 
   - title: '<b>Quality control</b>'
     element: '#right:visible'
     onloadwait:
-      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
     content: 'FastQC processing completed.'
     placement: left
 
   - title: '<b>Quality control</b>'
-    element: '#current-history-panel .list-items > :nth-child(2) .display-btn:visible'
-    content: 'Open a report.'
+    element: '#current-history-panel .list-items > :nth-child(2):visible'
+    content: 'To open a report, we first need to access a collection...'
     onnextclick:
-      - '#current-history-panel .list-items > :nth-child(2) .display-btn:visible'
+      - '#current-history-panel .list-items > :nth-child(2) .name:visible'
+    placement: top
+
+  - title: '<b>Quality control</b>'
+    element: '#current-history-panel .list-items > :nth-child(1) .display-btn:visible'
+    content: '..then we can open a report.'
+    onnextclick:
+      - '#current-history-panel .list-items > :nth-child(1) .display-btn:visible'
     placement: left
 
   - title: '<b>Quality control</b>'
@@ -226,10 +342,12 @@ More information on this plot can be found <a href="http://www.bioinformatics.ba
       - '.summary ul > :nth-child(10) a:visible'
 
   - title: '<b>Quality control</b>'
-    element: '#masthead:visible'
+    element: '.back'
     content: 'Now that the quality of the input datasets have been assessed, we
-improve the overall read quality using a quality trimming tool.'
+improve the overall read quality using a quality trimming tool. First, we navigate back to the main history.'
     placement: bottom
+    onnextclick:
+      - '.back'
 
 # trim ctr dataset collections
 

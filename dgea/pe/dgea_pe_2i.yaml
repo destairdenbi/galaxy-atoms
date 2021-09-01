@@ -1,6 +1,6 @@
-id: dgea_pe_2d
+id: dgea_pe_2i
 name: 'Differential Gene Expression Analysis (paired-end reads)'
-description: 'Quality control and data preprocessing with FastQC and Trim Galore!'
+description: 'Quality control and data preprocessing with FastQC and PRINSEQ (new)'
 title_default: 'Differential Gene Expression Analysis (paired-end reads)'
 steps:
   - title: '<b>Outline</b>'
@@ -13,7 +13,7 @@ remove those low quality score sequences which might ultimately bias the
 interpretation of results.<br>
 Here, we will leverage on two tools:<br>
 - <b>FastQC</b>, to assess the quality of the sequences<br>
-- <b>Trim Galore!</b>, to remove low quality sequence content.'
+- <b>PRINSEQ</b>, to remove low quality sequence content.'
     placement: bottom
 
 # quality control dataset collections
@@ -30,56 +30,172 @@ further parameterize the tools during the course of the analysis.'
       - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(2):visible'
-    content: 'Select multiple datasets.'
+    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(2):visible'
+      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .ui-select:visible'
+    content: 'Currently, this step has to be performed for each collection individually.'
+    placement: bottom
+    # select:
+    #   - '[tour_id="input_file"] .ui-select-multiple.ui-select .select > :nth-child(n+1):visible'
+    onnextclick:
+      - '[tour_id="input_file"] .ui-select .fa-caret-down:visible'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="input_file"] .ui-select-multiple.ui-select:visible'
-    content: 'Select all imported control and treated datasets.'
-    placement: bottom
-    select:
-      - '[tour_id="input_file"] .ui-select-multiple.ui-select .select > :nth-child(n+1):visible'
+    element: '[tour_id="input_file"] .ui-select:visible'
+    content: 'Select the first collection.'
+    placement: top
+    onloadclick:
+      - 'ul.select2-results > :nth-child(4)'
+    # postclick:
+    #   - '#execute:visible'
 
   - title: '<b>Quality control</b>'
     element: '#execute:visible'
     content: 'For all remaining parametrisation options, we will use default
-settings. However, for further information, please refer to the manual provided
-below the tool box.'
+settings.<br>
+However, for further information, please refer to the manual provided below the
+tool box.'
     placement: top
     postclick:
       - '#execute:visible'
 
   - title: '<b>Quality control</b>'
     element: '#right:visible'
-    content: 'FastQC processing has begun, and the results are loading in your
-history.'
+    content: 'FastQC processing has begun, and the results (1/4) are loading in your history. The processing for the remaining collections is the same. First, we will select the tool anew.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC"):visible'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC")' 
+        count: 1
+    onnextclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection again.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .ui-select:visible'
+    content: 'Select the second collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .ui-select .fa-caret-down:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#execute:visible'
+    content: 'Execute (2/4).'
+    placement: top
+    onloadclick:
+      - 'ul.select2-results > :nth-child(3)'
+    postclick:
+      - '#execute:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#right:visible'
+    content: 'FastQC processing has begun, and the results (2/4) are loading in your history. Two collections remain.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC")' 
+        count: 1
+    onnextclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection again.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .ui-select:visible'
+    content: 'Select the third collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .ui-select .fa-caret-down:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#execute:visible'
+    content: 'Execute (3/4).'
+    placement: top
+    onloadclick:
+      - 'ul.select2-results > :nth-child(2)'
+    postclick:
+      - '#execute:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#right:visible'
+    content: 'FastQC processing has begun, and the results (3/4) are loading in your history. One collection remains.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC")' 
+        count: 1
+    onnextclick:
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fdevteam%2Ffastqc%2Ffastqc%2F0.72%2Bgalaxy1"]'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    content: 'Select dataset collection again.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="input_file"] .ui-select:visible'
+    content: 'Select the last collection.'
+    placement: bottom
+    onnextclick:
+      - '[tour_id="input_file"] .ui-select .fa-caret-down:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#execute:visible'
+    content: 'Execute (4/4).'
+    placement: top
+    onloadclick:
+      - 'ul.select2-results > :nth-child(1)'
+    postclick:
+      - '#execute:visible'
+
+  - title: '<b>Quality control</b>'
+    element: '#right:visible'
+    content: 'FastQC processing has begun, and the results (4/4) are loading in your history.'
+    placement: left
+    onloadwait:
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("FastQC")' 
         count: 1
 
   - title: '<b>Quality control</b>'
     element: '#right:visible'
     onloadwait:
-      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
     content: 'FastQC processing completed.'
     placement: left
 
   - title: '<b>Quality control</b>'
-    element: '#current-history-panel .list-items > :nth-child(2) .display-btn:visible'
-    content: 'Open a report.'
+    element: '#current-history-panel .list-items > :nth-child(2):visible'
+    content: 'To open a report, we first need to access a collection...'
     onnextclick:
-      - '#current-history-panel .list-items > :nth-child(2) .display-btn:visible'
+      - '#current-history-panel .list-items > :nth-child(2) .name:visible'
+    placement: top
+
+  - title: '<b>Quality control</b>'
+    element: '#current-history-panel .list-items > :nth-child(1) .display-btn:visible'
+    content: '..then we can open a report.'
+    onnextclick:
+      - '#current-history-panel .list-items > :nth-child(1) .display-btn:visible'
     placement: left
 
   - title: '<b>Quality control</b>'
@@ -226,29 +342,31 @@ More information on this plot can be found <a href="http://www.bioinformatics.ba
       - '.summary ul > :nth-child(10) a:visible'
 
   - title: '<b>Quality control</b>'
-    element: '#masthead:visible'
+    element: '.back'
     content: 'Now that the quality of the input datasets have been assessed, we
-improve the overall read quality using a quality trimming tool.'
+improve the overall read quality using a quality trimming tool. First, we navigate back to the main history.'
     placement: bottom
+    onnextclick:
+      - '.back'
 
 # trim ctr dataset collections
 
   - title: '<b>Quality control</b>'
     element: '#tool-search-query:visible'
-    content: 'Search for the <b>Trim Galore!</b> tool.<br>
-Trim Galore! searches for low quality score reads, and ultimately removes them
-to improve the overall quality of the input datasets.'
+    content: 'Search for the <b>PRINSEQ</b> tool.<br>
+PRINSEQ searches for low quality score reads, and ultimately removes them to
+improve the overall quality of the input datasets.'
     placement: right
-    textinsert: trim galore
+    textinsert: prinseq
     onnextclick:
-      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftrim_galore%2Ftrim_galore%2F0.6.3"]'
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fprinseq%2Fprinseq%2F0.20.4"]'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+    element: '[tour_id="seq_type|seq_type_opt"] .ui-select .select2-container .select2-choice:visible'
     content: 'Open the dropdown.'
     placement: top
     onnextclick:
-      - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+      - '[tour_id="seq_type|seq_type_opt"] .ui-select .select2-container .select2-choice:visible'
   - title: '<b>Quality control</b>'
     element: '.select2-drop .select2-input:visible'
     content: 'Search and select <b>Paired-end</b>.'
@@ -258,17 +376,17 @@ to improve the overall quality of the input datasets.'
        - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="singlePaired|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    element: '[tour_id="seq_type|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
     content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - '[tour_id="singlePaired|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+      - '[tour_id="seq_type|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Quality control</b>'
-    element: '[tour_id="singlePaired|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+    element: '[tour_id="seq_type|input_mate1"] .ui-select .select2-container .select2-choice:visible'
     content: 'Open the dropdown.'
     placement: top
     onnextclick:
-      - '[tour_id="singlePaired|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+      - '[tour_id="seq_type|input_mate1"] .ui-select .select2-container .select2-choice:visible'
   - title: '<b>Quality control</b>'
     element: '.select2-drop .select2-input:visible'
     content: 'Search and select <b>rna_ctr.R1</b>.'
@@ -278,17 +396,17 @@ to improve the overall quality of the input datasets.'
        - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="singlePaired|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    element: '[tour_id="seq_type|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
     content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - '[tour_id="singlePaired|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+      - '[tour_id="seq_type|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Quality control</b>'
-    element: '[tour_id="singlePaired|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+    element: '[tour_id="seq_type|input_mate2"] .ui-select .select2-container .select2-choice:visible'
     content: 'Open the dropdown.'
     placement: top
     onnextclick:
-      - '[tour_id="singlePaired|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+      - '[tour_id="seq_type|input_mate2"] .ui-select .select2-container .select2-choice:visible'
   - title: '<b>Quality control</b>'
     element: '.select2-drop .select2-input:visible'
     content: 'Search and select <b>rna_ctr.R2</b>.'
@@ -298,76 +416,60 @@ to improve the overall quality of the input datasets.'
        - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown.'
-    placement: top
-    onnextclick:
-      - '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'
-  - title: '<b>Quality control</b>'
-    element: '.select2-drop .select2-input:visible'
-    content: 'Search and select <b>Full parameter list</b>.'
-    textinsert: 'Full parameter list'
-    placement: left
-    onloadclick:
-       - '.select2-drop .select2-results > :nth-child(1):visible'
-
-  - title: '<b>Quality control</b>'
-    element: '[tour_id="params|quality"] .ui-input:visible'
-    placement: top
-    content: 'The <b>Phred quality score threshold</b> is the minimum allowed
-quality on the 3prime end of the read.<br>
-Trim Galore! subtracts the defined threshold from each quality value, and
-computes partial sums beginning from the end. Any base with a quality score
-blow 0 will be removed.<br>
-Specify <b>20</b> as the minimum quality score, below which the read gets
-discarded.'
-    textinsert: '20'
-
-  - title: '<b>Quality control</b>'
-    element: '[tour_id="params|stringency"] .ui-input:visible'
-    placement: top
-    content: 'Specify <b>3</b> as the minimum overlap length between the
-adapter and the sequence.'
-    textinsert: '3'
-
-  - title: '<b>Quality control</b>'
-    element: '[tour_id="params|min_length"] .ui-input:visible'
-    placement: top
-    content: 'The <b>Minimum length N</b> of a sequence defines how many bp are
-required to keep the sequence in the dataset after trimming.<br>
+    element: '[tour_id="filter_treatments|length_filter_treatments|min_length_filter_treatments|min_length_filter_treatment_value"] .ui-input:visible'
+    content: 'The <b>Minimum length threshold to conserve sequences</b>
+indicates the allowed length (in nucleotides) that a sequence must have after
+quality threshold trimming.<br>
 It is generally recommended to keep only those sequences whose length indicates
 enought sequence information content for downstream analyses.<br>
-Specify <b>20</b> as the minimum lenght limit, below which the read gets
-discarded.'
+Specify <b>20</b>.'
     textinsert: '20'
+    placement: top
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="params|report"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+    element: '[tour_id="filter_treatments|quality_filter_treatments|mean_quality_filter_treatments|min_mean_quality_filter_treatments|min_mean_quality_filter_treatment_value"] .ui-input:visible'
+    content: 'The <b>Minimum mean score threshold to conserve sequences</b>
+indicates the allowed base-quality.<br>
+It is generally recommended to keep only those nucleotides whose quality is
+above 20.<br>
+Specify <b>20</b>.'
+    textinsert: '20'
     placement: top
-    content: 'Select <b>Yes</b> to generate a report.'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options:visible'
+    content: 'Select the sliding window approach to use the <b>Mean</b>
+calculation.'
+    placement: top
     onnextclick:
-      - '[tour_id="params|report"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+      - '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options .ui-options-list > :nth-child(2) input'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|window_quality_trimming_treatments"] .ui-input:visible'
+    content: 'Specify <b>4</b> as the sliding window size.'
+    textinsert: '4'
+    placement: top
 
   - title: '<b>Quality control</b>'
     element: '#execute:visible'
-    content: 'With the current parameterisation, Trim Galore! will:<br>
-- Trim reads with low average quality<br>
-- Discard reads whose length became shorter than the indicated threshold.<br>
+    placement: top
+    content: 'With the current parametrisation, PRINSEQ will:<br>
+- Trim low-quality score sequence ends<br>
+- Discard reads whose length became shorter than 20 bp.<br>
 For all remaining parametrisation options, we will use the provided default
 settings.<br>
 However, for further information, please refer to the manual provided below the
 tool box.'
-    placement: top
-    postclick:
+    onnextclick:
       - '#execute:visible'
 
   - title: '<b>Quality control</b>'
     element: '#right:visible'
-    content: 'Trim Galore! processing has begun, and the results are loading in
-the history.'
+    content: 'PRINSEQ processing has begun, and the results are loading in the
+history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("Trim Galore!")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("PRINSEQ")'
         count: 1
 
 # trim treat dataset collections
@@ -375,18 +477,18 @@ the history.'
   - title: '<b>Quality control</b>'
     element: '#tool-search-query:visible'
     content: 'Analogously, we need to perform quality control on the treated
-dataset collections using <b>Trim Galore!</b>.'
+dataset collections using <b>PRINSEQ</b>.'
     placement: right
-    textinsert: trim galore
+    textinsert: prinseq
     onnextclick:
-      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fbgruening%2Ftrim_galore%2Ftrim_galore%2F0.6.3"]'
+      - 'a[href$="/tool_runner?tool_id=toolshed.g2.bx.psu.edu%2Frepos%2Fiuc%2Fprinseq%2Fprinseq%2F0.20.4"]'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+    element: '[tour_id="seq_type|seq_type_opt"] .ui-select .select2-container .select2-choice:visible'
     content: 'Open the dropdown.'
     placement: top
     onnextclick:
-      - '[tour_id="singlePaired|sPaired"] .ui-select .select2-container .select2-choice:visible'
+      - '[tour_id="seq_type|seq_type_opt"] .ui-select .select2-container .select2-choice:visible'
   - title: '<b>Quality control</b>'
     element: '.select2-drop .select2-input:visible'
     content: 'Search and select <b>Paired-end</b>.'
@@ -396,17 +498,17 @@ dataset collections using <b>Trim Galore!</b>.'
        - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="singlePaired|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    element: '[tour_id="seq_type|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
     content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - '[tour_id="singlePaired|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+      - '[tour_id="seq_type|input_mate1"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Quality control</b>'
-    element: '[tour_id="singlePaired|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+    element: '[tour_id="seq_type|input_mate1"] .ui-select .select2-container .select2-choice:visible'
     content: 'Open the dropdown.'
     placement: top
     onnextclick:
-      - '[tour_id="singlePaired|input_mate1"] .ui-select .select2-container .select2-choice:visible'
+      - '[tour_id="seq_type|input_mate1"] .ui-select .select2-container .select2-choice:visible'
   - title: '<b>Quality control</b>'
     element: '.select2-drop .select2-input:visible'
     content: 'Search and select <b>rna_treat.R1</b>.'
@@ -416,17 +518,17 @@ dataset collections using <b>Trim Galore!</b>.'
        - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="singlePaired|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+    element: '[tour_id="seq_type|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
     content: 'Select dataset collection.'
     placement: bottom
     onnextclick:
-      - '[tour_id="singlePaired|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
+      - '[tour_id="seq_type|input_mate2"] .btn-group.ui-radiobutton > :nth-child(3):visible'
   - title: '<b>Quality control</b>'
-    element: '[tour_id="singlePaired|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+    element: '[tour_id="seq_type|input_mate2"] .ui-select .select2-container .select2-choice:visible'
     content: 'Open the dropdown.'
     placement: top
     onnextclick:
-      - '[tour_id="singlePaired|input_mate2"] .ui-select .select2-container .select2-choice:visible'
+      - '[tour_id="seq_type|input_mate2"] .ui-select .select2-container .select2-choice:visible'
   - title: '<b>Quality control</b>'
     element: '.select2-drop .select2-input:visible'
     content: 'Search and select <b>rna_treat.R2</b>.'
@@ -436,77 +538,61 @@ dataset collections using <b>Trim Galore!</b>.'
        - '.select2-drop .select2-results > :nth-child(1):visible'
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'
-    content: 'Open the dropdown.'
-    placement: top
-    onnextclick:
-      - '[tour_id="params|settingsType"] .ui-select .select2-container .select2-choice:visible'
-  - title: '<b>Quality control</b>'
-    element: '.select2-drop .select2-input:visible'
-    content: 'Search and select <b>Full parameter list</b>.'
-    textinsert: 'Full parameter list'
-    placement: left
-    onloadclick:
-       - '.select2-drop .select2-results > :nth-child(1):visible'
-
-  - title: '<b>Quality control</b>'
-    element: '[tour_id="params|quality"] .ui-input:visible'
-    placement: top
-    content: 'The <b>Phred quality score threshold</b> is the minimum allowed
-quality on the 3prime end of the read.<br>
-Trim Galore! subtracts the defined threshold from each quality value, and
-computes partial sums beginning from the end. Any base with a quality score
-blow 0 will be removed.<br>
-Specify <b>20</b> as the minimum quality score, below which the read gets
-discarded.'
-    textinsert: '20'
-
-  - title: '<b>Quality control</b>'
-    element: '[tour_id="params|stringency"] .ui-input:visible'
-    placement: top
-    content: 'Specify <b>3</b> as the minimum overlap length between the
-adapter and the sequence.'
-    textinsert: '3'
-
-  - title: '<b>Quality control</b>'
-    element: '[tour_id="params|min_length"] .ui-input:visible'
-    placement: top
-    content: 'The <b>Minimum length N</b> of a sequence defines how many bp are
-required to keep the sequence in the dataset after trimming.<br>
+    element: '[tour_id="filter_treatments|length_filter_treatments|min_length_filter_treatments|min_length_filter_treatment_value"] .ui-input:visible'
+    content: 'The <b>Minimum length threshold to conserve sequences</b>
+indicates the allowed length (in nucleotides) that a sequence must have after
+quality threshold trimming.<br>
 It is generally recommended to keep only those sequences whose length indicates
 enought sequence information content for downstream analyses.<br>
-Specify <b>20</b> as the minimum lenght limit, below which the read gets
-discarded.'
+Specify <b>20</b>.'
     textinsert: '20'
+    placement: top
 
   - title: '<b>Quality control</b>'
-    element: '[tour_id="params|report"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+    element: '[tour_id="filter_treatments|quality_filter_treatments|mean_quality_filter_treatments|min_mean_quality_filter_treatments|min_mean_quality_filter_treatment_value"] .ui-input:visible'
+    content: 'The <b>Minimum mean score threshold to conserve sequences</b>
+indicates the allowed base-quality.<br>
+It is generally recommended to keep only those nucleotides whose quality is
+above 20.<br>
+Specify <b>20</b>.'
+    textinsert: '20'
     placement: top
-    content: 'Select <b>Yes</b> to generate a report.'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options:visible'
+    content: 'Select the sliding window approach to use the <b>Mean</b>
+calculation.'
+    placement: top
     onnextclick:
-      - '[tour_id="params|report"] .btn-group.ui-radiobutton > :nth-child(1):visible'
+      - '[tour_id="trimming_treatments|quality_trimming_treatments|type_quality_trimming_treatments"] .ui-options .ui-options-list > :nth-child(2) input'
+
+  - title: '<b>Quality control</b>'
+    element: '[tour_id="trimming_treatments|quality_trimming_treatments|window_quality_trimming_treatments"] .ui-input:visible'
+    content: 'Specify <b>4</b> as the sliding window size.'
+    textinsert: '4'
+    placement: top
 
   - title: '<b>Quality control</b>'
     element: '#execute:visible'
-    content: 'With the current parameterisation, Trim Galore! will:<br>
-- Trim reads with low average quality<br>
-- Discard reads whose length became shorter than the indicated threshold.<br>
+    placement: top
+    content: 'With the current parametrisation, PRINSEQ will:<br>
+- Trim low-quality score sequence ends<br>
+- Discard reads whose length became shorter than 20 bp.<br>
 For all remaining parametrisation options, we will use the provided default
 settings.<br>
 However, for further information, please refer to the manual provided below the
 tool box.'
-    placement: top
-    postclick:
+    onnextclick:
       - '#execute:visible'
 
   - title: '<b>Quality control</b>'
     element: '#right:visible'
-    content: 'Trim Galore! processing has begun, and the results are loading in
-the history.'
+    content: 'PRINSEQ processing has begun, and the results are loading in the
+history.'
     placement: left
     onloadwait:
-      - element: '#current-history-panel .list-items .name:contains("Trim Galore!")'
-        count: 6
+      - element: '#current-history-panel .list-items .name:contains("PRINSEQ")'
+        count: 12
 
 # rename collections
 
@@ -515,13 +601,13 @@ the history.'
     content: 'The quality control and data preprocessing analysis has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
 
   - title: '<b>Rename datasets</b>'
@@ -531,23 +617,35 @@ the history.'
 collections.'
     rename:
       - element: '#current-history-panel .list-items > :nth-child(1):visible'
-        name: 'report treat'
+        name: 'rejected treat R2'
       - element: '#current-history-panel .list-items > :nth-child(2):visible'
-        name: 'trimmed treat R2'
+        name: 'singletons treat R2'
       - element: '#current-history-panel .list-items > :nth-child(3):visible'
-        name: 'trimmed treat R1'
+        name: 'trimmed treat R2'
       - element: '#current-history-panel .list-items > :nth-child(4):visible'
-        name: 'report ctr'
+        name: 'rejected treat R1'
       - element: '#current-history-panel .list-items > :nth-child(5):visible'
-        name: 'trimmed ctr R2'
+        name: 'singletons treat R1'
       - element: '#current-history-panel .list-items > :nth-child(6):visible'
+        name: 'trimmed treat R1'
+      - element: '#current-history-panel .list-items > :nth-child(7):visible'
+        name: 'rejected ctr R2'
+      - element: '#current-history-panel .list-items > :nth-child(8):visible'
+        name: 'singletons ctr R2'
+      - element: '#current-history-panel .list-items > :nth-child(9):visible'
+        name: 'trimmed ctr R2'
+      - element: '#current-history-panel .list-items > :nth-child(10):visible'
+        name: 'rejected ctr R1'
+      - element: '#current-history-panel .list-items > :nth-child(11):visible'
+        name: 'singletons ctr R1'
+      - element: '#current-history-panel .list-items > :nth-child(12):visible'
         name: 'trimmed ctr R1'
     onnextclick:
       - '#history-refresh-button'
 
   - title: '<b>Rename datasets</b>'
     onloadwait:
-      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("report treat")'
+      - element: '#current-history-panel .list-items > :nth-child(1) .name:contains("rejected treat R2")'
         count: 1
     element: '#right'
     placement: left
