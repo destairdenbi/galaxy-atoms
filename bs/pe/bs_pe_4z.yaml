@@ -1,0 +1,9 @@
+id: bs_pe_4z
+name: 'BS-Seq analysis (paired-end reads)'
+description: 'Skip this atom'
+title_default: 'BS-Seq analysis (paired-end reads)'
+steps:
+  - title: '<b>Skip: Genome alignment</b>'
+    element: '#masthead:visible'
+    content: 'Take me to the next atom!'
+    placement: bottom
