@@ -1,0 +1,9 @@
+id: dgea_se_1z
+name: 'Differential Gene Expression Analysis (single-end reads)'
+description: 'Skip this atom'
+title_default: 'Differential Gene Expression Analysis (single-end reads)'
+steps:
+  - title: '<b>Skip: Galaxy data upload</b>'
+    element: '#masthead:visible'
+    content: 'Take me to the next atom!'
+    placement: bottom

@@ -296,13 +296,13 @@ the history.'
     content: 'The quality control and data preprocessing analysis has been completed.'
     placement: bottom
     onloadwait:
-      - element: '#current-history-panel .list-item.dataset.history-content.state-loading:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-loading:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-new:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-new:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-running:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-running:visible'
         count: 0
-      - element: '#current-history-panel .list-item.dataset.history-content.state-queued:visible'
+      - element: '#current-history-panel .list-item.dataset-collection.history-content.state-queued:visible'
         count: 0
 
 # rename dataset collections
